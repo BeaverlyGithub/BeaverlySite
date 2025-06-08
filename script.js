@@ -52,49 +52,35 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Add mobile menu functionality if needed
-const createMobileMenu = () => {
+// Mobile menu functionality
+const setupMobileMenu = () => {
   const navLinks = document.querySelector('.nav-links');
   const navContainer = document.querySelector('.nav-container');
   
-  if (window.innerWidth <= 768) {
-    if (!document.querySelector('.mobile-menu-toggle')) {
-      const menuToggle = document.createElement('button');
-      menuToggle.className = 'mobile-menu-toggle';
-      menuToggle.innerHTML = '☰';
-      menuToggle.style.cssText = `
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: #0a0a0a;
-        cursor: pointer;
-        display: block;
-      `;
-      
-      menuToggle.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        if (navLinks.style.display === 'flex') {
-          navLinks.style.cssText = `
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 1rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-          `;
-        }
-      });
-      
-      navContainer.appendChild(menuToggle);
-    }
+  if (!document.querySelector('.mobile-menu-toggle')) {
+    const menuToggle = document.createElement('button');
+    menuToggle.className = 'mobile-menu-toggle';
+    menuToggle.innerHTML = '☰';
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    navContainer.appendChild(menuToggle);
   }
+  
+  // Close menu when clicking on links
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      document.querySelector('.mobile-menu-toggle').innerHTML = '☰';
+    });
+  });
 };
 
-// Initialize mobile menu on load and resize
-window.addEventListener('load', createMobileMenu);
-window.addEventListener('resize', createMobileMenu);
+// Initialize mobile menu
+document.addEventListener('DOMContentLoaded', setupMobileMenu);
 
 // Add form handling for contact
 document.querySelectorAll('.btn-primary[href="mailto:contact@beaverly.ai"]').forEach(btn => {
