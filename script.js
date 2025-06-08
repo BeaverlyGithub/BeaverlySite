@@ -34,21 +34,32 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      if (entry.target.classList.contains('demo-card')) {
+        entry.target.classList.add('animate-in');
+      } else if (entry.target.classList.contains('testimonial')) {
+        entry.target.classList.add('animate-in');
+      } else {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
     }
   });
 }, observerOptions);
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-  const animatedElements = document.querySelectorAll('.feature-card, .pricing-card, .testimonial, .faq-item, .why-item');
-  
-  animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+  const animatedElements = document.querySelectorAll('.feature-card, .pricing-card, .testimonial, .why-item, .demo-card');
+
+  animatedElements.forEach((el, index) => {
+    if (el.classList.contains('demo-card') || el.classList.contains('testimonial')) {
+      // These use CSS classes for animation
+      observer.observe(el);
+    } else {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+      observer.observe(el);
+    }
   });
 });
 
@@ -56,20 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
 const setupMobileMenu = () => {
   const navLinks = document.querySelector('.nav-links');
   const navContainer = document.querySelector('.nav-container');
-  
+
   if (!document.querySelector('.mobile-menu-toggle')) {
     const menuToggle = document.createElement('button');
     menuToggle.className = 'mobile-menu-toggle';
     menuToggle.innerHTML = '☰';
-    
+
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
     });
-    
+
     navContainer.appendChild(menuToggle);
   }
-  
+
   // Close menu when clicking on links
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
@@ -81,6 +92,29 @@ const setupMobileMenu = () => {
 
 // Initialize mobile menu
 document.addEventListener('DOMContentLoaded', setupMobileMenu);
+
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all other FAQ items
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+});
 
 // Add form handling for contact
 document.querySelectorAll('.btn-primary[href="mailto:contact@beaverly.ai"]').forEach(btn => {
