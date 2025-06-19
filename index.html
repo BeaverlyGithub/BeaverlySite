@@ -273,7 +273,7 @@
           </div>
           <div class="plan-note">For users with their own VPS setup</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(99000, 'Basic')" class="btn btn-outline">Get Started</button>
+          <button onclick="payWithPaystack(null, 'Basic')" class="btn btn-outline">Get Started</button>
         </div>
 
         <div class="pricing-card pricing-card-featured">
@@ -290,7 +290,7 @@
           </div>
           <div class="plan-note">Includes lightweight VPS hosting</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(499000, 'Standard')" class="btn btn-outline">Go Standard</button>
+          <button onclick="payWithPaystack(null, 'Standard')" class="btn btn-outline">Go Standard</button>
         </div>
 
         <div class="pricing-card">
@@ -306,7 +306,7 @@
           </div>
           <div class="plan-note">Premium dedicated infrastructure</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(999000, 'Premium')" class="btn btn-outline">Go Premium</button>
+          <button onclick="payWithPaystack(null, 'Premium')" class="btn btn-outline">Go Premium</button>
 
         </div>
       </div>
@@ -549,20 +549,38 @@
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script>
-  function payWithPaystack(amount, planName) {
-    const email = prompt("Enter your email");
-    const mt5_id = prompt("Enter your MT5 Account ID");
+  let selectedPlan = null;
+
+  function payWithPaystack(_, planName) {
+    selectedPlan = planName;
+    document.getElementById("payment-modal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("payment-modal").classList.add("hidden");
+    document.getElementById("paystack-email").value = "";
+    document.getElementById("paystack-mt5").value = "";
+  }
+
+  function submitPaystack() {
+    const email = document.getElementById("paystack-email").value.trim();
+    const mt5_id = document.getElementById("paystack-mt5").value.trim();
 
     if (!email || !mt5_id) {
-      alert("Both email and MT5 ID are required.");
+      alert("Please fill in both email and MT5 ID.");
       return;
     }
 
-    let handler = PaystackPop.setup({
-      key: 'pk_live_d12de2c4db8480075610182041c0b263515d985f',  // 🔁 Replace with your actual public key
+    const plans = {
+      "Basic": "PLN_8233lm4k90igw66",
+      "Standard": "PLN_vjwwizlq9qjiscj",
+      "Premium": "PLN_0h9aj38ywvg6dpg"
+    };
+
+    const handler = PaystackPop.setup({
+      key: 'pk_live_d12de2c4db8480075610182041c0b263515d985f',
       email: email,
-      amount: amount * 100,
-      currency: "NGN",
+      plan: plans[selectedPlan],
       metadata: {
         custom_fields: [
           {
@@ -572,20 +590,40 @@
           }
         ],
         mt5_id: mt5_id,
-        plan: planName
+        plan: selectedPlan
       },
       callback: function(response) {
-        alert("Payment successful! Reference: " + response.reference);
-        window.location.href = "https://app.beaverlyai.com/license";
+        alert("🎉 Subscription successful! Reference: " + response.reference);
+        window.location.href = "https://app.beaverlyai.com/license?ref=" + response.reference;
       },
       onClose: function() {
-        alert('Transaction was cancelled');
+        alert("Transaction was cancelled.");
       }
     });
 
+    closeModal();
     handler.openIframe();
   }
 </script>
+
+  <!-- Payment Modal -->
+<div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-xl shadow-lg p-6 w-[90%] max-w-md">
+    <h2 class="text-xl font-semibold mb-4">Enter Your Details</h2>
+    <label class="block mb-2 text-sm">Email</label>
+    <input id="paystack-email" type="email" placeholder="e.g. user@example.com" class="w-full border px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    
+    <label class="block mb-2 text-sm">MT5 Account ID</label>
+    <input id="paystack-mt5" type="text" placeholder="e.g. 12345678" class="w-full border px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    
+    <div class="flex justify-end gap-2">
+      <button onclick="closeModal()" class="px-4 py-2 text-sm bg-gray-200 rounded hover:bg-gray-300">Cancel</button>
+      <button onclick="submitPaystack()" class="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">Pay Now</button>
+    </div>
+  </div>
+</div>
+
+
 
   
 </body>
