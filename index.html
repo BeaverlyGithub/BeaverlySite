@@ -695,7 +695,7 @@
       },
       callback: function (response) {
         alert("🎉 Subscription successful! Reference: " + response.reference);
-        window.location.href = "https://app.beaverlyai.com/license?ref=" + response.reference;
+        window.location.href = "https://app.beaverlyai.com";
       },
       onClose: function () {
         alert("Transaction was cancelled.");
@@ -717,7 +717,7 @@
     <input id="paystack-email" type="email" placeholder="e.g. user@example.com" />
 
     <label class="block mb-2 text-sm">MT5 Account ID</label>
-    <input id="paystack-mt5" type="text" placeholder="e.g. 12345678" />
+    <input id="paystack-mt5" type="text" placeholder="Your 8 digit MT5 ID" />
 
     <div class="flex justify-end gap-2 mt-4">
       <button onclick="closeModal()" class="btn-cancel">Cancel</button>
