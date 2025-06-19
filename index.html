@@ -546,5 +546,47 @@
 <script src="https://files.bpcontent.cloud/2025/06/09/22/20250609220506-ZFL7FQ6G.js"></script>
 
   <script src="script.js"></script>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+  function payWithPaystack(amount, planName) {
+    const email = prompt("Enter your email");
+    const mt5_id = prompt("Enter your MT5 Account ID");
+
+    if (!email || !mt5_id) {
+      alert("Both email and MT5 ID are required.");
+      return;
+    }
+
+    let handler = PaystackPop.setup({
+      key: 'pk_live_YOUR_PUBLIC_KEY',  // 🔁 Replace with your actual public key
+      email: email,
+      amount: amount * 100,
+      currency: "NGN",
+      metadata: {
+        custom_fields: [
+          {
+            display_name: "MT5 ID",
+            variable_name: "mt5_id",
+            value: mt5_id
+          }
+        ],
+        mt5_id: mt5_id,
+        plan: planName
+      },
+      callback: function(response) {
+        alert("Payment successful! Reference: " + response.reference);
+        window.location.href = "https://app.beaverlyai.com/license";
+      },
+      onClose: function() {
+        alert('Transaction was cancelled');
+      }
+    });
+
+    handler.openIframe();
+  }
+</script>
+
+  
 </body>
 </html>
