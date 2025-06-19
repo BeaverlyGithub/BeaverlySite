@@ -13,16 +13,83 @@
     display: none;
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    transition: all 0.3s ease-in-out;
   }
 
   #payment-modal.show {
     display: flex;
   }
+
+  .modal-box {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal-box h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .modal-box input {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .modal-box button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .btn-cancel {
+    background-color: #f3f4f6;
+    color: #111;
+  }
+
+  .btn-cancel:hover {
+    background-color: #e5e7eb;
+  }
+
+  .btn-submit {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .btn-submit:hover {
+    background-color: #1e40af;
+  }
 </style>
+
 
   
 <body>
@@ -626,21 +693,20 @@
 </script>
 
 
- <!-- Payment Modal -->
+<!-- Payment Modal -->
 <div id="payment-modal">
-  <div class="bg-white rounded-xl shadow-lg p-6 w-[90%] max-w-md">
-    <h2 class="text-xl font-semibold mb-4">Enter Your Details</h2>
+  <div class="modal-box">
+    <h2>Enter Your Details</h2>
+
     <label class="block mb-2 text-sm">Email</label>
-    <input id="paystack-email" type="email" placeholder="e.g. user@example.com"
-      class="w-full border px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input id="paystack-email" type="email" placeholder="e.g. user@example.com" />
 
     <label class="block mb-2 text-sm">MT5 Account ID</label>
-    <input id="paystack-mt5" type="text" placeholder="e.g. 12345678"
-      class="w-full border px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <input id="paystack-mt5" type="text" placeholder="e.g. 12345678" />
 
-    <div class="flex justify-end gap-2">
-      <button onclick="closeModal()" class="px-4 py-2 text-sm bg-gray-200 rounded hover:bg-gray-300">Cancel</button>
-      <button onclick="submitPaystack()" class="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">Pay Now</button>
+    <div class="flex justify-end gap-2 mt-4">
+      <button onclick="closeModal()" class="btn-cancel">Cancel</button>
+      <button onclick="submitPaystack()" class="btn-submit">Pay Now</button>
     </div>
   </div>
 </div>
