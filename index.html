@@ -55,6 +55,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-229WRH1KTN');
+
+  // 👇 Force explicit page_view (optional, but fixes stream error)
+  gtag('event', 'page_view', {
+    page_title: document.title,
+    page_path: window.location.pathname,
+  });
 </script>
 </head>
 
