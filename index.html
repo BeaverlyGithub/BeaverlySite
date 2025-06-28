@@ -5,18 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chilla by Beaverly® – Chill With Your Money</title>
   <meta name="description" content="Chilla is quietly growing your money while you live. Travel, sleep, chill.">
+  <meta name="keywords" content="chilla, beaverly, AI trading, forex automation, MT5 bot, trading bot, chill with your money, financial co-pilot, forex trading, free vps, best investment, investment, best investment company, legit investment, safe investment, grow my money, stock trading">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Chilla by Beaverly® – Chill With Your Money">
   <meta property="og:description" content="Let your money chill while Chilla does the thinking. Your financial co-pilot that never sleeps.">
   <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://beaverlyai.com">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Beaverly® | Chill With Your Money">
   <meta name="twitter:description" content="Chilla is quietly growing your money while you live.">
   <meta name="twitter:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Fonts + Preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Beaverly",
+    "url": "https://beaverlyai.com",
+    "logo": "https://beaverlyai.com/attached_assets/beaverly_lodo.png",
+    "sameAs": [
+      "https://twitter.com/beaverlyai",
+      "https://linkedin.com/company/beaverlyai"
+    ],
+    "description": "Beaverly® is your AI wealth co-pilot. Travel, sleep, live — Chilla quietly grows your money using advanced market automation.",
+    "founder": {
+      "@type": "Person",
+      "name": "Moses Olabode"
+    }
+  }
+  </script>
+
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-229WRH1KTN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-229WRH1KTN');
+</script>
 </head>
+
 
 <style>
   #payment-modal {
@@ -126,11 +167,11 @@
         <span class="logo-text">Beaverly®</span>
       </div>
       <div class="nav-links">
-        <a href="#how-it-works">How To Chill</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="https://app.beaverlyai.com">Join all Chillers</a>
-        <a href="#pricing" class="nav-cta">Start Chilling Now</a>
+        <a href="#how-it-works" data-track="nav_how-it-works">How To Chill</a>
+        <a href="#pricing" data-track="nav_pricing">Pricing</a>
+        <a href="#about" data-track="nav_about">About</a>
+        <a href="https://app.beaverlyai.com" data-track="nav_login_signup">Join all Chillers</a>
+        <a href="#pricing" class="nav-cta" data-track="nav_cta">Start Chilling Now</a>
       </div>
     </div>
   </nav>
@@ -167,8 +208,8 @@
         <h1 class="hero-headline">You Chill. Chilla Works.</h1>
         <p class="hero-subheadline">Travel, sleep, live — Chilla is quietly growing your money.</p>
         <div class="hero-cta">
-          <a href="#pricing" class="btn btn-primary">Start Chilling Now</a>
-          <a href="#how-it-works" class="btn btn-secondary">How To Chill</a>
+          <a href="#pricing" class="btn btn-primary" data-track="hero_cta">Start Chilling Now</a>
+          <a href="#how-it-works" class="btn btn-secondary" data-track="hero_how-it-works">How To Chill</a>
         </div>
       </div>
     </div>
@@ -386,7 +427,7 @@
           </div>
           <div class="plan-note">A calm, confident way to begin your chill journey</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(null, 'Basic')" class="btn btn-outline">Start Chilling Now</button>
+          <button onclick="payWithPaystack(null, 'Basic')" class="btn btn-outline" data-tier="Basic">Start Chilling Now</button>
         </div>
 
         <div class="pricing-card pricing-card-featured">
@@ -403,7 +444,7 @@
           </div>
           <div class="plan-note">Just enough power to chill like a boss</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(null, 'Standard')" class="btn btn-outline">Start Chilling Now</button>
+          <button onclick="payWithPaystack(null, 'Standard')" class="btn btn-outline" data-tier="Standard">Start Chilling Now</button>
         </div>
 
         <div class="pricing-card">
@@ -420,7 +461,7 @@
           </div>
           <div class="plan-note">Front-row money-making experience</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(null, 'Premium')" class="btn btn-outline">Start Chilling Now</button>
+          <button onclick="payWithPaystack(null, 'Premium')" class="btn btn-outline" data-tier="Premium">Start Chilling Now</button>
 
         </div>
       </div>
@@ -605,9 +646,9 @@
         <h2 class="section-title">Ready to Start Chilling?</h2>
         <p class="contact-subtitle">Join other chilled people making silent wins.</p>
         <div class="contact-cta">
-          <a href="#pricing" class="btn btn-primary">Start Chilling Now <img src="attached_assets/dollar-stack.gif" alt="Floating Coin" class="floating" style="width: 30px;">
+          <a href="#pricing" class="btn btn-primary" data-track="end_cta">Start Chilling Now <img src="attached_assets/dollar-stack.mp4" alt="Floating Coin" class="floating" style="width: 30px;">
 </a>
-          <p class="contact-note">Or chill with us directly at <a href="mailto:hello@beaverlyai.com">hello@beaverlyai.com</a></p>
+          <p class="contact-note">Or chill with us directly at <a href="mailto:hello@beaverlyai.com" data-track="end_mailto">hello@beaverlyai.com</a></p>
         </div>
       </div>
     </div>
@@ -627,29 +668,29 @@
         <div class="footer-links">
           <div class="footer-section">
             <h4>Product</h4>
-            <a href="#how-it-works">How to Chill</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
+            <a href="#how-it-works" data-track="footer_how-to-chill">How to Chill</a>
+            <a href="#pricing" data-track="footer_pricing">Pricing</a>
+            <a href="#contact" data-track="footer_contact">Contact</a>
           </div>
           <div class="footer-section">
             <h4>Company</h4>
-            <a href="#about">About</a>
-            <a href="/privacy.html">Privacy Policy</a>
-            <a href="/terms.html">Terms of Service</a>
+            <a href="#about" data-track="footer_about">About</a>
+            <a href="/privacy.html" data-track="footer_privacy">Privacy Policy</a>
+            <a href="/terms.html" data-track="footer_terms">Terms of Service</a>
           </div>
         </div>
       </div>
       <div class="social-links">
-  <a href="https://x.com/beaverlyai" target="_blank" aria-label="X">
+  <a href="https://x.com/beaverlyai" target="_blank" aria-label="X" data-track="footer_xtwitter">
     <img src="attached_assets/x-icon.png" alt="X" class="social-icon">
   </a>
-  <a href="https://linkedin.com/company/beaverly" target="_blank" aria-label="LinkedIn">
+  <a href="https://linkedin.com/company/beaverly" target="_blank" aria-label="LinkedIn" data-track="footer_linkedin">
     <img src="attached_assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
   </a>
-  <a href="https://facebook.com/profile.php?id=61569968914920" target="_blank" aria-label="Facebook">
+  <a href="https://facebook.com/profile.php?id=61569968914920" target="_blank" aria-label="Facebook" data-track="footer_facebook">
     <img src="attached_assets/facebook-icon.png" alt="Facebook" class="social-icon">
   </a>
-  <a href="https://instagram.com/beaverlyai" target="_blank" aria-label="Instagram">
+  <a href="https://instagram.com/beaverlyai" target="_blank" aria-label="Instagram" data-track="footer_instagram">
     <img src="attached_assets/instagram-icon.png" alt="Instagram" class="social-icon">
   </a>
 </div>
@@ -738,13 +779,15 @@
 
 
     <div class="flex justify-end gap-2 mt-4">
-      <button onclick="closeModal()" class="btn-cancel">Cancel</button>
-      <button onclick="submitPaystack()" class="btn-submit">Start Chilling</button>
+      <button onclick="closeModal()" class="btn-cancel" data-track="payment_modal_cancel">Cancel</button>
+      <button onclick="submitPaystack()" class="btn-submit" data-track="payment_modal_ok">Start Chilling</button>
     </div>
   </div>
 </div>
 
 
+
+<script src="/js/analytics.js"></script>
 
   
 </body>
