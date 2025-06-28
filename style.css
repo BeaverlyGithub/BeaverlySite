@@ -84,7 +84,13 @@ p {
 
 .logo-text {
   display: inline-block;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
+
 
 .footer-logo {
   filter: brightness(0) saturate(100%) invert(1);
