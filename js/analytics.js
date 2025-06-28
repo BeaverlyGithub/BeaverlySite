@@ -1,7 +1,5 @@
-// # js/analytics.js for Beaverly
-
-
-// Track Pricing Tier Button Clicks
+document.addEventListener('DOMContentLoaded', () => {
+  // Track Pricing Tier Button Clicks
   const tierButtons = document.querySelectorAll('[data-tier]');
   tierButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -13,18 +11,17 @@
     });
   });
 
-// Track Granular Button Clicks
-
-document.querySelectorAll('[data-track]').forEach(button => {
-  button.addEventListener('click', () => {
-    const label = button.getAttribute('data-track');
-    gtag('event', 'cta_click', {
-      event_category: 'navigation',
-      event_label: label
+  // Track Granular Button Clicks
+  document.querySelectorAll('[data-track]').forEach(button => {
+    button.addEventListener('click', () => {
+      const label = button.getAttribute('data-track');
+      gtag('event', 'cta_click', {
+        event_category: 'navigation',
+        event_label: label
+      });
     });
   });
 });
-
 
 // Scroll Depth Tracking
 window.addEventListener('scroll', () => {
@@ -45,4 +42,3 @@ setTimeout(() => {
     event_label: 'Stayed 30s+'
   });
 }, 30000);
-
