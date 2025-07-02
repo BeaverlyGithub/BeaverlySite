@@ -76,104 +76,6 @@
 </head>
 
 
-<style>
-  #payment-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-     background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: all 0.3s ease-in-out;
-  }
-
-  #payment-modal.show {
-    display: flex;
-  }
-
-  .modal-box {
-    background: white;
-    border-radius: 1.25rem;
-    padding: 2rem;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    animation: fadeInUp 0.3s ease;
-    font-family: 'Outfit', sans-serif;
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .modal-box h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .modal-box input {
-    border: 1px solid #e0e0e0;
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .modal-box button {
-    padding: 0.6rem 1.2rem;
-    border-radius: 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: background 0.3s ease;
-  }
-
-  .btn-cancel {
-     background: transparent;
-  color: #0a0a0a;
-  border: 2px solid #0a0a0a;
-  }
-
-  .btn-cancel:hover {
-    background: #0a0a0a;
-  color: #ffffff;
-  transform: translateY(-2px);
-  }
-
-  .btn-submit {
-    background: #0a0a0a;
-  color: #ffffff;
-  }
-
-  .btn-submit:hover {
-    background: #2a2a2a;
-  transform: translateY(-2px);
-  }
-.btn-outline {
-  background: transparent;
-  color: #4a4a4a;
-  border: 2px solid #e0e0e0;
-}
-
-.btn-outline:hover {
-  border-color: #0a0a0a;
-  color: #0a0a0a;
-}
-  
-</style>
-
-
   
 <body>
   <!-- Navigation -->
@@ -433,7 +335,7 @@
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="plan-header">
-            <h3>Basic</h3>
+            <h3>Level One</h3>
             <div class="plan-price">$99<span>/year</span></div>
           </div>
           <div class="plan-features">
@@ -444,13 +346,13 @@
           </div>
           <div class="plan-note">A calm, confident way to begin your chill journey</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(null, 'Basic')" class="btn btn-outline" data-tier="Basic">Start Chilling Now</button>
+          <a href="https://paystack.shop/pay/3upgdgk3ja" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Start Chilling Now</a>
         </div>
 
         <div class="pricing-card pricing-card-featured">
           <div class="plan-badge">Most Popular</div>
           <div class="plan-header">
-            <h3>Standard</h3>
+            <h3>Deep Chill</h3>
             <div class="plan-price">$499<span>/year</span></div>
           </div>
           <div class="plan-features">
@@ -461,12 +363,12 @@
           </div>
           <div class="plan-note">Just enough power to chill like a boss</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(null, 'Standard')" class="btn btn-outline" data-tier="Standard">Start Chilling Now</button>
+          <a href="https://paystack.shop/pay/iq567nig5e" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Go Deeper Now</a>
         </div>
 
         <div class="pricing-card">
           <div class="plan-header">
-            <h3>Premium</h3>
+            <h3>Peak Chil</h3>
             <div class="plan-price">$999<span>/year</span></div>
           </div>
           <div class="plan-features">
@@ -478,7 +380,7 @@
           </div>
           <div class="plan-note">Front-row money-making experience</div>
           <div class="plan-note">Supports all local payments</div>
-          <button onclick="payWithPaystack(null, 'Premium')" class="btn btn-outline" data-tier="Premium">Start Chilling Now</button>
+          <a href="https://paystack.shop/pay/gj89tz5341" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Unlock Peak Chill Now</a>
 
         </div>
       </div>
@@ -731,83 +633,6 @@
 <script src="https://files.bpcontent.cloud/2025/06/09/22/20250609220506-ZFL7FQ6G.js"></script>
 
   <script src="script.js"></script>
-
-<script src="https://js.paystack.co/v1/inline.js"></script>
-<script>
-  let selectedPlan = null;
-
-  function payWithPaystack(_, planName) {
-    selectedPlan = planName;
-    document.getElementById("payment-modal").classList.add("show");
-  }
-
-  function closeModal() {
-    const modal = document.getElementById("payment-modal");
-    modal.classList.remove("show");
-    document.getElementById("paystack-email").value = "";
-  }
-
-  function submitPaystack() {
-    const email = document.getElementById("paystack-email").value.trim();
-    
-    if (!email) {
-      alert("Please fill in your email.");
-      return;
-    }
-
-    const plans = {
-      "Basic": "PLN_8233lm4k90igw66",
-      "Standard": "PLN_vjwwizlq9qjiscj",
-      "Premium": "PLN_0h9aj38ywvg6dpg"
-    };
-
-    const handler = PaystackPop.setup({
-      key: 'pk_live_d12de2c4db8480075610182041c0b263515d985f',
-      email: email,
-      plan: plans[selectedPlan],
-      metadata: {
-        custom_fields: [
-          {
-            display_name: "email",
-            variable_name: "email",
-            value: email
-          }
-        ],
-        email: email,
-        plan: selectedPlan
-      },
-      callback: function (response) {
-        alert("🎉 Minister of Enjoyment! Reference: " + response.reference);
-        window.location.href = "https://app.beaverlyai.com";
-      },
-      onClose: function () {
-        alert("Transaction was cancelled.");
-      }
-    });
-
-    closeModal();
-    handler.openIframe();
-  }
-</script>
-
-
-<!-- Payment Modal -->
-<div id="payment-modal">
-  <div class="modal-box">
-    <h2>Enter Your Details</h2>
-
-    <label class="block mb-2 text-sm">Email</label>
-    <input id="paystack-email" type="email" placeholder="e.g. user@example.com" />
-
-
-    <div class="flex justify-end gap-2 mt-4">
-      <button onclick="closeModal()" class="btn-cancel" data-track="payment_modal_cancel">Cancel</button>
-      <button onclick="submitPaystack()" class="btn-submit" data-track="payment_modal_ok">Start Chilling</button>
-    </div>
-  </div>
-</div>
-
-
 
 <script src="/js/analytics.js"></script>
 
