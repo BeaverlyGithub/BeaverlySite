@@ -210,7 +210,7 @@ p {
 
 .agnostic-logos-wrapper {
   overflow: hidden;
-  border-radius: clamp(12px, 4vw, 150px);
+  border-radius: 12px;
   background-color: #000;
 }
 
@@ -230,7 +230,7 @@ p {
 }
 
 .logo-img {
-  height: clamp(24px, 4vw, 48px);
+  height: clamp(24px, 4vw, 150px);
   filter: grayscale(100%);
   opacity: 0.8;
   transition: opacity 0.3s ease, filter 0.3s ease;
