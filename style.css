@@ -188,17 +188,16 @@ p {
 
 
 
-/* Agnostic Signals */
 .agnostic-signals {
   padding: 3rem 0;
-  background: #000000;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  background: #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .agnostic-content {
   text-align: center;
-}  
+}
 
 .agnostic-label {
   font-size: 0.875rem;
@@ -209,39 +208,49 @@ p {
   font-weight: 500;
 }
 
+.agnostic-logos-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #000;
+}
+
 .agnostic-logos {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  min-width: max-content;
+  padding: 1rem 0;
+  animation: scroll 25s linear infinite;
 }
 
 .agnostic-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
-  background: #000000;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
+.logo-img {
+  height: 32px;  /* perfect medium size */
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
 
+.logo-img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }  /* Adjust speed/distance as needed */
+  100% { transform: translateX(-50%); }
 }
 
-.animate-scroll {
-  display: flex;
-  animation: scroll 20s linear infinite;
+/* Optional: Slow down animation on hover */
+.agnostic-logos:hover {
+  animation-play-state: paused;
 }
 
-.platform-ticker img {
-  filter: grayscale(100%);
-}
 
 
 
