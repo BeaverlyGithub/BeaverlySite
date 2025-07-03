@@ -210,7 +210,7 @@ p {
 
 .agnostic-logos-wrapper {
   overflow: hidden;
-  border-radius: clamp(12px, 4vw, 48px);
+  border-radius: clamp(12px, 4vw, 150px);
   background-color: #000;
 }
 
