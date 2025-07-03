@@ -218,6 +218,9 @@ p {
 
 .agnostic-logo {
   display: flex;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
