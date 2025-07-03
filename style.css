@@ -230,7 +230,7 @@ p {
 }
 
 .logo-img {
-  height: 32px;  /* perfect medium size */
+  height: clamp(24px, 4vw, 48px);
   filter: grayscale(100%);
   opacity: 0.8;
   transition: opacity 0.3s ease, filter 0.3s ease;
