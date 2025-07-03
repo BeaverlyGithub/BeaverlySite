@@ -186,6 +186,66 @@ p {
 }
 
 
+
+
+/* Agnostic Signals */
+.agnostic-signals {
+  padding: 3rem 0;
+  background: #000000;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+.agnostic-content {
+  text-align: center;
+}  
+
+.agnostic-label {
+  font-size: 0.875rem;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.agnostic-logos {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.agnostic-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }  /* Adjust speed/distance as needed */
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.platform-ticker img {
+  filter: grayscale(100%);
+}
+
+
+
+
 /* Trust Signals */
 .trust-signals {
   padding: 3rem 0;
@@ -1488,16 +1548,3 @@ p {
 }
 
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }  /* Adjust speed/distance as needed */
-}
-
-.animate-scroll {
-  display: flex;
-  animation: scroll 20s linear infinite;
-}
-
-.platform-ticker img {
-  filter: grayscale(100%);
-}
