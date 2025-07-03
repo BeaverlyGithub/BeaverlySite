@@ -217,6 +217,7 @@ p {
 .agnostic-logos {
   display: flex;
   align-items: center;
+  min-height: 56px; 
   gap: 2rem;
   min-width: max-content;
   padding: 1rem 0;
@@ -230,11 +231,12 @@ p {
 }
 
 .logo-img {
-  height: 32px;
+  width: clamp(24px, 6vw, 56px);
   filter: grayscale(100%);
   opacity: 0.8;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
+
 
 .logo-img:hover {
   opacity: 1;
