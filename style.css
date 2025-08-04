@@ -233,7 +233,7 @@ p {
 
 .logo-img {
   width: clamp(28px, 5vw, 56px);
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   opacity: 0.8;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
