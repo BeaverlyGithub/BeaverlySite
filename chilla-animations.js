@@ -39,8 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Observe all elements with animation class
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
-  animatedElements.forEach(el => {
-    scrollObserver.observe(el);
+  animatedElements.forEach((el, index) => {
+    // Make content visible immediately, then add scroll animation
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+    
+    // Add a small delay for staggered effect
+    setTimeout(() => {
+      scrollObserver.observe(el);
+    }, index * 50);
   });
 
   // Enhanced button interactions
@@ -150,15 +157,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Smooth reveal for hero content
+  // Ensure hero content is visible
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
-    // Ensure hero is visible immediately, then add animation class
     heroContent.style.opacity = '1';
     heroContent.style.transform = 'translateY(0)';
-    setTimeout(() => {
-      heroContent.classList.add('animate-in');
-    }, 100);
+    heroContent.classList.add('animate-in');
   }
 
   // Dynamic typing effect for immersive text (subtle)
