@@ -1159,20 +1159,34 @@ p {
 }
 
 .ecosystem-card {
-  background: #ffffff;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
   border-radius: 20px;
   padding: 3rem 2rem;
   text-align: center;
-  border: 2px solid #2a2a2a;
+  border: 2px solid #3a3a3a;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.ecosystem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border-radius: 20px;
+  pointer-events: none;
 }
 
 .ecosystem-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
-  border-color: #ffffff;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  border-color: #5a5a5a;
+  background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
 }
 
 .ecosystem-card:hover .ecosystem-icon {
@@ -1197,11 +1211,12 @@ p {
 .brain-core {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #0a0a0a, #4a4a4a);
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   margin: 20px auto;
   position: relative;
   animation: brain-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .neural-connections {
@@ -1216,7 +1231,7 @@ p {
   position: absolute;
   width: 2px;
   height: 20px;
-  background: linear-gradient(to bottom, #0a0a0a, transparent);
+  background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.3));
   animation: neural-fire 2s ease-in-out infinite;
 }
 
@@ -1259,9 +1274,10 @@ p {
 }
 
 .gear {
-  border: 4px solid #0a0a0a;
+  border: 4px solid #ffffff;
   border-radius: 50%;
   position: absolute;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .gear::before {
@@ -1272,7 +1288,7 @@ p {
   transform: translate(-50%, -50%);
   width: 60%;
   height: 60%;
-  border: 2px solid #4a4a4a;
+  border: 2px solid #e0e0e0;
   border-radius: 50%;
 }
 
@@ -1301,9 +1317,10 @@ p {
 
 .flow-line {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #0a0a0a, transparent);
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
   margin-bottom: 4px;
   animation: flow-data 2s linear infinite;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .flow-line:nth-child(2) {
@@ -1335,13 +1352,14 @@ p {
 .core-center {
   width: 30px;
   height: 30px;
-  background: linear-gradient(45deg, #0a0a0a, #2a2a2a);
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: core-glow 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .data-rings {
@@ -1364,21 +1382,21 @@ p {
 .ring-1 {
   width: 40px;
   height: 40px;
-  border-color: #0a0a0a;
+  border-color: #ffffff;
   animation-delay: 0s;
 }
 
 .ring-2 {
   width: 60px;
   height: 60px;
-  border-color: #4a4a4a;
+  border-color: #e0e0e0;
   animation-delay: 1s;
 }
 
 .ring-3 {
   width: 80px;
   height: 80px;
-  border-color: #6a6a6a;
+  border-color: #c0c0c0;
   animation-delay: 2s;
 }
 
@@ -1393,10 +1411,11 @@ p {
 .processing-dots .dot {
   width: 4px;
   height: 4px;
-  background: #0a0a0a;
+  background: #ffffff;
   border-radius: 50%;
   position: absolute;
   animation: dot-orbit 4s linear infinite;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 .processing-dots .dot:nth-child(1) {
@@ -1419,11 +1438,11 @@ p {
 
 @keyframes core-glow {
   0%, 100% { 
-    box-shadow: 0 0 0 rgba(10, 10, 10, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     transform: translate(-50%, -50%) scale(1);
   }
   50% { 
-    box-shadow: 0 0 20px rgba(10, 10, 10, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
     transform: translate(-50%, -50%) scale(1.1);
   }
 }
@@ -1447,26 +1466,36 @@ p {
 .ecosystem-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #0a0a0a;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 .ecosystem-card p {
   font-size: 1rem;
-  color: #4a4a4a;
+  color: #d0d0d0;
   line-height: 1.6;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .ecosystem-btn {
   min-width: 180px;
   transition: all 0.3s ease;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #5a5a5a;
+  position: relative;
+  z-index: 1;
 }
 
 .ecosystem-btn:hover {
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
   color: #0a0a0a;
   transform: translateY(-2px);
   border-color: #ffffff;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 /* Single plan pricing adjustments */
