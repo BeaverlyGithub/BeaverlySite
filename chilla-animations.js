@@ -2,6 +2,25 @@
 // Chilla Page Animations
 document.addEventListener('DOMContentLoaded', function() {
   
+  // Mobile menu functionality
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking on links
+    navLinks.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        mobileToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+  
   // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.15,
@@ -134,10 +153,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Smooth reveal for hero content
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
-    // Small delay to ensure smooth load animation
+    // Ensure hero is visible immediately, then add animation class
+    heroContent.style.opacity = '1';
+    heroContent.style.transform = 'translateY(0)';
     setTimeout(() => {
       heroContent.classList.add('animate-in');
-    }, 300);
+    }, 100);
   }
 
   // Dynamic typing effect for immersive text (subtle)
