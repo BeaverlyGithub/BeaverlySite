@@ -1134,10 +1134,19 @@ p {
 }
 
 /* The Chill Ecosystem */
+.ecosystem-section {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.ecosystem-section .section-title {
+  color: #ffffff;
+}
+
 .ecosystem-subtitle {
   text-align: center;
   font-size: 1.25rem;
-  color: #4a4a4a;
+  color: #e0e0e0;
   max-width: 700px;
   margin: 0 auto 4rem;
 }
@@ -1154,7 +1163,7 @@ p {
   border-radius: 20px;
   padding: 3rem 2rem;
   text-align: center;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #2a2a2a;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -1162,8 +1171,8 @@ p {
 
 .ecosystem-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  border-color: #0a0a0a;
+  box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
 }
 
 .ecosystem-card:hover .ecosystem-icon {
@@ -1454,9 +1463,10 @@ p {
 }
 
 .ecosystem-btn:hover {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #ffffff;
+  color: #0a0a0a;
   transform: translateY(-2px);
+  border-color: #ffffff;
 }
 
 /* Single plan pricing adjustments */
