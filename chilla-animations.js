@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-in');
-        // Unobserve after animation to improve performance
         scrollObserver.unobserve(entry.target);
       }
     });
@@ -40,11 +39,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // Observe all elements with animation class
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   animatedElements.forEach((el, index) => {
+    // Make content visible immediately
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+    
     // Add a small delay for staggered effect
     setTimeout(() => {
       scrollObserver.observe(el);
-    }, index * 100);
+    }, index * 50);
   });
+
+  // Ensure hero content is visible
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    heroContent.style.opacity = '1';
+    heroContent.style.transform = 'translateY(0)';
+    heroContent.classList.add('animate-in');
+  }
 
   // Enhanced button interactions
   const buttons = document.querySelectorAll('.btn');
@@ -90,16 +101,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Add ripple animation keyframes
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes ripple {
-      to {
-        transform: scale(2);
-        opacity: 0;
+  if (!document.querySelector('#ripple-styles')) {
+    const style = document.createElement('style');
+    style.id = 'ripple-styles';
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(2);
+          opacity: 0;
+        }
       }
-    }
-  `;
-  document.head.appendChild(style);
+    `;
+    document.head.appendChild(style);
+  }
 
   // Enhanced capability card interactions
   const capabilityCards = document.querySelectorAll('.capability-card');
@@ -122,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const avatar = this.querySelector('.persona-avatar');
       if (avatar) {
         avatar.style.transform = 'scale(1.1) rotate(5deg)';
+        avatar.style.transition = 'transform 0.3s ease';
       }
     });
 
@@ -174,8 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Parallax effect for hero background
-  let lastScrollY = window.scrollY;
-  
   function updateParallax() {
     const scrollY = window.scrollY;
     const heroBackground = document.querySelector('.hero-background');
@@ -184,8 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const speed = scrollY * 0.5;
       heroBackground.style.transform = `translateY(${speed}px)`;
     }
-    
-    lastScrollY = scrollY;
   }
 
   // Throttled scroll handler for performance
@@ -220,6 +231,13 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.style.transform = 'scale(1) rotate(0deg)';
       }
     });
+  });
+
+  // Make sure all content is visible on load
+  const allContent = document.querySelectorAll('section, .hero-content, .nav');
+  allContent.forEach(el => {
+    el.style.opacity = '1';
+    el.style.visibility = 'visible';
   });
 
 });
