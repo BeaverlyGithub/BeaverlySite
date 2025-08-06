@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Intersection Observer for scroll animations
   const observerOptions = {
-    threshold: 0.15,
+    threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
 
@@ -40,14 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Observe all elements with animation class
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   animatedElements.forEach((el, index) => {
-    // Make content visible immediately, then add scroll animation
-    el.style.opacity = '1';
-    el.style.transform = 'translateY(0)';
-    
     // Add a small delay for staggered effect
     setTimeout(() => {
       scrollObserver.observe(el);
-    }, index * 50);
+    }, index * 100);
   });
 
   // Enhanced button interactions
@@ -55,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   buttons.forEach(button => {
     button.addEventListener('mouseenter', function() {
       this.style.transform = this.classList.contains('btn-primary') 
-        ? 'translateY(-3px) scale(1.02)' 
+        ? 'translateY(-2px) scale(1.02)' 
         : 'translateY(-2px)';
     });
 
@@ -105,36 +101,42 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
   document.head.appendChild(style);
 
-  // Parallax effect for immersive breaks
-  const immersiveBreaks = document.querySelectorAll('.immersive-break');
+  // Enhanced capability card interactions
+  const capabilityCards = document.querySelectorAll('.capability-card');
   
-  function updateParallax() {
-    immersiveBreaks.forEach(break => {
-      const rect = break.getBoundingClientRect();
-      const speed = -0.5;
-      const yPos = rect.top * speed;
-      break.style.transform = `translateY(${yPos}px)`;
+  capabilityCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-4px) scale(1.02)';
     });
-  }
 
-  // Throttled scroll handler for performance
-  let ticking = false;
-  function handleScroll() {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateParallax();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-
-  // Enhanced card hover effects with mouse tracking
-  const cards = document.querySelectorAll('.flow-card, .user-story');
+  // Enhanced persona card hover effects
+  const personaCards = document.querySelectorAll('.persona-card');
   
-  cards.forEach(card => {
+  personaCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      const avatar = this.querySelector('.persona-avatar');
+      if (avatar) {
+        avatar.style.transform = 'scale(1.1) rotate(5deg)';
+      }
+    });
+
+    card.addEventListener('mouseleave', function() {
+      const avatar = this.querySelector('.persona-avatar');
+      if (avatar) {
+        avatar.style.transform = 'scale(1) rotate(0deg)';
+      }
+    });
+  });
+
+  // Work cards 3D tilt effect
+  const workCards = document.querySelectorAll('.work-card');
+  
+  workCards.forEach(card => {
     card.addEventListener('mousemove', function(e) {
       const rect = this.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -157,45 +159,67 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Ensure hero content is visible
-  const heroContent = document.querySelector('.hero-content');
-  if (heroContent) {
-    heroContent.style.opacity = '1';
-    heroContent.style.transform = 'translateY(0)';
-    heroContent.classList.add('animate-in');
-  }
-
-  // Dynamic typing effect for immersive text (subtle)
-  const immersiveTexts = document.querySelectorAll('.immersive-text');
-  
-  const typeEffect = (element, text, speed = 100) => {
-    let i = 0;
-    element.textContent = '';
-    
-    const timer = setInterval(() => {
-      if (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
-      } else {
-        clearInterval(timer);
-      }
-    }, speed);
-  };
-
-  // Observer for immersive text typing
-  const typingObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const text = entry.target.dataset.originalText || entry.target.textContent;
-        entry.target.dataset.originalText = text;
-        typeEffect(entry.target, text, 50);
-        typingObserver.unobserve(entry.target);
+  // Scroll hint click handler
+  const scrollHint = document.querySelector('.scroll-hint');
+  if (scrollHint) {
+    scrollHint.addEventListener('click', function() {
+      const worksSection = document.querySelector('.works-section');
+      if (worksSection) {
+        worksSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
     });
-  }, { threshold: 0.8 });
+  }
 
-  immersiveTexts.forEach(text => {
-    typingObserver.observe(text);
+  // Parallax effect for hero background
+  let lastScrollY = window.scrollY;
+  
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    const heroBackground = document.querySelector('.hero-background');
+    
+    if (heroBackground && scrollY < window.innerHeight) {
+      const speed = scrollY * 0.5;
+      heroBackground.style.transform = `translateY(${speed}px)`;
+    }
+    
+    lastScrollY = scrollY;
+  }
+
+  // Throttled scroll handler for performance
+  let ticking = false;
+  function handleScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Tech blocks enhanced interaction
+  const techBlocks = document.querySelectorAll('.tech-block');
+  
+  techBlocks.forEach(block => {
+    block.addEventListener('mouseenter', function() {
+      const icon = this.querySelector('.tech-block-icon');
+      if (icon) {
+        icon.style.transform = 'scale(1.2) rotate(5deg)';
+        icon.style.transition = 'transform 0.3s ease';
+      }
+    });
+
+    block.addEventListener('mouseleave', function() {
+      const icon = this.querySelector('.tech-block-icon');
+      if (icon) {
+        icon.style.transform = 'scale(1) rotate(0deg)';
+      }
+    });
   });
 
 });
