@@ -1266,47 +1266,7 @@ p {
   50% { opacity: 1; }
 }
 
-/* Paca Icon */
-.paca-icon .automation-gears {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
-.gear {
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.gear::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  border: 2px solid #e0e0e0;
-  border-radius: 50%;
-}
-
-.gear-large {
-  width: 50px;
-  height: 50px;
-  top: 25px;
-  left: 10px;
-  animation: spin-clockwise 4s linear infinite;
-}
-
-.gear-small {
-  width: 30px;
-  height: 30px;
-  top: 35px;
-  right: 15px;
-  animation: spin-counter-clockwise 3s linear infinite;
-}
 
 .strategy-flow {
   position: absolute;
