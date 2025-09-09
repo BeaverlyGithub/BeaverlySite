@@ -75,44 +75,6 @@ body {
   }
 }
 
-/* Premium Icon Styling */
-.premium-power-icon,
-.premium-attribute-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 28px;
-  transition: all 0.3s ease;
-}
-
-.premium-power-icon .premium-icon,
-.premium-attribute-icon .premium-icon {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  border-radius: 24px;
-  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
-  transition: all 0.3s ease;
-}
-
-.power-tile:hover .premium-power-icon,
-.attribute-card:hover .premium-attribute-icon {
-  transform: scale(1.1) translateY(-2px);
-  background: rgba(255, 255, 255, 1);
-  border-radius: 32px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.power-tile:hover .premium-icon,
-.attribute-card:hover .premium-icon {
-  transform: scale(1.05);
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.2));
-}
-
 @keyframes pulseConnection {
   0%, 100% {
     opacity: 0.4;
@@ -465,7 +427,7 @@ body {
 .power-tile {
   background: #f8f9fa;
   padding: 3rem 2rem;
-  border-radius: 28px;
+  border-radius: 16px;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -492,7 +454,6 @@ body {
 .power-tile:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border-radius: 32px;
 }
 
 .power-tile:hover::before {
@@ -535,7 +496,7 @@ body {
 .attribute-card {
   background: #fff;
   padding: 3rem 2rem;
-  border-radius: 28px;
+  border-radius: 16px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
@@ -544,7 +505,6 @@ body {
 .attribute-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border-radius: 32px;
 }
 
 .attribute-icon {
