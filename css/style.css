@@ -132,14 +132,17 @@
   width: 80px;
   height: 80px;
   object-fit: contain;
-  border-radius: 16px;
+  border-radius: 28px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
 }
 
 .feature-card:hover .feature-image {
   transform: scale(1.1) translateY(-4px);
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.2));
+  border-radius: 32px;
 }
 
 .founder-content {
@@ -209,6 +212,40 @@
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
 }
 
+/* Ecosystem Images */
+.ecosystem-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 6px 24px rgba(255, 255, 255, 0.2));
+}
+
+.ecosystem-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.ecosystem-card:hover .ecosystem-icon {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.1);
+}
+
+.ecosystem-card:hover .ecosystem-image {
+  transform: scale(1.1);
+  filter: drop-shadow(0 8px 32px rgba(255, 255, 255, 0.3));
+}
+
 @media (max-width: 768px) {
   .founder-content,
   .product-showcase {
@@ -220,6 +257,17 @@
   .feature-image {
     width: 60px;
     height: 60px;
+    border-radius: 24px;
+  }
+  
+  .ecosystem-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .ecosystem-icon {
+    width: 100px;
+    height: 100px;
   }
 }
 
