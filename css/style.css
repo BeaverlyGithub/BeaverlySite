@@ -1061,6 +1061,22 @@ p {
   transition: transform 0.3s ease;
 }
 
+.step-visual {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 1.5rem;
+  background: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
 .broker-icon {
   display: flex;
   align-items: center;
@@ -1366,8 +1382,8 @@ p {
 /* Testimonials */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
   margin-top: 4rem;
 }
 
