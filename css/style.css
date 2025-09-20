@@ -528,6 +528,9 @@ p {
   padding: 8rem 0;
   background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
   position: relative;
+  z-index: 10;
+  display: block;
+  visibility: visible;
 }
 
 .demo-video-content {
