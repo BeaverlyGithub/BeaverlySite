@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaverly Blog Preview Card</title>
+    <style>
+        .blog-preview-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border-color: #555;
+        }
+
+        .blog-preview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff88, #00ccff);
+        }
+
+        .blog-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00ff88, #00ccff);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .blog-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .blog-card-description {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .blog-card-cta {
+            color: #00ff88;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-card-cta::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-preview-card:hover .blog-card-cta::after {
+            transform: translateX(4px);
+        }
+
+        .blog-card-stats {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .blog-card-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .blog-preview-card {
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+            
+            .blog-card-title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://blog.beaverlyai.com" class="blog-preview-card" target="_blank" rel="noopener noreferrer">
+        <div class="blog-card-header">
+            <div class="blog-card-icon">B</div>
+            <h3 class="blog-card-title">Beaverly Blog</h3>
+        </div>
+        
+        <p class="blog-card-description">
+            Insights into AI-powered wealth automation, personal wealth co-pilot, and the next generation of financial technology.
+        </p>
+        
+        <div class="blog-card-meta">
+            <div class="blog-card-stats">
+                <span class="blog-card-stat">
+                    <span>📝</span>
+                    <span>Latest insights</span>
+                </span>
+                <span class="blog-card-stat">
+                    <span>🤖</span>
+                    <span>AI Trading</span>
+                </span>
+            </div>
+            <span class="blog-card-cta">Read Articles</span>
+        </div>
+    </a>
+</body>
+</html>
