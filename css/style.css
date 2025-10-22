@@ -16,18 +16,24 @@
   min-height: 100vh;
 }
 
-.hero-image img {
-  position: relative;
-  width: calc(100vw - 6vw);            /* full viewport width */
-  max-width: none;             /* ignore the 800px container cap */
-  left: 50%;                   /* shift out of container center */
-  transform: translateX(-50%); /* perfectly center */
-  border-radius: 20px;
-  margin-top: 40px;
+.hero-full-image {
+  width: 100%;
+  height: auto;
   display: block;
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: none;
 }
 
+hero-image-wrapper {
+  width: 100%;
+  padding: 0 3vw;        /* small gutter on each side */
+  margin-top: 40px;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  z-index: 1;            /* behind hero-content which has z-index:2 */
+}
 
 .hero-background {
   position: absolute;
