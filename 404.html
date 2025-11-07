@@ -1,3 +1,5 @@
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,16 +36,14 @@
   </style>
 </head>
 <body>
-  <h1>
+  <h1 style="display:flex;align-items:center;justify-content:center;gap:0.5em;">
     404
-    <span style="display:inline-block; width:36px; height:36px; vertical-align:middle; margin-left:0.5rem;">
-      <!-- subtle status icon -->
-      <svg viewBox="0 0 24 24" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="10" stroke="#333" stroke-width="1.5" fill="none"/>
-        <path d="M11 7h2v6h-2zM11 15h2v2h-2z" fill="#333"/>
-      </svg>
-    </span>
+    <i data-lucide="alert-triangle" style="width:1.5em;height:1.5em;vertical-align:middle;"></i>
   </h1>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    else window.addEventListener('DOMContentLoaded', function() { if (window.lucide) lucide.createIcons(); });
+  </script>
   <p>This page doesn’t exist or is chilling somewhere else.</p>
   <a href="https://beaverlyai.com">Go Home</a>
 </body>
