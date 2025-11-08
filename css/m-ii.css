@@ -238,7 +238,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+  background: #000000;
   color: #fff;
   overflow: hidden;
 }
@@ -252,49 +252,11 @@ body {
 }
 
 .grid-animation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridPulse 4s ease-in-out infinite;
+  display: none;
 }
 
 .wave-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.wave-line {
-  position: absolute;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  animation: waveFlow 8s linear infinite;
-}
-
-.wave-line:nth-child(1) {
-  top: 25%;
-  width: 400px;
-  animation-delay: 0s;
-}
-
-.wave-line:nth-child(2) {
-  top: 50%;
-  width: 300px;
-  animation-delay: 3s;
-}
-
-.wave-line:nth-child(3) {
-  top: 75%;
-  width: 500px;
-  animation-delay: 6s;
+  display: none;
 }
 
 .hero-content {
