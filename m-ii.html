@@ -12,6 +12,9 @@
   <meta name="keywords" content="m-ii, beaverly, ai engine, market intelligence, trading infrastructure, execution engine">
   <link rel="icon" href="https://beaverlyai.com/attached_assets/beaverly_lodo.png" type="image/png">
 
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
   <!-- Open Graph -->
   <meta property="og:title" content="M-II by Beaverly® – Infrastructure for Intelligent Execution">
   <meta property="og:description" content="M-II is the execution intelligence layer powering Beaverly's entire ecosystem.">
@@ -105,13 +108,13 @@
       <h2 class="section-title">It Powers Everything</h2>
       <div class="powers-grid">
         <div class="power-tile animate-on-scroll" data-description="Executes user-connected logic with technical optimization and low latency.">
-          <div class="power-icon">🧊</div>
+          <div class="power-icon"><i data-lucide="cpu" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Chilla</h3>
           <p>Your intelligent automated execution co-pilot</p>
         </div>
         </div>
         <div class="power-tile animate-on-scroll" data-description="Powers data ingestion, risk checks, and load balancing">
-          <div class="power-icon">🏗️</div>
+          <div class="power-icon"><i data-lucide="settings" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Internal Ops</h3>
           <p>Infrastructure management</p>
         </div>
@@ -125,17 +128,17 @@
       <h2 class="section-title">Why M-II Matters</h2>
       <div class="attributes-grid">
         <div class="attribute-card animate-on-scroll">
-          <div class="attribute-icon">🔁</div>
+          <div class="attribute-icon"><i data-lucide="refresh-cw" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Adaptive Execution</h3>
           <p>Executes user-defined rules with real-time technical optimization.</p>
         </div>
         <div class="attribute-card animate-on-scroll">
-          <div class="attribute-icon">🧠</div>
+          <div class="attribute-icon"><i data-lucide="brain" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Logic Processing</h3>
           <p>Processes complex user logic for ultra-low-latency deployment.</p>
         </div>
         <div class="attribute-card animate-on-scroll">
-          <div class="attribute-icon">🌍</div>
+          <div class="attribute-icon"><i data-lucide="globe" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Infrastructure Agnostic</h3>
           <p>Compatible with multiple brokers and asset classes</p>
         </div>
@@ -295,16 +298,16 @@
       </div>
       <div class="social-links">
         <a href="https://x.com/beaverlyai" target="_blank" aria-label="X">
-          <img src="attached_assets/x-icon.png" alt="X" class="social-icon">
+          <i data-lucide="twitter" class="social-icon"></i>
         </a>
         <a href="https://linkedin.com/company/beaverly" target="_blank" aria-label="LinkedIn">
-          <img src="attached_assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
+          <i data-lucide="linkedin" class="social-icon"></i>
         </a>
         <a href="https://facebook.com/profile.php?id=61569968914920" target="_blank" aria-label="Facebook">
-          <img src="attached_assets/facebook-icon.png" alt="Facebook" class="social-icon">
+          <i data-lucide="facebook" class="social-icon"></i>
         </a>
         <a href="https://instagram.com/beaverlyai" target="_blank" aria-label="Instagram">
-          <img src="attached_assets/instagram-icon.png" alt="Instagram" class="social-icon">
+          <i data-lucide="instagram" class="social-icon"></i>
         </a>
       </div>
       <div class="footer-bottom">
@@ -332,5 +335,10 @@
   </footer>
 
   <script src="js/m-ii-animations.js"></script>
+
+<script>
+  if (window.lucide) lucide.createIcons();
+  else window.addEventListener('DOMContentLoaded', function() { if (window.lucide) lucide.createIcons(); });
+</script>
 </body>
 </html>
