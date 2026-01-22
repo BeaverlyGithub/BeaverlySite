@@ -2030,20 +2030,67 @@ p {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 10rem 0 6rem;
+    padding: 5rem 0.75rem 3rem;
+    min-height: 60vh;
   }
 
   .hero-headline {
     font-size: 2rem;
   }
 
+  .hero-subheadline {
+    font-size: 0.95rem;
+  }
+
   .section {
-    padding: 4rem 0;
+    padding: 3rem 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
   }
 
   .btn {
-    min-width: 140px;
+    min-width: 100%;
     padding: 0.875rem 1.5rem;
+  }
+
+  .pricing-card,
+  .feature-card,
+  .testimonial-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .nav {
+    padding: 0.75rem 0;
+  }
+
+  .demo-vision h3 {
+    font-size: 1.5rem;
+  }
+
+  .demo-vision p {
+    font-size: 1rem;
+  }
+
+  .founder-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .founder-content p {
+    font-size: 1rem;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.25rem; }
+  
+  p {
+    font-size: 1rem;
   }
 }
 
@@ -2082,4 +2129,49 @@ p {
 
 .floating {
   animation: float 2s infinite ease-in-out;
+}
+
+/* Additional overflow and containment fixes */
+body {
+  overflow-x: hidden;
+}
+
+.nav-links {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feature-card,
+.pricing-card,
+.testimonial-card {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.agnostic-logos-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 375px) {
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .hero-full-image {
+    border-radius: 6px;
+  }
+
+  .demo-card {
+    padding: 1.25rem;
+  }
 }
