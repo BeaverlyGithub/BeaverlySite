@@ -33,18 +33,29 @@
 </nav>
 
 <script>
-function toggleMobileMenu() {
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
-  const button = document.querySelector('.mobile-menu-button');
-  if (menu.style.display === 'none' || menu.style.display === '') {
-    menu.style.display = 'flex';
-    button.innerHTML = '<i data-lucide="x" style="width: 24px; height: 24px;"></i>';
-  } else {
-    menu.style.display = 'none';
-    button.innerHTML = '<i data-lucide="menu" style="width: 24px; height: 24px;"></i>';
+  
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isHidden = menu.style.display === 'none' || menu.style.display === '';
+      menu.style.display = isHidden ? 'flex' : 'none';
+      
+      // Recreate button icon using DOM manipulation
+      menuBtn.innerHTML = '';
+      const icon = document.createElement('i');
+      icon.setAttribute('data-lucide', isHidden ? 'x' : 'menu');
+      icon.style.width = '24px';
+      icon.style.height = '24px';
+      menuBtn.appendChild(icon);
+      
+      // Re-render Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
   }
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
-}
+});
 </script>
