@@ -2,9 +2,9 @@
 <footer style="background: var(--bg-primary); color: var(--text-primary); padding: 3rem 0 2rem; margin-top: 4rem;">
   <div class="container-wide">
     <!-- Footer Grid 4-Column Layout -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+    <div class="footer-grid">
       <!-- Brand Column -->
-      <div>
+      <div class="footer-col">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
           <img src="/attached_assets/beaverly-logo.png" alt="Beaverly Logo" style="width: 2rem; height: 2rem; border-radius: 4px;">
           <span style="font-size: 1.25rem; font-weight: 600;">Beaverly<span style="font-size: 0.875rem;">®</span></span>
@@ -13,32 +13,26 @@
       </div>
 
       <!-- Ecosystem Column -->
-      <div>
-        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">Ecosystem</h4>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <a href="https://beaverlyai.com/chilla" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">Chilla</a>
-          <a href="https://beaverlyai.com/m-ii" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">M-II</a>
-        </div>
+      <div class="footer-col">
+        <h4>Ecosystem</h4>
+        <a href="https://beaverlyai.com/chilla">Chilla</a>
+        <a href="https://beaverlyai.com/m-ii">M-II</a>
       </div>
 
       <!-- Product Column -->
-      <div>
-        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">Product</h4>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <a href="https://beaverlyai.com#how-it-works" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">How to Chill</a>
-          <a href="https://beaverlyai.com#pricing" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">Pricing</a>
-          <a href="https://beaverlyai.com#contact" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">Contact</a>
-        </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="https://beaverlyai.com#how-it-works">How to Chill</a>
+        <a href="https://beaverlyai.com#pricing">Pricing</a>
+        <a href="https://beaverlyai.com#contact">Contact</a>
       </div>
 
       <!-- Company Column -->
-      <div>
-        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">Company</h4>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <a href="https://beaverlyai.com#about" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">About</a>
-          <a href="https://beaverlyai.com/privacy" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">Privacy Policy</a>
-          <a href="https://beaverlyai.com/terms" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; font-size: 0.9rem;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">Terms of Service</a>
-        </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://beaverlyai.com#about">About</a>
+        <a href="https://beaverlyai.com/privacy">Privacy Policy</a>
+        <a href="https://beaverlyai.com/terms">Terms of Service</a>
       </div>
     </div>
 
@@ -60,10 +54,10 @@
 
     <!-- Footer Bottom Section -->
     <div style="border-top: 1px solid var(--border-primary); padding-top: 2rem; text-align: center;">
-      <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem;">Not just AI fintech. Chilled tech.</p>
-      <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">&copy; 2024-2025 Beaverly<span style="font-size: 0.875rem;">®</span> All rights reserved.</p>
-      <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Chilla™ and M-II™ are trademarks of Beaverly<span style="font-size: 0.875rem;">®</span> Innovative Systems Ltd.</p>
-      <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; max-width: 900px; margin: 0 auto;"><strong>Disclaimer:</strong> Beaverly<span style="font-size: 0.875rem;">®</span> is an AI financial technology platform and does not operate as a licensed financial advisor, broker-dealer, or banking institution. We do not offer personalized investment advice, solicit securities, or guarantee any financial outcomes. All trading activities are executed at the sole discretion of the user via third-party platforms. Use of our automation tools, including Chilla™, involves inherent market risk, including but not limited to the loss of invested capital. Past performance is not indicative of future results. Beaverly<span style="font-size: 0.875rem;">®</span> does not hold, manage, or custody user funds at any time. Information provided is for general educational purposes only and should not be interpreted as a recommendation. Users are solely responsible for their financial decisions and are advised to consult licensed professionals where necessary. Beaverly Innovative Systems Ltd disclaims all liability for losses or damages arising from trading activity, third-party platform failures, latency, data inaccuracies, or service interruptions. Use of this service constitutes your acceptance of our Terms of Service and Privacy Policy, and confirms that you are over 18 and understand the financial risks involved.</p>
+      <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Not just AI fintech. Chilled tech.</p>
+      <p style="color: var(--text-secondary); margin-bottom: 0.5rem; font-size: 0.9rem;">&copy; 2024-2025 Beaverly<span style="font-size: 0.75rem;">®</span> All rights reserved.</p>
+      <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Chilla™ and M-II™ are trademarks of Beaverly<span style="font-size: 0.7rem;">®</span> Innovative Systems Ltd.</p>
+      <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; max-width: 900px; margin: 0 auto;"><strong>Disclaimer:</strong> Beaverly<span style="font-size: 0.7rem;">®</span> is an AI financial technology platform and does not operate as a licensed financial advisor, broker-dealer, or banking institution. We do not offer personalized investment advice, solicit securities, or guarantee any financial outcomes. All trading activities are executed at the sole discretion of the user via third-party platforms. Use of our automation tools, including Chilla™, involves inherent market risk, including but not limited to the loss of invested capital. Past performance is not indicative of future results. Beaverly<span style="font-size: 0.7rem;">®</span> does not hold, manage, or custody user funds at any time. Information provided is for general educational purposes only and should not be interpreted as a recommendation. Users are solely responsible for their financial decisions and are advised to consult licensed professionals where necessary. Beaverly Innovative Systems Ltd disclaims all liability for losses or damages arising from trading activity, third-party platform failures, latency, data inaccuracies, or service interruptions. Use of this service constitutes your acceptance of our Terms of Service and Privacy Policy, and confirms that you are over 18 and understand the financial risks involved.</p>
     </div>
   </div>
 </footer>
