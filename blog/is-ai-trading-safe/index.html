@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <!-- Header will be injected here -->
   <section class="section-small">
     <div class="container-narrow">
       <a href="../" class="btn-back">
@@ -146,6 +147,9 @@
     </div>
   </section>
 
+  <!-- Load shared header/footer -->
+  <script src="../../../js/header-footer-loader.js"></script>
+  
   <script>
     lucide.createIcons();
     const images = document.querySelectorAll('img[loading="lazy"]');
