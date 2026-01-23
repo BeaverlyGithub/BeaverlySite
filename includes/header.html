@@ -17,7 +17,7 @@
       </div>
 
       <!-- Mobile menu button -->
-      <button class="mobile-menu-button hidden-desktop" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+      <button class="mobile-menu-button hidden-desktop" aria-label="Toggle menu" id="mobile-menu-btn">
         <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
       </button>
     </div>
@@ -34,7 +34,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const menuBtn = document.querySelector('.mobile-menu-button');
+  const menuBtn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   
   if (menuBtn && menu) {
