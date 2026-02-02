@@ -8,7 +8,7 @@
 /* Hero Section */
 .hero {
   background: #000000;
-  padding: 12rem 0 8rem;
+  padding: clamp(4rem, 15vw, 12rem) 0 clamp(2rem, 10vw, 8rem);
   position: relative;
   overflow: visible;
   flex-direction: column;     /* stack children vertically (important) */
@@ -20,23 +20,12 @@
 
 /* full-bleed but padded image */
 .hero-full-image {
-  width: calc(100vw - 6vw);   /* full viewport minus gutter */
+  width: calc(100vw - clamp(3vw, 5vw, 6vw));   /* responsive full viewport minus gutter */
   max-width: 2400px;          /* keep a sane max if you want */
   height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 20px;
-}
-
-/* small responsive tweak */
-@media (max-width: 720px) {
-  .hero {
-    padding: 4rem 0 3rem;
-  }
-  .hero-full-image {
-    width: calc(100vw - 8vw); /* larger gutter on small screens */
-    border-radius: 12px;
-  }
+  border-radius: clamp(12px, 2vw, 20px);
 }
 
 .hero-image-wrapper {
@@ -2058,7 +2047,8 @@ p {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 5rem 0.75rem 3rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     min-height: 60vh;
   }
 
