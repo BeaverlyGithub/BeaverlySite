@@ -887,6 +887,26 @@ section, .hero-content, .nav {
   margin-bottom: 0.5rem;
 }
 
+.footer-bottom .classification-notice {
+  font-size: 0.875rem;
+  color: #999;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-bottom .disclaimer-text {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .container {

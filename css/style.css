@@ -1897,6 +1897,93 @@ p {
   font-size: 0.875rem;
 }
 
+.footer-bottom .classification-notice {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom .disclaimer-text {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+/* Content Styling Classes */
+.hero-light {
+  background-color: #ffffff;
+}
+
+.integration-disclaimer {
+  max-width: 820px;
+  margin: 1.5rem auto 0;
+  font-size: 0.9em;
+  color: #999;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.testimonials-section-light {
+  background-color: #f8f9fa;
+}
+
+.socials-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.disclaimer-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+  color: #555;
+  font-weight: bold;
+}
+
+.faq-intro {
+  max-width: 720px;
+  margin: 1rem auto;
+}
+
+.rating-disclaimer {
+  font-size: 0.8em;
+  color: #555;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.team-photo {
+  display: block;
+  margin: 40px auto 0;
+}
+
+.contact-cta-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Usage & Guardrails Page */
+.final-disclaimer {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.hr-divider {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
