@@ -34,6 +34,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/interactive-demo.css" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -113,25 +114,145 @@
 
 
 
-  <!-- Demonstration Video -->
-  <section id="demo-video" class="demo-video-section">
-    <div class="container">
-      <div class="demo-video-content">
-        <h2 class="demo-video-title">How To Use Chilla</h2>
-        <p class="demo-video-subtitle">See how calm, structured market participation works in the background.</p>
-        <div class="video-container">
-          <iframe 
-            src="https://www.youtube.com/embed/ZfeT3BWsr0k?rel=0&showinfo=0" 
-            title="Chilla Demonstration - Your market participation Co-Pilot in Action"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen
-            class="demo-video"
-            loading="lazy">
-          </iframe>
+  <!-- Interactive Flow Demo -->
+  <section id="interactive-flow-demo" class="interactive-demo-section">
+    <div class="demo-container">
+      <div class="demo-grid">
+        <!-- Left Side - Text -->
+        <div class="demo-text">
+          <h2 class="demo-headline">Participate in global markets — without becoming a trader.</h2>
+          <p class="demo-subtext">Chilla translates your instructions into disciplined automation — and shows you every step through Flow.</p>
+          <div class="demo-cta-group">
+            <a href="https://chilla.beaverlyai.com" class="btn btn-primary" data-track="demo_start_chilling">Give your first instruction</a>
+            <a href="#how-it-works" class="btn btn-secondary" data-track="demo_learn_more">Learn More</a>
+          </div>
         </div>
-        <div class="video-caption">
-          <p>Experience what it feels like to stay connected to markets — without watching charts all day.</p>
+
+        <!-- Right Side - Interactive Demo Panel -->
+        <div class="demo-panel-container">
+          <button id="restart-demo-btn" class="restart-demo">↻ Restart Demo</button>
+          
+          <!-- Progress Dots -->
+          <div class="demo-progress">
+            <div class="progress-dot active"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+          </div>
+
+          <!-- Step 1: Connect Environment -->
+          <div id="demo-step-1" class="demo-card active">
+            <div class="demo-card-header">Connect Environment</div>
+            <div class="wizard-step-content">
+              <div class="broker-status">
+                <div class="broker-info">
+                  <div class="broker-name">cTrader</div>
+                  <div id="broker-status-text" class="broker-status-text">Not Connected</div>
+                </div>
+                <button id="demo-connect-broker" class="demo-btn demo-btn-primary">Connect</button>
+              </div>
+              <div class="broker-status">
+                <div class="broker-info">
+                  <div class="broker-name">Deriv</div>
+                  <div id="broker-status-text" class="broker-status-text">Not Connected</div>
+                </div>
+                <button id="demo-connect-broker" class="demo-btn demo-btn-primary">Connect</button>
+              </div>
+              <p class="step-description">Connect your automation environment to begin.</p>
+            </div>
+            <div class="demo-actions">
+              <button id="demo-continue-btn-1" class="demo-btn demo-btn-primary demo-continue-btn" disabled>Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Select Behavior -->
+          <div id="demo-step-2" class="demo-card">
+            <div class="demo-card-header">Choose Behavior</div>
+            <div class="wizard-step-content">
+              <p class="step-description">Select how Chilla should act in your playgrounds</p>
+              <div class="behavior-option" data-behavior="momentum">
+                <div class="behavior-name">Momentum Follow</div>
+                <div class="behavior-description">Acts during directional conviction. Avoids low-clarity periods.</div>
+              </div>
+              <div class="behavior-option" data-behavior="momentum">
+                <div class="behavior-name">Angry Assault Rifle</div>
+                <div class="behavior-description">Acts aggressively in all situations. Ignores low-clarity periods.</div>
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button id="demo-continue-btn-2" class="demo-btn demo-btn-primary demo-continue-btn" disabled>Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Select Playgrounds -->
+          <div id="demo-step-3" class="demo-card">
+            <div class="demo-card-header">Choose Playgrounds</div>
+            <div class="wizard-step-content">
+              <p class="step-description">Selected behavior supports these environments</p>
+              <div class="playground-grid">
+                <div class="playground-item selected" data-playground="EURUSD">
+                  <span class="checkmark">✓</span>
+                  EURUSD
+                </div>
+                <div class="playground-item selected" data-playground="XAUUSD">
+                  <span class="checkmark">✓</span>
+                  XAUUSD
+                </div>
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button id="demo-continue-btn-3" class="demo-btn demo-btn-primary demo-continue-btn">Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Set Comfort Level -->
+          <div id="demo-step-4" class="demo-card">
+            <div class="demo-card-header">Set Comfort Level</div>
+            <div class="wizard-step-content">
+              <p class="step-description">Tell Chilla how comfortable you are with resource exposure</p>
+              <div class="comfort-slider-container">
+                <div class="slider-labels">
+                  <span>Deep Sleep</span>
+                  <span>No Sleep</span>
+                </div>
+                <input type="range" id="demo-comfort-slider" class="comfort-slider" min="0" max="100" value="50">
+                <div id="comfort-value" class="comfort-value">Balanced</div>
+                <div id="comfort-subtext" class="comfort-subtext">Moderate exposure</div>
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button id="demo-continue-btn-4" class="demo-btn demo-btn-primary demo-continue-btn">Continue</button>
+            </div>
+          </div>
+
+          <!-- Step 5: Consent -->
+          <div id="demo-step-5" class="demo-card">
+            <div class="demo-card-header">Confirm & Activate</div>
+            <div class="wizard-step-content">
+              <p class="step-description">Authorize Chilla to follow your instructions</p>
+              <div class="consent-item">
+                <div id="demo-consent-checkbox" class="consent-checkbox"></div>
+                <div class="consent-text">
+                  I confirm and activate instruction
+                </div>
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button id="demo-activate-btn" class="demo-btn demo-btn-primary" disabled>Activate</button>
+            </div>
+          </div>
+
+          <!-- Step 6: Flow (The Magic) -->
+          <div id="demo-step-6" class="demo-card">
+            <div class="demo-card-header">Flow</div>
+            <div class="wizard-step-content">
+              <div id="flow-messages-container" class="flow-messages">
+                <!-- Flow messages will be added here dynamically -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -607,6 +728,7 @@
   <script src="script.js"></script>
   <script src="/js/analytics.js"></script>
   <script src="/js/footer-loader.js"></script>
+  <script src="/js/interactive-demo.js"></script>
 
   <script>
     if (window.lucide) lucide.createIcons();
