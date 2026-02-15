@@ -31,10 +31,13 @@ class InteractiveFlowDemo {
     // Connect broker button
     document.addEventListener('click', (e) => {
       if (e.target.id === 'demo-connect-broker') {
+        console.log('🔌 Connect button clicked');
+        e.preventDefault();
         this.connectBroker();
+        return;
       }
       
-      // Continue buttons (all have same class)
+      // Continue buttons (check for class)
       if (e.target.classList.contains('demo-continue-btn')) {
         this.nextStep();
       }
