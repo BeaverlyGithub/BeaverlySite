@@ -1,0 +1,497 @@
+/* ============================================================
+   navbar.css — Beaverly Floating Liquid Glass Navbar
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --nav-height: 64px;
+  --nav-radius: 20px;
+  --nav-blur: 24px;
+  --nav-bg-light: rgba(255, 255, 255, 0.55);
+  --nav-bg-dark: rgba(10, 10, 10, 0.55);
+  --nav-border-light: rgba(255, 255, 255, 0.75);
+  --nav-border-dark: rgba(255, 255, 255, 0.08);
+  --nav-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 0 1px 0 rgba(255,255,255,0.3) inset;
+  --nav-shadow-dark: 0 8px 40px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255,255,255,0.06) inset;
+  --nav-text: #0a0a0a;
+  --nav-text-muted: #6a6a6a;
+  --nav-cta-bg: #0a0a0a;
+  --nav-cta-text: #fff;
+  --sidebar-width: 280px;
+  --sidebar-bg-light: rgba(255, 255, 255, 0.7);
+  --sidebar-bg-dark: rgba(14, 14, 14, 0.8);
+  --transition-nav: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-text: #f0f0f0;
+    --nav-text-muted: #888;
+    --nav-cta-bg: #f0f0f0;
+    --nav-cta-text: #0a0a0a;
+  }
+}
+
+/* ---------- Navbar wrapper ---------- */
+.bvly-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1160px;
+  height: var(--nav-height);
+  z-index: 9000;
+  border-radius: var(--nav-radius);
+  background: var(--nav-bg-light);
+  backdrop-filter: blur(var(--nav-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--nav-blur)) saturate(180%);
+  border: 1px solid var(--nav-border-light);
+  box-shadow: var(--nav-shadow);
+  transition:
+    background var(--transition-nav),
+    border-color var(--transition-nav),
+    box-shadow var(--transition-nav),
+    top var(--transition-nav),
+    width var(--transition-nav);
+}
+
+.bvly-nav.nav-scrolled {
+  top: 12px;
+  width: calc(100% - 64px);
+  background: var(--nav-bg-light);
+  box-shadow: var(--nav-shadow), 0 0 0 0.5px rgba(0,0,0,0.04);
+}
+
+/* Dark-context nav (when over dark hero) */
+.bvly-nav.nav-dark-ctx {
+  background: var(--nav-bg-dark);
+  border-color: var(--nav-border-dark);
+  box-shadow: var(--nav-shadow-dark);
+}
+
+.bvly-nav.nav-dark-ctx .bvly-nav__wordmark,
+.bvly-nav.nav-dark-ctx .bvly-nav__link,
+.bvly-nav.nav-dark-ctx .bvly-nav__sidebar-btn {
+  color: #f0f0f0;
+}
+
+.bvly-nav.nav-dark-ctx .bvly-nav__link:hover {
+  color: #ffffff;
+}
+
+.bvly-nav.nav-dark-ctx .bvly-nav__cta {
+  background: rgba(255,255,255,0.12);
+  color: #f0f0f0;
+  border-color: rgba(255,255,255,0.2);
+}
+
+.bvly-nav.nav-dark-ctx .bvly-nav__cta:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ---------- Inner layout ---------- */
+.bvly-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 20px;
+  gap: 16px;
+}
+
+/* ---------- Left: sidebar toggle ---------- */
+.bvly-nav__sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--nav-text);
+  border-radius: 10px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.bvly-nav__sidebar-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Sidebar icon: outer rect + inner vertical rect */
+.sidebar-icon {
+  width: 22px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-icon__outer {
+  width: 22px;
+  height: 18px;
+  border: 1.75px solid currentColor;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-icon__panel {
+  width: 6px;
+  height: 12px;
+  background: currentColor;
+  border-radius: 1.5px;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  opacity: 0.85;
+}
+
+/* ---------- Center: logo/wordmark ---------- */
+.bvly-nav__brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  user-select: none;
+}
+
+.bvly-nav__wordmark {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--nav-text);
+  letter-spacing: -0.03em;
+  transition: opacity var(--transition-nav);
+  white-space: nowrap;
+}
+
+.bvly-nav__wordmark sup {
+  font-size: 0.55rem;
+  font-weight: 500;
+  opacity: 0.6;
+  vertical-align: super;
+  letter-spacing: 0;
+}
+
+.bvly-nav__logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  object-fit: contain;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity var(--transition-nav), transform var(--transition-nav);
+  pointer-events: none;
+}
+
+/* Scrolled state: hide wordmark, show logo */
+.bvly-nav.nav-scrolled .bvly-nav__wordmark {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bvly-nav.nav-scrolled .bvly-nav__logo-img {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ---------- Right: CTA ---------- */
+.bvly-nav__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.bvly-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--nav-cta-bg);
+  color: var(--nav-cta-text);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.bvly-nav__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/* ============================================================
+   SIDEBAR PANEL
+   ============================================================ */
+
+.bvly-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 8990;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  pointer-events: none;
+  transition: background var(--transition-nav), backdrop-filter var(--transition-nav);
+}
+
+.bvly-sidebar-overlay.is-open {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+.bvly-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  z-index: 9100;
+  background: var(--sidebar-bg-light);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-right: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 4px 0 40px rgba(0,0,0,0.1), 1px 0 0 rgba(255,255,255,0.5) inset;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0 40px;
+  transform: translateX(-100%);
+  transition: transform var(--transition-nav);
+  will-change: transform;
+}
+
+.bvly-sidebar.is-open {
+  transform: translateX(0);
+}
+
+/* Sidebar header */
+.bvly-sidebar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 32px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 8px;
+}
+
+.bvly-sidebar__brand {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nav-text);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.bvly-sidebar__brand sup {
+  font-size: 0.5rem;
+  opacity: 0.55;
+  vertical-align: super;
+}
+
+.bvly-sidebar__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--nav-text);
+  transition: background var(--transition-fast);
+}
+
+.bvly-sidebar__close:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+/* Sidebar nav links */
+.bvly-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  gap: 2px;
+  flex: 1;
+}
+
+.bvly-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--nav-text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.bvly-sidebar__link:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.bvly-sidebar__link-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* Sidebar footer CTA */
+.bvly-sidebar__footer {
+  padding: 24px 24px 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-top: 12px;
+}
+
+.bvly-sidebar__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: var(--nav-cta-bg);
+  color: var(--nav-cta-text);
+  border-radius: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.bvly-sidebar__cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  .bvly-nav {
+    background: var(--nav-bg-dark);
+    border-color: var(--nav-border-dark);
+    box-shadow: var(--nav-shadow-dark);
+  }
+
+  .bvly-nav__wordmark,
+  .bvly-nav__sidebar-btn {
+    color: #f0f0f0;
+  }
+
+  .bvly-nav__link {
+    color: #b0b0b0;
+  }
+
+  .bvly-nav__link:hover {
+    color: #f0f0f0;
+  }
+
+  .bvly-nav__sidebar-btn:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .bvly-sidebar {
+    background: var(--sidebar-bg-dark);
+    border-right-color: rgba(255,255,255,0.07);
+    box-shadow: 4px 0 40px rgba(0,0,0,0.5);
+  }
+
+  .bvly-sidebar__head,
+  .bvly-sidebar__footer {
+    border-color: rgba(255,255,255,0.07);
+  }
+
+  .bvly-sidebar__brand,
+  .bvly-sidebar__link {
+    color: #e8e8e8;
+  }
+
+  .bvly-sidebar__link:hover {
+    background: rgba(255,255,255,0.06);
+  }
+
+  .bvly-sidebar__close {
+    background: rgba(255,255,255,0.08);
+    color: #e8e8e8;
+  }
+
+  .bvly-sidebar__close:hover {
+    background: rgba(255,255,255,0.14);
+  }
+
+  .bvly-nav__cta {
+    background: rgba(240,240,240,0.1);
+    color: #f0f0f0;
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .bvly-nav__cta:hover {
+    background: rgba(240,240,240,0.18);
+  }
+}
+
+/* ============================================================
+   PAGE OFFSET HELPER
+   Prevents content from being hidden under the floating navbar.
+   Add .hero--nav-offset (or .page--nav-offset) to any first section.
+   ============================================================ */
+.hero--nav-offset {
+  padding-top: calc(var(--nav-height) + 72px);
+}
+
+.page--nav-offset {
+  padding-top: calc(var(--nav-height) + 48px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+  .bvly-nav {
+    width: calc(100% - 24px);
+    top: 12px;
+    border-radius: 16px;
+  }
+
+  .bvly-nav.nav-scrolled {
+    width: calc(100% - 32px);
+    top: 8px;
+  }
+
+  .bvly-nav__inner {
+    padding: 0 14px;
+  }
+
+  .bvly-nav__cta {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+}

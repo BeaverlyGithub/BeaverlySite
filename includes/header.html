@@ -1,0 +1,96 @@
+<!-- ============================================================
+     Beaverly Floating Navbar
+     Requires: css/navbar.css  |  js/navbar.js
+     ============================================================ -->
+
+<!-- Sidebar overlay (click to close) -->
+<div class="bvly-sidebar-overlay" aria-hidden="true"></div>
+
+<!-- Sidebar panel -->
+<aside class="bvly-sidebar" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="bvly-sidebar__head">
+    <a href="/" class="bvly-sidebar__brand">Beaverly<sup>®</sup></a>
+    <button class="bvly-sidebar__close" aria-label="Close menu">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="13" y2="13"/>
+        <line x1="13" y1="1" x2="1" y2="13"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="bvly-sidebar__nav" aria-label="Site navigation">
+    <a href="/blog/" class="bvly-sidebar__link">
+      <svg class="bvly-sidebar__link-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="16" height="2.5" rx="1.25"/>
+        <rect x="2" y="8.75" width="16" height="2.5" rx="1.25"/>
+        <rect x="2" y="13.5" width="10" height="2.5" rx="1.25"/>
+      </svg>
+      Blog
+    </a>
+
+    <a href="https://beaverlyai.com#about" target="_blank" rel="noopener noreferrer" class="bvly-sidebar__link">
+      <svg class="bvly-sidebar__link-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10" cy="7" r="3"/>
+        <path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7"/>
+      </svg>
+      About
+    </a>
+
+    <a href="https://beaverlyai.com#contact" target="_blank" rel="noopener noreferrer" class="bvly-sidebar__link">
+      <svg class="bvly-sidebar__link-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="16" height="12" rx="2"/>
+        <polyline points="2,4 10,11 18,4"/>
+      </svg>
+      Contact
+    </a>
+  </nav>
+
+  <div class="bvly-sidebar__footer">
+    <a href="https://chilla.beaverlyai.com" target="_blank" rel="noopener noreferrer" class="bvly-sidebar__cta">
+      Start Chilling Now
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 7h10M7 2l5 5-5 5"/>
+      </svg>
+    </a>
+  </div>
+</aside>
+
+<!-- Floating navbar -->
+<nav class="bvly-nav" role="navigation" aria-label="Main navigation">
+  <div class="bvly-nav__inner">
+
+    <!-- Left: sidebar toggle -->
+    <button class="bvly-nav__sidebar-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="bvly-sidebar">
+      <span class="sidebar-icon" aria-hidden="true">
+        <span class="sidebar-icon__outer"></span>
+        <span class="sidebar-icon__panel"></span>
+      </span>
+    </button>
+
+    <!-- Centre: wordmark → logo on scroll -->
+    <a href="/" class="bvly-nav__brand" aria-label="Beaverly home">
+      <span class="bvly-nav__wordmark">Beaverly<sup>®</sup></span>
+      <img
+        src="/attached_assets/beaverly-logo.png"
+        alt="Beaverly"
+        class="bvly-nav__logo-img"
+        width="34"
+        height="34"
+      />
+    </a>
+
+    <!-- Right: CTA -->
+    <div class="bvly-nav__right">
+      <a href="https://chilla.beaverlyai.com" target="_blank" rel="noopener noreferrer" class="bvly-nav__cta">
+        Start Chilling
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 6.5h9M7 2l4.5 4.5L7 11"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Navbar script -->
+<script src="/js/navbar.js" defer></script>

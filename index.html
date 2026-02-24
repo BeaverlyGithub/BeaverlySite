@@ -35,6 +35,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/interactive-demo.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/cards.css" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -79,27 +81,11 @@
 
 
 <body>
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="attached_assets/beaverlyvh_1749358435969.png" alt="Beaverly Logo" class="logo-image">
-        <span class="logo-text">Beaverly®</span>
-      </div>
-      <div class="nav-links">
-        <a href="#how-it-works" data-track="nav_how-it-works">How To Chill</a>
-        <a href="#pricing" data-track="nav_pricing">Pricing</a>
-        <a href="#about" data-track="nav_about">About</a>
-        <a href="/blog/" data-track="nav_blog">Blog</a>
-        <a href="https://chilla.beaverlyai.com" data-track="nav_login_signup">Join all Chillers</a>
-        <a href="https://chilla.beaverlyai.com" class="nav-cta" data-track="nav_cta">Start Chilling Now</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Header injected by js/header-loader.js -->
 
 
 <!-- Hero Section -->
-<section class="hero hero-light">
+<section class="hero hero-light hero--nav-offset">
   <div class="container">
     <div class="hero-content">
       <h1 class="hero-headline">You Chill. Chilla Works.</h1>
@@ -706,7 +692,7 @@ Chilla turns your instructions into disciplined automation. You stay in control 
         <p class="contact-subtitle">Join other chilled people making efficient moves.</p>
         <div class="contact-cta">
           <a href="#pricing" class="btn btn-primary contact-cta-button" data-track="end_cta">Start Chilling Now</a>
-          <p class="contact-note">Or chill with us directly at <a href="mailto:hello@beaverlyai.com" data-track="end_mailto">hello@beaverlyai.com</a></p>
+          <p class="contact-note">Or chill with us directly at <a href="/cdn-cgi/l/email-protection#a3cbc6cfcfcce3c1c6c2d5c6d1cfdac2ca8dc0ccce" data-track="end_mailto"><span class="__cf_email__" data-cfemail="49212c252526092b2c283f2c3b25302820672a2624">[email&#160;protected]</span></a></p>
         </div>
       </div>
     </div>
@@ -714,8 +700,10 @@ Chilla turns your instructions into disciplined automation. You stay in control 
 
   <!-- Footer will be injected here via loader -->
 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="script.js"></script>
   <script src="/js/analytics.js"></script>
+  <script src="/js/header-loader.js"></script>
   <script src="/js/footer-loader.js"></script>
   <script src="/js/interactive-demo.js"></script>
 

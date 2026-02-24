@@ -1,0 +1,347 @@
+/* ============================================================
+   cards.css — Beaverly Stylized Card System
+   White/black canvas. Sections differentiated by card treatment.
+   ============================================================ */
+
+:root {
+  --card-radius-sm: 16px;
+  --card-radius-md: 24px;
+  --card-radius-lg: 32px;
+  --card-radius-xl: 40px;
+  --canvas-light: #ffffff;
+  --canvas-dark: #0a0a0a;
+  --card-shadow-soft: 0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+  --card-shadow-mid: 0 12px 48px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+  --card-shadow-strong: 0 24px 64px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.06);
+  --card-shadow-lifted: 0 32px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   1. GLASS CARD — frosted pane, backdrop blur
+   ============================================================ */
+.card-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--card-radius-md);
+  box-shadow: var(--card-shadow-mid), 0 0 0 1px rgba(0,0,0,0.03);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.card-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, transparent 60%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.card-glass:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-lifted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-glass {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.09);
+  }
+  .card-glass::before {
+    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 60%);
+  }
+}
+
+/* ============================================================
+   2. TILTED CARD — slight rotation for visual energy
+   ============================================================ */
+.card-tilted {
+  border-radius: var(--card-radius-md);
+  box-shadow: var(--card-shadow-strong);
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.card-tilted--right {
+  transform: rotate(1.5deg);
+}
+
+.card-tilted--left {
+  transform: rotate(-1.5deg);
+}
+
+.card-tilted--right:hover {
+  transform: rotate(0.5deg) translateY(-6px);
+  box-shadow: var(--card-shadow-lifted);
+}
+
+.card-tilted--left:hover {
+  transform: rotate(-0.5deg) translateY(-6px);
+  box-shadow: var(--card-shadow-lifted);
+}
+
+/* ============================================================
+   3. STACKED CARDS — depth illusion via pseudo-elements
+   ============================================================ */
+.card-stack {
+  position: relative;
+  border-radius: var(--card-radius-md);
+  box-shadow: var(--card-shadow-mid);
+  padding: 2rem;
+  background: var(--canvas-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  isolation: isolate;
+}
+
+.card-stack::before,
+.card-stack::after {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  background: var(--canvas-light);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.card-stack::before {
+  inset: 6px;
+  transform: translateY(8px) rotate(1.5deg) scale(0.97);
+  opacity: 0.55;
+  box-shadow: var(--card-shadow-soft);
+}
+
+.card-stack::after {
+  inset: 10px;
+  transform: translateY(14px) rotate(2.5deg) scale(0.94);
+  opacity: 0.3;
+  box-shadow: var(--card-shadow-soft);
+}
+
+.card-stack:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-lifted);
+}
+
+.card-stack:hover::before {
+  transform: translateY(10px) rotate(2deg) scale(0.97);
+}
+
+.card-stack:hover::after {
+  transform: translateY(18px) rotate(3.5deg) scale(0.94);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-stack,
+  .card-stack::before,
+  .card-stack::after {
+    background: #1a1a1a;
+  }
+}
+
+/* ============================================================
+   4. EDGE ACCENT CARD — coloured left or top border strip
+   ============================================================ */
+.card-edge {
+  border-radius: var(--card-radius-sm);
+  background: var(--canvas-light);
+  box-shadow: var(--card-shadow-soft);
+  padding: 2rem 2rem 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-edge::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #0a0a0a 0%, #555 100%);
+  border-radius: 4px 0 0 4px;
+}
+
+.card-edge:hover {
+  transform: translateX(3px);
+  box-shadow: var(--card-shadow-mid);
+}
+
+.card-edge--accent::before {
+  background: linear-gradient(180deg, #3b82f6 0%, #6366f1 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-edge {
+    background: #141414;
+  }
+  .card-edge::before {
+    background: linear-gradient(180deg, #f0f0f0 0%, #888 100%);
+  }
+}
+
+/* ============================================================
+   5. LIFTED CARD — strong floating shadow, clean surface
+   ============================================================ */
+.card-lifted {
+  border-radius: var(--card-radius-lg);
+  background: var(--canvas-light);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 12px 24px rgba(0,0,0,0.08),
+    0 40px 80px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.card-lifted:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 20px 40px rgba(0,0,0,0.1),
+    0 60px 100px rgba(0,0,0,0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-lifted {
+    background: #161616;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.3),
+      0 12px 24px rgba(0,0,0,0.4),
+      0 40px 80px rgba(0,0,0,0.5);
+  }
+}
+
+/* ============================================================
+   6. OUTLINED CARD — thin border, no fill
+   ============================================================ */
+.card-outlined {
+  border-radius: var(--card-radius-md);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 2rem;
+  position: relative;
+  background: transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-outlined:hover {
+  border-color: rgba(0,0,0,0.25);
+  box-shadow: var(--card-shadow-soft);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-outlined {
+    border-color: rgba(255,255,255,0.1);
+  }
+  .card-outlined:hover {
+    border-color: rgba(255,255,255,0.25);
+  }
+}
+
+/* ============================================================
+   7. DARK INVERT CARD — black card on white canvas
+   ============================================================ */
+.card-dark {
+  border-radius: var(--card-radius-md);
+  background: #0a0a0a;
+  color: #f0f0f0;
+  box-shadow: var(--card-shadow-strong);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-dark p,
+.card-dark span {
+  color: #a0a0a0;
+}
+
+.card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-lifted);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-dark {
+    background: #f0f0f0;
+    color: #0a0a0a;
+  }
+  .card-dark p,
+  .card-dark span {
+    color: #555;
+  }
+}
+
+/* ============================================================
+   GRID HELPERS for tilted / stacked layouts
+   ============================================================ */
+
+/* Staggered tilt grid — alternates rotate direction per child */
+.cards-stagger {
+  display: grid;
+  gap: 2rem;
+}
+
+.cards-stagger > *:nth-child(even) {
+  transform: rotate(-1deg);
+}
+
+.cards-stagger > *:nth-child(odd) {
+  transform: rotate(0.75deg);
+}
+
+.cards-stagger > *:nth-child(even):hover {
+  transform: rotate(-0.25deg) translateY(-6px);
+}
+
+.cards-stagger > *:nth-child(odd):hover {
+  transform: rotate(0.25deg) translateY(-6px);
+}
+
+/* Overlapping stack layout — cards peek behind each other */
+.cards-overlap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-overlap > * {
+  margin-top: -24px;
+  transition: transform 0.3s ease, z-index 0s;
+  position: relative;
+}
+
+.cards-overlap > *:first-child {
+  margin-top: 0;
+}
+
+.cards-overlap > *:hover {
+  z-index: 10;
+  transform: translateY(-12px) scale(1.02);
+}
+
+/* ============================================================
+   SECTION WRAPPER — ensures white/black canvas is clean
+   ============================================================ */
+.section-canvas {
+  background: var(--canvas-light);
+  position: relative;
+}
+
+.section-canvas--dark {
+  background: var(--canvas-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-canvas {
+    background: var(--canvas-dark);
+  }
+  .section-canvas--dark {
+    background: var(--canvas-light);
+  }
+}

@@ -2280,3 +2280,37 @@ body {
     padding: 1.25rem;
   }
 }
+
+/* ============================================================
+   Footer utility classes (replaces inline styles)
+   ============================================================ */
+.footer-tagline {
+  font-style: italic;
+}
+
+.footer-trademark {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.footer-legal {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-legal-link {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Hero nav offset — clears floating navbar on first section
+   ============================================================ */
+.hero--nav-offset {
+  padding-top: calc(var(--nav-height, 64px) + 72px);
+}
+
+.page--nav-offset {
+  padding-top: calc(var(--nav-height, 64px) + 48px);
+}
