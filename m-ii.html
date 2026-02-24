@@ -27,6 +27,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/m-ii.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/cards.css" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
@@ -40,26 +42,10 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="attached_assets/beaverlyvh_1749358435969.png" alt="Beaverly Logo" class="logo-image">
-        <span class="logo-text">Beaverly®</span>
-      </div>
-      <div class="mobile-menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="nav-links">
-        <a href="index.html" class="back-link">← Back to Ecosystem</a>
-      </div>
-    </div>
-  </nav>
+  <!-- Header injected by js/header-loader.js -->
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero hero--nav-offset">
     <div class="hero-background">
       <div class="grid-animation"></div>
       <div class="wave-lines">
@@ -106,12 +92,12 @@
     <div class="container">
       <h2 class="section-title">Powers Everything</h2>
       <div class="powers-grid">
-        <div class="power-tile animate-on-scroll" data-description="Automates logic with optimization and speed.">
+        <div class="power-tile card-lifted animate-on-scroll" data-description="Automates logic with optimization and speed.">
           <div class="power-icon"><i data-lucide="cpu" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Chilla</h3>
           <p>Programmable Orchestration</p>
         </div>
-        <div class="power-tile animate-on-scroll" data-description="Data ingestion and faithful execution of intent.">
+        <div class="power-tile card-lifted animate-on-scroll" data-description="Data ingestion and faithful execution of intent.">
           <div class="power-icon"><i data-lucide="settings" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Internal Ops</h3>
           <p>Infrastructure management</p>
@@ -125,17 +111,17 @@
     <div class="container">
       <h2 class="section-title">Why M-II</h2>
       <div class="attributes-grid">
-        <div class="attribute-card animate-on-scroll">
+        <div class="attribute-card card-glass animate-on-scroll">
           <div class="attribute-icon"><i data-lucide="refresh-cw" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Adaptive</h3>
           <p>Real-time optimization</p>
         </div>
-        <div class="attribute-card animate-on-scroll">
+        <div class="attribute-card card-glass animate-on-scroll">
           <div class="attribute-icon"><i data-lucide="brain" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Intelligent</h3>
           <p>Reliable orchestration</p>
         </div>
-        <div class="attribute-card animate-on-scroll">
+        <div class="attribute-card card-glass animate-on-scroll">
           <div class="attribute-icon"><i data-lucide="globe" style="width:2.5em;height:2.5em;"></i></div>
           <h3>Universal</h3>
           <p>Multi-broker compatible</p>
@@ -237,6 +223,7 @@
   </section>
 
   <script src="js/m-ii-animations.js"></script>
+  <script src="/js/header-loader.js"></script>
   <script src="/js/footer-loader.js"></script>
 
   <script>
