@@ -283,19 +283,39 @@ button:focus-visible {
   background: rgba(255,255,255,0.22);
 }
 
-/* Mobile: hide CTA text label, show icon only → no overlap with wordmark */
+/* Mobile: icon-only CTA by default — label hidden while wordmark visible */
 @media (max-width: 767px) {
   .bvly-nav__cta-label {
     display: none;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: opacity var(--t-nav), max-width var(--t-nav);
   }
   .bvly-nav__cta {
     padding: 8px 11px;
     gap: 0;
     border-radius: 10px;
+    transition: padding var(--t-nav), gap var(--t-nav), opacity var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   }
-  /* Give brand more room now that side elements are icon-only */
+  /* Once scrolled: wordmark gone → CTA can expand to show full label */
+  .bvly-nav.nav-scrolled .bvly-nav__cta-label {
+    display: inline;
+    opacity: 1;
+    max-width: 200px;
+  }
+  .bvly-nav.nav-scrolled .bvly-nav__cta {
+    padding: 8px 16px;
+    gap: 6px;
+  }
+  /* Brand safe width at rest */
   .bvly-nav__brand {
     max-width: calc(100% - 110px);
+  }
+  /* Brand safe width when scrolled (CTA expanded, no wordmark competing) */
+  .bvly-nav.nav-scrolled .bvly-nav__brand {
+    max-width: none;
+    pointer-events: auto;
   }
 }
 
