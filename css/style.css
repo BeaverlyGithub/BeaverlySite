@@ -273,7 +273,7 @@ p {
 
 /* Container */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -862,7 +862,7 @@ p {
 
 /* Sections */
 .section {
-  padding: 10rem 0;
+  padding: 6rem 0;
 }
 
 .section-alt {
@@ -1241,19 +1241,44 @@ p {
 }
 
 .feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
   padding: 0.5rem 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #4a4a4a;
+  line-height: 1.5;
 }
 
 .feature-disabled {
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  color: #a0a0a0;
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  line-height: 1.5;
 }
+/* Checkmark icon in pricing feature lists */
+.feature .feature-check,
+.feature > span:first-child {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-top: 0.05rem;
+}
+
+.pricing-card-featured .feature > span:first-child,
+.pricing-card-featured .feature .feature-check {
+  color: #ffffff;
+}
+
 
 .plan-note {
   font-size: 0.875rem;
@@ -2148,7 +2173,7 @@ p {
   }
 
   .section {
-    padding: 3rem 0.75rem;
+    padding: 3rem 1rem;
   }
 
   .section-title {
@@ -2279,38 +2304,4 @@ body {
   .demo-card {
     padding: 1.25rem;
   }
-}
-
-/* ============================================================
-   Footer utility classes (replaces inline styles)
-   ============================================================ */
-.footer-tagline {
-  font-style: italic;
-}
-
-.footer-trademark {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  color: #888;
-}
-
-.footer-legal {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
-
-.footer-legal-link {
-  text-decoration: underline;
-}
-
-/* ============================================================
-   Hero nav offset — clears floating navbar on first section
-   ============================================================ */
-.hero--nav-offset {
-  padding-top: calc(var(--nav-height, 64px) + 72px);
-}
-
-.page--nav-offset {
-  padding-top: calc(var(--nav-height, 64px) + 48px);
 }

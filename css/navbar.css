@@ -206,14 +206,14 @@ button:focus-visible {
 .bvly-nav__right {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   flex-shrink: 0;
 }
 
 /* Desktop nav links — only visible ≥768px */
 .bvly-nav__link {
   display: none;
-  padding: 7px 12px;
+  padding: 7px 14px;
   border-radius: 10px;
   font-family: 'Outfit', -apple-system, sans-serif;
   font-size: 0.875rem;
