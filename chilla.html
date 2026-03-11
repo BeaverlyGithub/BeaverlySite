@@ -7,229 +7,1554 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <title>Chilla™ by Beaverly® – You Chill. Chilla Works.</title>
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <meta name="description" content="Stay connected to global markets — without turning trading into your lifestyle. You Chill. Chilla Works.">
-  <meta name="keywords" content="chilla, beaverly, AI wealth co-pilot, financial automation, market automation, investment automation, market participation">
+  <meta name="description" content="Stay connected to global markets without turning trading into your lifestyle. Instruction-based automation, built on M-II. You Chill. Chilla Works.">
+  <meta name="keywords" content="chilla, beaverly, market automation, instruction-based automation, non-custodial, market participation">
   <link rel="icon" href="https://beaverlyai.com/attached_assets/beaverly_lodo.png" type="image/png">
 
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Chilla™ by Beaverly® – You Chill. Chilla Works.">
-  <meta property="og:description" content="Stay connected to global markets — without turning trading into your lifestyle. You Chill. Chilla Works.">
+  <meta property="og:title" content="Chilla page: Chilla™ by Beaverly® – You Chill. Chilla Works.">
+  <meta property="og:description" content="Stay connected to global markets without turning trading into your lifestyle.">
   <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://beaverlyai.com/chilla.html">
 
-  <!-- Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+  <!-- Fonts: Outfit (matches site) + Fraunces for editorial punch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap"></noscript>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/chilla.css" />
+  <!-- Site CSS -->
   <link rel="stylesheet" href="css/navbar.css" />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-83PFRQ3WQ6');
-  </script></head>
+  </script>
+
+  <style>
+    /* ============================
+       CHILLA PAGE — FULL STYLES
+       ============================ */
+
+    :root {
+      --black:    #0a0a0a;
+      --white:    #ffffff;
+      --cream:    #f8f7f4;
+      --sand:     #f0ede8;
+      --mid:      #6a6a6a;
+      --border:   #e5e3de;
+      --radius:   16px;
+      --radius-lg: 28px;
+      --pad:      clamp(5rem, 10vw, 9rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ── Eyebrow label ── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.1rem;
+    }
+    .eyebrow-light { color: rgba(255,255,255,0.35); }
+
+    /* ── Rule ── */
+    .rule { border: none; border-top: 1px solid var(--border); }
+
+    /* ============================
+       HERO
+       ============================ */
+    .hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: clamp(8rem, 14vw, 12rem) 0 clamp(5rem, 10vw, 8rem);
+      text-align: center;
+    }
+
+    /* Grain texture overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Radial warm glow */
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(255,255,255,0.035) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .hero-content.visible { opacity: 1; transform: translateY(0); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2.5rem;
+    }
+    .hero-badge .dot {
+      width: 5px; height: 5px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 50%;
+      animation: pulse-dot 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:0.35; transform:scale(1); }
+      50% { opacity:1; transform:scale(1.4); }
+    }
+
+    .hero-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(3.5rem, 11vw, 7.5rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 0.4em;
+    }
+    .hero-title .italic { font-style: italic; color: rgba(255,255,255,0.55); }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.65;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .scroll-cue:hover { color: rgba(255,255,255,0.4); }
+    .scroll-cue .arr {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.25));
+    }
+
+    /* ============================
+       POSITIONING STATEMENT
+       ============================ */
+    .statement-section {
+      padding: var(--pad) 0;
+      background: var(--white);
+    }
+    .statement-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .statement-copy {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.5rem, 3.8vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1.4;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .statement-copy em {
+      font-style: italic;
+      color: var(--mid);
+    }
+    .statement-sub {
+      margin-top: 2rem;
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.75;
+    }
+
+    /* ============================
+       HOW CHILLA WORKS (Premium journey)
+       ============================ */
+    .journey-section {
+      background: var(--cream);
+      padding: var(--pad) 0;
+    }
+    .journey-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .journey-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .journey-header p {
+      color: var(--mid);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .journey-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .journey-step {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr;
+      gap: 2rem 3rem;
+      align-items: center;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .journey-step:first-child { border-top: 1px solid var(--border); }
+
+    .step-num {
+      font-family: 'Fraunces', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .step-text h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .step-text p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .step-detail {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .step-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+    .step-detail-item .ic {
+      flex-shrink: 0;
+      width: 15px;
+      height: 15px;
+      margin-top: 2px;
+      color: var(--black);
+    }
+
+    /* ============================
+       WHY CHILLA FEELS DIFFERENT
+       ============================ */
+    .different-section {
+      background: var(--white);
+      padding: var(--pad) 0;
+    }
+    .different-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .different-text h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .different-text p {
+      color: var(--mid);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .different-text p:last-child { margin-bottom: 0; }
+
+    .contrast-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .contrast-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contrast-row:first-child { border-top: 1px solid var(--border); }
+    .contrast-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+    }
+    .contrast-icon.neg { color: #ccc; }
+    .contrast-icon.pos { color: var(--black); }
+    .contrast-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.2rem;
+    }
+    .contrast-label.dim { color: #aaa; font-weight: 400; }
+    .contrast-desc {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    /* ============================
+       CORE PRODUCT EXPERIENCE
+       ============================ */
+    .product-section {
+      background: var(--cream);
+      padding: var(--pad) 0;
+    }
+    .product-header {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    .product-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .product-header p {
+      color: var(--mid);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .product-bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1.25rem;
+    }
+
+    .bento-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover {
+      box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    /* Wide cards */
+    .bento-card.wide { grid-column: span 2; }
+    .bento-card.tall { grid-row: span 2; }
+
+    .bento-card .card-icon {
+      width: 44px;
+      height: 44px;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+    .bento-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.65rem;
+    }
+    .bento-card p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .bento-card .card-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+    }
+
+    /* Dark card variant */
+    .bento-card.dark {
+      background: var(--black);
+      border-color: var(--black);
+    }
+    .bento-card.dark .card-icon { color: rgba(255,255,255,0.6); }
+    .bento-card.dark h3 { color: var(--white); }
+    .bento-card.dark p { color: rgba(255,255,255,0.45); }
+    .bento-card.dark .card-tag {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ============================
+       VISIBILITY & CONTROL (Flow)
+       ============================ */
+    .flow-section {
+      background: var(--white);
+      padding: var(--pad) 0;
+    }
+    .flow-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .flow-text h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .flow-text p {
+      color: var(--mid);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 0.85rem;
+    }
+
+    /* Simulated Flow feed */
+    .flow-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .flow-bar {
+      background: var(--cream);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .flow-bar-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .flow-bar-live {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a8b2b;
+    }
+    .flow-bar-live .blink {
+      width: 6px; height: 6px;
+      background: #27c93f;
+      border-radius: 50%;
+      animation: blink-live 1.5s ease-in-out infinite;
+    }
+    @keyframes blink-live {
+      0%,100% { opacity:1; } 50% { opacity:0.3; }
+    }
+
+    .flow-item {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .flow-item:last-child { border-bottom: none; }
+
+    .flow-type {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .ft-entry { background: rgba(39,201,63,0.1); color: #1a8b2b; }
+    .ft-skip  { background: rgba(255,189,46,0.1); color: #9a6f00; }
+    .ft-mon   { background: rgba(100,100,255,0.1); color: #4444bb; }
+    .ft-exit  { background: rgba(0,0,0,0.06); color: #555; }
+
+    .flow-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.2rem;
+    }
+    .flow-desc {
+      font-size: 0.78rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+    .flow-time {
+      font-size: 0.7rem;
+      color: #bbb;
+      white-space: nowrap;
+      margin-top: 3px;
+    }
+
+    /* ============================
+       USER CONTROL
+       ============================ */
+    .control-section {
+      background: var(--cream);
+      padding: var(--pad) 0;
+    }
+    .control-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .control-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .control-header p {
+      color: var(--mid);
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .control-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .control-card:hover {
+      box-shadow: 0 10px 32px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+    .control-card .cc-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--black);
+      margin-bottom: 1.1rem;
+    }
+    .control-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .control-card p {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ============================
+       WHO IT'S BUILT FOR (Personas)
+       ============================ */
+    .personas-section {
+      background: var(--white);
+      padding: var(--pad) 0;
+    }
+    .personas-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .personas-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .personas-header p {
+      color: var(--mid);
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .personas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .persona-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .persona-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.06);
+    }
+    .persona-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .persona-avatar {
+      width: 44px;
+      height: 44px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .persona-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .persona-loc {
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+    .persona-quote {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ============================
+       BUILT ON M-II
+       ============================ */
+    .mii-section {
+      background: var(--black);
+      padding: var(--pad) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .mii-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      pointer-events: none;
+    }
+
+    .mii-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .mii-text h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .mii-text p {
+      color: rgba(255,255,255,0.45);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 0.85rem;
+    }
+    .mii-text p:last-child { margin-bottom: 0; }
+    .mii-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 1.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 0.2rem;
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+    .mii-link:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+    .mii-props {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .mii-prop {
+      background: rgba(255,255,255,0.025);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.3s ease;
+    }
+    .mii-prop:hover { background: rgba(255,255,255,0.045); }
+    .mii-prop-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      color: rgba(255,255,255,0.45);
+    }
+    .mii-prop-body h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .mii-prop-body p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ============================
+       MANIFESTO
+       ============================ */
+    .manifesto-section {
+      background: var(--white);
+      padding: var(--pad) 0;
+      text-align: center;
+    }
+    .manifesto-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .manifesto-quote {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .manifesto-quote span { color: var(--mid); }
+
+    /* ============================
+       CTA
+       ============================ */
+    .cta-section {
+      background: var(--black);
+      padding: var(--pad) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(255,255,255,0.035) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .cta-inner h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .cta-inner p {
+      color: rgba(255,255,255,0.4);
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================
+       BUTTONS
+       ============================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+    .btn-primary:hover { background: #eee; transform: translateY(-2px); }
+    .btn-primary.dark {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+    .btn-primary.dark:hover { background: #222; transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.55);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .btn-ghost:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border-color: var(--black);
+    }
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ============================
+       SCROLL ANIMATIONS
+       ============================ */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .animate-on-scroll.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================
+       RESPONSIVE
+       ============================ */
+    @media (max-width: 960px) {
+      .different-inner,
+      .flow-inner,
+      .mii-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .product-bento { grid-template-columns: 1fr 1fr; }
+      .bento-card.wide { grid-column: span 1; }
+      .control-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .journey-step { grid-template-columns: 48px 1fr; gap: 1.25rem; }
+      .step-detail { display: none; }
+      .product-bento { grid-template-columns: 1fr; }
+      .bento-card.wide, .bento-card.tall { grid-column: span 1; grid-row: span 1; }
+      .control-grid { grid-template-columns: 1fr; }
+      .personas-grid { grid-template-columns: 1fr; }
+      .hero-cta-row { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 320px; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .step-num { font-size: 2rem; }
+    }
+  </style>
+</head>
 
 <body>
+
   <!-- Header injected by js/header-loader.js -->
 
-  <!-- Hero Section -->
-  <section class="hero hero--nav-offset">
+  <!-- ══════════════════════════════════════
+       HERO
+       ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
     <div class="container">
-      <div class="hero-content">
-        <div class="brand-logo">Chilla by Beaverly®</div>
-        <h1 class="hero-title">You Chill. Chilla Works.</h1>
-        <p class="hero-subtitle">Stay connected to global markets — without turning trading into your lifestyle.</p>
-        <div class="hero-cta">
-          <div class="scroll-hint"><i data-lucide="chevron-down" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.3em;"></i>Learn how Chilla works</div>
+      <div class="hero-content" id="heroContent">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Chilla™ by Beaverly®
+        </div>
+        <h1 class="hero-title">
+          You Chill.<br><span class="italic">Chilla Works.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Stay connected to global markets — without turning market participation into a lifestyle. Your instructions run. You stay calm.
+        </p>
+        <div class="hero-cta-row">
+          <a href="https://chilla.beaverlyai.com" class="btn btn-primary">Open Chilla</a>
+          <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+        </div>
+        <div class="scroll-cue" id="scrollCue">
+          <span>Scroll</span>
+          <div class="arr"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How Chilla Works -->
-  <section class="section works-section">
+  <!-- ══════════════════════════════════════
+       POSITIONING STATEMENT
+       ══════════════════════════════════════ -->
+  <section class="statement-section">
     <div class="container">
-      <h2 class="section-title">How Chilla Works</h2>
-      <div class="works-grid">
-        <div class="work-card animate-on-scroll">
-          <div class="work-icon" aria-hidden="true">
-            <i data-lucide="wifi" style="width:2.5em;height:2.5em;"></i>
+      <div class="statement-inner animate-on-scroll">
+        <p class="statement-copy">
+          Markets don't sleep. <em>You shouldn't have to watch them.</em><br>
+          Chilla is the calm layer between you and the noise.
+        </p>
+        <p class="statement-sub">
+          You set the instructions. You define the comfort boundaries. You choose what runs. Chilla handles the execution — transparently, within the scope you approved, on the account you selected. Nothing more.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       HOW CHILLA WORKS
+       ══════════════════════════════════════ -->
+  <section class="journey-section" id="how-it-works">
+    <div class="container">
+      <div class="journey-header animate-on-scroll">
+        <span class="eyebrow">How Chilla Works</span>
+        <h2>A guided setup. A calm experience.</h2>
+        <p>Getting started is deliberate by design. Every step requires your explicit approval before anything runs.</p>
+      </div>
+
+      <div class="journey-steps">
+
+        <div class="journey-step animate-on-scroll">
+          <div class="step-num">01</div>
+          <div class="step-text">
+            <h3>Connect your environment</h3>
+            <p>Authorize your broker account through a secure connection flow. Chilla supports multiple accounts under a connected environment — you choose which account is active for automation. Your funds remain with your broker throughout.</p>
           </div>
-          <h3>Connect Your Broker</h3>
-          <p>Securely connect your broker account. Your funds remain with your broker at all times.</p>
+          <div class="step-detail">
+            <div class="step-detail-item">
+              <i data-lucide="link" class="ic"></i>
+              Secure broker authorization flow
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="layers" class="ic"></i>
+              Multi-account support under one environment
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="toggle-right" class="ic"></i>
+              Automation toggle per account
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="activity" class="ic"></i>
+              Broker and account health visible on dashboard
+            </div>
+          </div>
         </div>
-        <div class="work-card animate-on-scroll">
-          <div class="work-icon" aria-hidden="true">
-            <i data-lucide="zap" style="width:2.5em;height:2.5em;"></i>
+
+        <div class="journey-step animate-on-scroll">
+          <div class="step-num">02</div>
+          <div class="step-text">
+            <h3>Choose behaviors and set your comfort</h3>
+            <p>Browse the behavior catalog. Filter by compatibility and select what fits your approach. Set your per-position comfort level. Optionally cap monthly risk. Chilla shows you the risk implications before anything is activated.</p>
           </div>
-          <h3>Choose Behaviors & Comfort</h3>
-          <p>Select pre-built behaviors and choose how much exposure you're comfortable with. Everything stays within your control.</p>
+          <div class="step-detail">
+            <div class="step-detail-item">
+              <i data-lucide="search" class="ic"></i>
+              Behavior catalog with filtering and metadata
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="sliders" class="ic"></i>
+              Per-position comfort input
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="shield" class="ic"></i>
+              Optional monthly risk budget cap
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="eye" class="ic"></i>
+              Risk implication preview before activation
+            </div>
+          </div>
         </div>
-        <div class="work-card animate-on-scroll">
-          <div class="work-icon" aria-hidden="true">
-            <i data-lucide="moon" style="width:2.5em;height:2.5em;"></i>
+
+        <div class="journey-step animate-on-scroll">
+          <div class="step-num">03</div>
+          <div class="step-text">
+            <h3>Review, consent, and activate</h3>
+            <p>Before activation, Chilla surfaces the consent document, captures your explicit authorization, and validates your configuration. Instructions are version-tracked from the moment they go live. You can run multiple instructions concurrently, each isolated from the others.</p>
           </div>
-          <h3>Activate & Relax</h3>
-          <p>Chilla monitors and automates strictly within your instructions. Adjust anytime — or keep chilling.</p>
+          <div class="step-detail">
+            <div class="step-detail-item">
+              <i data-lucide="file-check" class="ic"></i>
+              Consent document retrieval and acceptance capture
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="git-branch" class="ic"></i>
+              Version-tracked instruction activation
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="layers" class="ic"></i>
+              Multiple concurrent instructions supported
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="check-circle" class="ic"></i>
+              Full pre-activation validation gate
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step animate-on-scroll">
+          <div class="step-num">04</div>
+          <div class="step-text">
+            <h3>Monitor, adjust, or pause — anytime</h3>
+            <p>Once active, your dashboard shows live instruction status, risk usage, and account readiness. The Flow feed surfaces every meaningful system event in plain language. Update your instructions, revoke them with confirmation, or disconnect accounts without losing your environment setup.</p>
+          </div>
+          <div class="step-detail">
+            <div class="step-detail-item">
+              <i data-lucide="layout-dashboard" class="ic"></i>
+              Real-time dashboard with status cards
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="activity" class="ic"></i>
+              Flow feed with entries, exits, skips, and warnings
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="edit-3" class="ic"></i>
+              Update or revoke instructions at any time
+            </div>
+            <div class="step-detail-item">
+              <i data-lucide="bar-chart-2" class="ic"></i>
+              Live risk usage visibility during runtime
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WHY CHILLA FEELS DIFFERENT
+       ══════════════════════════════════════ -->
+  <section class="different-section">
+    <div class="container">
+      <div class="different-inner">
+        <div class="different-text animate-on-scroll">
+          <span class="eyebrow">Why It's Different</span>
+          <h2>Not a bot. Not a signal app. Not a dashboard.</h2>
+          <p>Chilla is a background co-pilot for calm market participation. It operates strictly within your approved instructions — no inference, no assumptions, no actions beyond what you authorized.</p>
+          <p>Where other tools demand your attention, Chilla is designed to need as little of it as possible. Once your instructions are live, Chilla handles the cadence. You stay calm.</p>
+        </div>
+        <div class="contrast-list animate-on-scroll" style="transition-delay:0.1s">
+          <div class="contrast-row">
+            <i data-lucide="x-circle" class="contrast-icon neg"></i>
+            <div class="contrast-body">
+              <div class="contrast-label dim">Signal apps</div>
+              <div class="contrast-desc">You wait for alerts, then act fast. You're still the bottleneck.</div>
+            </div>
+          </div>
+          <div class="contrast-row">
+            <i data-lucide="x-circle" class="contrast-icon neg"></i>
+            <div class="contrast-body">
+              <div class="contrast-label dim">Copy trading</div>
+              <div class="contrast-desc">You copy someone else's decisions — including their mistakes. No control over scope or comfort.</div>
+            </div>
+          </div>
+          <div class="contrast-row">
+            <i data-lucide="x-circle" class="contrast-icon neg"></i>
+            <div class="contrast-body">
+              <div class="contrast-label dim">Robo-advisors</div>
+              <div class="contrast-desc">Generic portfolios built for averages. Not built around your specific instructions and comfort.</div>
+            </div>
+          </div>
+          <div class="contrast-row">
+            <i data-lucide="check-circle" class="contrast-icon pos"></i>
+            <div class="contrast-body">
+              <div class="contrast-label">Chilla</div>
+              <div class="contrast-desc">Your instructions. Your comfort boundaries. Your authorized account. Execution handled in the background — with full visibility through Flow.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Chilla vs Others -->
-  <section class="section vs-section">
+  <!-- ══════════════════════════════════════
+       CORE PRODUCT EXPERIENCE (Bento)
+       ══════════════════════════════════════ -->
+  <section class="product-section">
     <div class="container">
-      <div class="vs-split">
-        <div class="vs-left animate-on-scroll">
-          <h2>Not a Bot. Not a Platform.</h2>
-          <p>Chilla is not a copy-trader, signal app, or dashboard tool. It's a background co-pilot for your market participation. 
-            Built to behave according to your instructions.</p>
+      <div class="product-header animate-on-scroll">
+        <span class="eyebrow">Product Experience</span>
+        <h2>Simple on the surface.<br>Serious underneath.</h2>
+        <p>Every part of Chilla is designed to give you the right amount of control — and no more complexity than you need.</p>
+      </div>
+
+      <div class="product-bento">
+        <div class="bento-card wide animate-on-scroll">
+          <i data-lucide="layout-dashboard" class="card-icon"></i>
+          <h3>Live Dashboard</h3>
+          <p>Your dashboard surfaces real-time status cards for every connected environment and account. See your active instruction count, current behavior coverage, risk usage, and playground status — all in one view. No digging required.</p>
+          <span class="card-tag">Real-time</span>
         </div>
-        <div class="vs-right animate-on-scroll">
-          <div class="comparison-list">
-            <div class="comparison-item negative"><i data-lucide="x-circle" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.5em;"></i>Signal apps: Wait for alerts, click fast</div>
-            <div class="comparison-item negative"><i data-lucide="x-circle" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.5em;"></i>Copy trading: Copy success — or failure</div>
-            <div class="comparison-item negative"><i data-lucide="x-circle" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.5em;"></i>Robo-advisors: Generic, one-size-fits-all</div>
-            <div class="comparison-item positive"><i data-lucide="check-circle" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.5em;"></i>Chilla: Automation based on your instructions</div>
+
+        <div class="bento-card animate-on-scroll" style="transition-delay:0.1s">
+          <i data-lucide="git-commit" class="card-icon"></i>
+          <h3>Instruction Lifecycle</h3>
+          <p>Draft, validate, activate, update, or revoke instructions at any point. Every version is tracked. Revocation requires explicit confirmation — nothing deactivates without your intent.</p>
+          <span class="card-tag">Version-tracked</span>
+        </div>
+
+        <div class="bento-card dark animate-on-scroll" style="transition-delay:0.1s">
+          <i data-lucide="sliders" class="card-icon"></i>
+          <h3>Comfort Controls</h3>
+          <p>Set your per-position comfort level. Add an optional monthly risk cap. Enable strict risk mode. Chilla shows you what these settings mean before you activate.</p>
+          <span class="card-tag">User-defined</span>
+        </div>
+
+        <div class="bento-card animate-on-scroll" style="transition-delay:0.15s">
+          <i data-lucide="compass" class="card-icon"></i>
+          <h3>Behavior Catalog</h3>
+          <p>Browse pre-built behaviors with compatibility context, descriptive metadata, and account-aware assignment. Choose what fits. Assign it to the right playground.</p>
+          <span class="card-tag">Filterable</span>
+        </div>
+
+        <div class="bento-card animate-on-scroll" style="transition-delay:0.2s">
+          <i data-lucide="bar-chart-2" class="card-icon"></i>
+          <h3>Usage & Plan Limits</h3>
+          <p>Chilla shows your daily automation capacity, plan-aware limits across environments and behaviors, and alerts when you approach a ceiling. Upgrade options are always one tap away.</p>
+          <span class="card-tag">Plan-aware</span>
+        </div>
+
+        <div class="bento-card animate-on-scroll" style="transition-delay:0.2s">
+          <i data-lucide="smartphone" class="card-icon"></i>
+          <h3>Install on Your Device</h3>
+          <p>Chilla is a Progressive Web App. Install it on your phone or tablet for a native-like experience with full dashboard access from anywhere.</p>
+          <span class="card-tag">PWA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FLOW — VISIBILITY & CONTROL
+       ══════════════════════════════════════ -->
+  <section class="flow-section">
+    <div class="container">
+      <div class="flow-inner">
+        <div class="flow-text animate-on-scroll">
+          <span class="eyebrow">Flow — Transparency Feed</span>
+          <h2>You always know what just happened.</h2>
+          <p>Flow is Chilla's real-time activity stream. Every meaningful event the system generates — entries, exits, skipped actions, warnings, monitoring updates — appears in plain language, in the order it happened.</p>
+          <p>Filter by event type. Replay history. Export your log. Expand any event for full context. Chilla doesn't act silently. Flow makes sure of that.</p>
+        </div>
+        <div class="animate-on-scroll" style="transition-delay:0.1s">
+          <div class="flow-feed">
+            <div class="flow-bar">
+              <span class="flow-bar-title">Flow</span>
+              <span class="flow-bar-live"><span class="blink"></span>Live</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-type ft-entry">Entry</span>
+              <div class="flow-body">
+                <div class="flow-title">Position opened</div>
+                <div class="flow-desc">Market conditions matched instruction scope. Comfort and risk checks passed.</div>
+              </div>
+              <span class="flow-time">just now</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-type ft-mon">Monitor</span>
+              <div class="flow-body">
+                <div class="flow-title">Position under observation</div>
+                <div class="flow-desc">Active lifecycle monitoring. Protective adjustment evaluated.</div>
+              </div>
+              <span class="flow-time">2m ago</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-type ft-skip">Skipped</span>
+              <div class="flow-body">
+                <div class="flow-title">Action deferred</div>
+                <div class="flow-desc">Monthly risk budget approaching cap. Action safely skipped.</div>
+              </div>
+              <span class="flow-time">14m ago</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-type ft-exit">Exit</span>
+              <div class="flow-body">
+                <div class="flow-title">Position closed</div>
+                <div class="flow-desc">Lifecycle complete. Broker confirmation received and recorded.</div>
+              </div>
+              <span class="flow-time">1h ago</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-type ft-entry">Entry</span>
+              <div class="flow-body">
+                <div class="flow-title">Position opened</div>
+                <div class="flow-desc">Instruction active. All pre-execution checks passed.</div>
+              </div>
+              <span class="flow-time">3h ago</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Capabilities Grid -->
-  <section class="section capabilities-section">
+  <!-- ══════════════════════════════════════
+       USER CONTROL GRID
+       ══════════════════════════════════════ -->
+  <section class="control-section">
     <div class="container">
-      <h2 class="section-title">Chilla's Capabilities</h2>
-      <div class="capabilities-grid">
-        <div class="capability-card animate-on-scroll" data-hover="Chilla automates your instructions instantly.">
-          <div class="capability-icon" aria-hidden="true">
-            <i data-lucide="refresh-cw" style="width:2em;height:2em;"></i>
-          </div>
-          <h3>Real-time Automation</h3>
+      <div class="control-header animate-on-scroll">
+        <span class="eyebrow">Your Control</span>
+        <h2>You're never locked in.</h2>
+        <p>Chilla is built around the principle that you can change your mind at any time. All the controls are always accessible.</p>
+      </div>
+      <div class="control-grid">
+        <div class="control-card animate-on-scroll">
+          <i data-lucide="pause-circle" class="cc-icon"></i>
+          <h4>Pause Anytime</h4>
+          <p>Toggle automation off per account without disconnecting your environment or losing your instruction setup.</p>
         </div>
-        <div class="capability-card animate-on-scroll" data-hover="Automation adjusts within your defined boundaries.">
-          <div class="capability-icon" aria-hidden="true">
-            <i data-lucide="brain" style="width:2em;height:2em;"></i>
-          </div>
-          <h3>Adaptive Automation</h3>
+        <div class="control-card animate-on-scroll" style="transition-delay:0.07s">
+          <i data-lucide="edit-3" class="cc-icon"></i>
+          <h4>Update Instructions</h4>
+          <p>Modify active instructions with version awareness. The system tracks what changed and when.</p>
         </div>
-        <div class="capability-card animate-on-scroll" data-hover="Works with any broker you choose.">
-          <div class="capability-icon" aria-hidden="true">
-            <i data-lucide="globe" style="width:2em;height:2em;"></i>
-          </div>
-          <h3>Works Across Brokers</h3>
+        <div class="control-card animate-on-scroll" style="transition-delay:0.14s">
+          <i data-lucide="trash-2" class="cc-icon"></i>
+          <h4>Revoke with Confirmation</h4>
+          <p>Revoke any instruction with an explicit confirmation step. Nothing is removed without your intent.</p>
         </div>
-        <div class="capability-card animate-on-scroll" data-hover="Set your instructions and step back. The system automates without daily monitoring.">
-          <div class="capability-icon" aria-hidden="true">
-            <i data-lucide="clock" style="width:2em;height:2em;"></i>
-          </div>
-          <h3>Instructional Automation</h3>
-        </div>
-        <div class="capability-card animate-on-scroll" data-hover="We never touch your funds or see your keys.">
-          <div class="capability-icon" aria-hidden="true">
-            <i data-lucide="shield" style="width:2em;height:2em;"></i>
-          </div>
-          <h3>Privacy-First</h3>
+        <div class="control-card animate-on-scroll" style="transition-delay:0.21s">
+          <i data-lucide="link-2-off" class="cc-icon"></i>
+          <h4>Disconnect Accounts</h4>
+          <p>Disconnect individual accounts without removing your connected environment or other account setups.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Who Uses It -->
-  <section class="section personas-section">
+  <!-- ══════════════════════════════════════
+       WHO IT'S BUILT FOR
+       ══════════════════════════════════════ -->
+  <section class="personas-section">
     <div class="container">
-      <h2 class="section-title">Who It's Built For</h2>
-      <div class="personas-scroll">
+      <div class="personas-header animate-on-scroll">
+        <span class="eyebrow">Who Uses Chilla</span>
+        <h2>For people who want to participate,<br>not to obsess.</h2>
+        <p>Chilla is for anyone with a life that doesn't revolve around charts — but still wants meaningful market exposure on their own terms.</p>
+      </div>
+      <div class="personas-grid">
         <div class="persona-card animate-on-scroll">
-          <div class="persona-avatar" aria-hidden="true"><i data-lucide="user" style="width:2em;height:2em;"></i></div>
-          <div class="persona-info">
-            <div class="persona-name">Dr. Tola — Lagos</div>
-            <div class="persona-quote">"I wanted to stay connected to markets without turning trading into my lifestyle. Chilla automates within my rules while I focus on patients."</div>
+          <div class="persona-meta">
+            <div class="persona-avatar"><i data-lucide="stethoscope" style="width:20px;height:20px;"></i></div>
+            <div>
+              <div class="persona-name">Dr. Tola</div>
+              <div class="persona-loc">Lagos, Nigeria</div>
+            </div>
           </div>
+          <p class="persona-quote">"I wanted to stay connected to markets without turning it into a second job. Chilla runs within my rules. I focus on patients. It handles the rest."</p>
         </div>
-        <div class="persona-card animate-on-scroll">
-          <div class="persona-avatar" aria-hidden="true"><i data-lucide="user-check" style="width:2em;height:2em;"></i></div>
-          <div class="persona-info">
-            <div class="persona-name">Sarah — Texas</div>
-            <div class="persona-quote">"I stay connected to global markets without living on charts. Just calm automation within my own instructions."</div>
+        <div class="persona-card animate-on-scroll" style="transition-delay:0.1s">
+          <div class="persona-meta">
+            <div class="persona-avatar"><i data-lucide="briefcase" style="width:20px;height:20px;"></i></div>
+            <div>
+              <div class="persona-name">Sarah</div>
+              <div class="persona-loc">Austin, Texas</div>
+            </div>
+          </div>
+          <p class="persona-quote">"I set my comfort level, activated my instructions, and stepped back. Flow tells me what happened. I don't need to be on a chart to stay involved."</p>
+        </div>
+        <div class="persona-card animate-on-scroll" style="transition-delay:0.05s">
+          <div class="persona-meta">
+            <div class="persona-avatar"><i data-lucide="code-2" style="width:20px;height:20px;"></i></div>
+            <div>
+              <div class="persona-name">Marcus</div>
+              <div class="persona-loc">Berlin, Germany</div>
+            </div>
+          </div>
+          <p class="persona-quote">"I appreciate that Chilla doesn't try to do more than I've authorized. The consent flow and version tracking make it feel serious and trustworthy."</p>
+        </div>
+        <div class="persona-card animate-on-scroll" style="transition-delay:0.15s">
+          <div class="persona-meta">
+            <div class="persona-avatar"><i data-lucide="building-2" style="width:20px;height:20px;"></i></div>
+            <div>
+              <div class="persona-name">Amara</div>
+              <div class="persona-loc">Accra, Ghana</div>
+            </div>
+          </div>
+          <p class="persona-quote">"The Flow feed is everything. I can see exactly what Chilla did, what it skipped, and why — in plain language. No black box."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BUILT ON M-II
+       ══════════════════════════════════════ -->
+  <section class="mii-section">
+    <div class="container">
+      <div class="mii-inner">
+        <div class="mii-text animate-on-scroll">
+          <span class="eyebrow eyebrow-light">Powered By</span>
+          <h2>Built on M-II infrastructure.</h2>
+          <p>Chilla is the experience layer. M-II is the automation infrastructure underneath it — handling instruction validation, risk enforcement, execution integrity, and real-time transparency output.</p>
+          <p>You don't see M-II. But every guarantee Chilla makes is backed by it.</p>
+          <a href="m-ii.html" class="mii-link">
+            Explore M-II <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </a>
+        </div>
+        <div class="mii-props animate-on-scroll" style="transition-delay:0.1s">
+          <div class="mii-prop">
+            <i data-lucide="shield-check" class="mii-prop-icon"></i>
+            <div class="mii-prop-body">
+              <h4>Authorized Execution Only</h4>
+              <p>M-II only acts within scope you've approved in Chilla. No inference beyond intent.</p>
+            </div>
+          </div>
+          <div class="mii-prop">
+            <i data-lucide="check-circle" class="mii-prop-icon"></i>
+            <div class="mii-prop-body">
+              <h4>Safety Before Every Action</h4>
+              <p>Every potential action passes risk, compatibility, and integrity checks before execution.</p>
+            </div>
+          </div>
+          <div class="mii-prop">
+            <i data-lucide="activity" class="mii-prop-icon"></i>
+            <div class="mii-prop-body">
+              <h4>Transparent Activity</h4>
+              <p>All system activity generates the human-readable Flow entries you see in Chilla.</p>
+            </div>
+          </div>
+          <div class="mii-prop">
+            <i data-lucide="lock" class="mii-prop-icon"></i>
+            <div class="mii-prop-body">
+              <h4>Account-Scoped Operation</h4>
+              <p>Automation runs strictly within the account and environment you selected. Funds stay with your broker.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Powered by M-II -->
-  <section class="section tech-section">
+  <!-- ══════════════════════════════════════
+       MANIFESTO
+       ══════════════════════════════════════ -->
+  <section class="manifesto-section">
     <div class="container">
-      <div class="tech-content animate-on-scroll">
-        <h2 class="tech-title">Built on Beaverly's M-II Engine</h2>
-        <p class="tech-description">Chilla is powered by M-II — our proprietary Market Infra Intelligence layer.</p>
-        <div class="tech-blocks">
-          <div class="tech-block animate-on-scroll">
-            <div class="tech-block-icon" aria-hidden="true"><i data-lucide="lock" style="width:2em;height:2em;"></i></div>
-            <h3>Secure Orchestration</h3>
-          </div>
-          <div class="tech-block animate-on-scroll">
-            <div class="tech-block-icon" aria-hidden="true"><i data-lucide="brain-circuit" style="width:2em;height:2em;"></i></div>
-            <h3>Advanced Logic Processing</h3>
-          </div>
-          <div class="tech-block animate-on-scroll">
-            <div class="tech-block-icon" aria-hidden="true"><i data-lucide="server" style="width:2em;height:2em;"></i></div>
-            <h3>Scalable Backend</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy/Manifesto -->
-  <section class="section manifesto-section">
-    <div class="manifesto-background">
-      <div class="starfield">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="manifesto-content animate-on-scroll">
+      <div class="manifesto-inner animate-on-scroll">
         <blockquote class="manifesto-quote">
-          "The future of market participation isn't about watching charts all day.<br>
-      It's about structured background systems that follow your instructions — quietly and continuously.<br><br>
-      That's what Chilla does.<br>
-      That's why it exists."
+          "The future of market participation isn't watching charts all day.<br>
+          <span>It's calm infrastructure that follows your instructions —<br>
+          quietly, continuously, and only within your approved scope.</span><br>
+          That's what Chilla is. That's why it exists."
         </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- CTA Footer -->
-  <section class="section cta-section">
+  <!-- ══════════════════════════════════════
+       CTA
+       ══════════════════════════════════════ -->
+  <section class="cta-section">
     <div class="container">
-      <div class="cta-content animate-on-scroll">
+      <div class="cta-inner animate-on-scroll">
         <h2>Ready to start chilling?</h2>
+        <p>Connect your environment, set your instructions, and let Chilla handle the rest.</p>
         <div class="cta-buttons">
-          <a href="https://chilla.beaverlyai.com" class="btn btn-primary"><i data-lucide="arrow-right" style="width:1.1em;height:1.1em;vertical-align:middle;margin-right:0.5em;"></i>Open Chilla</a>
-          <a href="index.html" class="btn btn-secondary"><i data-lucide="arrow-left" style="width:1.1em;height:1.1em;vertical-align:middle;margin-right:0.5em;"></i>Back to Ecosystem</a>
+          <a href="https://chilla.beaverlyai.com" class="btn btn-primary">Open Chilla</a>
+          <a href="index.html" class="btn btn-ghost">← Back to Ecosystem</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Scripts -->
   <script src="js/chilla-animations.js"></script>
   <script src="/js/header-loader.js"></script>
   <script src="/js/footer-loader.js"></script>
+
+  <script>
+    // Init Lucide icons
+    if (window.lucide) lucide.createIcons();
+    else window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Hero entrance
+      setTimeout(() => {
+        const hero = document.getElementById('heroContent');
+        if (hero) hero.classList.add('visible');
+      }, 180);
+
+      // Smooth scroll from hero CTA
+      const scrollCue = document.getElementById('scrollCue');
+      if (scrollCue) {
+        scrollCue.addEventListener('click', () => {
+          const target = document.getElementById('how-it-works');
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // Smooth scroll for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Scroll-triggered animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+      // Navbar hide/show on scroll
+      const navbar = document.querySelector('.nav');
+      let lastY = 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (navbar) {
+          navbar.style.transform = (y > lastY && y > 100) ? 'translateY(-100%)' : 'translateY(0)';
+          navbar.style.transition = 'transform 0.3s ease';
+          navbar.classList.toggle('scrolled', y > 50);
+        }
+        lastY = y;
+      }, { passive: true });
+    });
+  </script>
 </body>
 </html>
