@@ -15,7 +15,7 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Chilla page: Chilla™ by Beaverly® – You Chill. Chilla Works.">
+  <meta property="og:title" content="Chilla™ by Beaverly® – You Chill. Chilla Works.">
   <meta property="og:description" content="Stay connected to global markets without turning trading into your lifestyle.">
   <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
   <meta property="og:type" content="website">
@@ -687,48 +687,41 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
-    .persona-card {
+
+    /* Built For section (replaces persona cards) */
+    .builtfor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .builtfor-item {
       background: var(--cream);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 2.25rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .persona-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.06);
-    }
-    .persona-meta {
       display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      margin-bottom: 1.25rem;
+      flex-direction: column;
+      gap: 1.1rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
-    .persona-avatar {
-      width: 44px;
-      height: 44px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .builtfor-item:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+    .builtfor-icon {
+      width: 32px;
+      height: 32px;
       color: var(--black);
       flex-shrink: 0;
     }
-    .persona-name {
-      font-weight: 700;
+    .builtfor-item p {
       font-size: 0.95rem;
-    }
-    .persona-loc {
-      font-size: 0.8rem;
-      color: var(--mid);
-    }
-    .persona-quote {
-      font-size: 0.92rem;
       color: var(--mid);
       line-height: 1.7;
-      font-style: italic;
+    }
+    .builtfor-item p strong {
+      color: var(--black);
+      font-weight: 600;
     }
 
     /* ============================
@@ -972,7 +965,7 @@
       .product-bento { grid-template-columns: 1fr; }
       .bento-card.wide, .bento-card.tall { grid-column: span 1; grid-row: span 1; }
       .control-grid { grid-template-columns: 1fr; }
-      .personas-grid { grid-template-columns: 1fr; }
+      .personas-grid, .builtfor-grid { grid-template-columns: 1fr; }
       .hero-cta-row { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 320px; justify-content: center; }
     }
@@ -1001,7 +994,7 @@
           You Chill.<br><span class="italic">Chilla Works.</span>
         </h1>
         <p class="hero-subtitle">
-          Stay connected to global markets — without turning market participation into a lifestyle. Your instructions run. You stay calm.
+          Stay connected to global markets — without turning market participation into a lifestyle. Your instructions run quietly in the background, within the boundaries you set.
         </p>
         <div class="hero-cta-row">
           <a href="https://chilla.beaverlyai.com" class="btn btn-primary">Open Chilla</a>
@@ -1161,9 +1154,9 @@
       <div class="different-inner">
         <div class="different-text animate-on-scroll">
           <span class="eyebrow">Why It's Different</span>
-          <h2>Not a bot. Not a signal app. Not a dashboard.</h2>
-          <p>Chilla is a background co-pilot for calm market participation. It operates strictly within your approved instructions — no inference, no assumptions, no actions beyond what you authorized.</p>
-          <p>Where other tools demand your attention, Chilla is designed to need as little of it as possible. Once your instructions are live, Chilla handles the cadence. You stay calm.</p>
+          <h2>More than a bot.<br>More than a signal app.<br>More than automated noise.</h2>
+          <p>Chilla is a background co-pilot for deliberate market participation. It operates strictly within your approved instructions — no inference, no assumptions, no actions beyond what you authorized.</p>
+          <p>Where other tools demand your attention, Chilla is designed to need as little of it as possible. Once your instructions are live, Chilla handles the cadence.</p>
         </div>
         <div class="contrast-list animate-on-scroll" style="transition-delay:0.1s">
           <div class="contrast-row">
@@ -1356,55 +1349,31 @@
   </section>
 
   <!-- ══════════════════════════════════════
-       WHO IT'S BUILT FOR
+       BUILT FOR PEOPLE WHO
        ══════════════════════════════════════ -->
   <section class="personas-section">
     <div class="container">
       <div class="personas-header animate-on-scroll">
-        <span class="eyebrow">Who Uses Chilla</span>
-        <h2>For people who want to participate,<br>not to obsess.</h2>
-        <p>Chilla is for anyone with a life that doesn't revolve around charts — but still wants meaningful market exposure on their own terms.</p>
+        <span class="eyebrow">Who It's Built For</span>
+        <h2>Built for people who want<br>to participate, not to obsess.</h2>
+        <p>Chilla isn't for day traders who live on charts. It's for people with full lives who still want meaningful, structured market exposure — on their terms.</p>
       </div>
-      <div class="personas-grid">
-        <div class="persona-card animate-on-scroll">
-          <div class="persona-meta">
-            <div class="persona-avatar"><i data-lucide="stethoscope" style="width:20px;height:20px;"></i></div>
-            <div>
-              <div class="persona-name">Dr. Tola</div>
-              <div class="persona-loc">Lagos, Nigeria</div>
-            </div>
-          </div>
-          <p class="persona-quote">"I wanted to stay connected to markets without turning it into a second job. Chilla runs within my rules. I focus on patients. It handles the rest."</p>
+      <div class="builtfor-grid">
+        <div class="builtfor-item animate-on-scroll">
+          <i data-lucide="clock" class="builtfor-icon"></i>
+          <p>People who <strong>don't have time</strong> to monitor positions manually — but want automation they've personally configured and can read back in plain language.</p>
         </div>
-        <div class="persona-card animate-on-scroll" style="transition-delay:0.1s">
-          <div class="persona-meta">
-            <div class="persona-avatar"><i data-lucide="briefcase" style="width:20px;height:20px;"></i></div>
-            <div>
-              <div class="persona-name">Sarah</div>
-              <div class="persona-loc">Austin, Texas</div>
-            </div>
-          </div>
-          <p class="persona-quote">"I set my comfort level, activated my instructions, and stepped back. Flow tells me what happened. I don't need to be on a chart to stay involved."</p>
+        <div class="builtfor-item animate-on-scroll" style="transition-delay:0.07s">
+          <i data-lucide="sliders" class="builtfor-icon"></i>
+          <p>People who <strong>want control</strong> without complexity — who care about what's authorized to run, what risks are defined, and being able to pause or revoke at any moment.</p>
         </div>
-        <div class="persona-card animate-on-scroll" style="transition-delay:0.05s">
-          <div class="persona-meta">
-            <div class="persona-avatar"><i data-lucide="code-2" style="width:20px;height:20px;"></i></div>
-            <div>
-              <div class="persona-name">Marcus</div>
-              <div class="persona-loc">Berlin, Germany</div>
-            </div>
-          </div>
-          <p class="persona-quote">"I appreciate that Chilla doesn't try to do more than I've authorized. The consent flow and version tracking make it feel serious and trustworthy."</p>
+        <div class="builtfor-item animate-on-scroll" style="transition-delay:0.14s">
+          <i data-lucide="eye" class="builtfor-icon"></i>
+          <p>People who <strong>value transparency</strong> — who want to see exactly what happened, what was skipped, and why, without digging through logs or trusting a black box.</p>
         </div>
-        <div class="persona-card animate-on-scroll" style="transition-delay:0.15s">
-          <div class="persona-meta">
-            <div class="persona-avatar"><i data-lucide="building-2" style="width:20px;height:20px;"></i></div>
-            <div>
-              <div class="persona-name">Amara</div>
-              <div class="persona-loc">Accra, Ghana</div>
-            </div>
-          </div>
-          <p class="persona-quote">"The Flow feed is everything. I can see exactly what Chilla did, what it skipped, and why — in plain language. No black box."</p>
+        <div class="builtfor-item animate-on-scroll" style="transition-delay:0.21s">
+          <i data-lucide="globe" class="builtfor-icon"></i>
+          <p>People <strong>anywhere in the world</strong> who want structured exposure to global markets through their own broker — non-custodial, account-scoped, and fully within their approved instructions.</p>
         </div>
       </div>
     </div>
