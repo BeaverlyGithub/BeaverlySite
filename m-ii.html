@@ -6,27 +6,27 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <title>M-II by Beaverly® – Infrastructure for Intelligent Orchestration</title>
-  <meta name="description" content="M-II is the orchestration layer powering Beaverly's entire ecosystem. It processes rules, optimizes automation, and never sleeps">
-  <meta name="keywords" content="m-ii, beaverly, ai engine, market intelligence, trading infrastructure, automation engine">
+  <title>M-II by Beaverly® – Instruction-Aware Automation Infrastructure</title>
+  <meta name="description" content="M-II is Beaverly's automation infrastructure. Instruction-aware, guardrail-enforced, and built for reliable execution at scale.">
+  <meta name="keywords" content="m-ii, beaverly, automation infrastructure, instruction-aware execution, orchestration layer">
   <link rel="icon" href="https://beaverlyai.com/attached_assets/beaverly_lodo.png" type="image/png">
 
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="M-II by Beaverly® – Infrastructure for Intelligent Orchestration">
-  <meta property="og:description" content="M-II is the orchestration layer powering Beaverly's entire ecosystem.">
+  <meta property="og:title" content="M-II by Beaverly® – Instruction-Aware Automation Infrastructure">
+  <meta property="og:description" content="M-II is Beaverly's automation infrastructure layer. Guardrail-enforced, transparent, and built for reliable execution.">
   <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://beaverlyai.com/m-ii.html">
 
   <!-- Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/m-ii.css" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/navbar.css" />
 
   <!-- Google tag (gtag.js) -->
@@ -35,184 +35,1217 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-83PFRQ3WQ6');
   </script>
+
+  <style>
+    /* ===========================
+       M-II PAGE STYLES
+       =========================== */
+
+    /* ── Tokens ── */
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #f8f8f6;
+      --mid-grey: #6a6a6a;
+      --border: #e8e8e4;
+      --accent: #0a0a0a;
+      --section-pad: clamp(5rem, 10vw, 9rem);
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+
+    /* ── Base Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ── Section base ── */
+    .section { padding: var(--section-pad) 0; }
+
+    /* ── Labels ── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Dividers ── */
+    .rule { border: none; border-top: 1px solid var(--border); }
+
+    /* ===========================
+       HERO
+       =========================== */
+    .hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: clamp(7rem, 14vw, 12rem) 0 clamp(5rem, 10vw, 8rem);
+    }
+
+    /* Subtle grid overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Radial glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .hero-content.visible { opacity: 1; transform: translateY(0); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.25rem;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: pulse-dot 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .hero-wordmark {
+      font-size: clamp(4.5rem, 14vw, 9rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.02em;
+      max-width: 520px;
+      margin: 0 auto 2.75rem;
+      line-height: 1.6;
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      margin-top: 1rem;
+    }
+    .scroll-cue:hover { color: rgba(255,255,255,0.5); }
+    .scroll-cue .arrow {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3));
+    }
+
+    /* ===========================
+       INTRO STATEMENT
+       =========================== */
+    .intro-section {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+    .intro-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro-statement {
+      font-size: clamp(1.5rem, 3.5vw, 2.35rem);
+      font-weight: 500;
+      color: var(--black);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+    .intro-statement em {
+      font-style: normal;
+      color: var(--mid-grey);
+    }
+    .intro-sub {
+      margin-top: 1.75rem;
+      font-size: 1.05rem;
+      color: var(--mid-grey);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===========================
+       SYSTEM GUARANTEES
+       =========================== */
+    .guarantees-section {
+      background: var(--black);
+      padding: var(--section-pad) 0;
+    }
+    .guarantees-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .guarantees-header .eyebrow { color: rgba(255,255,255,0.35); }
+    .guarantees-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .guarantees-header p {
+      margin-top: 1rem;
+      color: rgba(255,255,255,0.4);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05rem;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      border: 1.5px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .guarantee-cell {
+      background: rgba(255,255,255,0.025);
+      padding: clamp(2rem, 4vw, 3rem);
+      border: 1.5px solid rgba(255,255,255,0.06);
+      position: relative;
+      transition: background 0.35s ease;
+    }
+    .guarantee-cell:hover {
+      background: rgba(255,255,255,0.045);
+    }
+
+    .guarantee-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 1.25rem;
+    }
+
+    .guarantee-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .guarantee-cell h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .guarantee-cell p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    /* ===========================
+       WHAT M-II POWERS
+       =========================== */
+    .powers-section {
+      background: var(--off-white);
+      padding: var(--section-pad) 0;
+    }
+    .powers-header {
+      margin-bottom: 3.5rem;
+    }
+    .powers-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .powers-header p {
+      color: var(--mid-grey);
+      max-width: 560px;
+      font-size: 1.05rem;
+    }
+
+    .powers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .power-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .power-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.07);
+      transform: translateY(-4px);
+    }
+    .power-card-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.75rem;
+      color: var(--black);
+    }
+    .power-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .power-card .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .power-card p {
+      font-size: 0.95rem;
+      color: var(--mid-grey);
+      line-height: 1.7;
+    }
+
+    /* ===========================
+       CORE CAPABILITIES
+       =========================== */
+    .capabilities-section {
+      background: var(--white);
+      padding: var(--section-pad) 0;
+    }
+    .capabilities-section .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .capabilities-section .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .capabilities-section .section-header p {
+      color: var(--mid-grey);
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .cap-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      margin-bottom: 6rem;
+    }
+    .cap-group:last-child { margin-bottom: 0; }
+    .cap-group.reverse .cap-visual { order: -1; }
+
+    .cap-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+      margin-bottom: 1.25rem;
+    }
+    .cap-text h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .cap-text p {
+      color: var(--mid-grey);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 0.85rem;
+    }
+    .cap-text p:last-child { margin-bottom: 0; }
+
+    .cap-visual {
+      position: relative;
+    }
+
+    /* Code-like display panel */
+    .cap-panel {
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2rem 1.75rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .cap-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .panel-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .panel-bar .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .panel-bar .dot.r { background: #ff5f56; }
+    .panel-bar .dot.y { background: #ffbd2e; }
+    .panel-bar .dot.g { background: #27c93f; }
+
+    .panel-lines {
+      position: relative;
+      z-index: 1;
+    }
+    .panel-line {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.3);
+    }
+    .panel-line .key { color: rgba(255,255,255,0.55); }
+    .panel-line .val { color: rgba(255,255,255,0.85); }
+    .panel-line .ok { color: #27c93f; }
+    .panel-line .warn { color: #ffbd2e; }
+    .panel-line .comment { color: rgba(255,255,255,0.2); font-style: italic; }
+
+    /* Stat card visual */
+    .cap-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .cap-stat {
+      background: var(--white);
+      padding: 1.75rem;
+    }
+    .cap-stat .num {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.35rem;
+      color: var(--black);
+    }
+    .cap-stat .lbl {
+      font-size: 0.8rem;
+      color: var(--mid-grey);
+      font-weight: 500;
+    }
+
+    /* Status visual */
+    .cap-status-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .status-row .sr-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .status-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+    }
+    .status-badge.pass {
+      background: rgba(39, 201, 63, 0.1);
+      color: #1a8b2b;
+    }
+    .status-badge.monitor {
+      background: rgba(255, 189, 46, 0.1);
+      color: #9a6f00;
+    }
+
+    /* ===========================
+       PRINCIPLES
+       =========================== */
+    .principles-section {
+      background: var(--off-white);
+      padding: var(--section-pad) 0;
+    }
+    .principles-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .principles-text h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+    .principles-text p {
+      color: var(--mid-grey);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .principles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .principle-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .principle-item:first-child { border-top: 1px solid var(--border); }
+    .pi-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      color: var(--black);
+      margin-top: 0.15rem;
+    }
+    .pi-body h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .pi-body p {
+      font-size: 0.9rem;
+      color: var(--mid-grey);
+      line-height: 1.6;
+    }
+
+    /* ===========================
+       COMPARISON (Smarter by Design)
+       =========================== */
+    .comparison-section {
+      background: var(--white);
+      padding: var(--section-pad) 0;
+    }
+    .comparison-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .comparison-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .comparison-header p {
+      color: var(--mid-grey);
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .comparison-table {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .ct-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+    }
+    .ct-head div {
+      padding: 1.1rem 2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid-grey);
+    }
+    .ct-head .highlight {
+      background: var(--black);
+      color: rgba(255,255,255,0.6);
+    }
+
+    .ct-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s ease;
+    }
+    .ct-row:last-child { border-bottom: none; }
+    .ct-row:hover { background: var(--off-white); }
+    .ct-row:hover .ct-cell.highlight { background: #111; }
+
+    .ct-cell {
+      padding: 1.35rem 2rem;
+      font-size: 0.95rem;
+      color: var(--mid-grey);
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .ct-cell.highlight {
+      background: var(--black);
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      border-right: none;
+    }
+    .ct-cell .check {
+      width: 16px; height: 16px;
+      color: #27c93f;
+      flex-shrink: 0;
+    }
+    .ct-cell.dim { color: #bbb; font-style: italic; }
+
+    /* ===========================
+       MANIFESTO
+       =========================== */
+    .manifesto-section {
+      background: var(--black);
+      padding: var(--section-pad) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .manifesto-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .manifesto-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .manifesto-quote {
+      font-size: clamp(1.6rem, 3.8vw, 2.5rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.3;
+      font-style: normal;
+    }
+    .manifesto-quote em {
+      font-style: normal;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ===========================
+       CTA
+       =========================== */
+    .cta-section {
+      background: var(--white);
+      padding: var(--section-pad) 0;
+    }
+    .cta-inner {
+      text-align: center;
+    }
+    .cta-inner h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .cta-inner p {
+      color: var(--mid-grey);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+    .btn-primary:hover {
+      background: #222;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      border-color: var(--black);
+    }
+    .btn-secondary:hover {
+      background: var(--black);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ===========================
+       SCROLL ANIMATIONS
+       =========================== */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .animate-on-scroll.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .stagger > * {
+      transition-delay: calc(var(--i, 0) * 0.08s);
+    }
+
+    /* ===========================
+       RESPONSIVE
+       =========================== */
+    @media (max-width: 900px) {
+      .guarantees-grid { grid-template-columns: 1fr; }
+      .cap-group { grid-template-columns: 1fr; gap: 3rem; }
+      .cap-group.reverse .cap-visual { order: 0; }
+      .principles-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 640px) {
+      .cap-stat-grid { grid-template-columns: 1fr; }
+      .ct-head, .ct-row { grid-template-columns: 1fr 1fr; }
+      .ct-cell:first-child, .ct-head div:first-child { display: none; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 
 <body>
+
   <!-- Header injected by js/header-loader.js -->
 
-  <!-- Hero Section -->
-  <section class="hero hero--nav-offset">
-    <div class="hero-background">
-      <div class="grid-animation"></div>
-      <div class="wave-lines">
-        <div class="wave-line"></div>
-        <div class="wave-line"></div>
-        <div class="wave-line"></div>
-      </div>
-    </div>
+  <!-- ══════════════════════════════════════
+       HERO
+       ══════════════════════════════════════ -->
+  <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="brand-logo">M-II</div>
-        <h1 class="hero-title">Intelligent Orchestration Infrastructure</h1>
-        <p class="hero-subtitle">The engine powering orchestration at scale.</p>
-        <div class="hero-cta">
-          <div class="scroll-hint">↓ Learn More</div>
+      <div class="hero-content" id="heroContent">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Beaverly Infrastructure
+        </div>
+        <div class="hero-wordmark">M-II</div>
+        <p class="hero-title">
+          Instruction-aware automation infrastructure.<br>
+          Guardrail-enforced. Transparent. Built for scale.
+        </p>
+        <div class="scroll-cue" id="scrollCue">
+          <span>Explore</span>
+          <div class="arrow"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What is M-II -->
-  <section class="section what-section">
+  <!-- ══════════════════════════════════════
+       INTRO STATEMENT
+       ══════════════════════════════════════ -->
+  <section class="intro-section">
     <div class="container">
-      <div class="what-split">
-        <div class="what-left animate-on-scroll">
-          <h2>What is M-II?</h2>
-          <p>Beaverly's orchestration engine built for programmable, reliable orchestration and real-time processing.</p>
+      <div class="intro-inner animate-on-scroll">
+        <p class="intro-statement">
+          M-II is the core infrastructure layer<br>
+          powering every Beaverly automation.
+          <em> It does not decide what to do. It ensures what's been authorized gets done — correctly, safely, and with full transparency.</em>
+        </p>
+        <p class="intro-sub">
+          M-II handles instruction intake, validation, execution boundaries, risk enforcement, and real-time activity output. It operates continuously in the background so users never have to.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SYSTEM GUARANTEES
+       ══════════════════════════════════════ -->
+  <section class="guarantees-section">
+    <div class="container">
+      <div class="guarantees-header animate-on-scroll">
+        <span class="eyebrow">System Guarantees</span>
+        <h2>Four properties that govern<br>how automation runs.</h2>
+        <p>These are not features. They are operational commitments built into the system design.</p>
+      </div>
+
+      <div class="guarantees-grid stagger">
+        <div class="guarantee-cell animate-on-scroll" style="--i:0">
+          <div class="guarantee-number">01</div>
+          <i data-lucide="shield-check" class="guarantee-icon"></i>
+          <h3>Authorized Execution Only</h3>
+          <p>M-II only acts within the scope of instructions explicitly approved by the user. Execution cannot occur outside authorized boundaries — no exceptions, no inference beyond intent.</p>
         </div>
-        <div class="what-right animate-on-scroll">
-          <div class="feature-list">
-            <div class="feature-item">• Reliable programmable orchestration</div>
-            <div class="feature-item">• Global broker connectivity</div>
-            <div class="feature-item">• Powers Chilla and future modules</div>
-            <div class="feature-item">• Secure and scalable</div>
-            <div class="feature-item">• Self-healing architecture</div>
+
+        <div class="guarantee-cell animate-on-scroll" style="--i:1">
+          <div class="guarantee-number">02</div>
+          <i data-lucide="check-circle" class="guarantee-icon"></i>
+          <h3>Safety Before Action</h3>
+          <p>Every potential action passes through compatibility, risk, and integrity checks before execution. Actions that fail validation are skipped safely — never assumed to be acceptable.</p>
+        </div>
+
+        <div class="guarantee-cell animate-on-scroll" style="--i:2">
+          <div class="guarantee-number">03</div>
+          <i data-lucide="activity" class="guarantee-icon"></i>
+          <h3>Transparent Activity</h3>
+          <p>All system activity generates human-readable output in the Flow interface. Users can see exactly what happened, what was skipped, and why — in plain language, in real time.</p>
+        </div>
+
+        <div class="guarantee-cell animate-on-scroll" style="--i:3">
+          <div class="guarantee-number">04</div>
+          <i data-lucide="lock" class="guarantee-icon"></i>
+          <h3>Account-Scoped Operation</h3>
+          <p>Automation always runs within the specific account and environment selected by the user. Funds remain held by the connected broker. M-II never touches assets outside its authorized scope.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       WHAT M-II POWERS
+       ══════════════════════════════════════ -->
+  <section class="powers-section section">
+    <div class="container">
+      <div class="powers-header animate-on-scroll">
+        <span class="eyebrow">What M-II Powers</span>
+        <h2>The infrastructure beneath<br>every Beaverly module.</h2>
+        <p>M-II is not product-specific. It provides shared automation services that any Beaverly module can depend on.</p>
+      </div>
+
+      <div class="powers-grid">
+        <div class="power-card animate-on-scroll">
+          <i data-lucide="cpu" class="power-card-icon"></i>
+          <span class="tag">Live Now</span>
+          <h3>Chilla</h3>
+          <p>M-II handles the full automation lifecycle for Chilla users — instruction intake, validation, execution, position monitoring, and real-time Flow output. Chilla presents the interface; M-II does the work.</p>
+        </div>
+
+        <div class="power-card animate-on-scroll" style="transition-delay: 0.1s">
+          <i data-lucide="layers" class="power-card-icon"></i>
+          <span class="tag">Infrastructure</span>
+          <h3>Platform Services</h3>
+          <p>Authentication, session lifecycle, consent verification, capacity enforcement, broker connectivity, and entitlement management all route through M-II. It maintains the operating consistency the entire platform depends on.</p>
+        </div>
+
+        <div class="power-card animate-on-scroll" style="transition-delay: 0.2s">
+          <i data-lucide="zap" class="power-card-icon"></i>
+          <span class="tag">Future Modules</span>
+          <h3>Next Beaverly Products</h3>
+          <p>M-II is designed as a reusable infrastructure layer. Future Beaverly modules will be able to consume the same instruction-aware execution services without rebuilding core safety and traceability from scratch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CORE CAPABILITY SECTIONS
+       ══════════════════════════════════════ -->
+  <section class="capabilities-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">Core Capabilities</span>
+        <h2>How M-II operates.</h2>
+        <p>Every function M-II performs is designed around the same principle: execute only what is authorized, and never skip the checks.</p>
+      </div>
+
+      <!-- 1. Instruction Lifecycle -->
+      <div class="cap-group">
+        <div class="cap-text animate-on-scroll">
+          <div class="cap-label">Instruction Lifecycle</div>
+          <h3>From intent to authorized action.</h3>
+          <p>M-II manages the complete lifecycle of user instructions — from draft validation and activation to version tracking, concurrent management, and explicit revocation.</p>
+          <p>Before any instruction becomes active, the system verifies user authorization and consent, validates configuration integrity, checks account compatibility, and confirms plan eligibility. Only fully validated instructions are allowed to run.</p>
+        </div>
+        <div class="cap-visual animate-on-scroll" style="transition-delay: 0.1s">
+          <div class="cap-panel">
+            <div class="panel-bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            </div>
+            <div class="panel-lines">
+              <div class="panel-line"><span class="comment">// Pre-activation validation</span></div>
+              <div class="panel-line"><span class="key">authorization</span>  <span class="val">verified</span>  <span class="ok">✓</span></div>
+              <div class="panel-line"><span class="key">consent_version</span> <span class="val">current</span>   <span class="ok">✓</span></div>
+              <div class="panel-line"><span class="key">account_compat</span>  <span class="val">confirmed</span> <span class="ok">✓</span></div>
+              <div class="panel-line"><span class="key">plan_eligibility</span> <span class="val">within_cap</span> <span class="ok">✓</span></div>
+              <div class="panel-line">&nbsp;</div>
+              <div class="panel-line"><span class="comment">// Instruction registered</span></div>
+              <div class="panel-line"><span class="key">status</span>          <span class="ok">ACTIVE</span></div>
+              <div class="panel-line"><span class="key">version</span>         <span class="val">1.0.0</span></div>
+              <div class="panel-line"><span class="key">scope</span>           <span class="val">account_scoped</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 6rem;">
+
+      <!-- 2. Risk & Safety -->
+      <div class="cap-group reverse">
+        <div class="cap-text animate-on-scroll">
+          <div class="cap-label">Risk & Safety Boundaries</div>
+          <h3>Every action checks its limits first.</h3>
+          <p>Before any action is attempted, M-II runs a series of pre-execution checks: instruction status, account and environment compatibility, plan and capacity eligibility, signal freshness, and duplicate protection.</p>
+          <p>Position sizing is determined by user comfort inputs, available account balance, optional monthly risk caps, and broker-specific minimum constraints. Actions that exceed defined boundaries are skipped safely — never force-executed.</p>
+        </div>
+        <div class="cap-visual animate-on-scroll" style="transition-delay: 0.1s">
+          <div class="cap-status-list">
+            <div class="status-row">
+              <span class="sr-label">Instruction active</span>
+              <span class="status-badge pass">Verified</span>
+            </div>
+            <div class="status-row">
+              <span class="sr-label">Account compatibility</span>
+              <span class="status-badge pass">Confirmed</span>
+            </div>
+            <div class="status-row">
+              <span class="sr-label">Capacity eligibility</span>
+              <span class="status-badge pass">Within limits</span>
+            </div>
+            <div class="status-row">
+              <span class="sr-label">Signal freshness</span>
+              <span class="status-badge pass">Current</span>
+            </div>
+            <div class="status-row">
+              <span class="sr-label">Duplicate protection</span>
+              <span class="status-badge pass">No repeat detected</span>
+            </div>
+            <div class="status-row">
+              <span class="sr-label">Risk sizing</span>
+              <span class="status-badge pass">Within comfort</span>
+            </div>
+            <div class="status-row">
+              <span class="sr-label">Monthly cap</span>
+              <span class="status-badge monitor">Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 6rem;">
+
+      <!-- 3. Flow & Transparency -->
+      <div class="cap-group">
+        <div class="cap-text animate-on-scroll">
+          <div class="cap-label">Transparency & Flow</div>
+          <h3>Everything M-II does, you can read.</h3>
+          <p>M-II generates human-readable activity updates for every meaningful event: entries, exits, skipped actions, warnings, and monitoring updates. These appear in the Flow interface in real time and remain queryable historically.</p>
+          <p>Flow entries are scoped to the relevant user and instruction context. Users can filter by event type, review a specific time window, export activity logs, and expand individual events for full context.</p>
+        </div>
+        <div class="cap-visual animate-on-scroll" style="transition-delay: 0.1s">
+          <div class="cap-panel">
+            <div class="panel-bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            </div>
+            <div class="panel-lines">
+              <div class="panel-line"><span class="comment">// Flow — live activity stream</span></div>
+              <div class="panel-line">&nbsp;</div>
+              <div class="panel-line"><span class="ok">ENTRY</span>     <span class="val">Position opened</span></div>
+              <div class="panel-line"><span class="comment">          Market conditions matched instruction scope.</span></div>
+              <div class="panel-line">&nbsp;</div>
+              <div class="panel-line"><span class="warn">SKIPPED</span>   <span class="val">Action deferred</span></div>
+              <div class="panel-line"><span class="comment">          Monthly risk cap approaching threshold.</span></div>
+              <div class="panel-line">&nbsp;</div>
+              <div class="panel-line"><span class="ok">MONITOR</span>   <span class="val">Position under observation</span></div>
+              <div class="panel-line"><span class="comment">          Protective adjustment evaluated.</span></div>
+              <div class="panel-line">&nbsp;</div>
+              <div class="panel-line"><span class="ok">EXIT</span>      <span class="val">Position closed</span></div>
+              <div class="panel-line"><span class="comment">          Lifecycle complete. Broker confirmed.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule" style="margin-bottom: 6rem;">
+
+      <!-- 4. Operational Reliability -->
+      <div class="cap-group reverse">
+        <div class="cap-text animate-on-scroll">
+          <div class="cap-label">Operational Reliability</div>
+          <h3>Built to run without intervention.</h3>
+          <p>M-II monitors platform health, maintains broker connectivity, synchronizes account status, and enforces entitlements continuously. Automation eligibility is constrained or halted automatically when integrity conditions are not met.</p>
+          <p>The system maintains auditable records for instruction lifecycle, execution activity, risk usage, capacity consumption, and operational status changes. Historical activity is reviewable by time window and event type.</p>
+        </div>
+        <div class="cap-visual animate-on-scroll" style="transition-delay: 0.1s">
+          <div class="cap-stat-grid">
+            <div class="cap-stat">
+              <div class="num">24/7</div>
+              <div class="lbl">Continuous market observation</div>
+            </div>
+            <div class="cap-stat">
+              <div class="num">≥1</div>
+              <div class="lbl">Concurrent instructions supported</div>
+            </div>
+            <div class="cap-stat">
+              <div class="num">Full</div>
+              <div class="lbl">Instruction lifecycle traceability</div>
+            </div>
+            <div class="cap-stat">
+              <div class="num">Auto</div>
+              <div class="lbl">Integrity-triggered interruption</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PLATFORM PRINCIPLES
+       ══════════════════════════════════════ -->
+  <section class="principles-section">
+    <div class="container">
+      <div class="principles-inner">
+        <div class="principles-text animate-on-scroll">
+          <span class="eyebrow">Platform Principles</span>
+          <h2>How M-II is designed to treat users and their assets.</h2>
+          <p>These are not policy statements. They are architectural commitments reflected in how M-II was built — and what it is designed to never do.</p>
+        </div>
+        <div class="principles-list">
+          <div class="principle-item animate-on-scroll">
+            <i data-lucide="user-check" class="pi-icon"></i>
+            <div class="pi-body">
+              <h4>User-Controlled</h4>
+              <p>Users configure, activate, pause, and revoke their instructions at any time. M-II does not modify instruction scope on its own.</p>
+            </div>
+          </div>
+          <div class="principle-item animate-on-scroll">
+            <i data-lucide="building-2" class="pi-icon"></i>
+            <div class="pi-body">
+              <h4>Non-Custodial</h4>
+              <p>Funds remain with the user-selected broker. M-II submits authorized actions to the connected environment — it holds nothing directly.</p>
+            </div>
+          </div>
+          <div class="principle-item animate-on-scroll">
+            <i data-lucide="file-text" class="pi-icon"></i>
+            <div class="pi-body">
+              <h4>Instruction-Bound</h4>
+              <p>Execution is always bounded by explicit user instruction. M-II does not infer, extend, or act beyond the defined scope.</p>
+            </div>
+          </div>
+          <div class="principle-item animate-on-scroll">
+            <i data-lucide="eye" class="pi-icon"></i>
+            <div class="pi-body">
+              <h4>Transparent by Default</h4>
+              <p>Every meaningful system event produces a human-readable Flow entry. Nothing significant happens silently.</p>
+            </div>
+          </div>
+          <div class="principle-item animate-on-scroll">
+            <i data-lucide="shield" class="pi-icon"></i>
+            <div class="pi-body">
+              <h4>Guardrail-Enforced</h4>
+              <p>Safety checks are mandatory, not optional. Risk boundaries, account constraints, and capacity limits are always enforced before action.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What M-II Powers -->
-  <section class="section powers-section">
+  <!-- ══════════════════════════════════════
+       COMPARISON
+       ══════════════════════════════════════ -->
+  <section class="comparison-section">
     <div class="container">
-      <h2 class="section-title">Powers Everything</h2>
-      <div class="powers-grid">
-        <div class="power-tile animate-on-scroll" data-description="Automates logic with optimization and speed.">
-          <div class="power-icon"><i data-lucide="cpu" style="width:2.5em;height:2.5em;"></i></div>
-          <h3>Chilla</h3>
-          <p>Programmable Orchestration</p>
-        </div>
-        <div class="power-tile animate-on-scroll" data-description="Data ingestion and faithful execution of intent.">
-          <div class="power-icon"><i data-lucide="settings" style="width:2.5em;height:2.5em;"></i></div>
-          <h3>Internal Ops</h3>
-          <p>Infrastructure management</p>
-        </div>
+      <div class="comparison-header animate-on-scroll">
+        <span class="eyebrow">Smarter by Design</span>
+        <h2>Instruction-aware infrastructure<br>vs. traditional automation.</h2>
+        <p>Most automation tools are reactive. M-II is built around authorization, validation, and accountability at every layer.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Key Attributes -->
-  <section class="section attributes-section">
-    <div class="container">
-      <h2 class="section-title">Why M-II</h2>
-      <div class="attributes-grid">
-        <div class="attribute-card animate-on-scroll">
-          <div class="attribute-icon"><i data-lucide="refresh-cw" style="width:2.5em;height:2.5em;"></i></div>
-          <h3>Adaptive</h3>
-          <p>Real-time optimization</p>
-        </div>
-        <div class="attribute-card animate-on-scroll">
-          <div class="attribute-icon"><i data-lucide="brain" style="width:2.5em;height:2.5em;"></i></div>
-          <h3>Intelligent</h3>
-          <p>Reliable orchestration</p>
-        </div>
-        <div class="attribute-card animate-on-scroll">
-          <div class="attribute-icon"><i data-lucide="globe" style="width:2.5em;height:2.5em;"></i></div>
-          <h3>Universal</h3>
-          <p>Multi-broker compatible</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison Table -->
-  <section class="section comparison-section">
-    <div class="container">
-      <h2 class="section-title">Smarter Orchestration</h2>
       <div class="comparison-table animate-on-scroll">
-        <div class="table-header">
-          <div class="table-col">Traditional</div>
-          <div class="table-col highlight">M-II</div>
+        <div class="ct-head">
+          <div>Capability</div>
+          <div>Traditional</div>
+          <div class="highlight">M-II</div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">Static scripts</div>
-          <div class="table-cell highlight">Dynamic orchestration</div>
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Execution model</div>
+          <div class="ct-cell dim">Static scripts, manual triggers</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Instruction-aware, dynamic</div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">Manual triggers</div>
-          <div class="table-cell highlight">Real-time processing</div>
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Pre-action validation</div>
+          <div class="ct-cell dim">None or minimal</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Mandatory multi-layer checks</div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">Asset-specific</div>
-          <div class="table-cell highlight">Multi-asset</div>
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Risk enforcement</div>
+          <div class="ct-cell dim">Operator-configured, optional</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Balance-aware, always on</div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">API failures</div>
-          <div class="table-cell highlight">Smart fallback</div>
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Activity transparency</div>
+          <div class="ct-cell dim">Logs, if any</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Real-time, human-readable Flow</div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">Operator-dependent</div>
-          <div class="table-cell highlight">Fully automated</div>
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Failure handling</div>
+          <div class="ct-cell dim">Error or retry blindly</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Safe skip with Flow notice</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What You Don't See -->
-  <section class="section invisible-section">
-    <div class="invisible-background">
-      <div class="orbiting-rings">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="invisible-content animate-on-scroll">
-        <div class="invisible-text">
-          M-II is invisible.<br>
-          It processes. Optimizes. Orchestrates.<br>
-          In silence.
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Scope control</div>
+          <div class="ct-cell dim">Asset-specific or global</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Account-scoped per instruction</div>
+        </div>
+        <div class="ct-row">
+          <div class="ct-cell" style="font-weight:500;color:var(--black)">Traceability</div>
+          <div class="ct-cell dim">Partial or absent</div>
+          <div class="ct-cell highlight"><i data-lucide="check" class="check"></i> Full lifecycle audit records</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Strategic Vision -->
-  <section class="section vision-section">
+  <!-- ══════════════════════════════════════
+       MANIFESTO
+       ══════════════════════════════════════ -->
+  <section class="manifesto-section">
     <div class="container">
-      <div class="vision-content animate-on-scroll">
-        <h2>Why We Built M-II</h2>
-        <div class="vision-text">
-          <p>Existing infrastructure is rigid and reactive.</p>
-          <p>We needed something modular and faithful. Built for scale.</p>
-          <p>So we built M-II. Not a library. An orchestration core.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Manifesto -->
-  <section class="section manifesto-section">
-    <div class="container">
-      <div class="manifesto-content animate-on-scroll">
+      <div class="manifesto-inner animate-on-scroll">
         <blockquote class="manifesto-quote">
           The future isn't platforms.<br>
-          It's infrastructure that orchestrates.<br>
-          Invisible. Reliable. Fast.
+          <em>It's infrastructure that knows what it's authorized to do,</em><br>
+          checks before it acts,<br>
+          and tells you exactly what happened.
         </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- CTA Footer -->
-  <section class="section cta-section">
+  <!-- ══════════════════════════════════════
+       CTA
+       ══════════════════════════════════════ -->
+  <section class="cta-section">
     <div class="container">
-      <div class="cta-content animate-on-scroll">
+      <div class="cta-inner animate-on-scroll">
+        <span class="eyebrow">Ready to explore</span>
+        <h2>See M-II in action<br>through Chilla.</h2>
+        <p>Chilla is the user-facing layer built on M-II. Set up your instructions, connect your environment, and let the infrastructure handle the rest.</p>
         <div class="cta-buttons">
           <a href="index.html" class="btn btn-secondary">← Back to Ecosystem</a>
           <a href="chilla.html" class="btn btn-primary">Explore Chilla →</a>
@@ -221,13 +1254,57 @@
     </div>
   </section>
 
+  <!-- Scripts -->
   <script src="js/m-ii-animations.js"></script>
   <script src="/js/header-loader.js"></script>
   <script src="/js/footer-loader.js"></script>
 
   <script>
+    // Init icons
     if (window.lucide) lucide.createIcons();
-    else window.addEventListener('DOMContentLoaded', function() { if (window.lucide) lucide.createIcons(); });
+    else window.addEventListener('DOMContentLoaded', function() {
+      if (window.lucide) lucide.createIcons();
+    });
+
+    // Hero entrance
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const hero = document.getElementById('heroContent');
+        if (hero) hero.classList.add('visible');
+      }, 200);
+
+      // Scroll cue
+      const scrollCue = document.getElementById('scrollCue');
+      if (scrollCue) {
+        scrollCue.addEventListener('click', () => {
+          const next = document.querySelector('.intro-section');
+          if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // Animate on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+      // Navbar scroll
+      const navbar = document.querySelector('.nav');
+      let lastY = 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (navbar) {
+          navbar.style.transform = (y > lastY && y > 100) ? 'translateY(-100%)' : 'translateY(0)';
+          navbar.classList.toggle('scrolled', y > 50);
+        }
+        lastY = y;
+      }, { passive: true });
+    });
   </script>
 </body>
 </html>
