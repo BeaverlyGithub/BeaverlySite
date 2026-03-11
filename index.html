@@ -6,33 +6,38 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <title>Chilla™ by Beaverly® – You Chill. Chilla Works.</title>
-  <meta name="description" content="Stay connected to global markets — without turning trading into your lifestyle. You Chill. Chilla Works.">
-  <meta name="keywords" content="chilla, beaverly, beaverly ai, beaverly website, beaverly site, beaverly.ai, beverly, AI trading, forex automation, ai co-pilot, co-pilot, 
-    MT5 bot, trading bot, financial co-pilot, forex trading, free vps, stock trading, automation infrastructure, autonomous, orchestration infrastructure">
   <link rel="icon" href="https://beaverlyai.com/attached_assets/beaverly_lodo.png" type="image/png">
 
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <title>Beaverly® — Instruction-Based Automation Infrastructure</title>
+  <meta name="description" content="Beaverly builds instruction-based automation infrastructure for calm, structured market participation. You Chill. Chilla Works.">
+  <meta name="keywords" content="beaverly, chilla, beaverly ai, market automation, instruction-based automation, non-custodial, flow transparency, m-ii infrastructure, financial co-pilot">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Chilla™ by Beaverly® – You Chill. Chilla Works.">
-  <meta property="og:description" content="Stay connected to global markets — without turning trading into your lifestyle. You Chill. Chilla Works.">
+  <meta property="og:title" content="Beaverly® — You Chill. Chilla Works.">
+  <meta property="og:description" content="Instruction-based automation infrastructure for calm, structured market participation.">
   <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://beaverlyai.com">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chilla™ by Beaverly® – You Chill. Chilla Works.">
-  <meta name="twitter:description" content="Stay connected to global markets — without turning trading into your lifestyle. You Chill. Chilla Works.">
+  <meta name="twitter:title" content="Beaverly® — You Chill. Chilla Works.">
+  <meta name="twitter:description" content="Instruction-based automation infrastructure for calm, structured market participation.">
   <meta name="twitter:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
 
-  <!-- Fonts + Preload -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"></noscript>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap"></noscript>
 
-  <!-- CSS -->
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Project CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/interactive-demo.css" />
   <link rel="stylesheet" href="css/navbar.css" />
@@ -45,664 +50,1478 @@
     "name": "Beaverly",
     "url": "https://beaverlyai.com",
     "logo": "https://beaverlyai.com/attached_assets/beaverly_lodo.png",
-    "sameAs": [
-      "https://twitter.com/beaverlyai",
-      "https://linkedin.com/company/beaverlyai"
-    ],
-    "description": "Beaverly® builds instruction-driven automation infrastructure for structured market participation. Stay connected to global markets — without turning trading into your lifestyle. You Chill. Chilla Works.",
-    "founder": {
-      "@type": "Person",
-      "name": "Moses Olabode"
-    }
+    "sameAs": ["https://twitter.com/beaverlyai","https://linkedin.com/company/beaverlyai"],
+    "description": "Beaverly builds instruction-based automation infrastructure for calm, structured market participation.",
+    "founder": { "@type": "Person", "name": "Moses Olabode" }
   }
   </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-83PFRQ3WQ6');
+  </script>
 
-  gtag('config', 'G-83PFRQ3WQ6');
+  <style>
+    /* ===================================================
+       HOMEPAGE BESPOKE LAYER
+       Tokens, components, and overrides for index only.
+       style.css provides the base; this layer elevates it.
+       =================================================== */
+    :root {
+      --ink:    #0a0a0a;
+      --white:  #ffffff;
+      --cream:  #f8f7f4;
+      --sand:   #f0ede8;
+      --mid:    #6a6a6a;
+      --border: #e5e3de;
+      --green:  #27c93f;
+      --r:      16px;
+      --r-lg:   28px;
+      --pad:    clamp(5rem, 10vw, 9rem);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { overflow-x: hidden; }
 
-  // ✅ Optional: Send an explicit page_view event that won’t affect layout
-  window.addEventListener('DOMContentLoaded', () => {
-    gtag('event', 'page_view', {
-      page_title: document.title,
-      page_location: window.location.href,
-      page_path: window.location.pathname
-    });
-  });
-</script>
+    /* ── Utilities ── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 1rem;
+    }
+    .eyebrow-inv { color: rgba(255,255,255,.28); }
+    .reveal {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ─────────────────────────────────────
+       SHARED BUTTONS (homepage variants)
+       ───────────────────────────────────── */
+    .btn-wh {
+      background: var(--white); color: var(--ink);
+      padding: .9rem 2rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 700; font-family: inherit;
+      text-decoration: none; border: 2px solid var(--white);
+      transition: all .25s; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .btn-wh:hover { background: #eee; transform: translateY(-2px); }
+
+    .btn-ghost-inv {
+      background: transparent; color: rgba(255,255,255,.48);
+      padding: .9rem 2rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 600; font-family: inherit;
+      text-decoration: none; border: 2px solid rgba(255,255,255,.15);
+      transition: all .25s; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .btn-ghost-inv:hover { color: var(--white); border-color: rgba(255,255,255,.38); transform: translateY(-2px); }
+
+    .btn-ink {
+      background: var(--ink); color: var(--white);
+      padding: .875rem 1.75rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 700; font-family: inherit;
+      text-decoration: none; border: 2px solid var(--ink);
+      transition: all .25s; display: inline-flex; align-items: center;
+    }
+    .btn-ink:hover { background: #333; transform: translateY(-2px); }
+
+    .btn-ol-dk {
+      background: transparent; color: var(--ink);
+      padding: .875rem 1.75rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 600; font-family: inherit;
+      text-decoration: none; border: 2px solid var(--border);
+      transition: all .25s; display: inline-flex; align-items: center;
+    }
+    .btn-ol-dk:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+    .btn-ol-inv {
+      background: transparent; color: rgba(255,255,255,.48);
+      padding: .875rem 1.75rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 600; font-family: inherit;
+      text-decoration: none; border: 2px solid rgba(255,255,255,.15);
+      transition: all .25s; display: inline-flex; align-items: center;
+    }
+    .btn-ol-inv:hover { color: var(--white); border-color: rgba(255,255,255,.38); transform: translateY(-2px); }
+
+
+    /* ===========================================
+       HERO
+       =========================================== */
+    .hp-hero {
+      background: var(--ink);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      position: relative; overflow: hidden;
+      padding: clamp(9rem,16vw,13rem) 0 clamp(5rem,10vw,8rem);
+    }
+    .hp-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: .45;
+    }
+    .hp-glow {
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background: radial-gradient(ellipse 90% 55% at 50% 30%, rgba(255,255,255,.04) 0%, transparent 70%);
+    }
+    .hp-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 800px; margin: 0 auto;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .hp-hero-inner.in { opacity: 1; transform: translateY(0); }
+
+    .hp-badge {
+      display: inline-flex; align-items: center; gap: .55rem;
+      border: 1px solid rgba(255,255,255,.09); border-radius: 100px;
+      padding: .38rem 1.05rem;
+      font-size: .69rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(255,255,255,.3); margin-bottom: 2.5rem;
+    }
+    .hp-badge .bd { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.28); animation: bd 2.8s ease-in-out infinite; }
+    @keyframes bd { 0%,100%{opacity:.28;transform:scale(1)} 50%{opacity:1;transform:scale(1.55)} }
+
+    .hp-h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(3.5rem,12vw,8rem);
+      font-weight: 700; color: var(--white);
+      line-height: .93; letter-spacing: -.035em; margin-bottom: .45em;
+    }
+    .hp-h1 .dim { color: rgba(255,255,255,.3); font-style: italic; }
+
+    .hp-hero-sub {
+      font-size: clamp(1rem,2.4vw,1.28rem); font-weight: 300;
+      color: rgba(255,255,255,.4); max-width: 520px;
+      margin: 0 auto 3rem; line-height: 1.72;
+    }
+
+    .hp-hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; }
+
+    .hp-scroll {
+      display: inline-flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: rgba(255,255,255,.14); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase;
+      background: none; border: none; cursor: pointer; transition: color .3s;
+    }
+    .hp-scroll:hover { color: rgba(255,255,255,.38); }
+    .hp-scroll .sc-bar { width: 1px; height: 38px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.2)); }
+
+
+    /* ===========================================
+       THESIS
+       =========================================== */
+    .hp-thesis { background: var(--white); padding: var(--pad) 0; }
+    .hp-thesis-inner {
+      max-width: 840px; margin: 0 auto; text-align: center;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+    }
+    .hp-thesis-copy {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.6rem,4vw,2.6rem); font-weight: 300;
+      line-height: 1.4; letter-spacing: -.02em; color: var(--ink);
+    }
+    .hp-thesis-copy em { font-style: italic; color: var(--mid); }
+    .hp-thesis-sub {
+      font-size: 1.05rem; color: var(--mid); line-height: 1.8;
+      max-width: 600px; margin: 2rem auto 0;
+    }
+
+
+    /* ===========================================
+       TRUST STRIP
+       =========================================== */
+    .hp-trust { background: var(--ink); padding: 1.75rem 0; }
+    .hp-trust-list {
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(.85rem,3vw,3rem); flex-wrap: wrap;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+    }
+    .hp-trust-item {
+      display: flex; align-items: center; gap: .52rem;
+      font-size: .78rem; font-weight: 500;
+      color: rgba(255,255,255,.35); white-space: nowrap;
+    }
+    .hp-trust-item svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .hp-trust-sep { width: 1px; height: 13px; background: rgba(255,255,255,.08); }
+    @media (max-width:540px) { .hp-trust-sep { display: none; } }
+
+
+    /* ===========================================
+       DEMO SECTION
+       =========================================== */
+    .hp-demo-section { background: var(--cream); padding: var(--pad) 0; }
+    .hp-demo-wrap {
+      max-width: 1140px; margin: 0 auto;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+    }
+    .hp-demo-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem,6vw,5.5rem); align-items: center;
+    }
+    @media (max-width:880px) { .hp-demo-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+    .hp-demo-copy h2 {
+      font-size: clamp(1.85rem,4vw,2.6rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1.1rem;
+    }
+    .hp-demo-copy p { color: var(--mid); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+    .hp-demo-copy .btn-row { display: flex; gap: .85rem; flex-wrap: wrap; }
+
+    /* Panel shell */
+    .demo-panel-shell {
+      background: var(--white);
+      border: 1px solid var(--border); border-radius: var(--r-lg);
+      box-shadow: 0 8px 48px rgba(0,0,0,.07), 0 2px 8px rgba(0,0,0,.04);
+      overflow: hidden;
+    }
+    /* Chrome bar */
+    .demo-chrome {
+      background: var(--cream); border-bottom: 1px solid var(--border);
+      padding: .82rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .demo-chrome-dots { display: flex; gap: 5px; }
+    .demo-chrome-dots span { width: 11px; height: 11px; border-radius: 50%; }
+    .demo-chrome-dots span:nth-child(1){background:#ff5f56}
+    .demo-chrome-dots span:nth-child(2){background:#ffbd2e}
+    .demo-chrome-dots span:nth-child(3){background:#27c93f}
+    .demo-chrome-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); }
+    .demo-rst {
+      font-size: .7rem; font-weight: 600; color: var(--mid);
+      background: none; border: 1px solid var(--border);
+      border-radius: 5px; padding: .25rem .65rem;
+      cursor: pointer; transition: all .2s; font-family: inherit;
+    }
+    .demo-rst:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* Progress bar */
+    .demo-progress-rail {
+      padding: .95rem 1.25rem 0;
+      display: flex; gap: 4px;
+    }
+    .demo-prog-seg {
+      height: 3px; flex: 1; border-radius: 2px;
+      background: var(--border); transition: background .3s;
+    }
+    .demo-prog-seg.done { background: var(--ink); }
+    .demo-prog-seg.active { background: var(--ink); animation: progseg 1.6s ease-in-out infinite; }
+    @keyframes progseg { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+    /* Body */
+    .demo-body { padding: 1.4rem 1.25rem .9rem; min-height: 330px; }
+    .demo-card { display: none; animation: dcappear .35s ease; }
+    .demo-card.active { display: block; }
+    @keyframes dcappear { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .dc-label { font-size: .66rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--mid); margin-bottom: .4rem; }
+    .dc-title { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin-bottom: .3rem; }
+    .dc-desc { font-size: .83rem; color: var(--mid); line-height: 1.65; margin-bottom: 1.2rem; }
+
+    /* Broker row */
+    .dc-broker-row {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 10px; padding: .92rem 1.05rem; gap: 1rem;
+    }
+    .dc-broker-name { font-size: .88rem; font-weight: 700; color: var(--ink); }
+    .dc-broker-s { font-size: .74rem; color: var(--mid); margin-top: 2px; }
+    .dc-broker-s.ok { color: #1a8b2b; font-weight: 600; }
+
+    /* Behavior opts */
+    .dc-bhv {
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: .88rem 1rem; cursor: pointer; transition: all .2s; margin-bottom: .5rem;
+    }
+    .dc-bhv:hover { border-color: var(--ink); }
+    .dc-bhv.sel { border-color: var(--ink); background: var(--cream); }
+    .dc-bhv-name { font-size: .87rem; font-weight: 700; color: var(--ink); margin-bottom: .18rem; }
+    .dc-bhv-desc { font-size: .76rem; color: var(--mid); line-height: 1.5; }
+
+    /* Playgrounds */
+    .dc-pg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-bottom: .75rem; }
+    .dc-pg {
+      display: flex; align-items: center; gap: .42rem;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      padding: .58rem .78rem;
+      font-size: .83rem; font-weight: 600; cursor: pointer; transition: all .2s; color: var(--ink);
+    }
+    .dc-pg:hover { border-color: var(--ink); }
+    .dc-pg.sel { border-color: var(--ink); background: var(--cream); }
+    .dc-pg-chk {
+      width: 14px; height: 14px; flex-shrink: 0;
+      border: 1.5px solid var(--border); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; color: var(--white); transition: all .2s;
+    }
+    .dc-pg.sel .dc-pg-chk { background: var(--ink); border-color: var(--ink); }
+
+    /* Comfort */
+    .dc-comfort-wrap { padding: .25rem 0 .9rem; }
+    .dc-slider-hd { display: flex; justify-content: space-between; font-size: .73rem; color: var(--mid); margin-bottom: .65rem; }
+    .dc-slider {
+      width: 100%; height: 5px; border-radius: 3px;
+      background: var(--border); outline: none;
+      -webkit-appearance: none; appearance: none;
+    }
+    .dc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 17px; height: 17px; border-radius: 50%;
+      background: var(--ink); cursor: pointer; transition: transform .2s;
+    }
+    .dc-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+    .dc-slider::-moz-range-thumb { width: 17px; height: 17px; border-radius: 50%; background: var(--ink); border: none; cursor: pointer; }
+    .dc-comfort-rd { text-align: center; margin-top: .8rem; }
+    .dc-cval { font-size: 1rem; font-weight: 700; color: var(--ink); }
+    .dc-csub { font-size: .73rem; color: var(--mid); margin-top: .12rem; }
+
+    /* Consent */
+    .dc-consent-row {
+      display: flex; align-items: flex-start; gap: .68rem;
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 10px; padding: .92rem;
+    }
+    .dc-chk-box {
+      width: 16px; height: 16px; min-width: 16px;
+      border: 1.5px solid var(--border); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; color: var(--white);
+      cursor: pointer; transition: all .2s; margin-top: 1px;
+    }
+    .dc-chk-box.checked { background: var(--ink); border-color: var(--ink); }
+    .dc-consent-txt { font-size: .83rem; line-height: 1.65; color: #333; }
+
+    /* Flow messages */
+    .dc-flow-list {
+      display: flex; flex-direction: column; gap: .52rem;
+      max-height: 248px; overflow-y: auto; padding-right: 2px;
+    }
+    .dc-flow-msg {
+      display: flex; align-items: flex-start; gap: .58rem;
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 8px; padding: .62rem .78rem;
+      animation: fmin .4s ease both;
+    }
+    @keyframes fmin { from{opacity:0;transform:translateX(-8px)} to{opacity:1;transform:translateX(0)} }
+    .dc-fdot {
+      width: 20px; height: 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .dc-fdot.ok   { background: rgba(39,201,63,.13); color: #1a8b2b; }
+    .dc-fdot.info { background: rgba(59,130,246,.11); color: #3b82f6; }
+    .dc-fdot.mon  { background: rgba(245,158,11,.11); color: #d97706; }
+    .dc-ftext { font-size: .8rem; font-weight: 500; color: var(--ink); margin-bottom: .08rem; }
+    .dc-fmeta { font-size: .68rem; color: var(--mid); }
+
+    /* Demo footer */
+    .demo-foot {
+      padding: .82rem 1.25rem; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+    }
+    .demo-next-btn {
+      font-size: .84rem; font-weight: 700; padding: .52rem 1.28rem;
+      border-radius: 7px; border: none; cursor: pointer; font-family: inherit;
+      background: var(--ink); color: var(--white); transition: background .2s;
+    }
+    .demo-next-btn:hover { background: #333; }
+    .demo-next-btn:disabled { opacity: .35; cursor: not-allowed; }
+    .dc-connect-btn {
+      font-size: .79rem; font-weight: 700; padding: .43rem 1rem;
+      background: var(--ink); color: var(--white);
+      border: none; border-radius: 6px; cursor: pointer; font-family: inherit; transition: background .2s;
+    }
+    .dc-connect-btn:hover { background: #333; }
+    .dc-connect-btn:disabled { opacity: .42; cursor: not-allowed; }
+    .dc-connected-badge {
+      display: inline-flex; align-items: center; gap: .38rem;
+      font-size: .73rem; font-weight: 700; padding: .36rem .88rem;
+      background: rgba(39,201,63,.1); color: #1a8b2b; border-radius: 100px;
+    }
+    .dc-connected-badge .gdot { width: 5px; height: 5px; background: #27c93f; border-radius: 50%; }
+
+
+    /* ===========================================
+       BROKER LOGOS
+       =========================================== */
+    .hp-brokers { background: var(--ink); padding: 2.5rem 0; }
+    .hp-brokers-lbl {
+      text-align: center; font-size: .67rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(255,255,255,.2); margin-bottom: 1.4rem;
+    }
+    .hp-logos-track { overflow: hidden; }
+    .hp-logos-row {
+      display: flex; align-items: center;
+      gap: clamp(2rem,5vw,4rem); width: max-content;
+      animation: logos-scroll 22s linear infinite;
+    }
+    @keyframes logos-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .hp-logos-row:hover { animation-play-state: paused; }
+    .hp-broker-logo img {
+      height: clamp(22px,3.5vw,38px); width: auto;
+      filter: grayscale(100%) brightness(.5); opacity: .48;
+      transition: opacity .3s, filter .3s;
+    }
+    .hp-broker-logo img:hover { opacity: .8; filter: grayscale(30%) brightness(.85); }
+    .hp-brokers-note {
+      text-align: center; margin-top: 1.2rem; font-size: .73rem;
+      color: rgba(255,255,255,.17); font-style: italic; padding: 0 1.25rem;
+    }
+
+
+    /* ===========================================
+       HOW IT WORKS
+       =========================================== */
+    .hp-how { background: var(--white); padding: var(--pad) 0; }
+    .hp-sec-wrap { max-width: 1140px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
+    .hp-sec-hdr { text-align: center; margin-bottom: 4rem; }
+    .hp-sec-hdr h2 {
+      font-size: clamp(2rem,4.2vw,2.75rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1rem;
+    }
+    .hp-sec-hdr p { color: var(--mid); font-size: 1.05rem; max-width: 480px; margin: 0 auto; line-height: 1.75; }
+
+    .hp-how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+    @media (max-width:780px) { .hp-how-grid { grid-template-columns: 1fr; } }
+    .hp-how-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 2.25rem;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .hp-how-card:hover { box-shadow: 0 14px 40px rgba(0,0,0,.06); transform: translateY(-3px); }
+    .hp-how-num { font-family: 'Fraunces',serif; font-size: 3.2rem; font-weight: 700; color: var(--border); line-height: 1; margin-bottom: 1.2rem; }
+    .hp-how-icon { width: 35px; height: 35px; color: var(--ink); margin-bottom: 1rem; }
+    .hp-how-card h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: .58rem; letter-spacing: -.01em; }
+    .hp-how-card p { font-size: .87rem; color: var(--mid); line-height: 1.75; }
+
+
+    /* ===========================================
+       STATS
+       =========================================== */
+    .hp-stats { background: var(--ink); padding: 3.5rem 0; }
+    .hp-stats-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      border: 1px solid rgba(255,255,255,.07); border-radius: var(--r-lg);
+      overflow: hidden; max-width: 860px; margin: 0 auto;
+    }
+    @media (max-width:640px) {
+      .hp-stats-grid { grid-template-columns: 1fr; }
+      .hp-stat-cell { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.07); }
+      .hp-stat-cell:last-child { border-bottom: none; }
+    }
+    .hp-stat-cell { padding: 2.5rem 2rem; text-align: center; border-right: 1px solid rgba(255,255,255,.07); }
+    .hp-stat-cell:last-child { border-right: none; }
+    .hp-stat-num { font-family: 'Fraunces',serif; font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 700; color: var(--white); letter-spacing: -.04em; margin-bottom: .3rem; }
+    .hp-stat-lbl { font-size: .78rem; color: rgba(255,255,255,.3); font-weight: 500; letter-spacing: .04em; }
+
+
+    /* ===========================================
+       WHY DIFFERENT
+       =========================================== */
+    .hp-diff { background: var(--cream); padding: var(--pad) 0; }
+    .hp-diff-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem,6vw,5.5rem); align-items: center; }
+    @media (max-width:840px) { .hp-diff-inner { grid-template-columns: 1fr; gap: 3rem; } }
+    .hp-diff-text h2 { font-size: clamp(2rem,4.2vw,2.75rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.12; margin-bottom: 1.2rem; color: var(--ink); }
+    .hp-diff-text p { color: var(--mid); font-size: 1.05rem; line-height: 1.8; margin-bottom: .9rem; }
+    .hp-diff-text p:last-child { margin-bottom: 0; }
+    .hp-contrast { display: flex; flex-direction: column; }
+    .hp-cr { display: flex; align-items: flex-start; gap: 1rem; padding: 1.12rem 0; border-bottom: 1px solid var(--border); }
+    .hp-cr:first-child { border-top: 1px solid var(--border); }
+    .hp-cr .ci { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; }
+    .hp-cr .ci.neg { color: #ccc; } .hp-cr .ci.pos { color: var(--ink); }
+    .hp-cr-lbl { font-size: .83rem; font-weight: 700; margin-bottom: .18rem; }
+    .hp-cr-lbl.dim { color: #aaa; font-weight: 400; }
+    .hp-cr-desc { font-size: .78rem; color: var(--mid); line-height: 1.6; }
+
+
+    /* ===========================================
+       CHILLA OVERVIEW
+       =========================================== */
+    .hp-chilla { background: var(--white); padding: var(--pad) 0; }
+    .hp-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem,6vw,5.5rem); align-items: center; }
+    @media (max-width:840px) { .hp-split { grid-template-columns: 1fr; gap: 3rem; } }
+    .hp-split-text h2 { font-size: clamp(2rem,4.2vw,2.75rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.12; margin-bottom: 1.1rem; color: var(--ink); }
+    .hp-split-text p { color: var(--mid); font-size: 1.05rem; line-height: 1.8; margin-bottom: .9rem; }
+    .hp-split-text p:last-of-type { margin-bottom: 1.75rem; }
+    .hp-pills { display: flex; flex-wrap: wrap; gap: .42rem; margin-bottom: 1.85rem; }
+    .hp-pill {
+      display: inline-flex; align-items: center; gap: .28rem;
+      font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      border: 1px solid var(--border); border-radius: 100px; padding: .26rem .72rem; color: var(--mid);
+    }
+    .hp-pill svg { width: 10px; height: 10px; }
+
+    /* Code visual panel */
+    .hp-code-panel {
+      background: var(--ink); border-radius: var(--r-lg); padding: 1.9rem 1.75rem;
+      position: relative; overflow: hidden;
+    }
+    .hp-code-panel::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size: 24px 24px;
+    }
+    .cp-bar { display:flex; gap:5px; margin-bottom:1.4rem; position:relative;z-index:1; }
+    .cp-bar span { width:10px;height:10px;border-radius:50%; }
+    .cp-bar span:nth-child(1){background:#ff5f56} .cp-bar span:nth-child(2){background:#ffbd2e} .cp-bar span:nth-child(3){background:#27c93f}
+    .cp-lines { position:relative;z-index:1; }
+    .cp-line { font-family:'SF Mono','Fira Code','Cascadia Code',monospace; font-size:.72rem; line-height:1.95; color:rgba(255,255,255,.24); }
+    .cpk{color:rgba(255,255,255,.5)} .cpv{color:rgba(255,255,255,.88)} .cpg{color:#27c93f} .cpy{color:#ffbd2e} .cpc{color:rgba(255,255,255,.16);font-style:italic}
+
+
+    /* ===========================================
+       M-II SECTION
+       =========================================== */
+    .hp-mii { background: var(--ink); padding: var(--pad) 0; position: relative; overflow: hidden; }
+    .hp-mii::before {
+      content:''; position:absolute;inset:0;
+      background-image: linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+      background-size: 54px 54px;
+    }
+    .hp-mii-inner { position:relative;z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,5.5rem); align-items:center; }
+    @media (max-width:840px) { .hp-mii-inner { grid-template-columns:1fr; gap:3rem; } }
+    .hp-mii-text h2 { font-size:clamp(2rem,4.2vw,2.75rem); font-weight:700; letter-spacing:-.03em; line-height:1.12; color:var(--white); margin-bottom:1.1rem; }
+    .hp-mii-text p { color:rgba(255,255,255,.38); font-size:1.05rem; line-height:1.8; margin-bottom:.9rem; }
+    .hp-mii-text p:last-of-type { margin-bottom:0; }
+    .hp-mii-link {
+      display:inline-flex; align-items:center; gap:.42rem;
+      color:rgba(255,255,255,.42); text-decoration:none;
+      font-size:.875rem; font-weight:600;
+      border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:.2rem; margin-top:1.75rem;
+      transition:color .25s,border-color .25s;
+    }
+    .hp-mii-link:hover { color:var(--white); border-color:rgba(255,255,255,.35); }
+    .hp-mii-link svg { width:12px;height:12px; }
+    .hp-guarantees { background:rgba(255,255,255,.028); border:1px solid rgba(255,255,255,.07); border-radius:var(--r-lg); overflow:hidden; }
+    .hp-guar { display:flex; align-items:flex-start; gap:1rem; padding:1.32rem 1.55rem; border-bottom:1px solid rgba(255,255,255,.052); transition:background .3s; }
+    .hp-guar:last-child { border-bottom:none; }
+    .hp-guar:hover { background:rgba(255,255,255,.036); }
+    .hp-g-ico { flex-shrink:0; width:25px;height:25px; color:rgba(255,255,255,.36); }
+    .hp-guar h4 { font-size:.87rem; font-weight:700; color:var(--white); margin-bottom:.2rem; }
+    .hp-guar p { font-size:.76rem; color:rgba(255,255,255,.28); line-height:1.55; margin:0; }
+
+
+    /* ===========================================
+       PRICING
+       =========================================== */
+    .hp-pricing { background: var(--cream); padding: var(--pad) 0; }
+    .hp-plan-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; align-items:start; }
+    @media (max-width:980px) { .hp-plan-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:520px)  { .hp-plan-grid { grid-template-columns:1fr; } }
+    .hp-plan {
+      background:var(--white); border:1.5px solid var(--border);
+      border-radius:var(--r-lg); padding:1.95rem 1.7rem;
+      position:relative; transition:box-shadow .3s,transform .3s;
+    }
+    .hp-plan:hover { box-shadow:0 14px 36px rgba(0,0,0,.07); transform:translateY(-3px); }
+    .hp-plan.featured { border-color:var(--ink); background:var(--ink); }
+    .hp-popular-tag {
+      display:inline-block; font-size:.61rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+      background:var(--white); color:var(--ink); padding:.18rem .62rem; border-radius:100px; margin-bottom:1rem;
+    }
+    .hp-plan-name { font-size:.87rem; font-weight:700; color:var(--ink); margin-bottom:.42rem; }
+    .hp-plan.featured .hp-plan-name { color:rgba(255,255,255,.52); }
+    .hp-plan-amt { font-family:'Fraunces',serif; font-size:2.35rem; font-weight:700; letter-spacing:-.04em; color:var(--ink); line-height:1; }
+    .hp-plan.featured .hp-plan-amt { color:var(--white); }
+    .hp-plan-per { font-size:.77rem; color:var(--mid); font-weight:400; display:inline; }
+    .hp-plan.featured .hp-plan-per { color:rgba(255,255,255,.28); }
+    .hp-plan-note { font-size:.78rem; color:var(--mid); font-style:italic; margin:.82rem 0 1.3rem; }
+    .hp-plan.featured .hp-plan-note { color:rgba(255,255,255,.26); }
+    .hp-plan-feats { display:flex; flex-direction:column; gap:.52rem; margin-bottom:1.7rem; }
+    .hp-pf { display:flex; align-items:flex-start; gap:.52rem; font-size:.81rem; color:var(--mid); line-height:1.55; }
+    .hp-plan.featured .hp-pf { color:rgba(255,255,255,.42); }
+    .hp-pf svg { flex-shrink:0; width:12px;height:12px; margin-top:2px; color:var(--ink); }
+    .hp-plan.featured .hp-pf svg { color:rgba(255,255,255,.62); }
+    .hp-plan-btn {
+      display:block; width:100%; text-align:center;
+      padding:.76rem; border-radius:8px; font-size:.875rem; font-weight:700;
+      text-decoration:none; transition:all .25s; font-family:inherit;
+    }
+    .hp-plan-btn.dark { background:var(--ink); color:var(--white); border:2px solid var(--ink); }
+    .hp-plan-btn.dark:hover { background:#333; transform:translateY(-1px); }
+    .hp-plan-btn.light { background:var(--white); color:var(--ink); border:2px solid var(--white); }
+    .hp-plan-btn.light:hover { background:#eee; transform:translateY(-1px); }
+    .hp-plan-btn.ol { background:transparent; color:var(--ink); border:2px solid var(--border); }
+    .hp-plan-btn.ol:hover { border-color:var(--ink); transform:translateY(-1px); }
+    .hp-pricing-note { text-align:center; margin-top:2rem; font-size:.83rem; color:var(--mid); }
+    .hp-pricing-note a { color:var(--ink); text-decoration:underline; }
+
+
+    /* ===========================================
+       TESTIMONIALS
+       =========================================== */
+    .hp-testi { background: var(--white); padding: var(--pad) 0; }
+    .hp-testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.45rem; }
+    @media (max-width:760px) { .hp-testi-grid { grid-template-columns:1fr; } }
+    .hp-tcard { background:var(--cream); border:1px solid var(--border); border-radius:var(--r-lg); padding:1.95rem; }
+    .hp-tquote { font-size:.94rem; color:var(--ink); line-height:1.75; font-style:italic; margin-bottom:1.2rem; }
+    .hp-tauthor { font-size:.78rem; font-weight:700; color:var(--mid); }
+    .hp-tdisc { text-align:center; margin-top:1.7rem; font-size:.76rem; color:#bbb; font-style:italic; max-width:600px; margin-left:auto; margin-right:auto; }
+
+
+    /* ===========================================
+       FAQ
+       =========================================== */
+    .hp-faq { background: var(--cream); padding: var(--pad) 0; }
+    .hp-faq-inner { max-width:820px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); }
+    .hp-faq-list { margin-top:3.5rem; }
+    .hp-faq-item { border-bottom:1px solid var(--border); }
+    .hp-faq-item:first-child { border-top:1px solid var(--border); }
+    .hp-faq-q {
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      padding:1.28rem 0; cursor:pointer;
+      font-size:.96rem; font-weight:600; color:var(--ink); list-style:none;
+    }
+    .hp-faq-q::-webkit-details-marker { display:none; }
+    .hp-faq-q .fqi { flex-shrink:0; width:16px;height:16px; color:var(--mid); transition:transform .3s; }
+    details[open] .hp-faq-q .fqi { transform:rotate(45deg); }
+    .hp-faq-a { font-size:.88rem; color:var(--mid); line-height:1.8; padding-bottom:1.28rem; max-width:630px; }
+
+
+    /* ===========================================
+       ABOUT
+       =========================================== */
+    .hp-about { background: var(--white); padding: var(--pad) 0; }
+    .hp-about-inner { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,5.5rem); align-items:center; }
+    @media (max-width:840px) { .hp-about-inner { grid-template-columns:1fr; gap:3rem; } }
+    .hp-about-text h2 { font-size:clamp(2rem,4.2vw,2.75rem); font-weight:700; letter-spacing:-.03em; line-height:1.12; margin-bottom:1.2rem; color:var(--ink); }
+    .hp-about-lead { font-family:'Fraunces',Georgia,serif; font-size:1.18rem; font-style:italic; font-weight:300; line-height:1.55; color:var(--ink); margin-bottom:1.2rem; }
+    .hp-about-body { color:var(--mid); font-size:1rem; line-height:1.85; }
+    .hp-about-img { width:100%; border-radius:var(--r-lg); display:block; margin-bottom:1.5rem; }
+    .hp-astats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+    .hp-astat { background:var(--white); padding:1.35rem; }
+    .hp-astat .sn { font-family:'Fraunces',serif; font-size:1.85rem; font-weight:700; letter-spacing:-.04em; color:var(--ink); margin-bottom:.18rem; }
+    .hp-astat .sl { font-size:.74rem; color:var(--mid); font-weight:500; }
+    @media (max-width:460px) { .hp-astats { grid-template-columns:1fr; } }
+
+
+    /* ===========================================
+       FINAL CTA
+       =========================================== */
+    .hp-cta-final {
+      background: var(--ink); padding: var(--pad) 0; text-align:center;
+      position:relative; overflow:hidden;
+    }
+    .hp-cta-final::before {
+      content:''; position:absolute;inset:0;
+      background:radial-gradient(ellipse 70% 65% at 50% 45%, rgba(255,255,255,.036) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .hp-cta-inner { position:relative;z-index:1; max-width:600px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); }
+    .hp-cta-inner h2 { font-family:'Fraunces',Georgia,serif; font-size:clamp(2.5rem,6vw,4rem); font-weight:700; color:var(--white); letter-spacing:-.035em; line-height:1.05; margin-bottom:1.2rem; }
+    .hp-cta-inner p { color:rgba(255,255,255,.36); font-size:1.05rem; line-height:1.75; margin-bottom:2.4rem; max-width:440px; margin-left:auto; margin-right:auto; }
+    .hp-cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .hp-cta-note { font-size:.74rem; color:rgba(255,255,255,.17); margin-top:1.4rem; font-style:italic; }
+
+
+    /* ===========================================
+       GLOBAL MOBILE
+       =========================================== */
+    @media (max-width:480px) {
+      .hp-hero-cta, .hp-cta-btns { flex-direction:column; align-items:center; }
+      .hp-hero-cta a, .hp-cta-btns a { width:100%; max-width:300px; justify-content:center; }
+      .hp-demo-copy .btn-row { flex-direction:column; }
+      .hp-demo-copy .btn-row a { width:100%; max-width:300px; }
+    }
+  </style>
 </head>
-
-
-
 <body>
+
   <!-- Header injected by js/header-loader.js -->
 
 
-<!-- Hero Section -->
-<section class="hero hero-light hero--nav-offset">
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-headline">You Chill. Chilla Works.</h1>
-      <p class="hero-subheadline">Stay connected to global markets — without turning trading into your lifestyle.</p>
-      <div class="hero-cta">
-        <a href="https://chilla.beaverlyai.com" class="btn btn-primary" data-track="hero_cta">Start Chilling Now</a>
-        <a href="#how-it-works" class="btn btn-secondary" data-track="hero_how-it-works">How To Chill</a>
+  <!-- ═══════════════════════════════
+       HERO
+       ═══════════════════════════════ -->
+  <section class="hp-hero">
+    <div class="hp-glow"></div>
+    <div class="hp-hero-inner" id="heroEl">
+      <div class="hp-badge">
+        <span class="bd"></span>
+        Beaverly® — Automation Infrastructure
       </div>
+      <h1 class="hp-h1">
+        You Chill.<br>
+        <span class="dim">Chilla Works.</span>
+      </h1>
+      <p class="hp-hero-sub">
+        Stay connected to global markets — without turning market participation into your lifestyle. Your instructions run. Your funds stay with your broker. Flow tells you everything.
+      </p>
+      <div class="hp-hero-cta">
+        <a href="https://chilla.beaverlyai.com" class="btn-wh" data-track="hero_cta">Start Chilling</a>
+        <a href="#how-it-works" class="btn-ghost-inv" data-track="hero_how">See How It Works</a>
+      </div>
+      <button class="hp-scroll" id="heroScroll" aria-label="Scroll down">
+        <span>Explore</span>
+        <div class="sc-bar"></div>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       THESIS
+       ═══════════════════════════════ -->
+  <section class="hp-thesis">
+    <div class="hp-thesis-inner reveal">
+      <p class="hp-thesis-copy">
+        Markets don't require your constant attention.<br>
+        <em>They require discipline, consistency, and the right infrastructure.</em>
+      </p>
+      <p class="hp-thesis-sub">
+        Beaverly is building that infrastructure. Chilla is the first product built on top of it — a calm, instruction-based automation experience for people who want structured market participation without a lifestyle to match.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       TRUST STRIP
+       ═══════════════════════════════ -->
+  <div class="hp-trust">
+    <div class="hp-trust-list">
+      <div class="hp-trust-item"><i data-lucide="shield-check" style="width:13px;height:13px"></i>Funds stay with your broker</div>
+      <div class="hp-trust-sep"></div>
+      <div class="hp-trust-item"><i data-lucide="lock" style="width:13px;height:13px"></i>Non-custodial</div>
+      <div class="hp-trust-sep"></div>
+      <div class="hp-trust-item"><i data-lucide="user-check" style="width:13px;height:13px"></i>User-authorized scope only</div>
+      <div class="hp-trust-sep"></div>
+      <div class="hp-trust-item"><i data-lucide="activity" style="width:13px;height:13px"></i>Full transparency through Flow</div>
+      <div class="hp-trust-sep"></div>
+      <div class="hp-trust-item"><i data-lucide="pause-circle" style="width:13px;height:13px"></i>Pause or revoke anytime</div>
     </div>
   </div>
-</section>
 
 
+  <!-- ═══════════════════════════════
+       INTERACTIVE DEMO
+       ═══════════════════════════════ -->
+  <section class="hp-demo-section" id="interactive-flow-demo">
+    <div class="hp-demo-wrap">
+      <div class="hp-demo-grid">
 
-  <!-- Interactive Flow Demo -->
-  <section id="interactive-flow-demo" class="interactive-demo-section">
-    <div class="demo-container">
-      <div class="demo-grid">
-        <!-- Left Side - Text -->
-        <div class="demo-text">
-          <h2 class="demo-headline">Participate in global markets — without becoming a trader.</h2>
-          <p class="demo-subtext">Chilla translates your instructions into disciplined automation — and shows you every step through Flow.</p>
-          <div class="demo-cta-group">
-            <a href="https://chilla.beaverlyai.com" class="btn btn-primary" data-track="demo_start_chilling">Give your first instruction</a>
-            <a href="#how-it-works" class="btn btn-secondary" data-track="demo_learn_more">Learn More</a>
+        <!-- Left: copy -->
+        <div class="hp-demo-copy reveal">
+          <span class="eyebrow">See It In Action</span>
+          <h2>Give an instruction.<br>Watch Chilla work.</h2>
+          <p>This is the real Chilla setup experience — from connecting your broker environment to watching Flow surface live activity. Every step requires your explicit authorization before anything runs.</p>
+          <div class="btn-row">
+            <a href="https://chilla.beaverlyai.com" class="btn-ink" data-track="demo_cta">Give Your First Instruction</a>
+            <a href="chilla.html" class="btn-ol-dk" data-track="demo_explore">Explore Chilla</a>
           </div>
         </div>
 
-        <!-- Right Side - Interactive Demo Panel -->
-        <div class="demo-panel-container">
-          <button id="restart-demo-btn" class="restart-demo">↻ Restart Demo</button>
-          
-          <!-- Progress Dots -->
-          <div class="demo-progress">
-            <div class="progress-dot active"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
+        <!-- Right: polished demo panel -->
+        <div class="demo-panel-shell reveal" style="transition-delay:.1s">
+
+          <!-- Chrome bar -->
+          <div class="demo-chrome">
+            <div class="demo-chrome-dots"><span></span><span></span><span></span></div>
+            <span class="demo-chrome-label">Chilla — Instruction Setup</span>
+            <button class="demo-rst" id="demoRstHeader">↻ Restart</button>
           </div>
 
-          <!-- Step 1: Connect Environment -->
-          <div id="demo-step-1" class="demo-card active">
-            <div class="demo-card-header">Connect Environment</div>
-            <div class="wizard-step-content">
-              <div class="broker-status">
-                <div class="broker-info">
-                  <div class="broker-name">cTrader</div>
-                  <div id="broker-status-text" class="broker-status-text">Not Connected</div>
-                </div>
-                <button id="demo-connect-broker" class="demo-btn demo-btn-primary">Connect</button>
-              </div>
-        
-              <p class="step-description">Connect your automation environment to begin.</p>
-            </div>
-            <div class="demo-actions">
-              <button id="demo-continue-btn-1" class="demo-btn demo-btn-primary demo-continue-btn" disabled>Continue</button>
-            </div>
+          <!-- Progress rail -->
+          <div class="demo-progress-rail" id="demoProgressRail">
+            <div class="demo-prog-seg active"></div>
+            <div class="demo-prog-seg"></div>
+            <div class="demo-prog-seg"></div>
+            <div class="demo-prog-seg"></div>
+            <div class="demo-prog-seg"></div>
+            <div class="demo-prog-seg"></div>
           </div>
 
-          <!-- Step 2: Select Behavior -->
-          <div id="demo-step-2" class="demo-card">
-            <div class="demo-card-header">Choose Behavior</div>
-            <div class="wizard-step-content">
-              <p class="step-description">Select how Chilla should act in your playgrounds</p>
-              <div class="behavior-option" data-behavior="momentum">
-                <div class="behavior-name">Momentum Follow</div>
-                <div class="behavior-description">Acts during directional conviction. Avoids low-clarity periods.</div>
-              </div>
-              
-            </div>
-            <div class="demo-actions">
-              <button id="demo-continue-btn-2" class="demo-btn demo-btn-primary demo-continue-btn" disabled>Continue</button>
-            </div>
-          </div>
+          <!-- Cards -->
+          <div class="demo-body">
 
-          <!-- Step 3: Select Playgrounds -->
-          <div id="demo-step-3" class="demo-card">
-            <div class="demo-card-header">Choose Playgrounds</div>
-            <div class="wizard-step-content">
-              <p class="step-description">Selected behavior supports these environments</p>
-              <div class="playground-grid">
-                <div class="playground-item selected" data-playground="EURUSD">
-                  <span class="checkmark">✓</span>
-                  EURUSD
+            <!-- Step 1: Connect -->
+            <div class="demo-card active" id="dc-step-1">
+              <div class="dc-label">Step 1 of 6</div>
+              <div class="dc-title">Connect Your Environment</div>
+              <div class="dc-desc">Authorize your broker account. Your funds remain with your broker throughout.</div>
+              <div class="dc-broker-row">
+                <div>
+                  <div class="dc-broker-name">cTrader</div>
+                  <div class="dc-broker-s" id="dcBrokerS">Not connected</div>
                 </div>
-                <div class="playground-item selected" data-playground="XAUUSD">
-                  <span class="checkmark">✓</span>
-                  XAUUSD
-                </div>
+                <button class="dc-connect-btn" id="dcConnectBtn">Connect</button>
               </div>
             </div>
-            <div class="demo-actions">
-              <button id="demo-continue-btn-3" class="demo-btn demo-btn-primary demo-continue-btn">Continue</button>
-            </div>
-          </div>
 
-          <!-- Step 4: Set Comfort Level -->
-          <div id="demo-step-4" class="demo-card">
-            <div class="demo-card-header">Set Comfort Level</div>
-            <div class="wizard-step-content">
-              <p class="step-description">Tell Chilla how comfortable you are with resource exposure</p>
-              <div class="comfort-slider-container">
-                <div class="slider-labels">
-                  <span>Deep Sleep</span>
-                  <span>No Sleep</span>
-                </div>
-                <input type="range" id="demo-comfort-slider" class="comfort-slider" min="0" max="100" value="50">
-                <div id="comfort-value" class="comfort-value">Balanced</div>
-                <div id="comfort-subtext" class="comfort-subtext">Moderate exposure</div>
+            <!-- Step 2: Behavior -->
+            <div class="demo-card" id="dc-step-2">
+              <div class="dc-label">Step 2 of 6</div>
+              <div class="dc-title">Choose a Behavior</div>
+              <div class="dc-desc">Select how Chilla should act within your authorized instruction scope.</div>
+              <div class="dc-bhv" data-bhv="momentum">
+                <div class="dc-bhv-name">Momentum Follow</div>
+                <div class="dc-bhv-desc">Acts during directional conviction. Avoids low-clarity periods.</div>
+              </div>
+              <div class="dc-bhv" data-bhv="range">
+                <div class="dc-bhv-name">Range Awareness</div>
+                <div class="dc-bhv-desc">Monitors defined boundaries. Skips ambiguous conditions.</div>
               </div>
             </div>
-            <div class="demo-actions">
-              <button id="demo-continue-btn-4" class="demo-btn demo-btn-primary demo-continue-btn">Continue</button>
-            </div>
-          </div>
 
-          <!-- Step 5: Consent -->
-          <div id="demo-step-5" class="demo-card">
-            <div class="demo-card-header">Confirm & Activate</div>
-            <div class="wizard-step-content">
-              <p class="step-description">Authorize Chilla to follow your instructions</p>
-              <div class="consent-item">
-                <div id="demo-consent-checkbox" class="consent-checkbox"></div>
-                <div class="consent-text">
-                  I confirm and activate instruction
+            <!-- Step 3: Playgrounds -->
+            <div class="demo-card" id="dc-step-3">
+              <div class="dc-label">Step 3 of 6</div>
+              <div class="dc-title">Select Playgrounds</div>
+              <div class="dc-desc">Choose the markets compatible with your selected behavior.</div>
+              <div class="dc-pg-grid">
+                <div class="dc-pg sel" data-pg="EURUSD"><span class="dc-pg-chk">✓</span>EURUSD</div>
+                <div class="dc-pg sel" data-pg="XAUUSD"><span class="dc-pg-chk">✓</span>XAUUSD</div>
+                <div class="dc-pg" data-pg="GBPUSD"><span class="dc-pg-chk"></span>GBPUSD</div>
+                <div class="dc-pg" data-pg="US30"><span class="dc-pg-chk"></span>US30</div>
+              </div>
+            </div>
+
+            <!-- Step 4: Comfort -->
+            <div class="demo-card" id="dc-step-4">
+              <div class="dc-label">Step 4 of 6</div>
+              <div class="dc-title">Set Your Comfort Level</div>
+              <div class="dc-desc">Define your per-position exposure. Optionally add a monthly risk cap.</div>
+              <div class="dc-comfort-wrap">
+                <div class="dc-slider-hd"><span>Deep Sleep</span><span>No Sleep</span></div>
+                <input type="range" class="dc-slider" id="dcComfortSlider" min="0" max="100" value="50">
+                <div class="dc-comfort-rd">
+                  <div class="dc-cval" id="dcComfortVal">Balanced</div>
+                  <div class="dc-csub" id="dcComfortSub">Moderate exposure</div>
                 </div>
               </div>
             </div>
-            <div class="demo-actions">
-              <button id="demo-activate-btn" class="demo-btn demo-btn-primary" disabled>Activate</button>
-            </div>
-          </div>
 
-          <!-- Step 6: Flow (The Magic) -->
-          <div id="demo-step-6" class="demo-card">
-            <div class="demo-card-header">Flow</div>
-            <div class="wizard-step-content">
-              <div id="flow-messages-container" class="flow-messages">
-                <!-- Flow messages will be added here dynamically -->
+            <!-- Step 5: Consent -->
+            <div class="demo-card" id="dc-step-5">
+              <div class="dc-label">Step 5 of 6</div>
+              <div class="dc-title">Confirm &amp; Authorize</div>
+              <div class="dc-desc">Chilla requires your explicit authorization before any instruction goes live.</div>
+              <div class="dc-consent-row">
+                <div class="dc-chk-box" id="dcConsentBox"></div>
+                <div class="dc-consent-txt">I confirm and authorize this instruction. I understand automation operates strictly within my defined scope and comfort boundaries.</div>
               </div>
             </div>
+
+            <!-- Step 6: Flow -->
+            <div class="demo-card" id="dc-step-6">
+              <div class="dc-label">Step 6 of 6 — Flow</div>
+              <div class="dc-title">Instruction Active</div>
+              <div class="dc-flow-list" id="dcFlowList"></div>
+            </div>
+
           </div>
-        </div>
+
+          <!-- Footer -->
+          <div class="demo-foot" id="demoFoot">
+            <button class="demo-rst" id="demoRstFoot" style="visibility:hidden">↻ Restart</button>
+            <button class="demo-next-btn" id="demoNextBtn" disabled>Continue</button>
+          </div>
+
+        </div><!-- /demo-panel-shell -->
       </div>
     </div>
   </section>
 
-  <!-- Agnostic Signals -->
-  <section class="agnostic-signals">
-  <div class="container">
-    <div class="agnostic-content">
-      <p class="agnostic-label">Co-pilot That Works Everywhere</p>
-      <div class="agnostic-logos-wrapper overflow-hidden border border-gray-800 rounded-xl bg-black p-4">
-        <div class="agnostic-logos animate-scroll">
 
-          <!-- First set -->
-          <div class="agnostic-logo">
-            <img src="attached_assets/ctrader_logo.png" alt="cTrader" class="logo-img">
-          </div>
-          <div class="agnostic-logo">
-            <img src="attached_assets/binance_logo.png" alt="Binance" class="logo-img">
-          </div>
-          <div class="agnostic-logo">
-            <img src="attached_assets/deriv_logo.png" alt="Deriv" class="logo-img">
-          </div>
-          <div class="agnostic-logo">
-            <img src="attached_assets/bybit_logo.png" alt="ByBit" class="logo-img">
-          </div>
-
-
-          <!-- Second identical set for loop -->
-          <div class="agnostic-logo">
-            <img src="attached_assets/ctrader_logo.png" alt="cTrader" class="logo-img">
-          </div>
-          <div class="agnostic-logo">
-            <img src="attached_assets/binance_logo.png" alt="Binance" class="logo-img">
-          </div>
-          <div class="agnostic-logo">
-            <img src="attached_assets/deriv_logo.png" alt="Deriv" class="logo-img">
-          </div>
-          <div class="agnostic-logo">
-            <img src="attached_assets/bybit_logo.png" alt="ByBit" class="logo-img">
-          </div>
+  <!-- ═══════════════════════════════
+       BROKER LOGOS
+       ═══════════════════════════════ -->
+  <div class="hp-brokers">
+    <div class="container">
+      <p class="hp-brokers-lbl">Works across broker environments</p>
+      <div class="hp-logos-track">
+        <div class="hp-logos-row">
+          <div class="hp-broker-logo"><img src="attached_assets/ctrader_logo.png" alt="cTrader"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/binance_logo.png" alt="Binance"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/deriv_logo.png" alt="Deriv"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/bybit_logo.png" alt="ByBit"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/ctrader_logo.png" alt="cTrader"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/binance_logo.png" alt="Binance"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/deriv_logo.png" alt="Deriv"></div>
+          <div class="hp-broker-logo"><img src="attached_assets/bybit_logo.png" alt="ByBit"></div>
         </div>
       </div>
-      <p class="integration-disclaimer"><em>Integrations operate via user-authorized third-party accounts. Beaverly does not access, hold, or control user funds.</em></p>
+      <p class="hp-brokers-note">Integrations via user-authorized third-party accounts. Beaverly does not access, hold, or control user funds.</p>
     </div>
   </div>
-</section>
 
 
-  <!-- Trust Signals -->
-  <section class="trust-signals">
-    <div class="container">
-      <div class="trust-content">
-        <p class="trust-label">Built for Calm, Built for Control</p>
-        <div class="trust-logos">
-          <div class="trust-logo">
-            <span class="trust-text">Your Funds, Always In Your Broker Account</span>
-          </div>
-          <div class="trust-logo">
-          <span class="trust-text">You Decide the Logic. Chilla Automates It.</span>
-            </div>
-          <div class="trust-logo">
-          <span class="trust-text">24/7 Monitoring. No Fatigue.</span>
-          </div>
-        <div class="trust-logo">
-        <span class="trust-text">Disciplined Automation. No Emotional Overrides.</span>
-          </div>
-          <div class="trust-logo">
-            <span class="trust-text">Full Transparency Into Every Action</span>
-          </div>
-          </div>
-        </div>
+  <!-- ═══════════════════════════════
+       HOW IT WORKS
+       ═══════════════════════════════ -->
+  <section class="hp-how" id="how-it-works">
+    <div class="hp-sec-wrap">
+      <div class="hp-sec-hdr reveal">
+        <span class="eyebrow">How Chilla Works</span>
+        <h2>Three steps to calm market participation.</h2>
+        <p>Every step is deliberate by design. Nothing runs without your explicit authorization.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section id="how-it-works" class="section">
-    <div class="container">
-      <h2 class="section-title">How To Chill</h2>
-      <div class="how-it-works-grid">
-        <div class="feature-card">
-          <div class="feature-icon broker-icon">
-            <i data-lucide="plug" style="width:2.5em;height:2.5em;"></i>
-          </div>
-          <div class="feature-number">01</div>
+      <div class="hp-how-grid">
+        <div class="hp-how-card reveal">
+          <div class="hp-how-num">01</div>
+          <i data-lucide="link" class="hp-how-icon"></i>
           <h3>Connect Your Broker</h3>
-          <p>Securely connect your broker account. Your funds remain with your broker at all times.</p>
+          <p>Authorize your environment through a secure flow. Multiple accounts, one dashboard. Your funds stay with your broker — Beaverly holds nothing.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon ai-icon">
-            <i data-lucide="bot" style="width:2.5em;height:2.5em;"></i>
-          </div>
-          <div class="feature-number">02</div>
-          <h3>Choose Behaviors & Comfort</h3>
-          <p>Select pre-built behaviors and decide how much exposure you're comfortable with. Everything stays within your control.</p>
+        <div class="hp-how-card reveal" style="transition-delay:.08s">
+          <div class="hp-how-num">02</div>
+          <i data-lucide="sliders" class="hp-how-icon"></i>
+          <h3>Set Instructions &amp; Comfort</h3>
+          <p>Browse the behavior catalog. Set your per-position comfort level and optional monthly risk cap. Chilla shows you the risk implications before you activate.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon automation-icon">
-            <i data-lucide="smile" style="width:2.5em;height:2.5em;"></i>
-          </div>
-          <div class="feature-number">03</div>
-          <h3>Activate & Relax</h3>
-          <p>Chilla monitors and automates strictly within your instructions. You can adjust anytime — or simply keep chilling.</p>
+        <div class="hp-how-card reveal" style="transition-delay:.16s">
+          <div class="hp-how-num">03</div>
+          <i data-lucide="activity" class="hp-how-icon"></i>
+          <h3>Activate. Watch Flow.</h3>
+          <p>After your explicit authorization, Chilla runs within your approved scope. Flow surfaces every entry, exit, skip, and warning — in plain language, in real time.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Social Proof -->
-  <section class="section social-proof">
+
+  <!-- ═══════════════════════════════
+       STATS
+       ═══════════════════════════════ -->
+  <section class="hp-stats">
     <div class="container">
-      <div class="social-proof-grid">
-        <div class="proof-stat">
-          <div class="proof-number"><i data-lucide="globe" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.3em;"></i>Early Adopters</div>
-          <div class="proof-label">Across 3 Continents</div>
+      <div class="hp-stats-grid reveal">
+        <div class="hp-stat-cell">
+          <div class="hp-stat-num">1,200+</div>
+          <div class="hp-stat-lbl">Instructions Automated Since Launch</div>
         </div>
-        <div class="proof-stat">
-          <div class="proof-number"><i data-lucide="zap" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.3em;"></i>1,200+</div>
-          <div class="proof-label">Instructions automated Since Launch</div>
+        <div class="hp-stat-cell">
+          <div class="hp-stat-num">3</div>
+          <div class="hp-stat-lbl">Continents With Early Adopters</div>
         </div>
-        <div class="proof-stat">
-          <div class="proof-number"><i data-lucide="clock" style="width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.3em;"></i>Millisecond</div>
-          <div class="proof-label">Automation Speed, Faster Than Any Human</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision -->
-  <section class="section performance-demo">
-    <div class="container">
-      <div class="demo-vision">
-        <h3>Vision</h3>
-        <p>
-          <strong>Trading shouldn’t feel like a second job.</strong>
-          <br><br>
-Chilla turns your instructions into disciplined automation. You stay in control while the system handles the repetition.
-          <br><br>
-          No hype. No guarantees. Just automation that does exactly what you tell it.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Founder Message -->
-  <section class="section founder-message">
-    <div class="container">
-      <div class="founder-content">
-        <div class="founder-text">
-          <div class="founder-badge">Built by Market Participants, Not Just Developers</div>
-          <h3>Led by Real Market Experience and Insight</h3>
-          <p>Beaverly was born from exhaustion — from watching charts late at night and second-guessing decisions. We built the system we wished existed: something structured, transparent, and calm.</p>
+        <div class="hp-stat-cell">
+          <div class="hp-stat-num">24/7</div>
+          <div class="hp-stat-lbl">Continuous Market Observation</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Plans -->
-  <section id="pricing" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Pick Your Chill Mode</h2>
-      <div class="pricing-grid">
-        <!-- Free Tier (Renamed from Chilla's Gift) -->
-        <div class="pricing-card">
-          <div class="plan-header">
-            <h3>Chill Architect</h3>
-            <div class="plan-price">Free<span></span></div>
-          </div>
-          <div class="plan-features">
-            <div class="feature"><span class="feature-check">✓</span>Design automation across pre-built behaviours and playgrounds</div>
-            <div class="feature"><span class="feature-check">✓</span>Connect your first automation environment (Deriv, cTrader and more++)</div>
-            <div class="feature"><span class="feature-check">✓</span>Plan comfort levels and monthly budgets with Omega Shield</div>
-            <div class="feature"><span class="feature-check">✓</span>Review exactly what you've told Chilla to do before activation</div>
-          </div>
-          <div class="plan-note">Understand how Chilla works before live automation.</div>
-          <a href="https://chilla.beaverlyai.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Start Free</a>
-        </div>
 
-        <!-- Chill Mode -->
-        <div class="pricing-card">
-          <div class="plan-header">
-            <h3>Chill Mode</h3>
-            <div class="plan-price">$20<span>/month</span></div>
-          </div>
-          <div class="plan-features">
-            <div class="feature"><span class="feature-check">✓</span>Run automation continuously across multiple behaviours and playgrounds</div>
-            <div class="feature"><span class="feature-check">✓</span>Participate across playgrounds without manual monitoring (Forex, Metals, Indices and more++)</div>
-            <div class="feature"><span class="feature-check">✓</span>Apply comfort levels and monthly budgets automatically</div>
-            <div class="feature"><span class="feature-check">✓</span>Automate multiple instructions at the same time</div>
-            <div class="feature"><span class="feature-check">✓</span>See clear, human-readable flow of what Chilla is doing and why</div>
-          </div>
-          <div class="plan-note">A calm way to begin.</div>
-          <a href="https://chilla.beaverlyai.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Start Chilling</a>
+  <!-- ═══════════════════════════════
+       WHY DIFFERENT
+       ═══════════════════════════════ -->
+  <section class="hp-diff">
+    <div class="hp-sec-wrap">
+      <div class="hp-diff-inner">
+        <div class="hp-diff-text reveal">
+          <span class="eyebrow">Why It's Different</span>
+          <h2>More than automation.<br>More than a platform.</h2>
+          <p>Most financial automation tools are either too simple to be useful or too opaque to trust. Chilla is built around a different principle: automation should be calm, authorized, transparent, and always within your defined boundaries.</p>
+          <p>We didn't build a dashboard. We built infrastructure — and Chilla is how that infrastructure feels to use.</p>
         </div>
-
-        <!-- Deep Chill -->
-        <div class="pricing-card pricing-card-featured">
-          <div class="popular-badge">Popular</div>
-          <div class="plan-header">
-            <h3>Deep Chill</h3>
-            <div class="plan-price">$59<span>/month</span></div>
+        <div class="hp-contrast reveal" style="transition-delay:.1s">
+          <div class="hp-cr">
+            <i data-lucide="x-circle" class="ci neg"></i>
+            <div><div class="hp-cr-lbl dim">Signal apps</div><div class="hp-cr-desc">You wait for alerts, then react under pressure. You're still the bottleneck.</div></div>
           </div>
-          <div class="plan-features">
-            <div class="feature"><span class="feature-check">✓</span>Run more automation at higher capacity without throttling</div>
-            <div class="feature"><span class="feature-check">✓</span>Participate across more environments from one place</div>
-            <div class="feature"><span class="feature-check">✓</span>Expand the number of behaviours and playgrounds you can use</div>
-            <div class="feature"><span class="feature-check">✓</span>Skip the queue for faster instruction automation</div>
+          <div class="hp-cr">
+            <i data-lucide="x-circle" class="ci neg"></i>
+            <div><div class="hp-cr-lbl dim">Copy trading</div><div class="hp-cr-desc">Someone else's decisions — including their mistakes. No scope control over what runs.</div></div>
           </div>
-          <div class="plan-note">Full chill experience.</div>
-          <a href="https://chilla.beaverlyai.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Go Deeper</a>
-        </div>
-
-        <!-- Peak Chill -->
-        <div class="pricing-card">
-          <div class="plan-header">
-            <h3>Peak Chill</h3>
-            <div class="plan-price">$200<span>/month</span></div>
+          <div class="hp-cr">
+            <i data-lucide="x-circle" class="ci neg"></i>
+            <div><div class="hp-cr-lbl dim">Generic robo-advisors</div><div class="hp-cr-desc">One-size portfolio allocation. Not instruction-based, not transparent, not yours.</div></div>
           </div>
-          <div class="plan-features">
-            <div class="feature"><span class="feature-check">✓</span>Run automation at higher capacity across all environments</div>
-            <div class="feature"><span class="feature-check">✓</span>Support complex, always-on automation setups</div>
-            <div class="feature"><span class="feature-check">✓</span>Access new behaviours and capabilities before everyone else</div>
-            <div class="feature"><span class="feature-check">✓</span>Support more complex automation setups with dedicated ease</div>
-          </div>
-          <div class="plan-note">The ultimate chill</div>
-          <a href="https://chilla.beaverlyai.com" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Unlock Peak</a>
-        </div>
-      </div>
-      <div class="pricing-note">
-        <p>Upgrade anytime from your dashboard.</p>
-        <a href="/usage-and-guardrails.html" class="plan-note" target="_blank" rel="noopener noreferrer">Unlimited, with guardrails</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Now -->
-  <section class="section">
-    <div class="container">
-      <div class="why-now-content">
-        <h2 class="section-title">Get Your Time Back</h2>
-        <div class="why-grid">
-          <div class="why-item">
-            <h3>Automation Without The Lifestyle</h3>
-            <p>Set your instructions once, then let automation run quietly in the background — without daily emotional pressure or constant monitoring.</p>
-          </div>
-          <div class="why-item">
-            <h3>Automate with Discipline</h3>
-            <p>No hype. No chasing. Just structured automation within your instructions — with clear boundaries and transparent Flow.</p>
-          </div>
-          <div class="why-item">
-            <h3>Transparent Participation</h3>
-            <p>Chilla follows your instructions and shows a clear Flow of what it’s doing and why — so you’re never left guessing.</p>
+          <div class="hp-cr">
+            <i data-lucide="check-circle" class="ci pos"></i>
+            <div><div class="hp-cr-lbl">Chilla by Beaverly</div><div class="hp-cr-desc">Your instructions. Your comfort boundaries. Your account. Full Flow transparency. Pause or revoke any moment.</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section testimonials-section testimonials-section-light">
-    <div class="container">
-      <h2 class="section-title">People Chilling With Chilla</h2>
-      <p class="socials-intro">Real people. Real chill. Real focus.</p>
-       <p class="disclaimer-intro">**Disclaimer:** The experiences described are unique to the individuals and are not guarantees of future results or success. Market participation involves risk.
-     </p>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <p>"Connecting my account and setting up my first Chilla behaviour felt straightforward. I spend less time monitoring and more time building."</p>
-          <div class="testimonial-author">— Tolu A., SWE, NG</div>
-        </div>
-        <div class="testimonial">
-          <p>"The automation gave me the peace of mind I desperately needed. I just set my rules and watch my stress levels decrease. I'm not going back."</p>
-          <div class="testimonial-author">— Francis E., Marketing Manager, US</div>
-           </div>
-        <div class="testimonial">
-          <p>"This is the first time I’ve felt a financial tool working with me in the background. It’s calm, silent automation — with clear boundaries."</p>
-          <div class="testimonial-author">— Mide, Nurse, UK</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- The Chill Ecosystem -->
-  <section class="section ecosystem-section">
-    <div class="container">
-      <h2 class="section-title">The Chill Ecosystem</h2>
-      <p class="ecosystem-subtitle">Welcome to Beaverly®'s orchestration infrastructure. Built for chill, designed for scale.</p>
-      <div class="ecosystem-grid">
-        <div class="ecosystem-card">
-          <div class="ecosystem-icon chilla-icon">
-            <i data-lucide="cpu" style="width:3em;height:3em;"></i>
+  <!-- ═══════════════════════════════
+       CHILLA OVERVIEW
+       ═══════════════════════════════ -->
+  <section class="hp-chilla">
+    <div class="hp-sec-wrap">
+      <div class="hp-split">
+        <div class="hp-split-text reveal">
+          <span class="eyebrow">The Product</span>
+          <h2>Chilla™ — the calm automation experience.</h2>
+          <p>Connect your broker. Configure your instructions. Set your comfort boundaries. Then step back and let Chilla operate quietly in the background — strictly within the scope you approved.</p>
+          <p>Every action surfaces in Flow — Chilla's real-time transparency feed. Plain language. Filterable. Exportable. You always know what happened and why.</p>
+          <div class="hp-pills">
+            <span class="hp-pill"><i data-lucide="link" style="width:10px;height:10px"></i>Multi-broker</span>
+            <span class="hp-pill"><i data-lucide="git-commit" style="width:10px;height:10px"></i>Version-tracked</span>
+            <span class="hp-pill"><i data-lucide="shield" style="width:10px;height:10px"></i>Guardrail-enforced</span>
+            <span class="hp-pill"><i data-lucide="activity" style="width:10px;height:10px"></i>Flow transparency</span>
+            <span class="hp-pill"><i data-lucide="smartphone" style="width:10px;height:10px"></i>PWA</span>
           </div>
-          <h3>Chilla™</h3>
-          <p>Your market co-pilot. Connect your broker account, set your instructions, and let Chilla™ automate quietly in the background while you focus on life.</p>
-         <a href="chilla.html" class="btn btn-outline ecosystem-btn" data-track="ecosystem_chilla">Read More About Chilla</a>
+          <a href="chilla.html" class="btn-ink">Explore Chilla &rarr;</a>
         </div>
-
-
-
-        <div class="ecosystem-card">
-          <div class="ecosystem-icon mii-icon">
-            <i data-lucide="database" style="width:3em;height:3em;"></i>
+        <div class="hp-code-panel reveal" style="transition-delay:.1s">
+          <div class="cp-bar"><span></span><span></span><span></span></div>
+          <div class="cp-lines">
+            <div class="cp-line"><span class="cpc">// Instruction lifecycle</span></div>
+            <div class="cp-line"><span class="cpk">authorization  </span><span class="cpg">verified</span></div>
+            <div class="cp-line"><span class="cpk">consent_ver    </span><span class="cpg">current</span></div>
+            <div class="cp-line"><span class="cpk">account_scope  </span><span class="cpv">cTrader / Main</span></div>
+            <div class="cp-line"><span class="cpk">status         </span><span class="cpg">ACTIVE</span></div>
+            <div class="cp-line">&nbsp;</div>
+            <div class="cp-line"><span class="cpc">// Flow — live activity</span></div>
+            <div class="cp-line"><span class="cpg">ENTRY    </span><span class="cpv">Position opened</span></div>
+            <div class="cp-line"><span class="cpc">         Conditions matched. Risk checks passed.</span></div>
+            <div class="cp-line"><span class="cpg">MONITOR  </span><span class="cpv">Position under observation</span></div>
+            <div class="cp-line"><span class="cpy">SKIPPED  </span><span class="cpv">Monthly cap approaching</span></div>
+            <div class="cp-line"><span class="cpg">EXIT     </span><span class="cpv">Position closed</span></div>
+            <div class="cp-line"><span class="cpc">         Lifecycle complete. Broker confirmed.</span></div>
           </div>
-          <h3>M-II™ (Market Infra Intelligence)</h3>
-          <p>The engine behind it all. M-II™ is our proprietary intelligent orchestration infrastructure. Powering Chilla™ with advanced orchestration logic.</p>
-         <a href="m-ii.html" class="btn btn-outline ecosystem-btn" data-track="ecosystem_mii">Learn About M-II</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Things People Ask Before They Chill</h2>
-      <p class="faq-intro">We got you. Chilla is not a bank, not an investment service, and not a brokerage. It’s user-configured automation infrastructure — and yes, your money stays with you.</p>
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>What is Chilla?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>Chilla™ is your market participation co-pilot. Think of it like a financial automation assistant with clear boundaries. Quietly working in the background within 
-              your specified instructions while you focus on life.</p>
-          </div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>How do I get access?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>Login, connect, and chill. From that point on, Chilla starts handling the automation and monitoring within your instructions in the background.</p>
-          </div>
+  <!-- ═══════════════════════════════
+       M-II
+       ═══════════════════════════════ -->
+  <section class="hp-mii">
+    <div class="hp-sec-wrap">
+      <div class="hp-mii-inner">
+        <div class="hp-mii-text reveal">
+          <span class="eyebrow eyebrow-inv">The Infrastructure</span>
+          <h2>M-II™ — the serious infrastructure underneath.</h2>
+          <p>M-II is Beaverly's automation infrastructure layer. It handles instruction validation, risk enforcement, execution integrity, and real-time transparency output. You don't interact with M-II directly — Chilla does.</p>
+          <p>Every guarantee Chilla makes is backed by M-II. Every safety gate, every consent check, every Flow entry — enforced at the infrastructure level.</p>
+          <a href="m-ii.html" class="hp-mii-link">
+            Explore M-II infrastructure
+            <i data-lucide="arrow-right" style="width:12px;height:12px"></i>
+          </a>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>What if I don't have a broker account?</h4>
-            <div class="faq-toggle">+</div>
+        <div class="hp-guarantees reveal" style="transition-delay:.1s">
+          <div class="hp-guar">
+            <i data-lucide="shield-check" class="hp-g-ico"></i>
+            <div><h4>Authorized Execution Only</h4><p>Automation only acts within explicit user-approved instructions. No inference beyond defined scope.</p></div>
           </div>
-          <div class="faq-answer">
-            <p>If you're new, you’ll need to register with a regulated broker in your country. Chilla connects to most global brokers. You choose, we adapt.</p>
+          <div class="hp-guar">
+            <i data-lucide="check-circle" class="hp-g-ico"></i>
+            <div><h4>Safety Before Every Action</h4><p>Risk, compatibility, and integrity checks run before any execution attempt. Failed checks skip cleanly.</p></div>
           </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Where can I use Chilla?</h4>
-            <div class="faq-toggle">+</div>
+          <div class="hp-guar">
+            <i data-lucide="activity" class="hp-g-ico"></i>
+            <div><h4>Transparent Activity</h4><p>Every system event generates a human-readable Flow entry. Nothing happens silently.</p></div>
           </div>
-          <div class="faq-answer">
-            <p>You can chill with Chilla on any broker that supports Chilla's integration and the markets you select. 
-              Our goal? Wherever your money moves, Chilla moves with you. Effortlessly.</p>
+          <div class="hp-guar">
+            <i data-lucide="lock" class="hp-g-ico"></i>
+            <div><h4>Account-Scoped Operation</h4><p>Execution is always bound to the user-selected account. Funds remain held by the broker.</p></div>
           </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Can I withdraw funds anytime?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, absolutely. Chilla doesn’t hold your capital. Your money stays in your broker account, and you have full control at all times. 
-              You can chill without feeling locked in.</p>
-         </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Do I need trading knowledge or experience?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>Chilla is designed for people who understand that markets involve risk and want structured automation. You don’t need to become a trader — but you should be comfortable making your own instruction choices.</p>
-         </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Is Chilla a bot or investment platform?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>Chilla is your market co-pilot that helps you maintain disciplined automation not an investment platform. 
-              We never hold your money. You maintain full control of your capital through your own broker account.</p>
-         </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Is my money safe?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>Yes. Your funds remain in your regulated broker account. Beaverly never has custody of your money. We only provide your market co-pilot.</p>
-         </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <h4>Does Chilla guarantee any returns?</h4>
-            <div class="faq-toggle">+</div>
-          </div>
-          <div class="faq-answer">
-            <p>No. Markets involve risk and outcomes vary. Chilla doesn’t make promises — it automates within your instructions and boundaries, and keeps you informed through Flow.</p>
-         </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Beaverly -->
-  <section id="about" class="section section-alt">
-    <div class="container">
-      <div class="about-content">
-        <h2 class="section-title">About Beaverly®</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="about-lead">We believe in the present, where anyone can find accessibility and consistency in their market participation.</p>
-           <p>We understand the complexities and intimidations of the markets and the need for tools that offer efficiency.
-             Since we all strive for liberating market participation, we built a system designed to support you while you focus on life. Allowing the automation logic 
-             to run without emotional pressure or needing to worry about it doing what you don't want.
-             If you’ve ever wanted a reliable way to stay on top of your participation in the markets, welcome home; where Chilla, your market co-pilot, 
-             keeps things moving quietly in the background. </p>
+
+  <!-- ═══════════════════════════════
+       PRICING
+       ═══════════════════════════════ -->
+  <section class="hp-pricing" id="pricing">
+    <div class="hp-sec-wrap">
+      <div class="hp-sec-hdr reveal">
+        <span class="eyebrow">Plans</span>
+        <h2>Pick your chill mode.</h2>
+        <p>Start free to understand the full setup. Upgrade when you're ready for continuous automation across more environments and behaviors.</p>
+      </div>
+      <div class="hp-plan-grid">
+
+        <div class="hp-plan reveal">
+          <div class="hp-plan-name">Chill Architect</div>
+          <div class="hp-plan-amt">Free</div>
+          <div class="hp-plan-note">Understand the setup before going live.</div>
+          <div class="hp-plan-feats">
+            <div class="hp-pf"><i data-lucide="check"></i>Design automation across pre-built behaviors and playgrounds</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Connect your first automation environment</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Plan comfort levels and monthly budgets</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Review your full instruction before activation</div>
           </div>
-          <div class="about-stats">
-            <div class="stat">
-              <div class="stat-number chill-icon">24/7</div>
-              <div class="stat-label">Running Silently</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Focus on Automation</div>
-            </div>
-            <div class="stat">
-              <div class="stat-number chill-icon">★ ★ ★ ★ ★</div>
-              <div class="stat-label">Based on User Automation Feedback*</div>
-            </div>
-          </div>
+          <a href="https://chilla.beaverlyai.com" class="hp-plan-btn ol" target="_blank" rel="noopener">Start Free</a>
         </div>
-        <div class="rating-disclaimer">
-          *Star rating based on feedback from a limited group of users. Individual results will vary.
+
+        <div class="hp-plan reveal" style="transition-delay:.07s">
+          <div class="hp-plan-name">Chill Mode</div>
+          <div><span class="hp-plan-amt">$20</span><span class="hp-plan-per">/month</span></div>
+          <div class="hp-plan-note">A calm way to begin automating.</div>
+          <div class="hp-plan-feats">
+            <div class="hp-pf"><i data-lucide="check"></i>Live automation across multiple behaviors continuously</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Participate across Forex, Metals, Indices and more</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Comfort levels and monthly budgets enforced automatically</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Full Flow activity — human-readable, filterable, exportable</div>
+          </div>
+          <a href="https://chilla.beaverlyai.com" class="hp-plan-btn ol" target="_blank" rel="noopener">Start Chilling</a>
+        </div>
+
+        <div class="hp-plan featured reveal" style="transition-delay:.14s">
+          <div class="hp-popular-tag">Popular</div>
+          <div class="hp-plan-name">Deep Chill</div>
+          <div><span class="hp-plan-amt">$59</span><span class="hp-plan-per">/month</span></div>
+          <div class="hp-plan-note">Full chill experience.</div>
+          <div class="hp-plan-feats">
+            <div class="hp-pf"><i data-lucide="check"></i>Higher automation capacity without throttling</div>
+            <div class="hp-pf"><i data-lucide="check"></i>More environments, behaviors, and playgrounds</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Multiple concurrent instructions</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Priority execution — skip the queue</div>
+          </div>
+          <a href="https://chilla.beaverlyai.com" class="hp-plan-btn light" target="_blank" rel="noopener">Go Deeper</a>
+        </div>
+
+        <div class="hp-plan reveal" style="transition-delay:.21s">
+          <div class="hp-plan-name">Peak Chill</div>
+          <div><span class="hp-plan-amt">$200</span><span class="hp-plan-per">/month</span></div>
+          <div class="hp-plan-note">The ultimate chill.</div>
+          <div class="hp-plan-feats">
+            <div class="hp-pf"><i data-lucide="check"></i>Maximum capacity across all environments</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Complex, always-on automation setups</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Early access to new behaviors before general release</div>
+            <div class="hp-pf"><i data-lucide="check"></i>Dedicated ease for complex configurations</div>
+          </div>
+          <a href="https://chilla.beaverlyai.com" class="hp-plan-btn ol" target="_blank" rel="noopener">Unlock Peak</a>
+        </div>
+
+      </div>
+      <p class="hp-pricing-note">
+        Upgrade anytime from your dashboard. &nbsp;<a href="/usage-and-guardrails.html">View guardrails and usage limits &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       TESTIMONIALS
+       ═══════════════════════════════ -->
+  <section class="hp-testi">
+    <div class="hp-sec-wrap">
+      <div class="hp-sec-hdr reveal">
+        <span class="eyebrow">Real Users</span>
+        <h2>People chilling with Chilla.</h2>
+        <p>Real experiences from the Beaverly community.</p>
+      </div>
+      <div class="hp-testi-grid">
+        <div class="hp-tcard reveal">
+          <p class="hp-tquote">"Setting up my first instruction felt genuinely straightforward. I spend less time monitoring and more time building the things I actually care about."</p>
+          <div class="hp-tauthor">— Tolu A., Software Engineer, Nigeria</div>
+        </div>
+        <div class="hp-tcard reveal" style="transition-delay:.08s">
+          <p class="hp-tquote">"The automation gave me the peace of mind I needed. I set my rules, stepped back, and watched my stress levels decrease. I'm not going back."</p>
+          <div class="hp-tauthor">— Francis E., Marketing Manager, United States</div>
+        </div>
+        <div class="hp-tcard reveal" style="transition-delay:.16s">
+          <p class="hp-tquote">"This is the first financial tool that feels like it's genuinely working with me in the background. Calm, silent automation — with clear boundaries I set myself."</p>
+          <div class="hp-tauthor">— Mide, Nurse, United Kingdom</div>
+        </div>
+      </div>
+      <p class="hp-tdisc">Experiences are individual and not guarantees of future results. Market participation involves risk.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       FAQ
+       ═══════════════════════════════ -->
+  <section class="hp-faq" id="faq">
+    <div class="hp-faq-inner">
+      <div class="hp-sec-hdr reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions before you chill.</h2>
+        <p>Chilla is not a bank, not an investment service, not a brokerage. Your money stays with you — always.</p>
+      </div>
+      <div class="hp-faq-list">
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">What is Chilla?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">Chilla™ is Beaverly's user-facing automation product. You connect your broker, configure instructions, set your comfort boundaries, and Chilla automates in the background — strictly within the scope you approved. Flow keeps you informed of every action in plain language.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">What is Beaverly?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">Beaverly is building instruction-based automation infrastructure for structured, non-custodial market participation. Chilla is the first product on that infrastructure. M-II is the automation layer that powers everything underneath it.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">Is my money safe?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">Yes. Your funds remain in your regulated broker account at all times. Beaverly never holds, controls, or has custody of your money. We only provide the automation infrastructure — you retain full access and control of your broker account throughout.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">Can I pause or withdraw anytime?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">Absolutely. You can pause automation or revoke any instruction from your dashboard at any moment. Your funds are in your broker account — your ability to withdraw is entirely independent of Chilla.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">How do I get started?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">Register on Chilla, connect your broker environment, choose a behavior, set your comfort level, review risk implications, give your authorization, and watch Flow. The free Chill Architect plan lets you explore the full setup before running any live automation.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">Do I need trading knowledge?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">You don't need to be a trader, but you should understand that markets involve risk and make your own informed instruction choices. Chilla is designed for people who want structured participation — not a black box they hand decisions to.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">Does Chilla guarantee returns?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">No. Markets involve risk and outcomes vary. Chilla automates within your instructions and boundaries — it makes no promises about results. It keeps you informed through Flow and enforces the safety guardrails you define.</p>
+        </details>
+        <details class="hp-faq-item">
+          <summary class="hp-faq-q">What is Flow?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="hp-faq-a">Flow is Chilla's real-time transparency feed. Every meaningful action the system takes — entries, exits, skipped actions, warnings — appears in plain language, in order. Filter, replay, and export your full activity history at any time.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       ABOUT
+       ═══════════════════════════════ -->
+  <section class="hp-about" id="about">
+    <div class="hp-sec-wrap">
+      <div class="hp-about-inner">
+        <div class="hp-about-text reveal">
+          <span class="eyebrow">About Beaverly</span>
+          <h2>Built from exhaustion.<br>Designed for calm.</h2>
+          <p class="hp-about-lead">"We built the system we wished existed."</p>
+          <p class="hp-about-body">
+            Beaverly was born from watching charts too late at night, second-guessing decisions under pressure, and wishing there was a structured, transparent way to stay in markets without losing sleep.<br><br>
+            We built instruction-based automation infrastructure so anyone — regardless of time zone, schedule, or expertise — could participate in global markets with discipline and calm. Chilla is how that infrastructure feels to use. M-II is what makes it trustworthy.
+          </p>
+        </div>
+        <div class="reveal" style="transition-delay:.1s">
+          <img src="attached_assets/Beaverly_founders.png" alt="Beaverly Team" class="hp-about-img" onerror="this.style.display='none'">
+          <div class="hp-astats">
+            <div class="hp-astat"><div class="sn">24/7</div><div class="sl">Infrastructure Running</div></div>
+            <div class="hp-astat"><div class="sn">3</div><div class="sl">Continents Reached</div></div>
+            <div class="hp-astat"><div class="sn">1,200+</div><div class="sl">Instructions Automated</div></div>
+            <div class="hp-astat"><div class="sn">$0</div><div class="sl">Funds Held by Beaverly</div></div>
+          </div>
         </div>
       </div>
     </div>
-    <img src="attached_assets/Beaverly_founders.png" 
-         alt="Beaverly Team" 
-         class="team-photo">
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="contact-content">
-        <h2 class="section-title">Ready to Start Chilling?</h2>
-        <p class="contact-subtitle">Join other chilled people making efficient moves.</p>
-        <div class="contact-cta">
-          <a href="#pricing" class="btn btn-primary contact-cta-button" data-track="end_cta">Start Chilling Now</a>
-          <p class="contact-note">Or chill with us directly at <a href="mailto:hello@beaverlyai.com" data-track="end_mailto">hello@beaverlyai.com</a></p>
-        </div>
+
+  <!-- ═══════════════════════════════
+       FINAL CTA
+       ═══════════════════════════════ -->
+  <section class="hp-cta-final" id="contact">
+    <div class="hp-cta-inner reveal">
+      <h2>Ready to start<br>chilling?</h2>
+      <p>Connect your broker. Set your instructions. Watch Flow. Market participation, on your terms — without the lifestyle.</p>
+      <div class="hp-cta-btns">
+        <a href="https://chilla.beaverlyai.com" class="btn-wh" data-track="final_cta">Open Chilla</a>
+        <a href="#pricing" class="btn-ol-inv" data-track="final_plans">View Plans</a>
       </div>
+      <p class="hp-cta-note">Non-custodial. No funds held by Beaverly. Pause or revoke anytime.</p>
     </div>
   </section>
 
-  <!-- Footer will be injected here via loader -->
 
-  <script src="script.js"></script>
-  <script src="/js/analytics.js"></script>
+  <!-- Footer injected by js/footer-loader.js -->
+
   <script src="/js/header-loader.js"></script>
   <script src="/js/footer-loader.js"></script>
-  <script src="/js/interactive-demo.js"></script>
+
+  <script>
+  /* =============================================
+     PAGE INIT
+     ============================================= */
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Lucide
+    if (window.lucide) lucide.createIcons();
+
+    // Hero entrance
+    requestAnimationFrame(() => setTimeout(() => {
+      const h = document.getElementById('heroEl');
+      if (h) h.classList.add('in');
+    }, 100));
+
+    // Scroll cue
+    const sc = document.getElementById('heroScroll');
+    if (sc) sc.addEventListener('click', () => {
+      const t = document.getElementById('interactive-flow-demo');
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Scroll reveal
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    // FAQ icons
+    document.querySelectorAll('.hp-faq-item').forEach(item => {
+      item.addEventListener('toggle', () => { if (window.lucide) lucide.createIcons(); });
+    });
+
+    // Navbar smart hide
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      const nav = document.querySelector('.nav');
+      if (nav) {
+        nav.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : 'translateY(0)';
+        nav.style.transition = 'transform .28s ease';
+      }
+      lastY = y;
+    }, { passive: true });
+
+    // Homepage demo
+    initDemo();
+  });
+
+  /* =============================================
+     HOMEPAGE DEMO
+     ============================================= */
+  function initDemo() {
+    const STEPS = 6;
+    let step = 1, connected = false, behavior = null, consented = false, fTimer = null;
+
+    const nextBtn  = document.getElementById('demoNextBtn');
+    const footEl   = document.getElementById('demoFoot');
+    const rstFoot  = document.getElementById('demoRstFoot');
+    const rstHead  = document.getElementById('demoRstHeader');
+
+    function go(n) {
+      step = n;
+      document.querySelectorAll('.demo-card').forEach(c => c.classList.remove('active'));
+      const card = document.getElementById('dc-step-' + n);
+      if (card) card.classList.add('active');
+      syncProgress();
+      syncNext();
+      if (n === STEPS) {
+        footEl.style.display = 'none';
+        startFlow();
+      } else {
+        footEl.style.display = 'flex';
+        if (rstFoot) rstFoot.style.visibility = n > 1 ? 'visible' : 'hidden';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function syncProgress() {
+      document.querySelectorAll('#demoProgressRail .demo-prog-seg').forEach((s, i) => {
+        s.classList.remove('done', 'active');
+        if (i + 1 < step) s.classList.add('done');
+        else if (i + 1 === step) s.classList.add('active');
+      });
+    }
+
+    function syncNext() {
+      if (!nextBtn) return;
+      const ok = { 1: connected, 2: !!behavior, 3: true, 4: true, 5: consented };
+      nextBtn.disabled = !ok[step];
+      nextBtn.textContent = step === 5 ? 'Activate' : 'Continue';
+    }
+
+    document.addEventListener('click', e => {
+      // Connect
+      if (e.target.id === 'dcConnectBtn') {
+        const b = e.target; b.textContent = 'Connecting…'; b.disabled = true;
+        setTimeout(() => {
+          connected = true;
+          const s = document.getElementById('dcBrokerS');
+          if (s) { s.textContent = 'Connected ✓'; s.classList.add('ok'); }
+          const badge = document.createElement('div');
+          badge.className = 'dc-connected-badge';
+          badge.innerHTML = '<span class="gdot"></span>Environment ready';
+          b.replaceWith(badge);
+          syncNext();
+        }, 1100);
+        return;
+      }
+
+      // Next
+      if (e.target.id === 'demoNextBtn' && !e.target.disabled) { if (step < STEPS) go(step + 1); return; }
+
+      // Behavior
+      const bhv = e.target.closest('.dc-bhv');
+      if (bhv) { document.querySelectorAll('.dc-bhv').forEach(x => x.classList.remove('sel')); bhv.classList.add('sel'); behavior = bhv.dataset.bhv; syncNext(); return; }
+
+      // Playground
+      const pg = e.target.closest('.dc-pg');
+      if (pg) { pg.classList.toggle('sel'); const c = pg.querySelector('.dc-pg-chk'); if (c) c.textContent = pg.classList.contains('sel') ? '✓' : ''; return; }
+
+      // Consent
+      if (e.target.closest('#dcConsentBox')) {
+        consented = !consented;
+        const b = document.getElementById('dcConsentBox');
+        if (b) { b.classList.toggle('checked'); b.textContent = consented ? '✓' : ''; }
+        syncNext(); return;
+      }
+
+      // Restart
+      if (e.target.id === 'demoRstHeader' || e.target.id === 'demoRstFoot') { restart(); }
+    });
+
+    document.addEventListener('input', e => {
+      if (e.target.id !== 'dcComfortSlider') return;
+      const v = parseInt(e.target.value);
+      const val = document.getElementById('dcComfortVal'), sub = document.getElementById('dcComfortSub');
+      if (!val || !sub) return;
+      if (v <= 30) { val.textContent = 'Deep Sleep'; sub.textContent = 'Minimal exposure'; }
+      else if (v >= 70) { val.textContent = 'No Sleep'; sub.textContent = 'Higher exposure'; }
+      else { val.textContent = 'Balanced'; sub.textContent = 'Moderate exposure'; }
+    });
+
+    function startFlow() {
+      const el = document.getElementById('dcFlowList'); if (!el) return; el.innerHTML = '';
+      const events = [
+        { t:'ok',   i:'check',  tx:'Instruction accepted',       mx:'Authorization verified — scope locked' },
+        { t:'info', i:'bolt',   tx:'Behavior initialized',       mx:'Momentum Follow active on EURUSD, XAUUSD' },
+        { t:'info', i:'globe',  tx:'Market observation started', mx:'Evaluating conditions…' },
+        { t:'mon',  i:'eye',    tx:'Conditions evaluated',       mx:'No action yet — waiting for clarity' },
+        { t:'ok',   i:'check',  tx:'Conditions matched',         mx:'Integrity & risk checks passed' },
+        { t:'ok',   i:'target', tx:'Position opened',            mx:'EURUSD — within comfort and risk bounds' },
+        { t:'mon',  i:'eye',    tx:'Monitoring position',        mx:'Active lifecycle observation' },
+        { t:'ok',   i:'check',  tx:'Position closed',            mx:'Exit conditions met — lifecycle complete' },
+        { t:'info', i:'pause',  tx:'Awaiting next opportunity',  mx:'Instruction remains active' },
+      ];
+      let i = 0;
+      (function tick() {
+        if (i >= events.length) return;
+        const ev = events[i++];
+        const d = document.createElement('div'); d.className = 'dc-flow-msg';
+        d.innerHTML = `<div class="dc-fdot ${ev.t}">${ico(ev.i)}</div><div><div class="dc-ftext">${ev.tx}</div><div class="dc-fmeta">${ev.mx}</div></div>`;
+        el.appendChild(d); el.scrollTop = el.scrollHeight;
+        fTimer = setTimeout(tick, 1150);
+      })();
+    }
+
+    function ico(n) {
+      const m = {
+        check:  `<svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        bolt:   `<svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        globe:  `<svg width="10" height="10" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2c2 4 2 6 2 10s0 6-2 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`,
+        eye:    `<svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>`,
+        target: `<svg width="10" height="10" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>`,
+        pause:  `<svg width="10" height="10" viewBox="0 0 24 24" fill="none"><rect x="6" y="5" width="3" height="14" fill="currentColor"/><rect x="15" y="5" width="3" height="14" fill="currentColor"/></svg>`,
+      };
+      return m[n] || '';
+    }
+
+    function restart() {
+      if (fTimer) clearTimeout(fTimer);
+      connected = false; behavior = null; consented = false;
+      const s = document.getElementById('dcBrokerS'); if (s) { s.textContent = 'Not connected'; s.classList.remove('ok'); }
+      const badge = document.querySelector('#dc-step-1 .dc-connected-badge');
+      if (badge) { const b = document.createElement('button'); b.className = 'dc-connect-btn'; b.id = 'dcConnectBtn'; b.textContent = 'Connect'; badge.replaceWith(b); }
+      document.querySelectorAll('.dc-bhv').forEach(x => x.classList.remove('sel'));
+      document.querySelectorAll('.dc-pg').forEach(p => { p.classList.remove('sel'); const c = p.querySelector('.dc-pg-chk'); if (c) c.textContent = ''; });
+      ['EURUSD','XAUUSD'].forEach(pg => { const el = document.querySelector(`.dc-pg[data-pg="${pg}"]`); if (el) { el.classList.add('sel'); const c = el.querySelector('.dc-pg-chk'); if (c) c.textContent = '✓'; } });
+      const sl = document.getElementById('dcComfortSlider'); if (sl) sl.value = 50;
+      const cv = document.getElementById('dcComfortVal'); if (cv) cv.textContent = 'Balanced';
+      const cs = document.getElementById('dcComfortSub'); if (cs) cs.textContent = 'Moderate exposure';
+      const cb = document.getElementById('dcConsentBox'); if (cb) { cb.classList.remove('checked'); cb.textContent = ''; }
+      const fl = document.getElementById('dcFlowList'); if (fl) fl.innerHTML = '';
+      footEl.style.display = 'flex'; if (rstFoot) rstFoot.style.visibility = 'hidden';
+      go(1);
+    }
+
+    go(1);
+  }
+  </script>
 </body>
 </html>
