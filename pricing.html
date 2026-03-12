@@ -457,138 +457,74 @@
   <!-- ═══════════════════════════════════════════
        FAQ
   ═══════════════════════════════════════════ -->
-  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
-    <div class="container">
+  <section class="prc-faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="prc-faq-inner">
       <div class="section-header reveal-up">
         <p class="section-eyebrow">Questions</p>
         <h2 class="section-title" id="faq-heading">Good questions, calm answers.</h2>
       </div>
 
-      <div class="faq-grid reveal-up reveal-delay-1">
+      <div class="prc-faq-list reveal-up reveal-delay-1">
 
-        <div class="faq-col">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-              What does "unlimited with guardrails" mean?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-1" hidden>
-              <p>It means your automation isn't arbitrarily capped — in normal use, you'll rarely if ever notice a limit. The guardrails are system-level safeguards that protect reliability for all Chilla users, not restrictions on everyday automation. They're designed to be invisible unless something unusual is happening.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">What does "unlimited with guardrails" mean?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">It means your automation isn't arbitrarily capped — in normal use, you'll rarely if ever notice a limit. The guardrails are system-level safeguards that protect reliability for all Chilla users, not restrictions on everyday automation. They're designed to be invisible unless something unusual is happening.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-              Can I change plans later?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-2" hidden>
-              <p>Yes — you can upgrade or downgrade anytime from inside Chilla. Changes take effect at the start of your next billing cycle. If you'd like to talk through a mid-cycle change, reach out to the team at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="18707d747477587a7d796e7d6a74617971367b7775">[email&#160;protected]</a>.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Can I change plans later?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">Yes — you can upgrade or downgrade anytime from inside Chilla. Changes take effect at the start of your next billing cycle. If you'd like to talk through a mid-cycle change, reach out to the team at hello@beaverlyai.com.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-              Does Chilla hold my funds?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-3" hidden>
-              <p>No — never. Your funds remain in your own environment account at all times. Beaverly doesn't hold, manage, or have access to your capital. We provide automation infrastructure that follows your instructions. You withdraw, deposit, and manage your money directly through your own environment.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Does Chilla hold my funds?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">No — never. Your funds remain in your own environment account at all times. Beaverly doesn't hold, manage, or have access to your capital. We provide automation infrastructure that follows your instructions. You withdraw, deposit, and manage your money directly through your own environment.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-              What is automation capacity?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-4" hidden>
-              <p>It's the total amount of automation work Chilla can run on your behalf in a single day. Think of it like daily automation fuel — it powers the monitoring, instruction processing, and behavior execution happening in the background. It resets every 24 hours, and you can always see where you stand inside Chilla.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">What is automation capacity?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">It's the total amount of automation work Chilla can run on your behalf in a single day. Think of it like daily automation fuel — it powers the monitoring, instruction processing, and behavior execution happening in the background. It resets every 24 hours, and you can always see where you stand inside Chilla.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-              Why do I see values like 12,000× in-app?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-5" hidden>
-              <p>The <strong>×</strong> symbol represents individual automation cycles — each one being a discrete piece of work Chilla completes within your instructions. 12,000× simply means 12,000 automation runs available that day. Most users with active behaviors find their daily allocation more than comfortable.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Why do I see values like 12,000× in-app?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">The <strong>×</strong> symbol represents individual automation cycles — each one a discrete piece of work Chilla completes within your instructions. 12,000× means 12,000 automation runs available that day. Most users with active behaviors find their daily allocation more than comfortable.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-              Do different behaviors use capacity differently?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-6" hidden>
-              <p>Yes. Lighter monitoring actions use less capacity; more complex behaviors — particularly those watching many playgrounds simultaneously — use a bit more. Chilla manages this automatically. Your usage panel always shows how much you've used and how much remains, so there's no guesswork.</p>
-            </div>
-          </div>
-        </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Do different behaviors use capacity differently?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">Yes. Lighter monitoring actions use less capacity; more complex behaviors — particularly those watching many playgrounds simultaneously — use a bit more. Chilla manages this automatically. Your usage panel always shows how much you've used and how much remains, so there's no guesswork.</p>
+        </details>
 
-        <div class="faq-col">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
-              What counts as an environment connection?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-7" hidden>
-              <p>An environment connection is a link between Chilla and a single account. If you have one account, you need one connection. If you want Chilla to automate across multiple accounts — different environments, regions, or account types — each one counts as a separate environment connection.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">What counts as an environment connection?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">An environment connection is a link between Chilla and a single account. If you have one account, you need one connection. If you want Chilla to automate across multiple accounts — different environments, regions, or account types — each one counts as a separate environment connection.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
-              Can I test before enabling live automation?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-8" hidden>
-              <p>Yes — that's exactly what Chill Architect is for. It's free, and it lets you configure behaviors, set comfort levels, and see precisely how your instructions are structured before a single live automation runs. When you're ready, upgrading to a paid plan activates everything you've already set up.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Can I test before enabling live automation?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">Yes — that's exactly what Chill Architect is for. It's free, and it lets you configure behaviors, set comfort levels, and see precisely how your instructions are structured before a single live automation runs. When you're ready, upgrading to a paid plan activates everything you've already set up.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
-              Which plan is right if I want more than one environment?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-9" hidden>
-              <p>Deep Chill supports up to 3 environment connections, which is a comfortable starting point for multi-environment automation. If you need more, Peak Chill offers unlimited connections (with guardrails), and Enterprise is available for institutional-scale requirements.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Which plan if I want more than one environment?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">Deep Chill supports up to 3 environment connections — a comfortable starting point for multi-environment automation. If you need more, Peak Chill offers unlimited connections (with guardrails), and Enterprise is available for institutional-scale requirements.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
-              Do all plans include Flow?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-10" hidden>
-              <p>Yes. Flow — your real-time decision log — is included across all plans, including the free Chill Architect tier. Transparency is core to how Chilla works. You'll always be able to see what Chilla is doing and why, within your instructions.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Do all plans include Flow?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">Yes. Flow — your real-time decision log — is included across all plans, including the free Chill Architect tier. Transparency is core to how Chilla works. You'll always be able to see what Chilla is doing and why, within your instructions.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
-              Does Chilla guarantee outcomes?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-11" hidden>
-              <p>No — and we'll never claim otherwise. Chilla is disciplined automation infrastructure, not a financial advisor or performance engine. All markets involve uncertainty. What Chilla offers is consistency, transparency, and the removal of emotional or time-based friction from your participation. Outcomes depend on market conditions and the behaviors you configure.</p>
-            </div>
-          </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Does Chilla guarantee outcomes?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">No — and we'll never claim otherwise. Chilla is disciplined automation infrastructure, not a financial advisor or performance engine. All markets involve uncertainty. What Chilla offers is consistency, transparency, and the removal of emotional or time-based friction from your participation. Outcomes depend on market conditions and the behaviors you configure.</p>
+        </details>
 
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
-              Is yearly billing locked in?
-              <i data-lucide="chevron-down" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq-12" hidden>
-              <p>Yearly plans are billed as a single annual payment and include a meaningful saving compared to monthly billing. If your circumstances change, reach out to the team at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0d8d5dcdcdff0d2d5d1c6d5c2dcc9d1d99ed3dfdd">[email&#160;protected]</a> — we're here to help.</p>
-            </div>
-          </div>
-        </div>
+        <details class="prc-faq-item">
+          <summary class="prc-faq-q">Is yearly billing locked in?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="prc-faq-a">Yearly plans are billed as a single annual payment and include a meaningful saving compared to monthly billing. If your circumstances change, reach out to the team at hello@beaverlyai.com — we're here to help.</p>
+        </details>
 
       </div>
     </div>

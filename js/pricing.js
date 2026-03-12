@@ -98,52 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 
-  // ─── FAQ Accordion ────────────────────────────
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded  = btn.getAttribute('aria-expanded') === 'true';
-      const answerId  = btn.getAttribute('aria-controls');
-      const answerEl  = document.getElementById(answerId);
-      if (!answerEl) return;
-
-      if (expanded) {
-        btn.setAttribute('aria-expanded', 'false');
-        collapsePanel(answerEl);
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        expandPanel(answerEl);
-      }
-    });
-
-    btn.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
-    });
-  });
-
-  function expandPanel(el) {
-    el.removeAttribute('hidden');
-    el.style.height   = '0';
-    el.style.overflow = 'hidden';
-    el.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-    requestAnimationFrame(() => { el.style.height = el.scrollHeight + 'px'; });
-    el.addEventListener('transitionend', () => {
-      el.style.height = '';
-      el.style.overflow = '';
-    }, { once: true });
-  }
-
-  function collapsePanel(el) {
-    el.style.height   = el.scrollHeight + 'px';
-    el.style.overflow = 'hidden';
-    el.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-    requestAnimationFrame(() => { el.style.height = '0'; });
-    el.addEventListener('transitionend', () => {
-      el.setAttribute('hidden', '');
-      el.style.height = '';
-      el.style.overflow = '';
-    }, { once: true });
-  }
-
   // ─── Capacity meter animation ─────────────────
   const meterFill  = document.querySelector('.capacity-meter-fill');
   const meterTrack = document.querySelector('.capacity-meter-track');
