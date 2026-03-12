@@ -8,15 +8,30 @@
   'use strict';
 
   async function loadHeader() {
-    const isBlogPage   = window.location.pathname.includes('/blog/');
-    const basePath     = isBlogPage ? '../../' : '';
-    const includesPath = basePath + 'includes/';
+    const candidates = [
+      '/includes/header.html',
+      'includes/header.html',
+      '../includes/header.html',
+      '../../includes/header.html',
+    ];
 
     try {
-      const res = await fetch(includesPath + 'header.html');
-      if (!res.ok) return;
+      let html = '';
 
-      const html = await res.text();
+      for (const path of candidates) {
+        try {
+          const res = await fetch(path);
+          if (res.ok) {
+            html = await res.text();
+            break;
+          }
+        } catch (err) {
+          // Try next candidate path.
+        }
+      }
+
+      if (!html) return;
+
       const frag = document.createRange().createContextualFragment(html);
 
       // Insert before the first element in <body>

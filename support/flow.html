@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow and Transparency | Beaverly Support</title>
+  <meta name="description" content="Learn how to read Flow events, statuses, filters, and historical activity in Chilla." />
+  <link rel="canonical" href="https://beaverlyai.com/support/flow.html" />
+  <meta property="og:title" content="Flow and Transparency | Beaverly Support" />
+  <meta property="og:description" content="Understand what happened, why it happened, and what to do next." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://beaverlyai.com/support/flow.html" />
+  <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,700&display=swap" /></noscript>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="support.css" />
+</head>
+<body>
+  <main class="support-page page--nav-offset">
+    <div class="support-shell">
+      <nav class="support-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span><a href="index.html">Support</a><span>/</span><span>Flow and Transparency</span>
+      </nav>
+
+      <header class="support-hero support-hero--light">
+        <p class="support-kicker">Flow and Transparency</p>
+        <h1 class="support-title">What Flow explains and how to use it</h1>
+        <p class="support-subtitle">Flow is the human-readable activity stream in Chilla. It helps you answer two questions quickly: what happened, and why it happened.</p>
+        <div class="support-meta">
+          <span class="support-chip"><i data-lucide="activity"></i> Article type: Concept + Reference</span>
+          <span class="support-chip"><i data-lucide="calendar-check-2"></i> Last reviewed: March 12, 2026</span>
+        </div>
+      </header>
+
+      <div class="support-layout">
+        <aside class="support-sidebar" aria-label="Support sections">
+          <h2>Sections</h2>
+          <a href="index.html">Support Home</a>
+          <a href="getting-started.html">Getting Started</a>
+          <a href="chilla-basics.html">Chilla Basics</a>
+          <a href="flow.html" aria-current="page">Flow and Transparency</a>
+          <a href="automation-capacity.html">Automation Capacity</a>
+          <a href="behaviors-playgrounds.html">Behaviors and Playgrounds</a>
+          <a href="instructions-and-comfort.html">Instructions and Comfort</a>
+          <a href="environments.html">Environments and Connections</a>
+          <a href="plans-billing-usage.html">Plans, Billing and Usage</a>
+          <a href="troubleshooting.html">Troubleshooting</a>
+          <a href="account-security.html">Account and Security</a>
+          <a href="enterprise.html">Enterprise</a>
+          <a href="contact.html">Contact and Escalation</a>
+        </aside>
+
+        <section class="support-content">
+          <article class="support-card">
+            <h2>Where to find this</h2>
+            <p>Flow is available from the main app experience and appears as the activity feed for instruction events. In most builds, you can open Flow from dashboard navigation or instruction detail views.</p>
+            <div class="support-callout support-callout--warn">
+              <strong>Verification note:</strong> Filter names, export placement, and event expansion controls should be checked against the current production UI before final publication screenshots are added.
+            </div>
+          </article>
+
+          <article class="support-card">
+            <h2>What you will see</h2>
+            <ul>
+              <li>Event type labels such as entry, exit, skipped, warning, and monitoring updates.</li>
+              <li>A timestamp so you can place events in sequence.</li>
+              <li>Plain-language event summary tied to your instruction context.</li>
+              <li>Status labels showing current lifecycle state.</li>
+            </ul>
+            <div class="support-inline-list">
+              <span class="support-status support-status--active">Active</span>
+              <span class="support-status support-status--paused">Paused</span>
+              <span class="support-status support-status--revoked">Revoked</span>
+              <span class="support-status support-status--verifying">Verifying</span>
+              <span class="support-status support-status--monitoring">Monitoring</span>
+            </div>
+            <p class="support-footnote">Status labels can vary slightly by app release. Meaning should remain consistent.</p>
+          </article>
+
+          <article class="support-card">
+            <h2>What each major element means</h2>
+            <div class="support-table-wrap">
+              <table class="support-table">
+                <thead>
+                  <tr><th>Element</th><th>Meaning</th><th>What to do next</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Entry event</td><td>Automation opened a position within your instruction scope.</td><td>Confirm environment and instruction are the expected ones.</td></tr>
+                  <tr><td>Exit event</td><td>A tracked position lifecycle ended and was closed.</td><td>Review sequence around the event if you need context.</td></tr>
+                  <tr><td>Skipped event</td><td>System stepped aside due to configuration or guardrail context.</td><td>Open event details and compare with comfort and capacity state.</td></tr>
+                  <tr><td>Warning event</td><td>Something needs attention (connection, status, readiness).</td><td>Use troubleshooting checklist for targeted fix steps.</td></tr>
+                  <tr><td>Live event</td><td>Instruction is active and being tracked with no immediate action.</td><td>No action needed unless behavior differs from expectation.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="support-card">
+            <h2>What you can do here</h2>
+            <ul>
+              <li>Filter by event type to isolate entries, exits, skips, or warnings.</li>
+              <li>Review historical activity windows to understand sequence.</li>
+              <li>Expand event details where available for deeper context.</li>
+              <li>Export activity logs where export controls are enabled in your account.</li>
+              <li>Use Flow as your first troubleshooting surface before contacting support.</li>
+            </ul>
+          </article>
+
+          <article class="support-card">
+            <h2>What Flow explains, and what it does not expose</h2>
+            <div class="support-pair">
+              <div class="support-box">
+                <h3>Flow explains</h3>
+                <ul>
+                  <li>What happened.</li>
+                  <li>Why Chilla responded at a high level.</li>
+                  <li>What action was taken or safely skipped.</li>
+                  <li>Which instruction context was involved.</li>
+                </ul>
+              </div>
+              <div class="support-box">
+                <h3>Flow does not expose</h3>
+                <ul>
+                  <li>Proprietary threshold values.</li>
+                  <li>Exact pattern and validation internals.</li>
+                  <li>Internal formula details.</li>
+                  <li>Private sequencing mechanics.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="support-card support-faq">
+            <h2>Flow FAQ</h2>
+            <details>
+              <summary>I expected activity but Flow is quiet. Is that a problem?</summary>
+              <p>Not always. A quiet period can mean no valid conditions, active monitoring, or step-aside behavior within your boundaries. Check instruction status, environment readiness, and capacity first.</p>
+            </details>
+            <details>
+              <summary>Can Flow be used for support requests?</summary>
+              <p>Yes. Include recent event timestamps, event types, and any warning labels when you contact support.</p>
+            </details>
+          </article>
+
+          <article class="support-card">
+            <h2>Related articles</h2>
+            <div class="support-related">
+              <a href="troubleshooting.html">Troubleshooting no activity</a>
+              <a href="instructions-and-comfort.html">Instruction statuses</a>
+              <a href="automation-capacity.html">Capacity and skipped actions</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  
+  <script src="/js/header-loader.js"></script>
+  <script src="/js/footer-loader.js"></script>
+  <script>if (window.lucide) { window.lucide.createIcons(); }</script>
+</body>
+</html>
+
+
+
+
