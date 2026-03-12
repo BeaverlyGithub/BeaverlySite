@@ -61,7 +61,11 @@
         <section class="support-content">
           <article class="support-card">
             <h2>Where to find this</h2>
-            <p>Plan and usage controls are usually found in account or billing areas in-app. Public tier details are available on the pricing page.</p>
+            <ul>
+              <li>Public plan catalog: <a href="/pricing.html">Pricing page</a>.</li>
+              <li>In-app usage: sidebar <strong>Usage</strong> -> <strong>Usage & Capacity</strong> (`usage.html`).</li>
+              <li>In-app plan upgrade: sidebar <strong>Upgrade</strong> or <strong>Upgrade Plan</strong> button from usage page -> `upgrade.html`.</li>
+            </ul>
             <div class="support-callout">
               <strong>Public pricing source:</strong> <a href="/pricing.html">Pricing page</a>.
             </div>
@@ -72,8 +76,8 @@
             <ul>
               <li>Check your current tier and included scope.</li>
               <li>Review daily usage and capacity indicators.</li>
-              <li>Switch billing cadence where available.</li>
-              <li>Upgrade or downgrade based on your automation profile.</li>
+              <li>Switch billing cadence on upgrade page with <strong>Monthly</strong> / <strong>Annual</strong> toggle.</li>
+              <li>Open the upgrade flow and select a paid tier that matches your current usage.</li>
             </ul>
           </article>
 
@@ -85,35 +89,35 @@
                   <tr><th>Tier</th><th>What it is for</th><th>High-level scope</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Chill Architect</td><td>Learn and configure before live automation.</td><td>Behavior setup, environment connection, Flow visibility.</td></tr>
-                  <tr><td>Chill Mode</td><td>Start live automation with calm coverage.</td><td>Live automation, full Flow visibility, one environment.</td></tr>
-                  <tr><td>Deep Chill</td><td>Broader multi-environment usage.</td><td>Higher automation room and priority processing.</td></tr>
-                  <tr><td>Peak Chill</td><td>Maximum ongoing automation scope.</td><td>Broadest room and dedicated support path.</td></tr>
-                  <tr><td>Enterprise</td><td>Organization-level needs.</td><td>Custom infrastructure, onboarding, and support.</td></tr>
+                  <tr><td>Chill Architect</td><td>Learn and configure before live automation.</td><td>Setup-focused free tier in public pricing.</td></tr>
+                  <tr><td>Chill Mode</td><td>Start live automation with calm coverage.</td><td>First paid automation tier.</td></tr>
+                  <tr><td>Deep Chill</td><td>Broader multi-environment usage.</td><td>Higher paid tier for scale and support.</td></tr>
+                  <tr><td>Peak Chill</td><td>Maximum ongoing automation scope.</td><td>Highest self-serve paid tier.</td></tr>
+                  <tr><td>Enterprise</td><td>Organization-level needs.</td><td>Custom enterprise package via Beaverly contact.</td></tr>
                 </tbody>
               </table>
             </div>
+            <p class="support-footnote">In-app upgrade cards currently render paid tiers as <code>chill mode</code>, <code>deep chill</code>, and <code>peak chill</code>.</p>
           </article>
 
           <article class="support-card">
             <h2>Billing basics</h2>
             <ul>
-              <li>Billing cadence can be monthly or yearly depending on selected tier.</li>
-              <li>Plan changes usually apply immediately or at cycle boundaries based on account policy.</li>
-              <li>For billing disputes or timing questions, use support escalation with billing details included.</li>
+              <li>Upgrade page includes <strong>Monthly</strong> and <strong>Annual</strong> billing toggle states.</li>
+              <li>Usage page includes direct upgrade CTAs when capacity is high or reached.</li>
+              <li>Billing timing, proration, and refund policy are handled by support; include billing timestamps and plan name in requests.</li>
             </ul>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> Refund windows, proration, and exact cycle transition rules should be confirmed with current billing policy before publication edits.
-            </div>
           </article>
 
           <article class="support-card">
             <h2>Usage page walk-through</h2>
             <ul>
-              <li><strong>Percent used:</strong> share of daily automation room consumed.</li>
-              <li><strong>Used today:</strong> current day workload already processed.</li>
-              <li><strong>Remaining:</strong> available room until reset.</li>
-              <li><strong>x suffix:</strong> automation cycles, not financial outcome units.</li>
+              <li><strong>Used Today:</strong> percentage indicator in the circular progress block.</li>
+              <li><strong>Automation Capacity Used:</strong> used value with backend-provided display formatting.</li>
+              <li><strong>Capacity Available:</strong> remaining value for the same day.</li>
+              <li><strong>Daily Available:</strong> full daily limit for the account tier.</li>
+              <li><strong>x suffix:</strong> automation capacity units, not financial outcome units.</li>
+              <li><strong>Your Plan Includes:</strong> Connected Environments, Active Playgrounds, Active Behaviours.</li>
             </ul>
           </article>
 

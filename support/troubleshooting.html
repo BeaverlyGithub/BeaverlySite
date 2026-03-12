@@ -62,11 +62,11 @@
           <article class="support-card">
             <h2>Universal first checks</h2>
             <ol class="support-steps">
-              <li><strong>Check instruction status.</strong> Active, paused, revoked, or verifying.</li>
-              <li><strong>Check environment status.</strong> Connected and ready.</li>
-              <li><strong>Check Flow.</strong> Recent warnings, skips, or readiness notes.</li>
-              <li><strong>Check usage.</strong> Daily capacity and remaining room.</li>
-              <li><strong>Check plan scope.</strong> Confirm limits match your current setup.</li>
+              <li><strong>Check dashboard status card.</strong> It should not stay on <strong>Not connected yet</strong> / <strong>Not Connected</strong>.</li>
+              <li><strong>Check instruction status.</strong> Use <strong>Your Instructions</strong> and confirm status is not <strong>Paused</strong> or <strong>Revoked</strong>.</li>
+              <li><strong>Check Flow card.</strong> Review latest <strong>SKIP</strong>/<strong>WARN</strong> items and open details.</li>
+              <li><strong>Check Usage & Capacity.</strong> Review <strong>Automation Capacity Used</strong>, <strong>Capacity Available</strong>, and alerts.</li>
+              <li><strong>Check active account.</strong> Confirm environment/account selection matches the instruction scope.</li>
             </ol>
           </article>
 
@@ -104,10 +104,10 @@
             <h2>Issue: No activity appears in Flow</h2>
             <ul>
               <li>Confirm instruction is active, not paused or revoked.</li>
-              <li>Check if status is monitoring or verifying.</li>
+              <li>If Flow shows <strong>Live automation context will appear here once you're connected</strong>, reconnect or switch active environment account.</li>
               <li>Confirm environment readiness.</li>
               <li>Check usage and remaining capacity.</li>
-              <li>Review recent warnings for step-aside context.</li>
+              <li>Review skip reasons such as <strong>Entry paused by available resources</strong> or <strong>Entry paused by instruction scope</strong>.</li>
             </ul>
           </article>
 
@@ -116,27 +116,27 @@
             <ul>
               <li>Review number of active instructions and playground coverage.</li>
               <li>Check whether a high-activity window increased cycle usage.</li>
-              <li>Compare usage trend across recent days.</li>
-              <li>Consider plan change if usage pattern is now steady at higher levels.</li>
+              <li>Look for <strong>High Automation Load</strong> or <strong>Daily Capacity Reached</strong> alerts.</li>
+              <li>Use <strong>Upgrade Plan</strong> when daily usage is consistently high.</li>
             </ul>
           </article>
 
           <article class="support-card">
             <h2>Issue: Upgrade not reflected yet</h2>
             <ul>
-              <li>Refresh session and return to plan screen.</li>
+              <li>Refresh session and return to <strong>Usage & Capacity</strong>.</li>
               <li>Confirm billing event completed successfully.</li>
-              <li>Check whether cycle boundary timing applies to your change type.</li>
+              <li>Re-open `upgrade.html` and verify the expected tier state.</li>
             </ul>
           </article>
 
           <article class="support-card">
-            <h2>Issue: Status stuck in verifying or monitoring</h2>
+            <h2>Issue: Connected but not automating</h2>
             <ul>
               <li>Check environment health and connection continuity.</li>
               <li>Review Flow for any persistent warnings.</li>
               <li>Confirm instruction scope and comfort values are valid.</li>
-              <li>If unchanged for an unusual duration, escalate with timestamps.</li>
+              <li>If the status card stays at <strong>Ready to Automate Instructions</strong> for an extended period, escalate with timestamps.</li>
             </ul>
           </article>
 

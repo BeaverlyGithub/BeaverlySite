@@ -61,10 +61,17 @@
         <section class="support-content">
           <article class="support-card">
             <h2>Where to find this</h2>
-            <p>The usage or capacity panel is available in-app and shows daily total, used today, remaining, and percent used.</p>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> The label may appear as "Usage", "Capacity", or a plan/usage card depending on release.
-            </div>
+            <p>From the dashboard sidebar, click <strong>Usage</strong> to open <strong>Usage & Capacity</strong> (`usage.html`).</p>
+          </article>
+
+          <article class="support-card">
+            <h2>What you will see on Usage & Capacity</h2>
+            <ul>
+              <li>Progress ring with <strong>Used Today</strong> percentage.</li>
+              <li>Stat rows: <strong>Automation Capacity Used</strong>, <strong>Capacity Available</strong>, <strong>Daily Available</strong>.</li>
+              <li>Daily reset notice: capacity resets at <strong>midnight UTC</strong>.</li>
+              <li>Plan limits section titled <strong>Your Plan Includes</strong> with <strong>Connected Environments</strong>, <strong>Active Playgrounds</strong>, and <strong>Active Behaviours</strong>.</li>
+            </ul>
           </article>
 
           <article class="support-card">
@@ -79,11 +86,11 @@
 
           <article class="support-card">
             <h2>What values like 12,000x mean</h2>
-            <p>The x suffix represents automation cycles available for that day.</p>
+            <p>The <code>x</code> suffix is the user-facing display format for automation capacity units from the backend. Typically indicating "x" and in "times".</p>
             <ul>
-              <li><strong>Total today:</strong> full daily capacity allocation.</li>
-              <li><strong>Used today:</strong> cycles consumed so far.</li>
-              <li><strong>Remaining:</strong> cycles still available before daily reset.</li>
+              <li><strong>Daily Available:</strong> full daily capacity allocation.</li>
+              <li><strong>Automation Capacity Used:</strong> units consumed so far today.</li>
+              <li><strong>Capacity Available:</strong> units remaining before daily reset.</li>
               <li><strong>Percent used:</strong> current share of daily capacity consumed.</li>
             </ul>
             <div class="support-callout support-callout--success">
@@ -103,11 +110,20 @@
 
           <article class="support-card">
             <h2>What "unlimited with guardrails" means</h2>
-            <p>In normal use, paid plans are designed to feel roomy. Guardrails are system-level safeguards for reliability and fair operation.</p>
+            <p>Usage can show <strong>Unlimited</strong> for some tier limits, while system guardrails still apply in the background for reliability.</p>
             <ul>
-              <li>Guardrails do not turn Chilla into advice.</li>
-              <li>Guardrails do not move funds.</li>
-              <li>Guardrails do not expose proprietary formulas.</li>
+              <li>Guardrails do not change instruction scope.</li>
+              <li>Guardrails do not move funds outside your environment account.</li>
+              <li>Guardrail internals are not exposed in support docs or Flow logs.</li>
+            </ul>
+          </article>
+
+          <article class="support-card">
+            <h2>Capacity alerts in the app</h2>
+            <ul>
+              <li><strong>High Automation Load</strong>: shown when usage reaches warning range.</li>
+              <li><strong>Daily Capacity Reached</strong>: shown when daily limit is fully consumed.</li>
+              <li>Both alert states include an <strong>Upgrade</strong> action that routes to `upgrade.html`.</li>
             </ul>
           </article>
 
@@ -146,7 +162,6 @@
   <script>if (window.lucide) { window.lucide.createIcons(); }</script>
 </body>
 </html>
-
 
 
 

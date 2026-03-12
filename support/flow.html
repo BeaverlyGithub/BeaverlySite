@@ -61,28 +61,24 @@
         <section class="support-content">
           <article class="support-card">
             <h2>Where to find this</h2>
-            <p>Flow is available from the main app experience and appears as the activity feed for instruction events. In most builds, you can open Flow from dashboard navigation or instruction detail views.</p>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> Filter names, export placement, and event expansion controls should be checked against the current production UI before final publication screenshots are added.
-            </div>
+            <p>Flow is the card titled <strong>Flow</strong> on the main dashboard (`dashboard.html`). It is visible directly under the <strong>Instructions</strong> card.</p>
           </article>
 
           <article class="support-card">
             <h2>What you will see</h2>
             <ul>
-              <li>Event type labels such as entry, exit, skipped, warning, and monitoring updates.</li>
-              <li>A timestamp so you can place events in sequence.</li>
-              <li>Plain-language event summary tied to your instruction context.</li>
-              <li>Status labels showing current lifecycle state.</li>
+              <li>Flow action buttons: <strong>Replay logs</strong>, <strong>Expand Flow</strong>, <strong>Download logs</strong>.</li>
+              <li>Category chips: <strong>All</strong>, <strong>Entry</strong>, <strong>Exit</strong>, <strong>Skip</strong>, <strong>Warn</strong>, <strong>Live</strong>.</li>
+              <li>Per-event status pills: <strong>ENTRY</strong>, <strong>EXIT</strong>, <strong>SKIP</strong>, <strong>WARN</strong>, <strong>LIVE</strong>.</li>
+              <li>Summary counters above the feed for Entry, Exit, Skipped, Errors, and Live.</li>
             </ul>
             <div class="support-inline-list">
-              <span class="support-status support-status--active">Active</span>
-              <span class="support-status support-status--paused">Paused</span>
-              <span class="support-status support-status--revoked">Revoked</span>
-              <span class="support-status support-status--verifying">Verifying</span>
-              <span class="support-status support-status--monitoring">Monitoring</span>
+              <span class="support-status support-status--active">ENTRY</span>
+              <span class="support-status support-status--paused">EXIT</span>
+              <span class="support-status support-status--revoked">SKIP</span>
+              <span class="support-status support-status--verifying">WARN</span>
+              <span class="support-status support-status--monitoring">LIVE</span>
             </div>
-            <p class="support-footnote">Status labels can vary slightly by app release. Meaning should remain consistent.</p>
           </article>
 
           <article class="support-card">
@@ -95,9 +91,27 @@
                 <tbody>
                   <tr><td>Entry event</td><td>Automation opened a position within your instruction scope.</td><td>Confirm environment and instruction are the expected ones.</td></tr>
                   <tr><td>Exit event</td><td>A tracked position lifecycle ended and was closed.</td><td>Review sequence around the event if you need context.</td></tr>
-                  <tr><td>Skipped event</td><td>System stepped aside due to configuration or guardrail context.</td><td>Open event details and compare with comfort and capacity state.</td></tr>
-                  <tr><td>Warning event</td><td>Something needs attention (connection, status, readiness).</td><td>Use troubleshooting checklist for targeted fix steps.</td></tr>
-                  <tr><td>Live event</td><td>Instruction is active and being tracked with no immediate action.</td><td>No action needed unless behavior differs from expectation.</td></tr>
+                  <tr><td>Skipped event</td><td>System stepped aside with a specific reason such as comfort boundary, instruction scope, or environment minimum.</td><td>Open event details and compare with instruction comfort and account readiness.</td></tr>
+                  <tr><td>Warning event</td><td>Validation or environment warning event was recorded.</td><td>Use troubleshooting steps and include the warning title in support requests.</td></tr>
+                  <tr><td>Live event</td><td>Monitoring update without an entry/exit action.</td><td>No action needed unless the update conflicts with your expected setup.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="support-card">
+            <h2>Common skip reasons and app wording</h2>
+            <div class="support-table-wrap">
+              <table class="support-table">
+                <thead>
+                  <tr><th>Flow reason code</th><th>User-visible headline</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>insufficient_balance</code></td><td>Entry paused by available resources</td></tr>
+                  <tr><td><code>broker_minimum</code></td><td>Entry paused by environment minimum</td></tr>
+                  <tr><td><code>not_authorized</code></td><td>Entry paused by instruction scope</td></tr>
+                  <tr><td><code>validation_failed</code></td><td>Action paused by validation check</td></tr>
+                  <tr><td><code>risk_cap_exhausted</code> / <code>risk_cap_approaching</code></td><td>Entry paused by comfort boundary</td></tr>
                 </tbody>
               </table>
             </div>
@@ -106,11 +120,11 @@
           <article class="support-card">
             <h2>What you can do here</h2>
             <ul>
-              <li>Filter by event type to isolate entries, exits, skips, or warnings.</li>
-              <li>Review historical activity windows to understand sequence.</li>
-              <li>Expand event details where available for deeper context.</li>
-              <li>Export activity logs where export controls are enabled in your account.</li>
-              <li>Use Flow as your first troubleshooting surface before contacting support.</li>
+              <li>Filter event categories with the Flow chips.</li>
+              <li>Open <strong>Replay logs</strong> and load history by <strong>Last hour</strong>, <strong>Last 24 hours</strong>, <strong>Last 7 days</strong>, <strong>Last 14 days</strong>, <strong>Last month</strong>, <strong>All available history</strong>, or <strong>Custom range</strong>.</li>
+              <li>Open details for a single event using the Flow details view.</li>
+              <li>Download filtered logs as `chilla-flow-YYYY-MM-DD.json` from <strong>Download logs</strong>.</li>
+              <li>Use Flow first when troubleshooting no-activity, skipped actions, or warnings.</li>
             </ul>
           </article>
 
@@ -169,7 +183,6 @@
   <script>if (window.lucide) { window.lucide.createIcons(); }</script>
 </body>
 </html>
-
 
 
 

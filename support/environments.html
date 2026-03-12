@@ -61,10 +61,12 @@
         <section class="support-content">
           <article class="support-card">
             <h2>Where to find this</h2>
-            <p>Environment connection controls are available in setup and account management areas. You can typically connect, verify, and select an active environment from these sections.</p>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> Supported provider list and exact selector layout should be validated against production UI at publish time.
-            </div>
+            <ul>
+              <li>Dashboard top-right button: <strong>Add Automation Environment</strong>.</li>
+              <li>Sidebar item: <strong>Connect Chilla</strong>.</li>
+              <li>Environment management page: <strong>Automation Environment Settings</strong> (`broker-settings.html`).</li>
+              <li>When no environment is connected, the page shows <strong>No Environments Connected</strong> with a <strong>Connect Environment</strong> button.</li>
+            </ul>
           </article>
 
           <article class="support-card">
@@ -90,11 +92,11 @@
           <article class="support-card">
             <h2>Connect an environment</h2>
             <ol class="support-steps">
-              <li><strong>Open the environment connection screen.</strong></li>
-              <li><strong>Choose provider and account details.</strong></li>
-              <li><strong>Authorize the connection.</strong></li>
-              <li><strong>Wait for verification.</strong> Status should move to connected or ready.</li>
-              <li><strong>Set active environment.</strong> Confirm instruction scope points to the expected account.</li>
+              <li><strong>Open Pick Automation Environment.</strong> Use dashboard plus button or <strong>Connect Chilla</strong>.</li>
+              <li><strong>Select provider.</strong> Current options are <strong>Deriv</strong> and <strong>cTrader</strong>.</li>
+              <li><strong>Authorize provider login.</strong> Chilla returns to dashboard after callback.</li>
+              <li><strong>Confirm connection state.</strong> Dashboard and environment settings should show connected account details.</li>
+              <li><strong>Set active account.</strong> Use <strong>Switch Account</strong> or account selector controls before creating/updating instructions.</li>
             </ol>
           </article>
 
@@ -106,11 +108,12 @@
                   <tr><th>State</th><th>Meaning</th><th>Action</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Not connected</td><td>No active environment link yet.</td><td>Start connection flow.</td></tr>
-                  <tr><td>Preparing</td><td>System is validating connection readiness.</td><td>Wait briefly; then troubleshoot if it stalls.</td></tr>
-                  <tr><td>Connected</td><td>Environment is linked and available.</td><td>Assign instruction scope and monitor Flow.</td></tr>
-                  <tr><td>Failed</td><td>Connection did not complete validation.</td><td>Review credentials and retry.</td></tr>
-                  <tr><td>Disconnected</td><td>Link removed or expired.</td><td>Reconnect and confirm active selection.</td></tr>
+                  <tr><td>Automated</td><td>Account is selected for automation and active.</td><td>Monitor instructions and Flow.</td></tr>
+                  <tr><td>Connected</td><td>Environment is linked but not currently active for automation.</td><td>Switch active account if needed.</td></tr>
+                  <tr><td>Disconnected</td><td>No active environment link on the selected account.</td><td>Run connection flow again.</td></tr>
+                  <tr><td>Active</td><td>Account-level status with connected account and assigned behaviours.</td><td>Normal operating state.</td></tr>
+                  <tr><td>Ready</td><td>Connected and mandate-aware but not fully active.</td><td>Verify instruction and account selection.</td></tr>
+                  <tr><td>Inactive</td><td>Account not currently usable for automation.</td><td>Reconnect or switch account.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -151,7 +154,6 @@
   <script>if (window.lucide) { window.lucide.createIcons(); }</script>
 </body>
 </html>
-
 
 
 

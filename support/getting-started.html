@@ -71,6 +71,15 @@
 
         <section class="support-content">
           <article class="support-card">
+            <h2>Where to find this in the app</h2>
+            <ul>
+              <li>After sign-in, Chilla opens to the dashboard (`dashboard.html`).</li>
+              <li>The main cards are <strong>Not connected yet</strong>, <strong>Instructions</strong>, <strong>Flow</strong>, and <strong>Active Playgrounds</strong>.</li>
+              <li>Use the top-right plus button (<strong>Add Automation Environment</strong>) or the sidebar item <strong>Connect Chilla</strong> to start environment setup.</li>
+            </ul>
+          </article>
+
+          <article class="support-card">
             <h2>What Chilla is</h2>
             <ul>
               <li>Instruction-driven automation infrastructure for structured market participation.</li>
@@ -96,12 +105,12 @@
           <article class="support-card">
             <h2>First session checklist</h2>
             <ol class="support-steps">
-              <li><strong>Sign in to Chilla.</strong> Confirm account access and complete any required verification prompts.</li>
-              <li><strong>Connect an environment.</strong> Link the account where automation is allowed to run.</li>
-              <li><strong>Choose a behavior and playground(s).</strong> Select what you want to automate and where.</li>
-              <li><strong>Set comfort controls.</strong> Configure per-position comfort and optional monthly comfort boundaries.</li>
-              <li><strong>Review and activate.</strong> Confirm instruction details, then activate.</li>
-              <li><strong>Watch Flow.</strong> Confirm live activity and status transitions after activation.</li>
+              <li><strong>Sign in to Chilla.</strong> You should land on the dashboard with the <strong>Not connected yet</strong> status card.</li>
+              <li><strong>Connect an environment.</strong> Open <strong>Pick Automation Environment</strong>, select <strong>Deriv</strong> or <strong>cTrader</strong>, then click <strong>Connect environment</strong>.</li>
+              <li><strong>Open instruction setup.</strong> In the <strong>Instructions</strong> card, click <strong>Tap to create instructions</strong>.</li>
+              <li><strong>Complete the wizard steps.</strong> Follow <strong>Behaviours</strong> -> <strong>Playgrounds</strong> -> <strong>Comfort</strong> -> <strong>Confirm</strong> -> <strong>Activate</strong>.</li>
+              <li><strong>Confirm activation.</strong> Finish on the activation screen and verify the success message <strong>Chilla is live!</strong></li>
+              <li><strong>Watch Flow.</strong> Use the <strong>Flow</strong> card to confirm first live events.</li>
             </ol>
           </article>
 
@@ -110,15 +119,12 @@
             <div class="support-grid support-grid--2">
               <div class="support-box">
                 <h3>Before activation</h3>
-                <p>You set configuration and authorize scope. Chilla validates instruction status, environment readiness, and safety boundaries.</p>
+                <p>You connect an environment, choose behaviours/playgrounds, set comfort, and accept consent. Chilla validates account readiness and instruction scope before activation.</p>
               </div>
               <div class="support-box">
                 <h3>After activation</h3>
-                <p>Chilla automates in the background, within your instructions. Flow records meaningful events in plain language.</p>
+                <p>Chilla automates within your instructions. The activity card moves to connected monitoring states and Flow begins recording ENTRY, EXIT, SKIP, WARN, and LIVE events.</p>
               </div>
-            </div>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> Exact button labels and panel positions can vary by app release. If the UI in your account differs, use this page for sequence and intent, then follow the labels shown in-app.
             </div>
           </article>
 

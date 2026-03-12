@@ -61,31 +61,32 @@
         <section class="support-content">
           <article class="support-card">
             <h2>Where to find this</h2>
-            <p>Instruction setup and comfort controls are available from the instruction workflow in Chilla. In many builds, controls appear in setup and instruction detail views.</p>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> Field names and button labels may vary by release. Confirm exact UI strings before training materials are finalized.
-            </div>
+            <ul>
+              <li>Dashboard card: <strong>Instructions</strong> -> <strong>Tap to create instructions</strong> opens the setup wizard.</li>
+              <li>Dashboard card settings icon opens <strong>Your Instructions</strong> (`mandate-settings.html`).</li>
+              <li>Inside <strong>Your Instructions</strong>, the action bar includes <strong>Add</strong>, <strong>Update</strong>, <strong>Pause</strong>, and <strong>Revoke</strong>.</li>
+            </ul>
           </article>
 
           <article class="support-card">
             <h2>What you can do here</h2>
             <ul>
               <li>Create an instruction with selected behavior and playground context.</li>
-              <li>Set per-position comfort boundaries.</li>
-              <li>Add optional monthly comfort boundaries (where available).</li>
-              <li>Activate, pause, edit, or revoke existing instructions.</li>
-              <li>Review status labels and recent lifecycle updates.</li>
+              <li>Set <strong>Comfort per position</strong> and optionally enable <strong>Omega Shield Cap</strong>.</li>
+              <li>Activate from wizard step <strong>5. Activate</strong>.</li>
+              <li>Pause, update, add to, or revoke from <strong>Your Instructions</strong>.</li>
+              <li>Review detailed fields: Behaviours, Account, Shield Cap (Omega), Comfort per position, Omega enabled, Status, Active since.</li>
             </ul>
           </article>
 
           <article class="support-card">
             <h2>Create an instruction</h2>
             <ol class="support-steps">
-              <li><strong>Open instruction setup.</strong> Confirm active environment selection.</li>
-              <li><strong>Select behavior and playground(s).</strong> Keep scope clear and intentional.</li>
-              <li><strong>Set comfort values.</strong> Review implications before activation.</li>
-              <li><strong>Review summary.</strong> Check key details one more time.</li>
-              <li><strong>Activate instruction.</strong> Confirm consent when prompted.</li>
+              <li><strong>Step 1 - Behaviours:</strong> choose your desired behaviour.</li>
+              <li><strong>Step 2 - Playgrounds:</strong> choose where the behaviour runs.</li>
+              <li><strong>Step 3 - Comfort:</strong> set <strong>Comfort per position</strong>; optionally enable <strong>Omega Shield Cap</strong> and <strong>Strict mode</strong>.</li>
+              <li><strong>Step 4 - Confirm:</strong> review disclosure text and tick the consent checkbox.</li>
+              <li><strong>Step 5 - Activate:</strong> review summary cards and activate.</li>
             </ol>
           </article>
 
@@ -96,7 +97,7 @@
                 <h3>Pause</h3>
                 <p>Use when you want to temporarily stop automation while keeping your setup.</p>
                 <ul>
-                  <li>Instruction can usually be resumed later.</li>
+                  <li>Current setup remains available for reactivation.</li>
                   <li>History remains available in Flow.</li>
                 </ul>
               </div>
@@ -104,7 +105,7 @@
                 <h3>Revoke</h3>
                 <p>Use when you want to fully stop the instruction lifecycle.</p>
                 <ul>
-                  <li>Revocation often requires explicit confirmation.</li>
+                  <li>Revocation requires explicit confirmation in the UI.</li>
                   <li>You can create a new instruction afterward if needed.</li>
                 </ul>
               </div>
@@ -122,8 +123,10 @@
                   <tr><td><span class="support-status support-status--active">Active</span></td><td>Instruction is live within approved scope.</td><td>Monitor through Flow and usage panel.</td></tr>
                   <tr><td><span class="support-status support-status--paused">Paused</span></td><td>Instruction is temporarily not running.</td><td>Resume when ready or edit settings first.</td></tr>
                   <tr><td><span class="support-status support-status--revoked">Revoked</span></td><td>Instruction lifecycle has been ended.</td><td>Create a new instruction if you want to run again.</td></tr>
-                  <tr><td><span class="support-status support-status--verifying">Verifying</span></td><td>System is checking readiness before activation or run state.</td><td>Wait briefly, then troubleshoot if it remains stuck.</td></tr>
-                  <tr><td><span class="support-status support-status--monitoring">Monitoring</span></td><td>Instruction is tracking context without immediate action.</td><td>No immediate action required.</td></tr>
+                  <tr><td>Expired</td><td>Instruction version reached an end state.</td><td>Create or activate a valid instruction version.</td></tr>
+                  <tr><td>Superseded</td><td>A newer instruction version replaced this one.</td><td>Review the latest active instruction.</td></tr>
+                  <tr><td>Draft</td><td>Instruction setup is incomplete or not yet active.</td><td>Complete setup and activate.</td></tr>
+                  <tr><td>No instructions</td><td>No active instruction exists for the account.</td><td>Use <strong>Tap to create instructions</strong> or <strong>Create your instructions</strong>.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -133,11 +136,11 @@
             <h2>Instruction FAQ</h2>
             <details>
               <summary>Can I change comfort after activation?</summary>
-              <p>In most builds, yes. Apply updates from instruction controls and confirm resulting status transitions in Flow.</p>
+              <p>Yes. Use <strong>Update</strong> in <strong>Your Instructions</strong> and review the updated lifecycle in Flow.</p>
             </details>
             <details>
-              <summary>Why is my instruction stuck in verifying?</summary>
-              <p>Check environment connection status, account readiness, and recent warnings in Flow. Then follow troubleshooting steps if needed.</p>
+              <summary>Why does my instruction not move to Active?</summary>
+              <p>Check environment readiness, account selection, comfort settings, and consent completion. Then review Flow and activity status for pause reasons.</p>
             </details>
             <details>
               <summary>Is comfort financial advice?</summary>

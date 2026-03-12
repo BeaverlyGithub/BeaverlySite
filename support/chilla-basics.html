@@ -62,32 +62,45 @@
           <article class="support-card">
             <h2>At a glance</h2>
             <div class="support-grid support-grid--3">
-              <div class="support-box"><h3>Dashboard</h3><p>Live summary for instruction status, connected environments, comfort usage, and readiness signals.</p></div>
-              <div class="support-box"><h3>Behavior area</h3><p>Browse and choose behaviors for selected playgrounds.</p></div>
-              <div class="support-box"><h3>Flow</h3><p>Real-time and historical activity with event context.</p></div>
-              <div class="support-box"><h3>Instructions</h3><p>Create, activate, pause, update, and revoke.</p></div>
-              <div class="support-box"><h3>Usage</h3><p>Daily automation capacity and percent used.</p></div>
-              <div class="support-box"><h3>Plan and billing</h3><p>Current tier details and upgrade path.</p></div>
+              <div class="support-box"><h3>Dashboard</h3><p>Main cards: <strong>Not connected yet</strong>, <strong>Instructions</strong>, <strong>Flow</strong>, and <strong>Active Playgrounds</strong>.</p></div>
+              <div class="support-box"><h3>Environment controls</h3><p>Top-right plus button (<strong>Add Automation Environment</strong>) and sidebar <strong>Connect Chilla</strong>.</p></div>
+              <div class="support-box"><h3>Flow controls</h3><p><strong>Replay logs</strong>, <strong>Expand Flow</strong>, <strong>Download logs</strong>, and category chips.</p></div>
+              <div class="support-box"><h3>Instructions</h3><p>Open <strong>Your Instructions</strong> with actions <strong>Add</strong>, <strong>Update</strong>, <strong>Pause</strong>, <strong>Revoke</strong>.</p></div>
+              <div class="support-box"><h3>Usage</h3><p>Sidebar <strong>Usage</strong> opens <strong>Usage & Capacity</strong> with daily usage fields and plan limits.</p></div>
+              <div class="support-box"><h3>Account menu</h3><p><strong>Settings</strong>, <strong>Contact</strong>, <strong>FAQ</strong>, <strong>Privacy Policy</strong>, <strong>Terms of Service</strong>, <strong>Logout</strong>.</p></div>
             </div>
           </article>
 
           <article class="support-card">
             <h2>Where to find this</h2>
-            <p>After login, you typically land on the main dashboard. From there, main navigation gives access to behaviors, instructions, Flow, usage, environments, and account controls.</p>
-            <div class="support-callout support-callout--warn">
-              <strong>Verification note:</strong> Exact tab names and icon labels can change between releases. Use the app labels in your account as source of truth for final click paths.
+            <p>After login, Chilla opens `dashboard.html`. Open the sidebar from the top-left menu icon. The sidebar is the entry point for <strong>Connect Chilla</strong>, <strong>Settings</strong>, <strong>Usage</strong>, and support/policy pages.</p>
+          </article>
+
+          <article class="support-card">
+            <h2>What each dashboard card does</h2>
+            <div class="support-table-wrap">
+              <table class="support-table">
+                <thead>
+                  <tr><th>Card</th><th>What you will see</th><th>What you can do</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Not connected yet / status card</td><td>Connection state and status text.</td><td>Use account switch and connect controls.</td></tr>
+                  <tr><td>Instructions</td><td>Status badge and instruction summary.</td><td>Click settings icon to open <strong>Your Instructions</strong>.</td></tr>
+                  <tr><td>Flow</td><td>Recent events, summary counts, and action buttons.</td><td>Filter events, replay logs, expand, and download JSON logs.</td></tr>
+                  <tr><td>Active Playgrounds</td><td>Current tracked playgrounds.</td><td>Review active playground coverage.</td></tr>
+                </tbody>
+              </table>
             </div>
           </article>
 
           <article class="support-card">
-            <h2>What you can do here</h2>
+            <h2>What you can do from this area</h2>
             <ul>
-              <li>Check what is active and what is paused.</li>
-              <li>Open a behavior and assign it to a playground.</li>
-              <li>Set comfort controls before activation.</li>
-              <li>Track automation capacity and remaining room for the day.</li>
-              <li>Review Flow events if activity looks different than expected.</li>
-              <li>Change plan tier when your usage profile changes.</li>
+              <li>Connect or disconnect environments.</li>
+              <li>Create instructions from <strong>Tap to create instructions</strong> or open <strong>Your Instructions</strong> for management.</li>
+              <li>Open <strong>Usage & Capacity</strong> from sidebar <strong>Usage</strong>.</li>
+              <li>Go to <strong>Upgrade</strong> from the sidebar tier panel.</li>
+              <li>Open support channels from sidebar <strong>Contact</strong> and <strong>FAQ</strong>.</li>
             </ul>
           </article>
 
@@ -145,7 +158,6 @@
   <script>if (window.lucide) { window.lucide.createIcons(); }</script>
 </body>
 </html>
-
 
 
 
