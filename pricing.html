@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Chilla by Beaverly</title>
+  <meta name="description" content="Choose your chill level. From understanding Chilla before you begin, to always-on automation across multiple environments. Plans that scale with how much calm and capacity you need." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pricing.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+</head>
+<body>
+    
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-hero bv-atm bv-dark-bg" aria-labelledby="pricing-hero-headline">
+    <div class="pricing-hero-inner">
+      <p class="pricing-eyebrow reveal-fade">Plans</p>
+      <h1 class="pricing-headline reveal-up" id="pricing-hero-headline">
+        Choose your<br /><em>chill level.</em>
+      </h1>
+      <p class="pricing-subhead reveal-up reveal-delay-1">
+        From understanding Chilla before you begin, to always-on automation across multiple environments — plans that scale with how much calm, capacity, and support you need.
+      </p>
+      <div class="pricing-hero-cta reveal-up reveal-delay-2">
+        <a href="https://app.beaverlyai.com/register" class="btn btn-hero-primary">Start Chilling</a>
+        <a href="#plans" class="btn btn-hero-secondary">Compare Plans</a>
+      </div>
+    </div>
+    <div class="pricing-hero-orb" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BILLING TOGGLE + PLAN CARDS
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-plans-section" id="plans" aria-labelledby="plans-heading">
+    <div class="container">
+
+      <!-- Toggle -->
+      <div class="billing-toggle-wrap reveal-fade">
+        <div class="billing-toggle" role="group" aria-label="Billing frequency">
+          <button class="toggle-btn active" id="toggle-monthly" aria-pressed="true" data-billing="monthly">Monthly</button>
+          <button class="toggle-btn" id="toggle-yearly" aria-pressed="false" data-billing="yearly">
+            Yearly
+            <span class="toggle-savings-badge">Save up to 2 months</span>
+          </button>
+          <div class="toggle-indicator" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="pricing-cards-grid" id="pricing-grid" aria-label="Pricing plans">
+
+        <!-- Chill Architect -->
+        <article class="pricing-card reveal-up" aria-labelledby="plan-architect-name">
+          <div class="pricing-card-inner">
+            <div class="plan-header">
+              <span class="plan-name" id="plan-architect-name">Chill Architect</span>
+              <p class="plan-tagline">Understand Chilla before you chill</p>
+            </div>
+            <div class="plan-price-block">
+              <div class="plan-price">
+                <span class="price-currency">$</span>
+                <span class="price-amount">0</span>
+              </div>
+              <p class="price-cadence">Always free</p>
+            </div>
+            <p class="plan-descriptor">Configure your behaviors, connect an environment, and see exactly how Chilla works — before live automation begins.</p>
+            <a href="https://app.beaverlyai.com/register" class="btn plan-cta btn-plan-outline">Get Started Free</a>
+            <ul class="plan-features" aria-label="Plan features">
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Full behavior configuration</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>1 environment connection</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited playgrounds</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Flow visibility</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>7-day reports history</span>
+              </li>
+              <li class="feature-unavailable">
+                <i data-lucide="minus" aria-hidden="true"></i>
+                <span>Live automation (paid plans)</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Chill Mode (highlighted) -->
+        <article class="pricing-card pricing-card--featured reveal-up reveal-delay-1" aria-labelledby="plan-mode-name">
+          <div class="featured-label" aria-label="Recommended starting plan">A calm place to begin</div>
+          <div class="pricing-card-inner">
+            <div class="plan-header">
+              <span class="plan-name" id="plan-mode-name">Chill Mode</span>
+              <p class="plan-tagline">Automate, and chill</p>
+            </div>
+            <div class="plan-price-block">
+              <div class="plan-price">
+                <span class="price-currency">$</span>
+                <span class="price-amount" data-monthly="20" data-yearly="17">20</span>
+                <span class="price-period">/mo</span>
+              </div>
+              <p class="price-cadence" data-monthly="Billed monthly" data-yearly="$200 billed yearly · you save $40">Billed monthly</p>
+            </div>
+            <p class="plan-descriptor">Instruct once. Let Chilla automate in the background. A measured way to begin live automation.</p>
+            <a href="https://app.beaverlyai.com/register?plan=chill_mode" class="btn plan-cta btn-plan-dark">Start Chilling</a>
+            <ul class="plan-features" aria-label="Plan features">
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Live automation enabled</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited automation <span class="feature-note">(with guardrails)</span></span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>1 environment connection</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited behaviors</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited playgrounds</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Full Flow visibility</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited reports history</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Omega Shield comfort controls</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Deep Chill -->
+        <article class="pricing-card reveal-up reveal-delay-2" aria-labelledby="plan-deep-name">
+          <div class="pricing-card-inner">
+            <div class="plan-header">
+              <span class="plan-name" id="plan-deep-name">Deep Chill</span>
+              <p class="plan-tagline">Full Chill Experience</p>
+            </div>
+            <div class="plan-price-block">
+              <div class="plan-price">
+                <span class="price-currency">$</span>
+                <span class="price-amount" data-monthly="59" data-yearly="49">59</span>
+                <span class="price-period">/mo</span>
+              </div>
+              <p class="price-cadence" data-monthly="Billed monthly" data-yearly="$590 billed yearly · you save $118">Billed monthly</p>
+            </div>
+            <p class="plan-descriptor">More scale, less friction. Automate across up to 3 environments with priority processing.</p>
+            <a href="https://app.beaverlyai.com/register?plan=deep_chill" class="btn plan-cta btn-plan-outline">Get Started</a>
+            <ul class="plan-features" aria-label="Plan features">
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Everything in Chill Mode</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Up to 3 environment connections</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Expanded automation capacity</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Priority processing</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Priority support</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited audit trail</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Peak Chill -->
+        <article class="pricing-card reveal-up reveal-delay-3" aria-labelledby="plan-peak-name">
+          <div class="pricing-card-inner">
+            <div class="plan-header">
+              <span class="plan-name" id="plan-peak-name">Peak Chill</span>
+              <p class="plan-tagline">Maximum chill.</p>
+            </div>
+            <div class="plan-price-block">
+              <div class="plan-price">
+                <span class="price-currency">$</span>
+                <span class="price-amount" data-monthly="200" data-yearly="183">200</span>
+                <span class="price-period">/mo</span>
+              </div>
+              <p class="price-cadence" data-monthly="Billed monthly" data-yearly="$2,200 billed yearly · you save $200">Billed monthly</p>
+            </div>
+            <p class="plan-descriptor">The ultimate chill. Broad environment access, maximum capacity, and dedicated support for serious automation.</p>
+            <a href="https://app.beaverlyai.com/register?plan=peak_chill" class="btn plan-cta btn-plan-outline">Get Started</a>
+            <ul class="plan-features" aria-label="Plan features">
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Everything in Deep Chill</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited environment connections <span class="feature-note">(with guardrails)</span></span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Maximum automation capacity</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Priority processing</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Priority support</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Dedicated support</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Early access to new capabilities</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Enterprise -->
+        <article class="pricing-card pricing-card--enterprise reveal-up reveal-delay-4" aria-labelledby="plan-enterprise-name">
+          <div class="pricing-card-inner">
+            <div class="plan-header">
+              <span class="plan-name" id="plan-enterprise-name">Enterprise</span>
+              <p class="plan-tagline">Custom automation infrastructure for organizations</p>
+            </div>
+            <div class="plan-price-block">
+              <div class="plan-price plan-price--custom">
+                <span class="price-amount price-custom">Custom</span>
+              </div>
+              <p class="price-cadence">Tailored to your organization</p>
+            </div>
+            <p class="plan-descriptor">For organizations and institutions needing custom automation capacity, compliance configuration, and dedicated infrastructure.</p>
+            <a href="mailto:hello@beaverlyai.com" class="btn plan-cta btn-plan-outline">Talk to Beaverly</a>
+            <ul class="plan-features" aria-label="Plan features">
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Custom automation capacity</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Unlimited environment connections</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Custom guardrails &amp; compliance</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Dedicated support &amp; onboarding</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>SLA &amp; priority infrastructure</span>
+              </li>
+              <li>
+                <i data-lucide="check" aria-hidden="true"></i>
+                <span>Custom reporting &amp; audit trails</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div><!-- /pricing-cards-grid -->
+
+      <p class="pricing-legal-note reveal-fade">
+        All plans include full Flow transparency. Your funds remain in your regulated broker account — Chilla never holds your capital. Pause or change plans anytime.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHAT CHANGES AS YOU MOVE UP
+  ═══════════════════════════════════════════ -->
+  <section class="upgrade-section" aria-labelledby="upgrade-heading">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">As you scale</p>
+        <h2 class="section-title" id="upgrade-heading">What changes as you move up</h2>
+        <p class="section-subtitle">Four dimensions that grow with each tier. Everything else stays consistent across all paid plans.</p>
+      </div>
+
+      <div class="upgrade-axes reveal-up reveal-delay-1" role="list">
+        <div class="upgrade-axis" role="listitem">
+          <div class="upgrade-axis-icon" aria-hidden="true">
+            <i data-lucide="zap"></i>
+          </div>
+          <h3 class="upgrade-axis-title">Automation Capacity</h3>
+          <p class="upgrade-axis-desc">How much automation work Chilla can run on your behalf each day. More capacity means more automation cycles available — useful as you run more behaviors across more playgrounds.</p>
+          <div class="upgrade-axis-scale" aria-label="Scale from Chill Mode to Peak Chill">
+            <span class="scale-start">Chill Mode</span>
+            <div class="scale-bar"><div class="scale-fill"></div></div>
+            <span class="scale-end">Peak Chill</span>
+          </div>
+        </div>
+
+        <div class="upgrade-axis" role="listitem">
+          <div class="upgrade-axis-icon" aria-hidden="true">
+            <i data-lucide="link-2"></i>
+          </div>
+          <h3 class="upgrade-axis-title">Environment Connections</h3>
+          <p class="upgrade-axis-desc">The number of broker environments you can connect to Chilla simultaneously. Ideal for those automating across different accounts, regions, or asset classes.</p>
+          <div class="upgrade-axis-scale" aria-label="Scale from 1 to unlimited">
+            <span class="scale-start">1 environment</span>
+            <div class="scale-bar"><div class="scale-fill"></div></div>
+            <span class="scale-end">Unlimited</span>
+          </div>
+        </div>
+
+        <div class="upgrade-axis" role="listitem">
+          <div class="upgrade-axis-icon" aria-hidden="true">
+            <i data-lucide="gauge"></i>
+          </div>
+          <h3 class="upgrade-axis-title">Processing Priority</h3>
+          <p class="upgrade-axis-desc">Higher tiers receive priority in Chilla's processing queue. This means your behaviors are handled with greater speed and consistency during busy periods.</p>
+          <div class="upgrade-axis-scale" aria-label="Scale from standard to priority">
+            <span class="scale-start">Standard</span>
+            <div class="scale-bar"><div class="scale-fill"></div></div>
+            <span class="scale-end">Priority</span>
+          </div>
+        </div>
+
+        <div class="upgrade-axis" role="listitem">
+          <div class="upgrade-axis-icon" aria-hidden="true">
+            <i data-lucide="headphones"></i>
+          </div>
+          <h3 class="upgrade-axis-title">Support Depth</h3>
+          <p class="upgrade-axis-desc">From community support on the free plan, through priority support, to dedicated account support at Peak Chill and above. Enterprise includes custom onboarding.</p>
+          <div class="upgrade-axis-scale" aria-label="Scale from community to dedicated">
+            <span class="scale-start">Community</span>
+            <div class="scale-bar"><div class="scale-fill"></div></div>
+            <span class="scale-end">Dedicated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FULL COMPARISON TABLE
+  ═══════════════════════════════════════════ -->
+  <section class="comparison-section" aria-labelledby="comparison-heading">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Side by side</p>
+        <h2 class="section-title" id="comparison-heading">Full plan comparison</h2>
+        <p class="section-subtitle">Everything, laid out calmly.</p>
+      </div>
+
+      <div class="comparison-table-wrap reveal-fade">
+        <table class="comparison-table" role="table" aria-label="Plan feature comparison">
+          <thead>
+            <tr>
+              <th scope="col" class="feature-col">Feature</th>
+              <th scope="col">Chill Architect</th>
+              <th scope="col" class="col-featured">Chill Mode</th>
+              <th scope="col">Deep Chill</th>
+              <th scope="col">Peak Chill</th>
+              <th scope="col">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-group-header">
+              <td colspan="6">Automation</td>
+            </tr>
+            <tr>
+              <th scope="row">Live automation</th>
+              <td><span class="cell-no" aria-label="Not included">—</span></td>
+              <td class="col-featured"><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Daily automation capacity</th>
+              <td><span class="cell-no">Config only</span></td>
+              <td class="col-featured"><span class="cell-text">Unlimited <span class="cell-note">(guardrails)</span></span></td>
+              <td><span class="cell-text">Expanded <span class="cell-note">(guardrails)</span></span></td>
+              <td><span class="cell-text">Maximum <span class="cell-note">(guardrails)</span></span></td>
+              <td><span class="cell-text">Custom</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Behaviors</th>
+              <td><span class="cell-text">Unlimited <span class="cell-note">(config only)</span></span></td>
+              <td class="col-featured"><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Playgrounds</th>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td class="col-featured"><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+            </tr>
+            <tr class="row-group-header">
+              <td colspan="6">Environments &amp; Scale</td>
+            </tr>
+            <tr>
+              <th scope="row">Environment connections</th>
+              <td><span class="cell-text">1</span></td>
+              <td class="col-featured"><span class="cell-text">1</span></td>
+              <td><span class="cell-text">Up to 3</span></td>
+              <td><span class="cell-text">Unlimited <span class="cell-note">(guardrails)</span></span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Priority processing</th>
+              <td><span class="cell-no" aria-label="Not included">—</span></td>
+              <td class="col-featured"><span class="cell-no" aria-label="Not included">—</span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr class="row-group-header">
+              <td colspan="6">Comfort &amp; Safety</td>
+            </tr>
+            <tr>
+              <th scope="row">Omega Shield comfort controls</th>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td class="col-featured"><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Monthly budget controls</th>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td class="col-featured"><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-text">Custom</span></td>
+            </tr>
+            <tr class="row-group-header">
+              <td colspan="6">Transparency &amp; Reporting</td>
+            </tr>
+            <tr>
+              <th scope="row">Flow visibility</th>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td class="col-featured"><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Reports history</th>
+              <td><span class="cell-text">7 days</span></td>
+              <td class="col-featured"><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Audit trail</th>
+              <td><span class="cell-text">30 days</span></td>
+              <td class="col-featured"><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Unlimited</span></td>
+              <td><span class="cell-text">Custom</span></td>
+            </tr>
+            <tr class="row-group-header">
+              <td colspan="6">Support</td>
+            </tr>
+            <tr>
+              <th scope="row">Priority support</th>
+              <td><span class="cell-no">—</span></td>
+              <td class="col-featured"><span class="cell-no">—</span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Dedicated support</th>
+              <td><span class="cell-no">—</span></td>
+              <td class="col-featured"><span class="cell-no">—</span></td>
+              <td><span class="cell-no">—</span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row">Early access to new capabilities</th>
+              <td><span class="cell-no">—</span></td>
+              <td class="col-featured"><span class="cell-no">—</span></td>
+              <td><span class="cell-no">—</span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+              <td><span class="cell-yes" aria-label="Included"><i data-lucide="check"></i></span></td>
+            </tr>
+            <tr class="row-best-for">
+              <th scope="row">Best for</th>
+              <td><span class="cell-text cell-best-for">Explore before activating</span></td>
+              <td class="col-featured"><span class="cell-text cell-best-for">A calm place to begin live automation</span></td>
+              <td><span class="cell-text cell-best-for">Multi-environment automation</span></td>
+              <td><span class="cell-text cell-best-for">Broad, always-on automation</span></td>
+              <td><span class="cell-text cell-best-for">Organizations &amp; institutions</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile swipe hint -->
+      <p class="table-scroll-hint" aria-hidden="true">
+        <i data-lucide="move-horizontal"></i> Scroll to compare all plans
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       AUTOMATION CAPACITY EXPLAINER
+  ═══════════════════════════════════════════ -->
+  <section class="capacity-section bv-atm bv-dark-bg" aria-labelledby="capacity-heading">
+    <div class="container">
+      <div class="capacity-layout">
+        <div class="capacity-copy reveal-up">
+          <p class="section-eyebrow section-eyebrow--light">Automation capacity</p>
+          <h2 class="section-title section-title--light" id="capacity-heading">How automation capacity works</h2>
+          <p class="capacity-lead">Every day, Chilla has a capacity for how much automation work it can run on your behalf. Think of it as the total automation fuel available to your account in a 24-hour window.</p>
+
+          <div class="capacity-points">
+            <div class="capacity-point">
+              <i data-lucide="sun" aria-hidden="true"></i>
+              <div>
+                <strong>It resets daily.</strong>
+                <p>Capacity refreshes each day, so you're never penalised for yesterday's activity.</p>
+              </div>
+            </div>
+            <div class="capacity-point">
+              <i data-lucide="sliders-horizontal" aria-hidden="true"></i>
+              <div>
+                <strong>Different behaviors use different amounts.</strong>
+                <p>Some automation actions are lighter; others — particularly when monitoring many playgrounds simultaneously — use more capacity. Chilla manages this automatically within your configured instructions.</p>
+              </div>
+            </div>
+            <div class="capacity-point">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+              <div>
+                <strong>Guardrails protect system reliability.</strong>
+                <p>Paid plans are designed to feel roomy in normal use. The guardrails exist to keep Chilla reliable and consistent for everyone — not to restrict everyday automation.</p>
+              </div>
+            </div>
+            <div class="capacity-point">
+              <i data-lucide="bar-chart-2" aria-hidden="true"></i>
+              <div>
+                <strong>Track it inside Chilla.</strong>
+                <p>Your usage is always visible. You'll never be surprised by where your capacity stands.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capacity visual card -->
+        <div class="capacity-visual reveal-up reveal-delay-2" aria-label="Example automation capacity display">
+          <div class="capacity-card">
+            <div class="capacity-card-header">
+              <span class="capacity-card-label">Automation Capacity</span>
+              <span class="capacity-card-badge">Today</span>
+            </div>
+            <div class="capacity-meter-wrap">
+              <div class="capacity-meter-track" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" aria-label="34% of daily automation capacity used">
+                <div class="capacity-meter-fill" style="width: 34%"></div>
+              </div>
+              <span class="capacity-meter-pct">34%</span>
+            </div>
+            <div class="capacity-stats">
+              <div class="capacity-stat">
+                <span class="cstat-label">Total today</span>
+                <span class="cstat-value">12,000<span class="cstat-x">×</span></span>
+              </div>
+              <div class="capacity-stat">
+                <span class="cstat-label">Used</span>
+                <span class="cstat-value">4,080<span class="cstat-x">×</span></span>
+              </div>
+              <div class="capacity-stat">
+                <span class="cstat-label">Remaining</span>
+                <span class="cstat-value">7,920<span class="cstat-x">×</span></span>
+              </div>
+            </div>
+            <p class="capacity-card-note">The <strong>×</strong> symbol represents automation cycles — individual runs Chilla completes within your instructions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Questions</p>
+        <h2 class="section-title" id="faq-heading">Good questions, calm answers.</h2>
+      </div>
+
+      <div class="faq-grid reveal-up reveal-delay-1">
+
+        <div class="faq-col">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              What does "unlimited with guardrails" mean?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-1" hidden>
+              <p>It means your automation isn't arbitrarily capped — in normal use, you'll rarely if ever notice a limit. The guardrails are system-level safeguards that protect reliability for all Chilla users, not restrictions on everyday automation. They're designed to be invisible unless something unusual is happening.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              Can I change plans later?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-2" hidden>
+              <p>Yes — you can upgrade, downgrade, or pause anytime. There's no lock-in. If you upgrade mid-month, you'll only be charged the difference for the remaining period. If you downgrade, changes take effect at the next billing cycle.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              Does Chilla hold my funds?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-3" hidden>
+              <p>No — never. Your funds remain in your regulated broker account at all times. Beaverly doesn't hold, manage, or have access to your capital. We provide automation infrastructure that follows your instructions. You withdraw, deposit, and manage your money directly through your broker.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              What is automation capacity?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-4" hidden>
+              <p>It's the total amount of automation work Chilla can run on your behalf in a single day. Think of it like daily automation fuel — it powers the monitoring, instruction processing, and behavior execution happening in the background. It resets every 24 hours, and you can always see where you stand inside Chilla.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              Why do I see values like 12,000× in-app?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-5" hidden>
+              <p>The <strong>×</strong> symbol represents individual automation cycles — each one being a discrete piece of work Chilla completes within your instructions. 12,000× simply means 12,000 automation runs available that day. Most users with active behaviors find their daily allocation more than comfortable.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+              Do different behaviors use capacity differently?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-6" hidden>
+              <p>Yes. Lighter monitoring actions use less capacity; more complex behaviors — particularly those watching many playgrounds simultaneously — use a bit more. Chilla manages this automatically. Your usage panel always shows how much you've used and how much remains, so there's no guesswork.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-col">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+              What counts as an environment connection?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-7" hidden>
+              <p>An environment connection is a link between Chilla and a single broker account. If you have one broker account, you need one connection. If you want Chilla to automate across multiple accounts — different brokers, different regions, or different account types — each one counts as a separate environment connection.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+              Can I test before enabling live automation?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-8" hidden>
+              <p>Yes — that's exactly what Chill Architect is for. It's free, and it lets you configure behaviors, set comfort levels, and see precisely how your instructions are structured before a single live automation runs. When you're ready, upgrading to a paid plan activates everything you've already set up.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-9">
+              Which plan is right if I want more than one environment?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-9" hidden>
+              <p>Deep Chill supports up to 3 environment connections, which is a comfortable starting point for multi-environment automation. If you need more — or if your requirements are broader — Peak Chill offers unlimited connections (with guardrails), and Enterprise is available for institutional-scale infrastructure.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-10">
+              Do all plans include Flow?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-10" hidden>
+              <p>Yes. Flow — your real-time decision log — is included across all plans, including the free Chill Architect tier. Transparency is core to how Chilla works. You'll always be able to see what Chilla is doing and why, within your instructions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-11">
+              Does Chilla guarantee outcomes?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-11" hidden>
+              <p>No — and we'll never claim otherwise. Chilla is disciplined automation infrastructure, not a financial advisor or performance engine. All markets involve uncertainty. What Chilla offers is consistency, transparency, and the removal of emotional or time-based friction from your participation. Outcomes depend on market conditions and the behaviors you configure.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-12">
+              Is yearly billing locked in?
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-12" hidden>
+              <p>Yearly plans are billed annually and include a meaningful saving compared to monthly. If your circumstances change, reach out to the team — we'll work with you. Our goal is for your plan to fit your life, not the other way around.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FINAL CTA
+  ═══════════════════════════════════════════ -->
+  <section class="final-cta-section bv-atm bv-dark-bg" aria-labelledby="final-cta-heading">
+    <div class="container">
+      <div class="final-cta-inner reveal-up">
+        <p class="section-eyebrow section-eyebrow--light">Ready when you are</p>
+        <h2 class="final-cta-headline" id="final-cta-heading">Start where your comfort is.</h2>
+        <p class="final-cta-subhead">Begin with Chill Architect — understand the system, configure your first behavior, see how it all fits together. When you're ready, live automation is one step away.</p>
+        <div class="final-cta-actions">
+          <a href="https://app.beaverlyai.com/register" class="btn btn-hero-primary">Start Chilling</a>
+          <a href="mailto:hello@beaverlyai.com" class="btn btn-hero-secondary">Talk to Beaverly</a>
+        </div>
+        <p class="final-cta-note">Your funds remain with your broker. Pause or change plans anytime.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="js/pricing.js"></script>
+  <script src="/js/header-loader.js"></script>
+  <script src="/js/footer-loader.js"></script>
+</body>
+</html>
