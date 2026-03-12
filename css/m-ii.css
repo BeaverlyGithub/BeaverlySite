@@ -63,29 +63,10 @@ body {
   padding: clamp(7rem, 14vw, 12rem) 0 clamp(5rem, 10vw, 8rem);
 }
 
-/* Subtle grid overlay */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-
-/* Radial glow */
+/* Calm atmospheric background — handled by .bv-dark-bg in beaverly-bg.css */
+.hero::before,
 .hero::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
-  pointer-events: none;
+  display: none;
 }
 
 .hero-content {
@@ -119,13 +100,11 @@ body {
   width: 6px; height: 6px;
   background: rgba(255,255,255,0.4);
   border-radius: 50%;
-  animation: pulse-dot 2.4s ease-in-out infinite;
+  /* static — calm, no pulse */
+  opacity: 0.5;
 }
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.3); }
-}
+/* removed: @keyframes pulse-dot */
 
 .hero-wordmark {
   font-size: clamp(4.5rem, 14vw, 9rem);
@@ -415,15 +394,7 @@ body {
   overflow: hidden;
   position: relative;
 }
-.cap-panel::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
+.cap-panel::before { display: none; }
 
 .panel-bar {
   display: flex;
@@ -668,15 +639,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.manifesto-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
+.manifesto-section::before { display: none; }
 .manifesto-inner {
   position: relative;
   z-index: 1;

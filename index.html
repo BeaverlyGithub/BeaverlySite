@@ -40,6 +40,7 @@
   <!-- Project CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/interactive-demo.css" />
+  <link rel="stylesheet" href="css/beaverly-bg.css" />
   <link rel="stylesheet" href="css/navbar.css" />
 
   <!-- Structured Data -->
@@ -160,15 +161,8 @@
       position: relative; overflow: hidden;
       padding: clamp(9rem,16vw,13rem) 0 clamp(5rem,10vw,8rem);
     }
-    .hp-hero::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: .45;
-    }
-    .hp-glow {
-      position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      background: radial-gradient(ellipse 90% 55% at 50% 30%, rgba(255,255,255,.04) 0%, transparent 70%);
-    }
+    .hp-hero::before { display: none; /* replaced by .bv-dark-bg */ }
+    .hp-glow { display: none; /* replaced by .bv-dark-bg */ }
     .hp-hero-inner {
       position: relative; z-index: 2;
       max-width: 800px; margin: 0 auto;
@@ -185,8 +179,7 @@
       font-size: .69rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
       color: rgba(255,255,255,.3); margin-bottom: 2.5rem;
     }
-    .hp-badge .bd { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.28); animation: bd 2.8s ease-in-out infinite; }
-    @keyframes bd { 0%,100%{opacity:.28;transform:scale(1)} 50%{opacity:1;transform:scale(1.55)} }
+    .hp-badge .bd { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.28); opacity: 0.45; /* static, no pulse */ }
 
     .hp-h1 {
       font-family: 'Fraunces', Georgia, serif;
@@ -559,11 +552,7 @@
       background: var(--ink); border-radius: var(--r-lg); padding: 1.9rem 1.75rem;
       position: relative; overflow: hidden;
     }
-    .hp-code-panel::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-      background-size: 24px 24px;
-    }
+    .hp-code-panel::before { display: none; }
     .cp-bar { display:flex; gap:5px; margin-bottom:1.4rem; position:relative;z-index:1; }
     .cp-bar span { width:10px;height:10px;border-radius:50%; }
     .cp-bar span:nth-child(1){background:#ff5f56} .cp-bar span:nth-child(2){background:#ffbd2e} .cp-bar span:nth-child(3){background:#27c93f}
@@ -576,11 +565,7 @@
        M-II SECTION
        =========================================== */
     .hp-mii { background: var(--ink); padding: var(--pad) 0; position: relative; overflow: hidden; }
-    .hp-mii::before {
-      content:''; position:absolute;inset:0;
-      background-image: linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
-      background-size: 54px 54px;
-    }
+    .hp-mii::before { display: none; }
     .hp-mii-inner { position:relative;z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,5.5rem); align-items:center; }
     @media (max-width:840px) { .hp-mii-inner { grid-template-columns:1fr; gap:3rem; } }
     .hp-mii-text h2 { font-size:clamp(2rem,4.2vw,2.75rem); font-weight:700; letter-spacing:-.03em; line-height:1.12; color:var(--white); margin-bottom:1.1rem; }
@@ -705,11 +690,7 @@
       background: var(--ink); padding: var(--pad) 0; text-align:center;
       position:relative; overflow:hidden;
     }
-    .hp-cta-final::before {
-      content:''; position:absolute;inset:0;
-      background:radial-gradient(ellipse 70% 65% at 50% 45%, rgba(255,255,255,.036) 0%, transparent 70%);
-      pointer-events:none;
-    }
+    .hp-cta-final::before { display: none; }
     .hp-cta-inner { position:relative;z-index:1; max-width:600px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); }
     .hp-cta-inner h2 { font-family:'Fraunces',Georgia,serif; font-size:clamp(2.5rem,6vw,4rem); font-weight:700; color:var(--white); letter-spacing:-.035em; line-height:1.05; margin-bottom:1.2rem; }
     .hp-cta-inner p { color:rgba(255,255,255,.36); font-size:1.05rem; line-height:1.75; margin-bottom:2.4rem; max-width:440px; margin-left:auto; margin-right:auto; }
@@ -736,7 +717,7 @@
   <!-- ═══════════════════════════════
        HERO
        ═══════════════════════════════ -->
-  <section class="hp-hero">
+  <section class="hp-hero bv-dark-bg">
     <div class="hp-glow"></div>
     <div class="hp-hero-inner" id="heroEl">
       <div class="hp-badge">
@@ -748,7 +729,7 @@
         <span class="dim">Chilla Works.</span>
       </h1>
       <p class="hp-hero-sub">
-        Stay connected to global markets — without turning market participation into your lifestyle. Your instructions run. Your funds stay with your broker. Flow tells you everything.
+        Stay connected to global markets — without turning market participation into your lifestyle. <br><br>Your instructions run. <br>Your funds stay with your broker. <br>Flow tells you everything.
       </p>
       <div class="hp-hero-cta">
         <a href="https://chilla.beaverlyai.com" class="btn-wh" data-track="hero_cta">Start Chilling</a>
@@ -929,7 +910,7 @@
   <!-- ═══════════════════════════════
        BROKER LOGOS
        ═══════════════════════════════ -->
-  <div class="hp-brokers">
+  <div class="hp-brokers bv-dark-bg">
     <div class="container">
       <p class="hp-brokers-lbl">Works across broker environments</p>
       <div class="hp-logos-track">
@@ -1523,5 +1504,6 @@
     go(1);
   }
   </script>
+  <script src="js/beaverly-bg.js"></script>
 </body>
 </html>
