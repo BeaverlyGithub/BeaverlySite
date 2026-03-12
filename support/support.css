@@ -1,20 +1,24 @@
+/* ─────────────────────────────────────────────────────────
+   SUPPORT PAGE  —  Beaverly visual system
+   Tokens aligned to main site: black / cream / white,
+   no slate, no blue. Structure and class names unchanged.
+   ───────────────────────────────────────────────────────── */
+
 :root {
-  --support-ink: #0f172a;
-  --support-muted: #475569;
-  --support-soft: #e2e8f0;
-  --support-bg: #f8fafc;
-  --support-panel: #ffffff;
-  --support-accent: #0f172a;
-  --support-accent-soft: #dbeafe;
-  --support-success: #14532d;
-  --support-warn: #9a3412;
+  --support-ink:         #0a0a0a;      /* was #0f172a (slate-900) */
+  --support-muted:       #6a6a6a;      /* was #475569 (slate-600) */
+  --support-soft:        #e5e3de;      /* was #e2e8f0 (slate-200) → Beaverly border */
+  --support-bg:          #f8f7f4;      /* was #f8fafc (slate-50)  → Beaverly cream */
+  --support-panel:       #ffffff;
+  --support-accent:      #0a0a0a;      /* was #0f172a */
+  --support-accent-soft: #f0ede8;      /* was #dbeafe (blue-100)  → Beaverly sand */
+  --support-success:     #1a3a24;      /* stays semantic green-dark, just deepened */
+  --support-warn:        #7c2d12;      /* stays semantic orange-dark */
 }
 
+/* ── Page shell ───────────────────────────────────────── */
 .support-page {
-  background:
-    radial-gradient(1200px 420px at 15% -10%, rgba(34, 197, 94, 0.10), transparent 60%),
-    radial-gradient(1000px 420px at 95% -20%, rgba(59, 130, 246, 0.10), transparent 55%),
-    var(--support-bg);
+  background: var(--support-bg);      /* was radial-gradient with green+blue blobs */
   color: var(--support-ink);
   min-height: 100vh;
 }
@@ -22,15 +26,16 @@
 .support-shell {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 1.25rem 1rem 4rem;
+  padding: 1.5rem 1.5rem 5rem;        /* roomier: was 1.25rem 1rem 4rem */
 }
 
+/* ── Breadcrumb ───────────────────────────────────────── */
 .support-breadcrumb {
   display: flex;
   gap: 0.5rem;
   font-size: 0.88rem;
   color: var(--support-muted);
-  margin-bottom: 0.85rem;
+  margin-bottom: 1.1rem;              /* was 0.85rem */
 }
 
 .support-breadcrumb a {
@@ -43,54 +48,63 @@
   border-bottom-color: currentColor;
 }
 
+/* ── Hero ─────────────────────────────────────────────── */
 .support-hero {
-  background: linear-gradient(140deg, #111827, #1f2937 60%, #0b1325);
-  color: #f8fafc;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 24px;
-  padding: 2.4rem;
-  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.25);
+  background: #0a0a0a;                /* was linear-gradient(140deg, #111827, #1f2937…) */
+  color: #f8f7f4;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;                /* was 24px */
+  padding: 2.8rem 2.8rem;             /* roomier: was 2.4rem */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 
 .support-hero--light {
-  background: linear-gradient(140deg, #ffffff, #f8fafc 60%, #eff6ff);
+  background: #ffffff;                /* was linear-gradient(140deg,#fff,#f8fafc,#eff6ff) */
   color: var(--support-ink);
   border: 1px solid var(--support-soft);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
+/* ── Kicker ───────────────────────────────────────────── */
 .support-kicker {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #bfdbfe;
-  margin-bottom: 0.85rem;
+  font-weight: 600;
+  color: rgba(248, 247, 244, 0.45);   /* was #bfdbfe (blue) */
+  margin-bottom: 0.9rem;
 }
 
 .support-hero--light .support-kicker {
-  color: #1d4ed8;
+  color: var(--support-muted);        /* was #1d4ed8 (blue-700) */
 }
 
+/* ── Title / subtitle ─────────────────────────────────── */
 .support-title {
   margin: 0;
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 1.15;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.9rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.12;
   color: inherit;
 }
 
 .support-subtitle {
-  margin-top: 0.9rem;
+  margin-top: 1rem;                   /* was 0.9rem */
   max-width: 72ch;
+  font-size: 1rem;
+  line-height: 1.7;
   color: inherit;
-  opacity: 0.92;
+  opacity: 0.75;                      /* was 0.92 — more restrained */
 }
 
+/* ── Meta chips ───────────────────────────────────────── */
 .support-meta {
-  margin-top: 1rem;
+  margin-top: 1.25rem;                /* was 1rem */
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
@@ -100,52 +114,59 @@
   display: inline-flex;
   align-items: center;
   gap: 0.32rem;
-  font-size: 0.78rem;
-  border-radius: 999px;
+  font-size: 0.76rem;
+  border-radius: 6px;                 /* was 999px pill → restrained rect */
   padding: 0.33rem 0.66rem;
-  border: 1px solid rgba(148, 163, 184, 0.32);
-  background: rgba(15, 23, 42, 0.28);
-  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(248, 247, 244, 0.65);   /* was #e2e8f0 */
+  letter-spacing: 0.02em;
+  font-weight: 500;
 }
 
 .support-hero--light .support-chip {
-  background: #eff6ff;
-  border-color: #bfdbfe;
-  color: #1e3a8a;
+  background: var(--support-accent-soft);   /* was #eff6ff */
+  border-color: var(--support-soft);        /* was #bfdbfe */
+  color: var(--support-ink);               /* was #1e3a8a */
 }
 
+/* ── Layout ───────────────────────────────────────────── */
 .support-layout {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.25rem;                       /* was 1rem */
+  margin-top: 1.25rem;                /* was 1rem */
 }
 
+/* ── Sidebar ──────────────────────────────────────────── */
 .support-sidebar {
   position: sticky;
   top: calc(var(--nav-height) + 28px);
   align-self: start;
   background: var(--support-panel);
   border: 1px solid var(--support-soft);
-  border-radius: 16px;
-  padding: 1rem;
+  border-radius: 12px;                /* was 16px */
+  padding: 1.25rem;                   /* roomier: was 1rem */
 }
 
 .support-sidebar h2 {
-  font-size: 0.94rem;
-  margin: 0 0 0.65rem;
-  color: var(--support-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.9rem;                 /* was 0.65rem */
+  color: var(--support-muted);        /* was --support-ink — lighter label */
 }
 
 .support-sidebar a {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--support-muted);
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  padding: 0.2rem 0;
+  margin-bottom: 0.6rem;              /* was 0.5rem */
+  padding: 0.2rem 0 0.2rem 0.6rem;
   border-left: 2px solid transparent;
-  padding-left: 0.5rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .support-sidebar a:hover,
@@ -154,16 +175,18 @@
   border-left-color: var(--support-ink);
 }
 
+/* ── Content grid ─────────────────────────────────────── */
 .support-content {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;                       /* was 1rem */
 }
 
+/* ── Cards ────────────────────────────────────────────── */
 .support-card {
   background: var(--support-panel);
   border: 1px solid var(--support-soft);
-  border-radius: 16px;
-  padding: 1.25rem;
+  border-radius: 12px;                /* was 16px */
+  padding: 1.75rem 1.75rem;           /* roomier: was 1.25rem */
 }
 
 .support-card h2,
@@ -180,37 +203,42 @@
 }
 
 .support-card p {
-  font-size: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.75;
 }
 
+/* ── Callouts ─────────────────────────────────────────── */
 .support-callout {
-  border-left: 4px solid #3b82f6;
-  background: #eff6ff;
-  color: #1e3a8a;
-  border-radius: 10px;
-  padding: 0.9rem;
-  margin-top: 0.85rem;
+  border-left: 3px solid var(--support-ink);   /* was 4px solid #3b82f6 (blue) */
+  background: var(--support-accent-soft);       /* was #eff6ff (blue-50) */
+  color: var(--support-ink);                    /* was #1e3a8a (blue-800) */
+  border-radius: 8px;                           /* was 10px */
+  padding: 1rem 1.1rem;                         /* roomier: was 0.9rem */
+  margin-top: 1rem;                             /* was 0.85rem */
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 .support-callout strong {
-  color: #1e3a8a;
+  color: var(--support-ink);                    /* was #1e3a8a */
 }
 
 .support-callout--warn {
-  border-left-color: #f59e0b;
-  background: #fffbeb;
-  color: #7c2d12;
+  border-left-color: #a16207;                   /* amber, kept semantic */
+  background: #fefce8;
+  color: #78350f;
 }
 
 .support-callout--success {
-  border-left-color: #15803d;
+  border-left-color: #15803d;                   /* green, kept semantic */
   background: #f0fdf4;
   color: #14532d;
 }
 
+/* ── Grids ────────────────────────────────────────────── */
 .support-grid {
   display: grid;
-  gap: 0.85rem;
+  gap: 1rem;                          /* was 0.85rem */
 }
 
 .support-grid--2 {
@@ -221,28 +249,32 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* ── Link cards ───────────────────────────────────────── */
 .support-linkcard {
   border: 1px solid var(--support-soft);
-  border-radius: 14px;
-  padding: 0.95rem;
+  border-radius: 10px;                /* was 14px */
+  padding: 1.25rem;                   /* roomier: was 0.95rem */
   text-decoration: none;
   color: inherit;
   background: #ffffff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .support-linkcard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border-color: #c8c5bf;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07); /* was 0 8px 20px rgba(15,23,42,0.08) */
 }
 
 .support-linkcard h3 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
 }
 
+/* ── Steps ────────────────────────────────────────────── */
 .support-steps {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.9rem;                        /* was 0.8rem */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -252,9 +284,12 @@
 .support-steps li {
   counter-increment: supportstep;
   border: 1px solid var(--support-soft);
-  border-radius: 12px;
-  padding: 0.8rem;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;               /* roomier: was 0.8rem */
   background: #fff;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--support-muted);
 }
 
 .support-steps li::before {
@@ -264,52 +299,61 @@
   justify-content: center;
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 0.5rem;
-  border-radius: 999px;
-  background: #0f172a;
-  color: #f8fafc;
-  font-size: 0.78rem;
+  margin-right: 0.6rem;
+  border-radius: 4px;                 /* was 999px circle → subtle rect */
+  background: var(--support-ink);     /* stays #0a0a0a */
+  color: #ffffff;
+  font-size: 0.72rem;
   font-weight: 700;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
+/* ── Pair ─────────────────────────────────────────────── */
 .support-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;                          /* was 0.75rem */
 }
 
+/* ── Boxes ────────────────────────────────────────────── */
 .support-box {
   border: 1px solid var(--support-soft);
-  border-radius: 12px;
-  padding: 0.9rem;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;            /* roomier: was 0.9rem */
   background: #fff;
 }
 
 .support-box h3,
 .support-box h4 {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.55rem;                /* was 0.45rem */
+  font-size: 0.9375rem;
+  color: var(--support-ink);
 }
 
+/* ── Inline tag list ──────────────────────────────────── */
 .support-inline-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-top: 0.6rem;
+  margin-top: 0.65rem;
 }
 
 .support-tag {
   font-size: 0.76rem;
   border: 1px solid var(--support-soft);
-  background: #f8fafc;
-  border-radius: 999px;
+  background: var(--support-bg);     /* was #f8fafc */
+  border-radius: 4px;                /* was 999px pill */
   padding: 0.28rem 0.58rem;
-  color: #334155;
+  color: var(--support-muted);       /* was #334155 */
+  letter-spacing: 0.01em;
 }
 
+/* ── Table ────────────────────────────────────────────── */
 .support-table-wrap {
   overflow-x: auto;
   border: 1px solid var(--support-soft);
-  border-radius: 12px;
+  border-radius: 10px;               /* was 12px */
 }
 
 .support-table {
@@ -321,72 +365,89 @@
 .support-table th,
 .support-table td {
   text-align: left;
-  padding: 0.75rem;
+  padding: 0.9rem 1rem;              /* roomier: was 0.75rem */
   border-bottom: 1px solid var(--support-soft);
   vertical-align: top;
+  font-size: 0.9rem;
 }
 
 .support-table th {
-  background: #f8fafc;
-  font-size: 0.86rem;
+  background: var(--support-bg);    /* was #f8fafc */
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--support-muted);
 }
 
 .support-table tr:last-child td {
   border-bottom: none;
 }
 
+/* ── FAQ ──────────────────────────────────────────────── */
 .support-faq details {
   border: 1px solid var(--support-soft);
   background: #fff;
-  border-radius: 12px;
-  padding: 0.75rem;
-  margin-bottom: 0.65rem;
+  border-radius: 10px;               /* was 12px */
+  padding: 1rem 1.1rem;              /* roomier: was 0.75rem */
+  margin-bottom: 0.6rem;
 }
 
 .support-faq summary {
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.9375rem;
   color: var(--support-ink);
+  list-style: none;
 }
+
+.support-faq summary::-webkit-details-marker { display: none; }
 
 .support-faq p {
-  margin-top: 0.6rem;
+  margin-top: 0.75rem;               /* was 0.6rem */
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--support-muted);
 }
 
+/* ── Status badges ────────────────────────────────────── */
 .support-status {
   display: inline-flex;
   align-items: center;
   font-size: 0.74rem;
-  border-radius: 999px;
-  padding: 0.2rem 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 4px;                /* was 999px */
+  padding: 0.2rem 0.55rem;
   border: 1px solid;
 }
 
 .support-status--active {
-  color: #065f46;
-  border-color: #6ee7b7;
-  background: #ecfdf5;
+  color: #166534;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
 }
 
 .support-status--paused {
   color: #92400e;
-  border-color: #fcd34d;
+  border-color: #fde68a;
   background: #fffbeb;
 }
 
 .support-status--revoked {
   color: #9f1239;
-  border-color: #fda4af;
+  border-color: #fecdd3;
   background: #fff1f2;
 }
 
 .support-status--verifying,
 .support-status--monitoring {
-  color: #1d4ed8;
-  border-color: #93c5fd;
-  background: #eff6ff;
+  color: var(--support-muted);       /* was #1d4ed8 (blue) */
+  border-color: var(--support-soft);
+  background: var(--support-bg);
 }
 
+/* ── Related links ────────────────────────────────────── */
 .support-related {
   display: flex;
   flex-wrap: wrap;
@@ -394,24 +455,29 @@
 }
 
 .support-related a {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   text-decoration: none;
-  color: #1d4ed8;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: 999px;
-  padding: 0.35rem 0.65rem;
+  color: var(--support-ink);          /* was #1d4ed8 (blue) */
+  background: var(--support-accent-soft); /* was #eff6ff (blue-50) */
+  border: 1px solid var(--support-soft);  /* was #bfdbfe (blue-200) */
+  border-radius: 6px;                 /* was 999px pill */
+  padding: 0.35rem 0.7rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .support-related a:hover {
-  background: #dbeafe;
+  background: #e8e5e0;               /* was #dbeafe (blue-100) */
+  border-color: #c8c5bf;
 }
 
+/* ── Footnote ─────────────────────────────────────────── */
 .support-footnote {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--support-muted);       /* was #64748b */
+  line-height: 1.65;
 }
 
+/* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 980px) {
   .support-layout {
     grid-template-columns: 1fr;
@@ -430,15 +496,15 @@
 
 @media (max-width: 640px) {
   .support-shell {
-    padding: 1rem 0.75rem 3rem;
+    padding: 1rem 1rem 3rem;         /* was 1rem 0.75rem 3rem */
   }
 
   .support-hero {
-    padding: 1.5rem;
-    border-radius: 18px;
+    padding: 1.75rem 1.5rem;         /* roomier: was 1.5rem */
+    border-radius: 12px;             /* was 18px */
   }
 
   .support-card {
-    padding: 1rem;
+    padding: 1.25rem;                /* was 1rem */
   }
 }
