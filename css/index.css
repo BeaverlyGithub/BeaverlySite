@@ -242,6 +242,22 @@ body { overflow-x: hidden; }
 .demo-card { display: none; animation: dcappear .35s ease; }
 .demo-card.active { display: block; }
 @keyframes dcappear { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* Resolve collision with legacy .demo-card styles in style.css */
+.hp-demo-section .demo-card {
+  opacity: 1;
+  transform: translateY(0);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+.hp-demo-section .demo-card:hover {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
 .dc-label { font-size: .66rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--mid); margin-bottom: .4rem; }
 .dc-title { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin-bottom: .3rem; }
 .dc-desc { font-size: .83rem; color: var(--mid); line-height: 1.65; margin-bottom: 1.2rem; }
