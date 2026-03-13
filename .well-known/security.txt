@@ -1,0 +1,3 @@
+Contact: mailto:security@beaverlyai.com
+Policy: https://www.beaverlyai.com/security.html
+Preferred-Languages: en
