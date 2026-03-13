@@ -610,11 +610,13 @@
   border-radius: var(--card-radius);
   border: 1px solid var(--cream-border);
   background: var(--white);
+  position: relative;
 }
 
 .comparison-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-family: 'Outfit', sans-serif;
   min-width: 800px;
 }
@@ -634,9 +636,34 @@
   letter-spacing: 0.01em;
 }
 
+.comparison-table-wrap--sticky-head .comparison-table thead th {
+  position: sticky;
+  top: 96px;
+  z-index: 4;
+  background: var(--cream);
+}
+
 .comparison-table thead th.feature-col {
   text-align: left;
   min-width: 200px;
+}
+
+.plan-col-title,
+.plan-col-price {
+  display: block;
+}
+
+.plan-col-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.plan-col-price {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .comparison-table thead th.col-featured {
@@ -676,6 +703,30 @@
   white-space: nowrap;
 }
 
+.comparison-table thead .sticky-feature-col,
+.comparison-table tbody th[scope="row"] {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: var(--white);
+}
+
+.comparison-table thead .sticky-feature-col {
+  z-index: 5;
+  background: var(--cream);
+}
+
+.comparison-table tbody th[scope="row"]::after,
+.comparison-table thead .sticky-feature-col::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--cream-border);
+}
+
 .comparison-table tbody td {
   text-align: center;
 }
@@ -695,6 +746,12 @@
   padding: 0.75rem 1.25rem;
   border-bottom: 1px solid var(--cream-border);
   text-align: left;
+}
+
+.row-group-header td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
 }
 
 .row-best-for th,
@@ -1092,6 +1149,10 @@ details[open] .prc-faq-q .fqi {
     border-radius: 12px;
   }
 
+  .comparison-table-wrap--sticky-head .comparison-table thead th {
+    top: 84px;
+  }
+
   .table-scroll-hint {
     display: flex;
   }
@@ -1108,6 +1169,10 @@ details[open] .prc-faq-q .fqi {
 
   .upgrade-axes {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-table-wrap--sticky-head .comparison-table thead th {
+    top: 76px;
   }
 
   .pricing-hero-cta {
