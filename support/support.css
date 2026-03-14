@@ -21,10 +21,13 @@
   background: var(--support-bg);      /* was radial-gradient with green+blue blobs */
   color: var(--support-ink);
   min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
 }
 
 .support-shell {
   max-width: 1160px;
+  width: min(100%, 1160px);
   margin: 0 auto;
   padding: 1.5rem 1.5rem 5rem;        /* roomier: was 1.25rem 1rem 4rem */
 }
@@ -32,10 +35,25 @@
 /* ── Breadcrumb ───────────────────────────────────────── */
 .support-breadcrumb {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.88rem;
   color: var(--support-muted);
   margin-bottom: 1.1rem;              /* was 0.85rem */
+}
+
+.support-breadcrumb,
+.support-layout,
+.support-layout > *,
+.support-card,
+.support-box,
+.support-related {
+  min-width: 0;
+}
+
+.support-breadcrumb a,
+.support-breadcrumb span {
+  overflow-wrap: anywhere;
 }
 
 .support-breadcrumb a {
@@ -167,6 +185,7 @@
   padding: 0.2rem 0 0.2rem 0.6rem;
   border-left: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
+  overflow-wrap: anywhere;
 }
 
 .support-sidebar a:hover,
@@ -497,6 +516,11 @@
 @media (max-width: 640px) {
   .support-shell {
     padding: 1rem 1rem 3rem;         /* was 1rem 0.75rem 3rem */
+  }
+
+  .support-breadcrumb {
+    gap: 0.35rem;
+    font-size: 0.82rem;
   }
 
   .support-hero {

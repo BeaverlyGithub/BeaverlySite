@@ -1158,6 +1158,118 @@ details[open] .prc-faq-q .fqi {
   }
 }
 
+@media (max-width: 760px) {
+  .comparison-table-wrap {
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .comparison-table,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table th,
+  .comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table {
+    min-width: 0;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--cream-border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .comparison-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .comparison-table tbody th[scope="row"] {
+    position: static;
+    white-space: normal;
+    padding: 1rem 1rem 0.7rem;
+    border-bottom: 1px solid var(--cream-border);
+    background: var(--cream);
+  }
+
+  .comparison-table tbody th[scope="row"]::after {
+    display: none;
+  }
+
+  .comparison-table tbody td {
+    display: grid;
+    grid-template-columns: minmax(110px, 42%) minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--cream-border);
+  }
+
+  .comparison-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .comparison-table tbody td::before {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .comparison-table tbody td:nth-child(2)::before { content: "Chill Architect"; }
+  .comparison-table tbody td:nth-child(3)::before { content: "Chill Mode"; }
+  .comparison-table tbody td:nth-child(4)::before { content: "Deep Chill"; }
+  .comparison-table tbody td:nth-child(5)::before { content: "Peak Chill"; }
+  .comparison-table tbody td:nth-child(6)::before { content: "Enterprise"; }
+
+  .comparison-table .cell-yes {
+    justify-content: flex-start;
+  }
+
+  .cell-best-for {
+    max-width: none;
+    margin: 0;
+  }
+
+  .row-group-header {
+    margin: 1.5rem 0 0.65rem;
+    border: none;
+    background: transparent;
+  }
+
+  .row-group-header td {
+    padding: 0;
+    border: none;
+    background: transparent !important;
+    font-size: 0.74rem;
+  }
+
+  .row-group-header td:first-child {
+    position: static;
+  }
+
+  .row-best-for th[scope="row"] {
+    background: #fafaf7;
+  }
+
+  .table-scroll-hint {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .pricing-cards-grid {
     grid-template-columns: 1fr;
