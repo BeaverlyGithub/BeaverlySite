@@ -68,15 +68,15 @@
             <h2>What you will see</h2>
             <ul>
               <li>Flow action buttons: <strong>Replay logs</strong>, <strong>Expand Flow</strong>, <strong>Download logs</strong>.</li>
-              <li>Category chips: <strong>All</strong>, <strong>Entry</strong>, <strong>Exit</strong>, <strong>Skip</strong>, <strong>Warn</strong>, <strong>Live</strong>.</li>
-              <li>Per-event status pills: <strong>ENTRY</strong>, <strong>EXIT</strong>, <strong>SKIP</strong>, <strong>WARN</strong>, <strong>LIVE</strong>.</li>
-              <li>Summary counters above the feed for Entry, Exit, Skipped, Errors, and Live.</li>
+              <li>Category chips: <strong>All</strong>, <strong>Entry</strong>, <strong>Exit</strong>, <strong>Pass</strong>, <strong>Warn</strong>, <strong>Live</strong>.</li>
+              <li>Per-event status pills: <strong>ENTRY</strong>, <strong>EXIT</strong>, <strong>PASS</strong>, <strong>WARN</strong>, <strong>LIVE</strong>.</li>
+              <li>Summary counters above the feed for Entry, Exit, Pass, Errors, and Live.</li>
             </ul>
             <div class="support-inline-list">
               <span class="support-status support-status--active">ENTRY</span>
               <span class="support-status support-status--paused">EXIT</span>
               <span class="support-status support-status--revoked">SKIP</span>
-              <span class="support-status support-status--verifying">WARN</span>
+              <span class="support-status support-status--verifying">PASS</span>
               <span class="support-status support-status--monitoring">LIVE</span>
             </div>
           </article>
@@ -91,7 +91,7 @@
                 <tbody>
                   <tr><td>Entry event</td><td>Automation opened a position within your instruction scope.</td><td>Confirm environment and instruction are the expected ones.</td></tr>
                   <tr><td>Exit event</td><td>A tracked position lifecycle ended and was closed.</td><td>Review sequence around the event if you need context.</td></tr>
-                  <tr><td>Skipped event</td><td>System stepped aside with a specific reason such as comfort boundary, instruction scope, or environment minimum.</td><td>Open event details and compare with instruction comfort and account readiness.</td></tr>
+                  <tr><td>Passed event</td><td>System stepped aside with a specific reason such as comfort boundary, instruction scope, or environment minimum.</td><td>Open event details and compare with instruction comfort and account readiness.</td></tr>
                   <tr><td>Warning event</td><td>Validation or environment warning event was recorded.</td><td>Use troubleshooting steps and include the warning title in support requests.</td></tr>
                   <tr><td>Live event</td><td>Monitoring update without an entry/exit action.</td><td>No action needed unless the update conflicts with your expected setup.</td></tr>
                 </tbody>
@@ -123,7 +123,7 @@
               <li>Filter event categories with the Flow chips.</li>
               <li>Open <strong>Replay logs</strong> and load history by <strong>Last hour</strong>, <strong>Last 24 hours</strong>, <strong>Last 7 days</strong>, <strong>Last 14 days</strong>, <strong>Last month</strong>, <strong>All available history</strong>, or <strong>Custom range</strong>.</li>
               <li>Open details for a single event using the Flow details view.</li>
-              <li>Download filtered logs as `chilla-flow-YYYY-MM-DD.json` from <strong>Download logs</strong>.</li>
+              <li>Download filtered logs as `chilla-flow-YYYY-MM-DD.pdf` or `chilla-flow-YYYY-MM-DD.json` from <strong>Download logs</strong>.</li>
               <li>Use Flow first when troubleshooting no-activity, skipped actions, or warnings.</li>
             </ul>
           </article>
