@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://beaverlyai.com/attached_assets/beaverly_lodo.png" type="image/png">
+
+  <title>Supported Accounts — Chilla by Beaverly®</title>
+  <meta name="description" content="Chilla works with leading brokers and prop firms through the cTrader ecosystem, plus direct Deriv integration. Your funds stay with your broker — always.">
+  <meta name="keywords" content="chilla compatible brokers, ctrader brokers, ic markets chilla, pepperstone automation, deriv chilla, prop firm automation, beaverly supported accounts">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Supported Accounts — Chilla by Beaverly®">
+  <meta property="og:description" content="Connect your existing broker account. Chilla automates within your instructions — your capital stays where it is.">
+  <meta property="og:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beaverlyai.com/supported-accounts.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Supported Accounts — Chilla by Beaverly®">
+  <meta name="twitter:description" content="Connect your existing broker account. Chilla automates within your instructions — your capital stays where it is.">
+  <meta name="twitter:image" content="https://beaverlyai.com/attached_assets/og-cover.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://beaverlyai.com/supported-accounts.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap"></noscript>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/beaverly-bg.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/index.css" />
+
+  <!-- Page CSS -->
+  <style>
+    /* ── Tokens (mirror index.css :root) ── */
+    :root {
+      --ink:    #0a0a0a;
+      --white:  #ffffff;
+      --cream:  #f8f7f4;
+      --sand:   #f0ede8;
+      --mid:    #6a6a6a;
+      --border: #e5e3de;
+      --green:  #27c93f;
+      --amber:  #d97706;
+      --r:      16px;
+      --r-lg:   28px;
+      --pad:    clamp(5rem, 10vw, 9rem);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { overflow-x: hidden; font-family: 'Outfit', sans-serif; background: var(--white); color: var(--ink); }
+
+    /* ── Shared utilities ── */
+    .eyebrow {
+      display: inline-block; font-size: .7rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 1rem;
+    }
+    .eyebrow-inv { color: rgba(255,255,255,.28); }
+    .reveal {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ── Buttons ── */
+    .btn-ink {
+      background: var(--ink); color: var(--white);
+      padding: .875rem 1.75rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 700; font-family: inherit;
+      text-decoration: none; border: 2px solid var(--ink);
+      transition: all .25s; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .btn-ink:hover { background: #333; transform: translateY(-2px); }
+    .btn-ol-dk {
+      background: transparent; color: var(--ink);
+      padding: .875rem 1.75rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 600; font-family: inherit;
+      text-decoration: none; border: 2px solid var(--border);
+      transition: all .25s; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .btn-ol-dk:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .btn-wh {
+      background: var(--white); color: var(--ink);
+      padding: .9rem 2rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 700; font-family: inherit;
+      text-decoration: none; border: 2px solid var(--white);
+      transition: all .25s; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .btn-wh:hover { background: #eee; transform: translateY(-2px); }
+    .btn-ol-inv {
+      background: transparent; color: rgba(255,255,255,.48);
+      padding: .875rem 1.75rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 600; font-family: inherit;
+      text-decoration: none; border: 2px solid rgba(255,255,255,.15);
+      transition: all .25s; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .btn-ol-inv:hover { color: var(--white); border-color: rgba(255,255,255,.38); transform: translateY(-2px); }
+
+    /* ── Page wrap ── */
+    .sa-wrap { max-width: 1140px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .sa-wrap-narrow { max-width: 780px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+
+    /* ───────────────────────────────────
+       HERO
+    ─────────────────────────────────── */
+    .sa-hero {
+      background: var(--ink);
+      padding: clamp(9rem, 16vw, 13rem) 0 clamp(5rem, 10vw, 8rem);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .sa-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 720px; margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .sa-hero-inner.in { opacity: 1; transform: translateY(0); }
+    .sa-hero-badge {
+      display: inline-flex; align-items: center; gap: .55rem;
+      border: 1px solid rgba(255,255,255,.09); border-radius: 100px;
+      padding: .38rem 1.05rem;
+      font-size: .69rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(255,255,255,.3); margin-bottom: 2.5rem;
+    }
+    .sa-hero-badge .bd { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.28); opacity: .45; }
+    .sa-hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 700; color: var(--white);
+      line-height: .95; letter-spacing: -.035em; margin-bottom: .55em;
+    }
+    .sa-hero h1 .dim { color: rgba(255,255,255,.3); font-style: italic; }
+    .sa-hero-sub {
+      font-size: clamp(.95rem, 2.2vw, 1.18rem); font-weight: 300;
+      color: rgba(255,255,255,.4); max-width: 500px;
+      margin: 0 auto 3rem; line-height: 1.75;
+    }
+    .sa-hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ───────────────────────────────────
+       TRUST STRIP
+    ─────────────────────────────────── */
+    .sa-trust { background: var(--ink); padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,.05); }
+    .sa-trust-list {
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(.85rem, 3vw, 3rem); flex-wrap: wrap;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .sa-trust-item {
+      display: flex; align-items: center; gap: .52rem;
+      font-size: .78rem; font-weight: 500;
+      color: rgba(255,255,255,.28); white-space: nowrap;
+    }
+    .sa-trust-item svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .sa-trust-sep { width: 1px; height: 13px; background: rgba(255,255,255,.07); }
+    @media (max-width: 540px) { .sa-trust-sep { display: none; } }
+
+    /* ───────────────────────────────────
+       WHAT COMPATIBILITY MEANS
+    ─────────────────────────────────── */
+    .sa-what { background: var(--white); padding: var(--pad) 0; }
+    .sa-what-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
+    @media (max-width: 840px) { .sa-what-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .sa-what-text h2 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1.1rem;
+    }
+    .sa-what-text p { color: var(--mid); font-size: 1.05rem; line-height: 1.8; margin-bottom: .9rem; }
+    .sa-what-text p:last-child { margin-bottom: 0; }
+    .sa-what-panel {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 2rem;
+    }
+    .sa-what-row {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .sa-what-row:first-child { padding-top: 0; }
+    .sa-what-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sa-what-ico { flex-shrink: 0; width: 18px; height: 18px; color: var(--ink); margin-top: 2px; }
+    .sa-what-row-title { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: .2rem; }
+    .sa-what-row-desc { font-size: .8rem; color: var(--mid); line-height: 1.6; }
+
+    /* ───────────────────────────────────
+       INFRASTRUCTURE SECTION
+    ─────────────────────────────────── */
+    .sa-infra { background: var(--cream); padding: var(--pad) 0; }
+    .sa-infra-hdr { text-align: center; margin-bottom: 4rem; }
+    .sa-infra-hdr h2 {
+      font-size: clamp(2rem, 4.2vw, 2.75rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1rem;
+    }
+    .sa-infra-hdr p { color: var(--mid); font-size: 1.05rem; max-width: 480px; margin: 0 auto; line-height: 1.75; }
+    .sa-infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+    @media (max-width: 760px) { .sa-infra-grid { grid-template-columns: 1fr; } }
+
+    /* Infrastructure card */
+    .sa-icard {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--r-lg); padding: 2.25rem; position: relative;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .sa-icard:hover { box-shadow: 0 14px 40px rgba(0,0,0,.06); transform: translateY(-3px); }
+    .sa-icard-tag {
+      display: inline-flex; align-items: center; gap: .38rem;
+      font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      border: 1px solid var(--border); border-radius: 100px;
+      padding: .26rem .72rem; color: var(--mid); margin-bottom: 1.5rem;
+    }
+    .sa-icard-tag .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .sa-icard-tag .tag-dot-amber { background: var(--amber); }
+    .sa-icard h3 {
+      font-size: 1.3rem; font-weight: 700; color: var(--ink);
+      letter-spacing: -.02em; margin-bottom: .55rem;
+    }
+    .sa-icard-lead { font-size: .96rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.75rem; }
+
+    /* Broker pills inside card */
+    .sa-broker-group { margin-bottom: 1.5rem; }
+    .sa-broker-group-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: .72rem; display: block;
+    }
+    .sa-pills { display: flex; flex-wrap: wrap; gap: .42rem; }
+    .sa-pill {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-size: .78rem; font-weight: 600; color: var(--ink);
+      border: 1.5px solid var(--border); border-radius: 100px;
+      padding: .32rem .85rem; background: var(--cream);
+      transition: border-color .2s;
+    }
+    .sa-pill:hover { border-color: var(--ink); }
+    .sa-pill-prop {
+      font-size: .56rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--ink); color: var(--white);
+      border-radius: 100px; padding: .12rem .45rem;
+    }
+    .sa-more-text {
+      font-size: .8rem; color: var(--mid); font-style: italic; margin-top: .75rem;
+    }
+
+    /* Paused state */
+    .sa-icard--paused { border-color: rgba(217,119,6,.2); background: rgba(253,246,232,.35); }
+    .sa-icard--paused:hover { box-shadow: 0 14px 40px rgba(217,119,6,.07); }
+    .sa-paused-banner {
+      display: flex; align-items: center; gap: .6rem;
+      background: rgba(217,119,6,.09); border: 1px solid rgba(217,119,6,.2);
+      border-radius: 10px; padding: .88rem 1rem; margin-bottom: 1.5rem;
+    }
+    .sa-paused-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--amber); flex-shrink: 0;
+      animation: pulse-amber 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse-amber {
+      0%,100% { opacity: 1; } 50% { opacity: .35; }
+    }
+    .sa-paused-txt { font-size: .8rem; font-weight: 600; color: var(--amber); }
+    .sa-paused-sub { font-size: .76rem; color: #a16207; margin-top: .18rem; line-height: 1.55; }
+
+    .sa-products { display: flex; flex-wrap: wrap; gap: .42rem; margin-bottom: 1rem; }
+    .sa-product-pill {
+      display: inline-flex; align-items: center;
+      font-size: .76rem; font-weight: 600; color: #92400e;
+      border: 1.5px solid rgba(217,119,6,.28); border-radius: 100px;
+      padding: .28rem .82rem; background: rgba(253,246,232,.7);
+    }
+
+    /* ───────────────────────────────────
+       HOW CONNECTION WORKS
+    ─────────────────────────────────── */
+    .sa-how { background: var(--white); padding: var(--pad) 0; }
+    .sa-how-hdr { text-align: center; margin-bottom: 4rem; }
+    .sa-how-hdr h2 {
+      font-size: clamp(2rem, 4.2vw, 2.75rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1rem;
+    }
+    .sa-how-hdr p { color: var(--mid); font-size: 1.05rem; max-width: 460px; margin: 0 auto; line-height: 1.75; }
+    .sa-steps { display: flex; flex-direction: column; gap: 0; max-width: 680px; margin: 0 auto; }
+    .sa-step {
+      display: flex; align-items: flex-start; gap: 1.5rem; position: relative;
+      padding: 0 0 2.8rem 0;
+    }
+    .sa-step:last-child { padding-bottom: 0; }
+    .sa-step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .sa-step-num {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--ink); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; font-weight: 800; letter-spacing: .06em; flex-shrink: 0;
+    }
+    .sa-step-line { width: 1px; background: var(--border); flex: 1; margin-top: 6px; min-height: 40px; }
+    .sa-step:last-child .sa-step-line { display: none; }
+    .sa-step-body { padding-top: .5rem; }
+    .sa-step-body h4 { font-size: .96rem; font-weight: 700; color: var(--ink); margin-bottom: .38rem; }
+    .sa-step-body p { font-size: .86rem; color: var(--mid); line-height: 1.72; }
+
+    /* ───────────────────────────────────
+       PROP FIRMS
+    ─────────────────────────────────── */
+    .sa-prop { background: var(--cream); padding: var(--pad) 0; }
+    .sa-prop-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; }
+    @media (max-width: 840px) { .sa-prop-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .sa-prop-text h2 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1.1rem;
+    }
+    .sa-prop-text p { color: var(--mid); font-size: 1.05rem; line-height: 1.8; margin-bottom: .9rem; }
+    .sa-prop-callout {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--r); padding: 1.5rem;
+    }
+    .sa-prop-callout h4 { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: .75rem; }
+    .sa-prop-list { display: flex; flex-direction: column; gap: .52rem; }
+    .sa-prop-item { display: flex; align-items: flex-start; gap: .62rem; font-size: .82rem; color: var(--mid); line-height: 1.6; }
+    .sa-prop-item svg { flex-shrink: 0; width: 13px; height: 13px; color: var(--ink); margin-top: 2px; }
+
+    /* ───────────────────────────────────
+       NON-CUSTODIAL
+    ─────────────────────────────────── */
+    .sa-custody { background: var(--ink); padding: var(--pad) 0; }
+    .sa-custody-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
+    @media (max-width: 840px) { .sa-custody-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .sa-custody-text h2 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--white); margin-bottom: 1.1rem;
+    }
+    .sa-custody-text p { color: rgba(255,255,255,.38); font-size: 1.05rem; line-height: 1.8; margin-bottom: .9rem; }
+    .sa-custody-text p:last-child { margin-bottom: 0; }
+    .sa-custody-cards { display: flex; flex-direction: column; gap: .85rem; }
+    .sa-custody-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--r); padding: 1.4rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: background .3s;
+    }
+    .sa-custody-card:hover { background: rgba(255,255,255,.06); }
+    .sa-custody-ico { flex-shrink: 0; width: 22px; height: 22px; color: rgba(255,255,255,.4); margin-top: 2px; }
+    .sa-custody-card h4 { font-size: .88rem; font-weight: 700; color: var(--white); margin-bottom: .22rem; }
+    .sa-custody-card p { font-size: .78rem; color: rgba(255,255,255,.28); line-height: 1.6; margin: 0; }
+
+    /* ───────────────────────────────────
+       GETTING STARTED REQUIREMENTS
+    ─────────────────────────────────── */
+    .sa-start { background: var(--white); padding: var(--pad) 0; }
+    .sa-start-hdr { text-align: center; margin-bottom: 3.5rem; }
+    .sa-start-hdr h2 {
+      font-size: clamp(2rem, 4.2vw, 2.75rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1rem;
+    }
+    .sa-start-hdr p { color: var(--mid); font-size: 1.05rem; max-width: 460px; margin: 0 auto; line-height: 1.75; }
+    .sa-req-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.45rem; }
+    @media (max-width: 720px) { .sa-req-grid { grid-template-columns: 1fr; } }
+    .sa-req-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 2rem;
+    }
+    .sa-req-num {
+      font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700;
+      color: var(--border); line-height: 1; margin-bottom: 1.2rem;
+    }
+    .sa-req-card h4 { font-size: .96rem; font-weight: 700; color: var(--ink); margin-bottom: .45rem; }
+    .sa-req-card p { font-size: .83rem; color: var(--mid); line-height: 1.72; }
+
+    /* ───────────────────────────────────
+       EXTENSIBILITY NOTE
+    ─────────────────────────────────── */
+    .sa-extend { background: var(--cream); padding: 3.5rem 0; }
+    .sa-extend-inner {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .sa-extend-copy {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 1.9rem); font-weight: 300;
+      line-height: 1.5; letter-spacing: -.02em; color: var(--ink); margin-bottom: 1rem;
+    }
+    .sa-extend-copy em { font-style: italic; color: var(--mid); }
+    .sa-extend-sub { font-size: .92rem; color: var(--mid); line-height: 1.75; }
+
+    /* ───────────────────────────────────
+       FAQ
+    ─────────────────────────────────── */
+    .sa-faq { background: var(--white); padding: var(--pad) 0; }
+    .sa-faq-inner { max-width: 820px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .sa-faq-hdr { text-align: center; margin-bottom: 3.5rem; }
+    .sa-faq-hdr h2 {
+      font-size: clamp(2rem, 4.2vw, 2.75rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12; color: var(--ink); margin-bottom: 1rem;
+    }
+    .sa-faq-hdr p { color: var(--mid); font-size: 1.05rem; line-height: 1.75; }
+    .sa-faq-list { margin-top: 3.5rem; }
+    .sa-faq-item { border-bottom: 1px solid var(--border); }
+    .sa-faq-item:first-child { border-top: 1px solid var(--border); }
+    .sa-faq-q {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.28rem 0; cursor: pointer;
+      font-size: .96rem; font-weight: 600; color: var(--ink); list-style: none;
+    }
+    .sa-faq-q::-webkit-details-marker { display: none; }
+    .sa-faq-q .fqi { flex-shrink: 0; width: 16px; height: 16px; color: var(--mid); transition: transform .3s; }
+    details[open] .sa-faq-q .fqi { transform: rotate(45deg); }
+    .sa-faq-a { font-size: .88rem; color: var(--mid); line-height: 1.8; padding-bottom: 1.28rem; max-width: 630px; }
+
+    /* ───────────────────────────────────
+       FINAL CTA
+    ─────────────────────────────────── */
+    .sa-cta-final {
+      background: var(--ink); padding: var(--pad) 0; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .sa-cta-inner {
+      position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .sa-cta-inner h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700;
+      color: var(--white); letter-spacing: -.035em; line-height: 1.05; margin-bottom: 1.2rem;
+    }
+    .sa-cta-inner p { color: rgba(255,255,255,.36); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.4rem; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .sa-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .sa-cta-note { font-size: .74rem; color: rgba(255,255,255,.17); margin-top: 1.4rem; font-style: italic; }
+
+    /* ───────────────────────────────────
+       MOBILE
+    ─────────────────────────────────── */
+    @media (max-width: 480px) {
+      .sa-hero-cta, .sa-cta-btns { flex-direction: column; align-items: center; }
+      .sa-hero-cta a, .sa-cta-btns a { width: 100%; max-width: 300px; justify-content: center; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Supported Accounts — Chilla by Beaverly",
+    "url": "https://beaverlyai.com/supported-accounts.html",
+    "description": "Chilla works with leading brokers and prop firms through the cTrader ecosystem, plus direct Deriv integration.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Beaverly",
+      "url": "https://beaverlyai.com"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
+  <script src="js/gtag-init.js"></script>
+</head>
+<body>
+
+  <!-- Header injected by js/header-loader.js -->
+
+
+  <!-- ═══════════════════════════════
+       HERO
+       ═══════════════════════════════ -->
+  <section class="sa-hero bv-atm">
+    <div class="sa-hero-inner" id="saHeroEl">
+      <div class="sa-hero-badge">
+        <span class="bd"></span>
+        Chilla by Beaverly® — Infrastructure
+      </div>
+      <h1>Supported<br><span class="dim">Accounts.</span></h1>
+      <p class="sa-hero-sub">
+        Connect your existing broker or prop firm account. Chilla automates within the scope you define — your capital stays where it is, always.
+      </p>
+      <div class="sa-hero-cta">
+        <a href="https://chilla.beaverlyai.com" class="btn-wh" data-track="sa_hero_cta">Connect Your Account</a>
+        <a href="#infrastructure" class="btn-ol-inv" data-track="sa_hero_explore">See All Infrastructure</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       TRUST STRIP
+       ═══════════════════════════════ -->
+  <div class="sa-trust">
+    <div class="sa-trust-list">
+      <div class="sa-trust-item"><i data-lucide="shield-check" style="width:13px;height:13px"></i>Funds stay with your broker</div>
+      <div class="sa-trust-sep"></div>
+      <div class="sa-trust-item"><i data-lucide="lock" style="width:13px;height:13px"></i>Non-custodial by design</div>
+      <div class="sa-trust-sep"></div>
+      <div class="sa-trust-item"><i data-lucide="user-check" style="width:13px;height:13px"></i>User-authorized scope only</div>
+      <div class="sa-trust-sep"></div>
+      <div class="sa-trust-item"><i data-lucide="pause-circle" style="width:13px;height:13px"></i>Revoke access anytime</div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       WHAT COMPATIBILITY MEANS
+       ═══════════════════════════════ -->
+  <section class="sa-what">
+    <div class="sa-wrap">
+      <div class="sa-what-inner">
+        <div class="sa-what-text reveal">
+          <span class="eyebrow">What "Supported" Means</span>
+          <h2>Infrastructure compatibility, not a broker directory.</h2>
+          <p>When Chilla lists a supported account, it means there is an established, stable technical pathway for your automation instructions to reach that environment — and for activity to be reported back to Flow.</p>
+          <p>Chilla is not affiliated with, endorsed by, or partnered with any broker or prop firm listed here. These are account environments Chilla is technically capable of connecting with, on your behalf, when you provide authorization.</p>
+          <p>Your funds remain in your account. Chilla never holds, transfers, or stores capital.</p>
+        </div>
+        <div class="sa-what-panel reveal" style="transition-delay:.1s">
+          <div class="sa-what-row">
+            <i data-lucide="check" class="sa-what-ico"></i>
+            <div>
+              <div class="sa-what-row-title">You authorize the connection</div>
+              <div class="sa-what-row-desc">Chilla can only connect to an account you've explicitly authorized. Nothing happens without your permission.</div>
+            </div>
+          </div>
+          <div class="sa-what-row">
+            <i data-lucide="check" class="sa-what-ico"></i>
+            <div>
+              <div class="sa-what-row-title">Your capital stays with your broker</div>
+              <div class="sa-what-row-desc">Beaverly has no access to move or withdraw funds. Your broker relationship is entirely separate from Chilla.</div>
+            </div>
+          </div>
+          <div class="sa-what-row">
+            <i data-lucide="check" class="sa-what-ico"></i>
+            <div>
+              <div class="sa-what-row-title">Flow reports every action</div>
+              <div class="sa-what-row-desc">Every entry, exit, skip, and warning appears in Flow — in plain language, in real time. Nothing runs silently.</div>
+            </div>
+          </div>
+          <div class="sa-what-row">
+            <i data-lucide="check" class="sa-what-ico"></i>
+            <div>
+              <div class="sa-what-row-title">Revoke access anytime</div>
+              <div class="sa-what-row-desc">You can disconnect and pause Chilla from your dashboard at any moment. Your account access is unaffected.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       INFRASTRUCTURE
+       ═══════════════════════════════ -->
+  <section class="sa-infra" id="infrastructure">
+    <div class="sa-wrap">
+      <div class="sa-infra-hdr reveal">
+        <span class="eyebrow">Account Infrastructure</span>
+        <h2>Two connection pathways.</h2>
+        <p>Chilla connects through two distinct technical infrastructures. Each supports different account environments and product types.</p>
+      </div>
+      <div class="sa-infra-grid">
+
+        <!-- cTrader ecosystem -->
+        <div class="sa-icard reveal">
+          <div class="sa-icard-tag">
+            <span class="tag-dot"></span>
+            Active
+          </div>
+          <h3>cTrader Ecosystem</h3>
+          <p class="sa-icard-lead">Chilla integrates with the cTrader account infrastructure and Open API — a widely adopted platform used by many leading retail brokers and prop trading firms worldwide. If your broker supports cTrader, Chilla can likely connect.</p>
+
+          <div class="sa-broker-group">
+            <span class="sa-broker-group-label">Popular brokers</span>
+            <div class="sa-pills">
+              <span class="sa-pill">Deriv</span>
+              <span class="sa-pill">IC Markets</span>
+              <span class="sa-pill">Pepperstone</span>
+              <span class="sa-pill">FP Markets</span>
+              <span class="sa-pill">FxPro</span>
+              <span class="sa-pill">Fusion Markets</span>
+              <span class="sa-pill">Tradeview</span>
+              <span class="sa-pill">Skilling</span>
+            </div>
+          </div>
+
+          <div class="sa-broker-group">
+            <span class="sa-broker-group-label">Prop firms</span>
+            <div class="sa-pills">
+              <span class="sa-pill">FTMO <span class="sa-pill-prop">Prop</span></span>
+              <span class="sa-pill" style="font-style:italic;color:var(--mid)">…and others</span>
+            </div>
+          </div>
+
+          <p class="sa-more-text">…and many more through the cTrader ecosystem. If your broker uses cTrader, check Chilla's environment setup for compatibility confirmation.</p>
+        </div>
+
+        <!-- Deriv — paused -->
+        <div class="sa-icard sa-icard--paused reveal" style="transition-delay:.1s">
+          <div class="sa-icard-tag">
+            <span class="tag-dot tag-dot-amber"></span>
+            Temporarily Paused
+          </div>
+          <h3>Deriv — Direct Integration</h3>
+          <p class="sa-icard-lead">Chilla has a direct API integration with Deriv, enabling access to native Deriv market products. This pathway is separate from the cTrader ecosystem and supports instruments unique to the Deriv platform.</p>
+
+          <div class="sa-paused-banner">
+            <span class="sa-paused-dot"></span>
+            <div>
+              <div class="sa-paused-txt">Temporarily paused</div>
+              <div class="sa-paused-sub">The Deriv API infrastructure is currently being migrated and improved. Existing integrations will resume when the upgrade is complete.</div>
+            </div>
+          </div>
+
+          <div class="sa-broker-group">
+            <span class="sa-broker-group-label">Supported product types (when active)</span>
+            <div class="sa-products">
+              <span class="sa-product-pill">Options</span>
+              <span class="sa-product-pill">Multipliers</span>
+              <span class="sa-product-pill">Accumulators</span>
+            </div>
+          </div>
+
+          <p class="sa-more-text">Deriv-native behaviors will return to full availability after infrastructure improvements are complete. No action required — existing setups will resume automatically.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       HOW THE CONNECTION WORKS
+       ═══════════════════════════════ -->
+  <section class="sa-how">
+    <div class="sa-wrap">
+      <div class="sa-how-hdr reveal">
+        <span class="eyebrow">How It Connects</span>
+        <h2>Authorization, not access.</h2>
+        <p>Chilla connects to your broker account through a structured, user-authorized flow. You decide the scope — Chilla operates within it.</p>
+      </div>
+      <div class="sa-steps reveal">
+        <div class="sa-step">
+          <div class="sa-step-left">
+            <div class="sa-step-num">01</div>
+            <div class="sa-step-line"></div>
+          </div>
+          <div class="sa-step-body">
+            <h4>You open an account with a supported broker</h4>
+            <p>Open and fund an account directly with the broker of your choice. Beaverly has no involvement in this process — your account relationship is entirely between you and your chosen broker.</p>
+          </div>
+        </div>
+        <div class="sa-step">
+          <div class="sa-step-left">
+            <div class="sa-step-num">02</div>
+            <div class="sa-step-line"></div>
+          </div>
+          <div class="sa-step-body">
+            <h4>You authorize Chilla to connect</h4>
+            <p>Inside Chilla, you provide authorization credentials for your environment. Chilla uses these to establish a read-and-execute connection — strictly within the scope you approve. Beaverly never stores your broker login credentials.</p>
+          </div>
+        </div>
+        <div class="sa-step">
+          <div class="sa-step-left">
+            <div class="sa-step-num">03</div>
+            <div class="sa-step-line"></div>
+          </div>
+          <div class="sa-step-body">
+            <h4>You set instructions and comfort limits</h4>
+            <p>Choose a behavior, set your per-position exposure, and optionally apply a monthly comfort cap. Chilla shows you the implications before anything runs. Nothing activates without your explicit confirmation.</p>
+          </div>
+        </div>
+        <div class="sa-step">
+          <div class="sa-step-left">
+            <div class="sa-step-num">04</div>
+            <div class="sa-step-line"></div>
+          </div>
+          <div class="sa-step-body">
+            <h4>Chilla runs within your defined scope</h4>
+            <p>Once authorized, Chilla observes market conditions and executes only when your instructions are satisfied. Flow surfaces every meaningful action in plain language, in real time. You can pause or revoke at any point.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       PROP FIRMS
+       ═══════════════════════════════ -->
+  <section class="sa-prop">
+    <div class="sa-wrap">
+      <div class="sa-prop-inner">
+        <div class="sa-prop-text reveal">
+          <span class="eyebrow">Prop Firm Accounts</span>
+          <h2>Prop firms that use cTrader are generally supported.</h2>
+          <p>Several prop trading firms operate on the cTrader platform — which means Chilla's connection infrastructure extends to those environments as well.</p>
+          <p>If a prop firm uses cTrader-based accounts for their funded traders, Chilla can typically connect in the same way it connects to any cTrader broker.</p>
+          <p>Confirm your prop firm's platform infrastructure before attempting to connect. Requirements and account restrictions vary by firm.</p>
+        </div>
+        <div class="reveal" style="transition-delay:.1s">
+          <div class="sa-prop-callout">
+            <h4>Before connecting a prop account</h4>
+            <div class="sa-prop-list">
+              <div class="sa-prop-item">
+                <i data-lucide="check" style="width:13px;height:13px"></i>
+                Confirm the firm uses a cTrader-based trading environment for funded accounts.
+              </div>
+              <div class="sa-prop-item">
+                <i data-lucide="check" style="width:13px;height:13px"></i>
+                Review your prop firm's trading rules for restrictions on automated or algorithmic participation.
+              </div>
+              <div class="sa-prop-item">
+                <i data-lucide="check" style="width:13px;height:13px"></i>
+                Understand the firm's drawdown and daily loss limits — configure your Chilla comfort caps to stay within them.
+              </div>
+              <div class="sa-prop-item">
+                <i data-lucide="check" style="width:13px;height:13px"></i>
+                Use Flow to monitor all activity during evaluation or funded phases. Every action is recorded and reviewable.
+              </div>
+              <div class="sa-prop-item">
+                <i data-lucide="alert-triangle" style="width:13px;height:13px"></i>
+                Chilla makes no representations about prop firm rule compliance or challenge outcomes. Rules vary by firm. Always verify independently.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       NON-CUSTODIAL
+       ═══════════════════════════════ -->
+  <section class="sa-custody bv-atm">
+    <div class="sa-wrap">
+      <div class="sa-custody-inner">
+        <div class="sa-custody-text reveal">
+          <span class="eyebrow eyebrow-inv">Capital Safety</span>
+          <h2>Your funds never leave your broker.</h2>
+          <p>Chilla is non-custodial by design. Beaverly has no mechanism to hold, transfer, or withdraw funds from any account. Not now. Not ever.</p>
+          <p>Your capital stays in your regulated broker account — subject to your broker's security, regulatory protections, and withdrawal processes — entirely independent of Chilla.</p>
+        </div>
+        <div class="sa-custody-cards reveal" style="transition-delay:.1s">
+          <div class="sa-custody-card">
+            <i data-lucide="shield-check" class="sa-custody-ico"></i>
+            <div>
+              <h4>Zero custody</h4>
+              <p>Beaverly holds $0 of user funds. Your balance lives in your broker account, not ours.</p>
+            </div>
+          </div>
+          <div class="sa-custody-card">
+            <i data-lucide="lock" class="sa-custody-ico"></i>
+            <div>
+              <h4>Scoped API access only</h4>
+              <p>Chilla's connection is limited to execution and read permissions within the scope you authorize. No withdrawal access. No transfer access.</p>
+            </div>
+          </div>
+          <div class="sa-custody-card">
+            <i data-lucide="pause-circle" class="sa-custody-ico"></i>
+            <div>
+              <h4>Revoke without consequence</h4>
+              <p>Disconnecting Chilla from your broker account has no effect on your ability to access or withdraw your funds. They're always yours to control.</p>
+            </div>
+          </div>
+          <div class="sa-custody-card">
+            <i data-lucide="activity" class="sa-custody-ico"></i>
+            <div>
+              <h4>Full action transparency</h4>
+              <p>Every action Chilla takes on your account appears in Flow — timestamped, plain-language, and exportable. Nothing runs without a record.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       WHAT YOU NEED TO GET STARTED
+       ═══════════════════════════════ -->
+  <section class="sa-start">
+    <div class="sa-wrap">
+      <div class="sa-start-hdr reveal">
+        <span class="eyebrow">Getting Started</span>
+        <h2>Three things you need.</h2>
+        <p>Getting Chilla connected to your broker is straightforward. Here's what you need before you begin.</p>
+      </div>
+      <div class="sa-req-grid">
+        <div class="sa-req-card reveal">
+          <div class="sa-req-num">01</div>
+          <h4>A supported broker or prop firm account</h4>
+          <p>Open and fund an account with any broker or prop firm that supports cTrader. If you already have one, you're ready. If not, choose from the cTrader ecosystem — IC Markets, Pepperstone, and FP Markets are widely used starting points.</p>
+        </div>
+        <div class="sa-req-card reveal" style="transition-delay:.08s">
+          <div class="sa-req-num">02</div>
+          <h4>A Chilla account</h4>
+          <p>Register for Chilla at chilla.beaverlyai.com. The free Chill Architect plan lets you connect your environment and explore the full setup experience before running any live automation. No payment required to get started.</p>
+        </div>
+        <div class="sa-req-card reveal" style="transition-delay:.16s">
+          <div class="sa-req-num">03</div>
+          <h4>Your broker API or cTrader credentials</h4>
+          <p>During setup, Chilla walks you through connecting your environment. For cTrader accounts, this involves authorizing through the cTrader connect flow. Chilla never stores your broker login password directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       EXTENSIBILITY
+       ═══════════════════════════════ -->
+  <section class="sa-extend">
+    <div class="sa-extend-inner reveal">
+      <p class="sa-extend-copy">
+        Chilla is designed as broker-agnostic automation infrastructure.<br>
+        <em>Additional account environments may be supported as the platform evolves.</em>
+      </p>
+      <p class="sa-extend-sub">The current infrastructure covers cTrader ecosystem accounts and direct Deriv API integration. Chilla's architecture is built for extensibility — the account list above reflects what's available today, not the limit of what's possible.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       FAQ
+       ═══════════════════════════════ -->
+  <section class="sa-faq">
+    <div class="sa-faq-inner">
+      <div class="sa-faq-hdr reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Account compatibility, explained.</h2>
+        <p>Clear answers to the questions users ask most before connecting their broker.</p>
+      </div>
+      <div class="sa-faq-list">
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Does my broker need to be on this list?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">Not necessarily. If your broker supports cTrader accounts, there's a strong chance Chilla can connect to it — even if it isn't listed here. The named brokers are popular examples, not an exhaustive list. During account setup, Chilla will confirm compatibility when you connect.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Is Chilla affiliated with or partnered with these brokers?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">No. Beaverly is not affiliated with, endorsed by, or in a business relationship with any broker or prop firm named here. These are account environments Chilla is technically compatible with. Beaverly does not receive referral fees or commissions for broker account openings.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">What happens to my broker account if I cancel Chilla?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">Nothing. Your broker account is completely independent of your Chilla subscription. Cancelling Chilla simply disconnects the automation. Your account, your balance, and your ability to withdraw are unaffected.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Can Chilla withdraw money from my account?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">No. Chilla has no withdrawal or transfer permissions on your account. The connection is limited to execution within your authorized instruction scope and reading account data to populate Flow. Beaverly cannot and does not touch your capital.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Why is Deriv showing as temporarily paused?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">Chilla's direct Deriv integration uses a live API connection, and the underlying infrastructure is currently being migrated to improve reliability and expand capabilities. Deriv-native behaviors (Options, Multipliers, Accumulators) will return automatically when the upgrade is complete. No action is required from users with existing Deriv connections.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Can I connect multiple broker accounts to Chilla?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">Yes. Chilla supports multiple environments from a single dashboard. You can connect accounts across different compatible brokers and manage instructions and comfort limits for each independently. Environment capacity depends on your Chilla plan.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Is Chilla suitable for funded prop trading accounts?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">Technically, yes — if the prop firm uses cTrader. However, you are solely responsible for ensuring your use of Chilla complies with your prop firm's trading rules. Some firms restrict algorithmic or automated participation. Always verify your firm's rules before connecting a funded account. Chilla makes no representations about prop firm compliance outcomes.</p>
+        </details>
+
+        <details class="sa-faq-item">
+          <summary class="sa-faq-q">Does Chilla support accounts on MT4 or MT5?<i data-lucide="plus" class="fqi"></i></summary>
+          <p class="sa-faq-a">Not currently. Chilla's infrastructure is built on the cTrader ecosystem and the Deriv API. MetaTrader 4 and MetaTrader 5 account environments are not supported at this time. This may change as Chilla's account compatibility infrastructure evolves.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════
+       FINAL CTA
+       ═══════════════════════════════ -->
+  <section class="sa-cta-final bv-atm">
+    <div class="sa-cta-inner reveal">
+      <h2>Ready to connect<br>your account?</h2>
+      <p>Open Chilla, authorize your environment, set your instructions, and watch Flow. Your capital stays where it is — always.</p>
+      <div class="sa-cta-btns">
+        <a href="https://chilla.beaverlyai.com" class="btn-wh" data-track="sa_final_cta">Open Chilla</a>
+        <a href="/support/getting-started.html" class="btn-ol-inv" data-track="sa_final_support">Setup Guide</a>
+      </div>
+      <p class="sa-cta-note">Non-custodial. No funds held by Beaverly. Revoke access anytime.</p>
+    </div>
+  </section>
+
+
+  <!-- Footer injected by js/footer-loader.js -->
+
+  <script src="/js/header-loader.js"></script>
+  <script src="/js/footer-loader.js"></script>
+
+  <script>
+    // Hero entrance
+    window.addEventListener('DOMContentLoaded', () => {
+      const hero = document.getElementById('saHeroEl');
+      if (hero) requestAnimationFrame(() => hero.classList.add('in'));
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.09 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Lucide
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+
+</body>
+</html>

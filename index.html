@@ -57,6 +57,131 @@
   }
   </script>
 
+  <!-- Supported Accounts section styles -->
+  <style>
+    /* ═══════════════════════════════════════
+       SUPPORTED ACCOUNTS — homepage section
+       ═══════════════════════════════════════ */
+    .hp-accounts {
+      background: var(--ink);
+      padding: clamp(3.5rem, 8vw, 6rem) 0;
+    }
+    .hp-accounts-inner {
+      max-width: 1140px; margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .hp-accounts-hdr {
+      text-align: center; margin-bottom: 3rem;
+    }
+    .hp-accounts-h2 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem); font-weight: 700;
+      letter-spacing: -.03em; line-height: 1.12;
+      color: var(--white); margin-bottom: .85rem;
+    }
+    .hp-accounts-sub {
+      font-size: .96rem; font-weight: 300;
+      color: rgba(255,255,255,.32); max-width: 460px;
+      margin: 0 auto; line-height: 1.72;
+    }
+
+    /* infrastructure blocks */
+    .hp-accounts-block {
+      margin-bottom: 2.25rem;
+    }
+    .hp-accounts-block:last-of-type { margin-bottom: 0; }
+
+    .hp-accounts-infra-label {
+      display: flex; align-items: center; gap: .75rem;
+      margin-bottom: 1rem;
+    }
+    .hp-infra-tag {
+      display: inline-flex; align-items: center;
+      font-size: .65rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+      color: rgba(255,255,255,.24); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 100px; padding: .24rem .72rem;
+    }
+    .hp-paused-badge {
+      display: inline-flex; align-items: center; gap: .42rem;
+      font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: #d97706; border: 1px solid rgba(217,119,6,.3);
+      border-radius: 100px; padding: .24rem .72rem;
+    }
+    .hp-paused-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: #d97706; flex-shrink: 0;
+      animation: hp-pulse-amber 2.2s ease-in-out infinite;
+    }
+    @keyframes hp-pulse-amber { 0%,100%{opacity:1} 50%{opacity:.28} }
+
+    /* broker pill grid */
+    .hp-broker-grid {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+    }
+    .hp-broker-pill {
+      display: inline-flex; align-items: center; gap: .38rem;
+      font-size: .8rem; font-weight: 600;
+      color: rgba(255,255,255,.52);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 100px; padding: .38rem .95rem;
+      background: rgba(255,255,255,.04);
+      transition: color .25s, border-color .25s, background .25s;
+    }
+    .hp-broker-pill:hover {
+      color: rgba(255,255,255,.82);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.07);
+    }
+    .hp-broker-pill--prop { /* prop firm variation — same style, just tagged */ }
+    .hp-prop-badge {
+      font-size: .54rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      background: rgba(255,255,255,.1); color: rgba(255,255,255,.45);
+      border-radius: 100px; padding: .1rem .42rem;
+    }
+    .hp-broker-pill--dim {
+      opacity: .45; cursor: default; pointer-events: none;
+    }
+
+    .hp-accounts-more {
+      font-size: .76rem; color: rgba(255,255,255,.22);
+      font-style: italic; margin-top: .75rem;
+    }
+
+    /* paused block separator */
+    .hp-accounts-block--paused {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 2rem;
+    }
+    .hp-accounts-paused-note {
+      font-size: .76rem; color: rgba(217,119,6,.55);
+      font-style: italic; margin-top: .6rem;
+    }
+
+    /* CTA row */
+    .hp-accounts-cta {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding-top: 2rem; margin-top: 2.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .hp-accounts-link {
+      display: inline-flex; align-items: center; gap: .42rem;
+      color: rgba(255,255,255,.52); text-decoration: none;
+      font-size: .875rem; font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: .18rem;
+      transition: color .25s, border-color .25s;
+    }
+    .hp-accounts-link:hover { color: var(--white); border-color: rgba(255,255,255,.38); }
+    .hp-accounts-link svg { flex-shrink: 0; }
+    .hp-accounts-disc {
+      font-size: .72rem; color: rgba(255,255,255,.16);
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .hp-accounts-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
   <script src="js/gtag-init.js"></script>
@@ -260,26 +385,62 @@
 
 
   <!-- ═══════════════════════════════
-       BROKER LOGOS
+       SUPPORTED ACCOUNTS
        ═══════════════════════════════ -->
-  <div class="hp-brokers bv-atm">
-    <div class="container">
-      <p class="hp-brokers-lbl">Works across automation environments</p>
-      <div class="hp-logos-track">
-        <div class="hp-logos-row">
-          <div class="hp-broker-logo"><img src="attached_assets/ctrader_logo.png" alt="cTrader"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/binance_logo.png" alt="Binance"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/deriv_logo.png" alt="Deriv"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/bybit_logo.png" alt="ByBit"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/ctrader_logo.png" alt="cTrader"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/binance_logo.png" alt="Binance"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/deriv_logo.png" alt="Deriv"></div>
-          <div class="hp-broker-logo"><img src="attached_assets/bybit_logo.png" alt="ByBit"></div>
-        </div>
+  <section class="hp-accounts bv-atm" id="supported-accounts">
+    <div class="hp-accounts-inner">
+
+      <div class="hp-accounts-hdr">
+        <span class="eyebrow eyebrow-inv">Supported Accounts</span>
+        <h2 class="hp-accounts-h2">Works with leading brokers<br>and prop firms.</h2>
+        <p class="hp-accounts-sub">Connect your existing account. Your capital stays where it is — Chilla only acts within the scope you authorize.</p>
       </div>
-      <p class="hp-brokers-note">Integrations via user-authorized third-party accounts. Beaverly does not access or hold user funds.</p>
+
+      <!-- Infrastructure: cTrader ecosystem -->
+      <div class="hp-accounts-block">
+        <div class="hp-accounts-infra-label">
+          <span class="hp-infra-tag">via cTrader ecosystem</span>
+        </div>
+        <div class="hp-broker-grid">
+          <div class="hp-broker-pill">Deriv</div>
+          <div class="hp-broker-pill">IC Markets</div>
+          <div class="hp-broker-pill">Pepperstone</div>
+          <div class="hp-broker-pill">FP Markets</div>
+          <div class="hp-broker-pill">FxPro</div>
+          <div class="hp-broker-pill">Fusion Markets</div>
+          <div class="hp-broker-pill">Tradeview</div>
+          <div class="hp-broker-pill">Skilling</div>
+          <div class="hp-broker-pill hp-broker-pill--prop">FTMO <span class="hp-prop-badge">Prop</span></div>
+        </div>
+        <p class="hp-accounts-more">…and many more through the cTrader ecosystem</p>
+      </div>
+
+      <!-- Infrastructure: Deriv direct — paused -->
+      <div class="hp-accounts-block hp-accounts-block--paused">
+        <div class="hp-accounts-infra-label">
+          <span class="hp-infra-tag">direct integration</span>
+          <span class="hp-paused-badge">
+            <span class="hp-paused-dot"></span>
+            Temporarily paused
+          </span>
+        </div>
+        <div class="hp-broker-grid">
+          <div class="hp-broker-pill hp-broker-pill--dim">Deriv</div>
+        </div>
+        <p class="hp-accounts-paused-note">Options · Multipliers · Accumulators — API infrastructure being upgraded. Returning soon.</p>
+      </div>
+
+      <!-- CTA row -->
+      <div class="hp-accounts-cta">
+        <a href="/supported-accounts.html" class="hp-accounts-link" data-track="brokers_view_all">
+          View all supported accounts
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+        </a>
+        <p class="hp-accounts-disc">Funds remain in your broker account at all times. Beaverly holds no user capital.</p>
+      </div>
+
     </div>
-  </div>
+  </section>
 
 
   <!-- ═══════════════════════════════
