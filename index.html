@@ -28,11 +28,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap"></noscript>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300;1,9..144,700&display=swap">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -56,131 +53,7 @@
     "founder": { "@type": "Person", "name": "Moses Olabode" }
   }
   </script>
-
-  <!-- Supported Accounts section styles -->
-  <style>
-    /* ═══════════════════════════════════════
-       SUPPORTED ACCOUNTS — homepage section
-       ═══════════════════════════════════════ */
-    .hp-accounts {
-      background: var(--ink);
-      padding: clamp(3.5rem, 8vw, 6rem) 0;
-    }
-    .hp-accounts-inner {
-      max-width: 1140px; margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-    }
-    .hp-accounts-hdr {
-      text-align: center; margin-bottom: 3rem;
-    }
-    .hp-accounts-h2 {
-      font-size: clamp(1.85rem, 4vw, 2.6rem); font-weight: 700;
-      letter-spacing: -.03em; line-height: 1.12;
-      color: var(--white); margin-bottom: .85rem;
-    }
-    .hp-accounts-sub {
-      font-size: .96rem; font-weight: 300;
-      color: rgba(255,255,255,.32); max-width: 460px;
-      margin: 0 auto; line-height: 1.72;
-    }
-
-    /* infrastructure blocks */
-    .hp-accounts-block {
-      margin-bottom: 2.25rem;
-    }
-    .hp-accounts-block:last-of-type { margin-bottom: 0; }
-
-    .hp-accounts-infra-label {
-      display: flex; align-items: center; gap: .75rem;
-      margin-bottom: 1rem;
-    }
-    .hp-infra-tag {
-      display: inline-flex; align-items: center;
-      font-size: .65rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
-      color: rgba(255,255,255,.24); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 100px; padding: .24rem .72rem;
-    }
-    .hp-paused-badge {
-      display: inline-flex; align-items: center; gap: .42rem;
-      font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      color: #d97706; border: 1px solid rgba(217,119,6,.3);
-      border-radius: 100px; padding: .24rem .72rem;
-    }
-    .hp-paused-dot {
-      width: 5px; height: 5px; border-radius: 50%;
-      background: #d97706; flex-shrink: 0;
-      animation: hp-pulse-amber 2.2s ease-in-out infinite;
-    }
-    @keyframes hp-pulse-amber { 0%,100%{opacity:1} 50%{opacity:.28} }
-
-    /* broker pill grid */
-    .hp-broker-grid {
-      display: flex; flex-wrap: wrap; gap: .5rem;
-    }
-    .hp-broker-pill {
-      display: inline-flex; align-items: center; gap: .38rem;
-      font-size: .8rem; font-weight: 600;
-      color: rgba(255,255,255,.52);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 100px; padding: .38rem .95rem;
-      background: rgba(255,255,255,.04);
-      transition: color .25s, border-color .25s, background .25s;
-    }
-    .hp-broker-pill:hover {
-      color: rgba(255,255,255,.82);
-      border-color: rgba(255,255,255,.22);
-      background: rgba(255,255,255,.07);
-    }
-    .hp-broker-pill--prop { /* prop firm variation — same style, just tagged */ }
-    .hp-prop-badge {
-      font-size: .54rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
-      background: rgba(255,255,255,.1); color: rgba(255,255,255,.45);
-      border-radius: 100px; padding: .1rem .42rem;
-    }
-    .hp-broker-pill--dim {
-      opacity: .45; cursor: default; pointer-events: none;
-    }
-
-    .hp-accounts-more {
-      font-size: .76rem; color: rgba(255,255,255,.22);
-      font-style: italic; margin-top: .75rem;
-    }
-
-    /* paused block separator */
-    .hp-accounts-block--paused {
-      border-top: 1px solid rgba(255,255,255,.07);
-      padding-top: 2rem;
-    }
-    .hp-accounts-paused-note {
-      font-size: .76rem; color: rgba(217,119,6,.55);
-      font-style: italic; margin-top: .6rem;
-    }
-
-    /* CTA row */
-    .hp-accounts-cta {
-      border-top: 1px solid rgba(255,255,255,.07);
-      padding-top: 2rem; margin-top: 2.25rem;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .hp-accounts-link {
-      display: inline-flex; align-items: center; gap: .42rem;
-      color: rgba(255,255,255,.52); text-decoration: none;
-      font-size: .875rem; font-weight: 600;
-      border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: .18rem;
-      transition: color .25s, border-color .25s;
-    }
-    .hp-accounts-link:hover { color: var(--white); border-color: rgba(255,255,255,.38); }
-    .hp-accounts-link svg { flex-shrink: 0; }
-    .hp-accounts-disc {
-      font-size: .72rem; color: rgba(255,255,255,.16);
-      font-style: italic;
-    }
-
-    @media (max-width: 600px) {
-      .hp-accounts-cta { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/index-supported-accounts.css" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-83PFRQ3WQ6"></script>
